@@ -1156,9 +1156,6 @@ export default function Page() {
                 </article>
               </div>
             </div>
-            <div className="lvev-e5-cta">
-              <a className="lvev-e5-pill" href="#compare" style={{ background: '#020405', boxShadow: 'none', padding: '10px 32px' }}>Account Structure</a>
-            </div>
           </div>
         </section>
         {/* e6-beyond */}
@@ -1168,6 +1165,9 @@ export default function Page() {
      weiss/blau-Glow, der weich in die dunklen Nachbarsektionen auslaeuft.
      Desktop exakt nach Figma (Frame 1760, Band y=5840..7210), Mobile gestapelt. */}
         <section className="lvev-e6" id="beyond">
+          <div className="lvev-e5-cta">
+            <a className="lvev-e5-pill" href="#compare" style={{ background: '#020405', boxShadow: 'none', padding: '10px 32px' }}>Account Structure</a>
+          </div>
           <div className="lvev-e6-glow lvev-e6-glow--center" aria-hidden="true" />
           <div className="lvev-e6-glow lvev-e6-glow--left" aria-hidden="true" />
           <div className="lvev-e6-glow lvev-e6-glow--right" aria-hidden="true" />
