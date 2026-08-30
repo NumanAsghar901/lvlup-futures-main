@@ -12,6 +12,7 @@
   inset: 0;
   pointer-events: none;
 }
+
 .lve-e1-bg-img {
   position: absolute;
   top: 0;
@@ -28,6 +29,7 @@
   -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
   mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
 }
+
 .lve-e1-bg-shade {
   position: absolute;
   inset: 0;
@@ -38,6 +40,7 @@
     linear-gradient(180deg, rgba(64, 34, 2, 0.38) 0%, rgba(52, 28, 2, 0.22) 40%, rgba(20, 12, 2, 0.3) 72%, rgba(5, 6, 15, 0) 100%),
     linear-gradient(180deg, rgba(5, 6, 15, 0.35) 0%, rgba(5, 6, 15, 0.15) 38%, rgba(5, 6, 15, 0.42) 72%, var(--lvf-bg) 100%);
 }
+
 /* Grosser Bernstein-Glow oben (die "Star"-Vektoren aus dem Figma, angenaehert) */
 .lve-e1-bg::before {
   content: "";
@@ -47,6 +50,7 @@
     radial-gradient(ellipse 62% 46% at 50% -12%, rgba(255, 146, 0, 0.5) 0%, rgba(255, 146, 0, 0.16) 45%, rgba(255, 146, 0, 0) 72%),
     radial-gradient(ellipse 30% 26% at 50% 6%, rgba(255, 188, 84, 0.35) 0%, rgba(255, 188, 84, 0) 70%);
 }
+
 /* Diagonale Lichtkegel links/rechts unten, weich auslaufend */
 .lve-e1-bg::after {
   content: "";
@@ -85,6 +89,7 @@
   color: var(--lvf-white);
   margin-bottom: 26px;
 }
+
 .lve-e1-kicker-dot {
   width: 6px;
   height: 6px;
@@ -101,13 +106,18 @@
   letter-spacing: -0.01em;
   margin-bottom: 36px;
 }
-.lve-e1-title-line { display: block; }
+
+.lve-e1-title-line {
+  display: block;
+}
+
 .lve-e1-title-line--gold {
   background: linear-gradient(180deg, #ffbc54 0%, #ff9200 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
 .lve-e1-title-line--white {
   background: linear-gradient(141deg, rgba(255, 255, 255, 0.7) 0%, #ffffff 50%, rgba(255, 255, 255, 0.7) 100%);
   -webkit-background-clip: text;
@@ -134,6 +144,7 @@
   gap: 8px;
   flex-wrap: wrap;
 }
+
 .lve-e1-btn {
   display: inline-flex;
   align-items: center;
@@ -145,8 +156,14 @@
   line-height: 25px;
   transition: filter 0.2s ease, transform 0.2s ease;
 }
-.lve-e1-btn:hover { filter: brightness(1.08); }
-.lve-e1-btn:active { transform: translateY(1px); }
+
+.lve-e1-btn:hover {
+  filter: brightness(1.08);
+}
+
+.lve-e1-btn:active {
+  transform: translateY(1px);
+}
 
 .lve-e1-btn--primary {
   padding: 5px 18px 5px 5px;
@@ -165,6 +182,7 @@
     6px 11px 28px rgba(0, 0, 0, 0.15),
     25px 44px 50px rgba(0, 0, 0, 0.13);
 }
+
 .lve-e1-btn-icon {
   display: inline-flex;
   align-items: center;
@@ -194,30 +212,60 @@
 
 /* Tablet */
 @media (max-width: 1023px) {
-  .lve-e1 { padding: 220px 0 200px; }
-  .lve-e1-bg-img { height: 640px; }
+  .lve-e1 {
+    padding: 220px 0 200px;
+  }
+
+  .lve-e1-bg-img {
+    height: 640px;
+  }
 }
 
 /* Mobile: kein Design vorhanden, sauber gestapelt abgeleitet */
 @media (max-width: 767px) {
-  .lve-e1 { padding: 160px 0 120px; }
-  .lve-e1-bg-img { height: 520px; }
-  .lve-e1-kicker { font-size: 13px; }
-  .lve-e1-title { margin-bottom: 24px; }
-  .lve-e1-sub { margin-bottom: 28px; letter-spacing: 0.3px; }
+  .lve-e1 {
+    padding: 160px 0 120px;
+  }
+
+  .lve-e1-bg-img {
+    height: 520px;
+  }
+
+  .lve-e1-kicker {
+    font-size: 13px;
+  }
+
+  .lve-e1-title {
+    margin-bottom: 24px;
+  }
+
+  .lve-e1-sub {
+    margin-bottom: 28px;
+    letter-spacing: 0.3px;
+  }
+
   .lve-e1-actions {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
     max-width: 340px;
   }
-  .lve-e1-btn { min-height: 48px; width: 100%; }
+
+  .lve-e1-btn {
+    min-height: 48px;
+    width: 100%;
+  }
 }
 
 
 /* Abnahme 06.08.: Shell-Reset ueberstimmte die Textfarbe - dunkel erzwingen */
-a.lve-e1-btn--primary { color: #1c1200; }
-a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
+a.lve-e1-btn--primary {
+  color: #1c1200;
+}
+
+a.lve-e1-btn--primary .lve-e1-btn-icon {
+  color: #ffffff;
+}
 
 
 /* ===========================================================================
@@ -300,12 +348,12 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   .lvf-page .lve-e1-btn--ghost {
     box-shadow:
       rgb(255, 196, 110) -2px -6px 19px 0 inset,
-      rgb(255, 146, 0)   -5px -4px 16px 0 inset,
-      rgb(255, 146, 0)   -1px -2px 5px 0 inset,
-      rgb(0, 0, 0)        9px  7px 12px 0 inset,
-      rgba(0, 0, 0, .36)  7px  3px 11px 0,
-      rgba(0, 0, 0, .25)  0 0 0 2px,
-      rgba(0, 0, 0, .16)  0 0 0 3px;
+      rgb(255, 146, 0) -5px -4px 16px 0 inset,
+      rgb(255, 146, 0) -1px -2px 5px 0 inset,
+      rgb(0, 0, 0) 9px 7px 12px 0 inset,
+      rgba(0, 0, 0, .36) 7px 3px 11px 0,
+      rgba(0, 0, 0, .25) 0 0 0 2px,
+      rgba(0, 0, 0, .16) 0 0 0 3px;
   }
 }
 
@@ -382,7 +430,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
     background-image:
       linear-gradient(180deg, #ffbc54 0%, #ff9200 100%),
       linear-gradient(180deg, #959595 0%, #959595 100%);
-    background-size: 109px 100%, 100% 100%;
+    background-size: 130px 100%, 100% 100%;
     background-position: 0 0, 0 0;
     background-repeat: no-repeat;
     -webkit-background-clip: text;
@@ -390,6 +438,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
     color: transparent;
     -webkit-text-fill-color: transparent;
   }
+
   /* Der Punkt ist ein eigenes Element mit eigener Fuellung, ihn darf der
      Textausschnitt der Elternregel nicht mitnehmen. */
   .lvf-page .lve-e1 .lve-e1-kicker .lve-e1-kicker-dot {
@@ -430,6 +479,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
       rgba(240, 158, 30, 0.85) 93%,
       #f8ac33 100%);
 }
+
 .lve-e2::after {
   content: "";
   position: absolute;
@@ -452,7 +502,8 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   align-items: center;
   justify-content: center;
   width: fit-content;
-  margin: 0 0 26px; /* Kaan 06.08.: links ueber dem Titel wie im Mockup */
+  margin: 0 0 26px;
+  /* Kaan 06.08.: links ueber dem Titel wie im Mockup */
   padding: 7px 20px;
   border-radius: 78px;
   background: linear-gradient(180deg, #ffbc54 0%, #ff9200 100%);
@@ -502,6 +553,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   background-clip: text;
   color: transparent;
 }
+
 .lve-e2-title-gold {
   background: linear-gradient(180deg, #ffbc54 0%, #ff9200 100%);
   -webkit-background-clip: text;
@@ -519,7 +571,11 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   letter-spacing: 0.54px;
   color: rgba(255, 255, 255, 0.85);
 }
-.lve-e2-text p + p { margin-top: 26px; }
+
+.lve-e2-text p+p {
+  margin-top: 26px;
+}
+
 .lve-e2-hl {
   background: linear-gradient(180deg, #ffbc54 0%, #ff9200 100%);
   -webkit-background-clip: text;
@@ -532,6 +588,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   display: flex;
   flex-direction: column;
 }
+
 .lve-e2-card {
   width: 386px;
   max-width: 100%;
@@ -548,15 +605,36 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
     9px 8px 27px rgba(0, 0, 0, 0.49),
     37px 32px 49px rgba(0, 0, 0, 0.28);
 }
+
 /* Drehwinkel und Kartenabstand: siehe den Block "Lage des Kartenstapels" am
    Ende dieser Datei. Kurz: der Entwurf dreht Karte 1 gar nicht und die
    uebrigen drei um 0,5 Grad, und er stapelt sie ohne Ueberlappung. Die
    seitlichen Versaetze 10 / 30 / 0 / 30 stimmen auf den Punkt und bleiben. */
-.lve-e2-card + .lve-e2-card { margin-top: 0; }
-.lve-e2-card--1 { transform: translateX(10px); }
-.lve-e2-card--2 { transform: translateX(30px) rotate(0.5deg); position: relative; z-index: 1; }
-.lve-e2-card--3 { transform: translateX(0) rotate(-0.5deg); position: relative; z-index: 2; }
-.lve-e2-card--4 { transform: translateX(30px) rotate(0.5deg); position: relative; z-index: 3; }
+.lve-e2-card+.lve-e2-card {
+  margin-top: 0;
+}
+
+.lve-e2-card--1 {
+  transform: translateX(10px);
+}
+
+.lve-e2-card--2 {
+  transform: translateX(30px) rotate(0.5deg);
+  position: relative;
+  z-index: 1;
+}
+
+.lve-e2-card--3 {
+  transform: translateX(0) rotate(-0.5deg);
+  position: relative;
+  z-index: 2;
+}
+
+.lve-e2-card--4 {
+  transform: translateX(30px) rotate(0.5deg);
+  position: relative;
+  z-index: 3;
+}
 
 .lve-e2-card-head {
   display: flex;
@@ -570,6 +648,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
     linear-gradient(327deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
   border: 1px solid rgba(255, 255, 255, 0.03);
 }
+
 .lve-e2-card-icon {
   display: inline-flex;
   align-items: center;
@@ -580,6 +659,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   color: #ffae3d;
   filter: drop-shadow(0 0 6px rgba(255, 146, 0, 0.45));
 }
+
 .lve-e2-card-title {
   font-size: clamp(17px, 1.4vw, 20px);
   font-weight: 555;
@@ -590,6 +670,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   background-clip: text;
   color: transparent;
 }
+
 .lve-e2-card-sub {
   padding: 12px 17px 2px;
   font-size: 11px;
@@ -622,6 +703,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   letter-spacing: 0.84px;
   color: var(--lvf-white);
 }
+
 .lve-e2-path-icon {
   display: inline-flex;
   align-items: center;
@@ -630,45 +712,78 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
 
 /* Tablet: Spalten schmaler, Karten volle Spaltenbreite */
 @media (max-width: 1023px) {
-  .lve-e2 { padding: 24px 0 48px; }
+  .lve-e2 {
+    padding: 24px 0 48px;
+  }
+
   .lve-e2-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
     gap: 32px;
   }
+
   /* Der gedrehte Stapel ist fuer die 386 px breite Karte auf dem Desktop
      gedacht. In der 340 px schmalen Tablet-Spalte reichen die 2 px
      Ueberlappung plus Drehung nicht mehr: jede Karte deckte die vorherige um
      7 bis 8 px zu und schnitt deren letzte Textzeile ab. Unter 768 px ist das
      laengst geloest, der Zweig darunter setzt transform: none und 12 px
      Abstand. Ab hier gilt dasselbe. */
-  .lve-e2-card { width: 100%; transform: none; }
-  .lve-e2-card + .lve-e2-card { margin-top: 12px; }
-}
-
-/* Mobile: kein Design vorhanden, sauber gestapelt */
-@media (max-width: 767px) {
-  .lve-e2 { padding: 16px 0 44px; }
-  .lve-e2-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .lve-e2-copy { padding-top: 0; }
-  .lve-e2-eyebrow { margin-bottom: 32px; font-size: 13px; }
-  .lve-e2-title {
-    letter-spacing: -0.6px;
-    margin-bottom: 24px;
-  }
-  .lve-e2-text { letter-spacing: 0.2px; }
-  .lve-e2-text p + p { margin-top: 20px; }
   .lve-e2-card {
     width: 100%;
     transform: none;
   }
-  .lve-e2-card + .lve-e2-card { margin-top: 12px; }
+
+  .lve-e2-card+.lve-e2-card {
+    margin-top: 12px;
+  }
+}
+
+/* Mobile: kein Design vorhanden, sauber gestapelt */
+@media (max-width: 767px) {
+  .lve-e2 {
+    padding: 16px 0 44px;
+  }
+
+  .lve-e2-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .lve-e2-copy {
+    padding-top: 0;
+  }
+
+  .lve-e2-eyebrow {
+    margin-bottom: 32px;
+    font-size: 13px;
+  }
+
+  .lve-e2-title {
+    letter-spacing: -0.6px;
+    margin-bottom: 24px;
+  }
+
+  .lve-e2-text {
+    letter-spacing: 0.2px;
+  }
+
+  .lve-e2-text p+p {
+    margin-top: 20px;
+  }
+
+  .lve-e2-card {
+    width: 100%;
+    transform: none;
+  }
+
+  .lve-e2-card+.lve-e2-card {
+    margin-top: 12px;
+  }
+
   .lve-e2-card-head {
     min-height: 48px;
     padding: 10px 14px;
   }
+
   .lve-e2-card-sub {
     padding: 12px 14px 4px;
     font-size: 16px;
@@ -676,7 +791,10 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
     line-height: 1.55;
     letter-spacing: 0.2px;
   }
-  .lve-e2-path { margin-top: 56px; }
+
+  .lve-e2-path {
+    margin-top: 56px;
+  }
 }
 
 
@@ -758,8 +876,12 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
       -49px -23px 32px rgba(0, 0, 0, 0.18),
       -86px -41px 38px rgba(0, 0, 0, 0.05);
   }
+
   /* Karte 1 liegt oben auf und hat im Entwurf keinen eigenen Schatten. */
-  .lve-e2 .lve-e2-card--1 { box-shadow: none; }
+  .lve-e2 .lve-e2-card--1 {
+    box-shadow: none;
+  }
+
   /* Gerade Karten: Eckverlauf gespiegelt, dunkel links unten statt rechts unten
      (Entwurf: t 0,00 rechts oben bis 0,62 links unten). */
   .lve-e2 .lve-e2-card--2,
@@ -778,6 +900,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
       linear-gradient(90deg, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.52) 100%),
       linear-gradient(180deg, rgba(32, 18, 0, 0.2) 0%, rgba(33, 19, 0, 0) 77%);
   }
+
   .lve-e2 .lve-e2-card--2 .lve-e2-card-head,
   .lve-e2 .lve-e2-card--4 .lve-e2-card-head {
     background:
@@ -966,17 +1089,53 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    Titels (24 px), der Kartenkopf steht weiter auf seiner `min-height: 46px`.
    =========================================================================== */
 @media (min-width: 1024px) {
-  .lve-e2 .lve-e2-cards { margin-top: 57px; }
+  .lve-e2 .lve-e2-cards {
+    margin-top: 57px;
+  }
 
-  .lve-e2 .lve-e2-card-icon > svg { flex: none; }
-  .lve-e2 .lve-e2-card--1 .lve-e2-card-icon { width: 23px; height: 23px; }
-  .lve-e2 .lve-e2-card--1 .lve-e2-card-icon > svg { width: 25.32px; height: 25.32px; }
-  .lve-e2 .lve-e2-card--2 .lve-e2-card-icon { width: 22px; height: 22px; }
-  .lve-e2 .lve-e2-card--2 .lve-e2-card-icon > svg { width: 27.79px; height: 27.79px; }
-  .lve-e2 .lve-e2-card--3 .lve-e2-card-icon { width: 23px; height: 18px; }
-  .lve-e2 .lve-e2-card--3 .lve-e2-card-icon > svg { width: 24.97px; height: 24.97px; }
-  .lve-e2 .lve-e2-card--4 .lve-e2-card-icon { width: 20px; height: 24px; }
-  .lve-e2 .lve-e2-card--4 .lve-e2-card-icon > svg { width: 24.24px; height: 24.24px; }
+  .lve-e2 .lve-e2-card-icon>svg {
+    flex: none;
+  }
+
+  .lve-e2 .lve-e2-card--1 .lve-e2-card-icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .lve-e2 .lve-e2-card--1 .lve-e2-card-icon>svg {
+    width: 25.32px;
+    height: 25.32px;
+  }
+
+  .lve-e2 .lve-e2-card--2 .lve-e2-card-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .lve-e2 .lve-e2-card--2 .lve-e2-card-icon>svg {
+    width: 27.79px;
+    height: 27.79px;
+  }
+
+  .lve-e2 .lve-e2-card--3 .lve-e2-card-icon {
+    width: 23px;
+    height: 18px;
+  }
+
+  .lve-e2 .lve-e2-card--3 .lve-e2-card-icon>svg {
+    width: 24.97px;
+    height: 24.97px;
+  }
+
+  .lve-e2 .lve-e2-card--4 .lve-e2-card-icon {
+    width: 20px;
+    height: 24px;
+  }
+
+  .lve-e2 .lve-e2-card--4 .lve-e2-card-icon>svg {
+    width: 24.24px;
+    height: 24.24px;
+  }
 }
 
 /* == e3-performance == */
@@ -1022,6 +1181,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   gap: 26px;
   margin-bottom: 48px;
 }
+
 .lve-e3.lve-e3 .lve-e3-title {
   font-size: clamp(38px, 4.6vw, 65px);
   font-weight: 565;
@@ -1029,6 +1189,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   letter-spacing: -0.03em;
   color: #050505;
 }
+
 .lve-e3-sub {
   max-width: 812px;
   font-size: clamp(16px, 1.3vw, 18px);
@@ -1044,7 +1205,10 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
-.lve-e3-card--wide { grid-column: 1 / -1; }
+
+.lve-e3-card--wide {
+  grid-column: 1 / -1;
+}
 
 .lve-e3-card {
   position: relative;
@@ -1059,6 +1223,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 26px;
 }
+
 /* Bernstein-Eckgluhen (Ellipse 9 links oben, Ellipse 10 rechts unten aus dem Design) */
 .lve-e3-card::before {
   content: "";
@@ -1069,6 +1234,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
     radial-gradient(ellipse 90px 100px at 2% 8%, rgba(255, 146, 0, 0.4) 0%, rgba(255, 146, 0, 0) 70%),
     radial-gradient(ellipse 120px 105px at 100% 88%, rgba(255, 146, 0, 0.34) 0%, rgba(255, 146, 0, 0) 70%);
 }
+
 /* Haarlinie oben links */
 .lve-e3-card::after {
   content: "";
@@ -1090,7 +1256,10 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   gap: 17px;
   max-width: 400px;
 }
-.lve-e3-card--wide .lve-e3-card-text { max-width: 905px; }
+
+.lve-e3-card--wide .lve-e3-card-text {
+  max-width: 905px;
+}
 
 .lve-e3-badge {
   align-self: flex-start;
@@ -1144,19 +1313,24 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
 }
 
 /* Breite Karte: Wert + Chips in einer Zeile, XL-Icon rechts angeschnitten */
-.lve-e3-card--wide { padding-right: 32px; }
+.lve-e3-card--wide {
+  padding-right: 32px;
+}
+
 .lve-e3-value-row {
   display: flex;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
 }
+
 .lve-e3-chips {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
 }
+
 .lve-e3-chip {
   display: inline-flex;
   align-items: center;
@@ -1173,6 +1347,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   color: rgba(255, 255, 255, 0.85);
   opacity: 0.8;
 }
+
 .lve-e3-chip--gold {
   background: linear-gradient(180deg, #ffbc54 0%, #ff9200 100%);
   border-color: rgba(255, 238, 211, 0.4);
@@ -1180,6 +1355,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   font-weight: 500;
   opacity: 1;
 }
+
 /* XL-Icon in die Karte integriert (Befund 11): keine eigene Kachel-Fuellung
    und kein Schatten, nur die Pfeil-Glyphe liegt auf dem Kartenkoerper */
 .lve-e3-icon--xl {
@@ -1219,19 +1395,47 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
 
 /* Tablet */
 @media (max-width: 1023px) {
-  .lve-e3 { padding: 70px 0 50px; }
-  .lve-e3-card { padding: 28px 32px 28px 28px; }
-  .lve-e3-icon--xl { right: -240px; }
-  .lve-e3-pill { margin-top: 80px; }
+  .lve-e3 {
+    padding: 70px 0 50px;
+  }
+
+  .lve-e3-card {
+    padding: 28px 32px 28px 28px;
+  }
+
+  .lve-e3-icon--xl {
+    right: -240px;
+  }
+
+  .lve-e3-pill {
+    margin-top: 80px;
+  }
 }
 
 /* Mobile: kein Design vorhanden, sauber gestapelt abgeleitet */
 @media (max-width: 767px) {
-  .lve-e3 { padding: 60px 0 44px; }
-  .lve-e3-head { gap: 18px; margin-bottom: 36px; }
-  .lve-e3-title { letter-spacing: -0.02em; }
-  .lve-e3-sub { letter-spacing: 0.3px; }
-  .lve-e3-grid { grid-template-columns: 1fr; gap: 14px; }
+  .lve-e3 {
+    padding: 60px 0 44px;
+  }
+
+  .lve-e3-head {
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+
+  .lve-e3-title {
+    letter-spacing: -0.02em;
+  }
+
+  .lve-e3-sub {
+    letter-spacing: 0.3px;
+  }
+
+  .lve-e3-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
   .lve-e3-card {
     flex-direction: column;
     align-items: flex-start;
@@ -1240,12 +1444,39 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
     padding: 24px 22px;
     border-radius: 20px;
   }
-  .lve-e3-card-text { max-width: none; gap: 14px; }
-  .lve-e3-desc { font-size: 16px; line-height: 1.5; letter-spacing: 0.2px; }
-  .lve-e3-icon { width: 72px; height: 72px; border-radius: 14px; }
-  .lve-e3-card--wide { padding-right: 22px; }
-  .lve-e3-value-row { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .lve-e3-chip { font-size: 11px; min-height: 32px; }
+
+  .lve-e3-card-text {
+    max-width: none;
+    gap: 14px;
+  }
+
+  .lve-e3-desc {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+  }
+
+  .lve-e3-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+  }
+
+  .lve-e3-card--wide {
+    padding-right: 22px;
+  }
+
+  .lve-e3-value-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .lve-e3-chip {
+    font-size: 11px;
+    min-height: 32px;
+  }
+
   .lve-e3-icon--xl {
     position: static;
     transform: none;
@@ -1253,7 +1484,11 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
     height: 120px;
     border-radius: 16px;
   }
-  .lve-e3-pill { margin-top: 56px; font-size: 13px; }
+
+  .lve-e3-pill {
+    margin-top: 56px;
+    font-size: 13px;
+  }
 }
 
 
@@ -1422,8 +1657,13 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    in e4). Also 18 statt 10.
    =========================================================================== */
 @media (min-width: 1024px) {
-  .lve-e3-pill { margin-top: 133px; }
-  .lvf-page section.lve-e3 { padding-bottom: 18px; }
+  .lve-e3-pill {
+    margin-top: 133px;
+  }
+
+  .lvf-page section.lve-e3 {
+    padding-bottom: 18px;
+  }
 }
 
 
@@ -1444,8 +1684,13 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    damit schon.
    =========================================================================== */
 @media (min-width: 1024px) {
-  .lvf-page section.lve-e3 { padding-top: 69px; }
-  .lve-e3-head .lve-e2-path { margin-bottom: 0; }
+  .lvf-page section.lve-e3 {
+    padding-top: 69px;
+  }
+
+  .lve-e3-head .lve-e2-path {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -1464,7 +1709,9 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    Zeile bricht um, dann waere 0,677 zu eng.
    =========================================================================== */
 @media (min-width: 1024px) {
-  .lve-e3.lve-e3 .lve-e3-title { line-height: 0.677; }
+  .lve-e3.lve-e3 .lve-e3-title {
+    line-height: 0.677;
+  }
 }
 
 
@@ -1551,14 +1798,33 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
 
 
 @media (min-width: 1024px) {
-  .lve-e3-grid > .lve-e3-card:nth-child(1) .lve-e3-icon > svg { width: 70px; height: 70px; }
-  .lve-e3-grid > .lve-e3-card:nth-child(2) .lve-e3-icon > svg { width: 65px; height: 65px; }
-  .lve-e3-grid > .lve-e3-card:nth-child(3) .lve-e3-icon > svg { width: 71px; height: 71px; }
-  .lve-e3-grid > .lve-e3-card:nth-child(4) .lve-e3-icon > svg { width: 65px; height: 65px; }
+  .lve-e3-grid>.lve-e3-card:nth-child(1) .lve-e3-icon>svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  .lve-e3-grid>.lve-e3-card:nth-child(2) .lve-e3-icon>svg {
+    width: 65px;
+    height: 65px;
+  }
+
+  .lve-e3-grid>.lve-e3-card:nth-child(3) .lve-e3-icon>svg {
+    width: 71px;
+    height: 71px;
+  }
+
+  .lve-e3-grid>.lve-e3-card:nth-child(4) .lve-e3-icon>svg {
+    width: 65px;
+    height: 65px;
+  }
+
   /* 159 statt 135: der Faktor 1,73 galt dem SVG-Kasten, der Pfad fuellt aber
      nur einen Teil seiner viewBox. Bemalte Flaeche war dadurch 59 x 75 statt
      der 73 x 85 des Mockups, also noch einmal Faktor 1,18. */
-  .lve-e3-grid > .lve-e3-card:nth-child(5) .lve-e3-icon--xl > svg { width: 159px; height: 159px; }
+  .lve-e3-grid>.lve-e3-card:nth-child(5) .lve-e3-icon--xl>svg {
+    width: 159px;
+    height: 159px;
+  }
 }
 
 /* == e4-world-beyond == */
@@ -1602,6 +1868,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   gap: 26px;
   margin-bottom: 48px;
 }
+
 .lve-e4-title {
   font-size: clamp(36px, 4.6vw, 65px);
   font-weight: 500;
@@ -1612,12 +1879,14 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   background-clip: text;
   color: transparent;
 }
+
 .lve-e4-title-gold {
   background: linear-gradient(180deg, #ffbc54 0%, #ff9200 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
 .lve-e4-sub {
   max-width: 1044px;
   font-size: clamp(16px, 1.3vw, 18px);
@@ -1659,6 +1928,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   -webkit-backdrop-filter: blur(35px);
   box-shadow: -5px -3px 13px rgba(0, 0, 0, 0.34);
 }
+
 /* Goldene Haarlinie als Rahmen (Mitte kraeftig, zu den Ecken transparent) */
 .lve-e4-card::before {
   content: "";
@@ -1682,6 +1952,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   align-items: center;
   gap: 8px;
 }
+
 .lve-e4-icon {
   flex: none;
   display: flex;
@@ -1696,6 +1967,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
     1px 1px 4px rgba(0, 0, 0, 0.49),
     6px 5px 8px rgba(0, 0, 0, 0.43);
 }
+
 .lve-e4-pill {
   display: inline-flex;
   align-items: center;
@@ -1725,9 +1997,19 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   letter-spacing: 0.68px;
   color: rgba(250, 248, 246, 0.6);
 }
-.lve-e4-desc p + p { margin-top: 10px; }
-.lve-e4-desc-gold { color: #ff9e2c; }
-.lve-e4-hl { color: #ffffff; font-weight: 500; }
+
+.lve-e4-desc p+p {
+  margin-top: 10px;
+}
+
+.lve-e4-desc-gold {
+  color: #ff9e2c;
+}
+
+.lve-e4-hl {
+  color: #ffffff;
+  font-weight: 500;
+}
 
 /* Bild mit Verlaufs-Overlays wie im Design */
 .lve-e4-media {
@@ -1738,11 +2020,13 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   border-radius: 7px;
   aspect-ratio: 362 / 206;
 }
+
 .lve-e4-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 /* Befund 9: das Bild der mittleren Karte der zweiten Reihe ("The Elite
    Progression Ladder", 5. Karte) ist blau/violett/magenta, im Soll eine warme
    Gold-Linienzeichnung. Per Filter warm drehen, HTML darf nicht geaendert
@@ -1750,6 +2034,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
 .lve-e4-card:nth-child(5) .lve-e4-media img {
   filter: sepia(0.85) hue-rotate(-14deg) saturate(2.1) brightness(0.9);
 }
+
 .lve-e4-media::after {
   content: "";
   position: absolute;
@@ -1785,33 +2070,72 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
 
 /* Tablet: 2 Spalten */
 @media (max-width: 1023px) {
-  .lve-e4 { padding: 56px 0 48px; }
-  .lve-e4-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .lve-e4-head { margin-bottom: 48px; }
-  .lve-e4-proof { margin-top: 72px; }
+  .lve-e4 {
+    padding: 56px 0 48px;
+  }
+
+  .lve-e4-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lve-e4-head {
+    margin-bottom: 48px;
+  }
+
+  .lve-e4-proof {
+    margin-top: 72px;
+  }
 }
 
 /* Mobile: kein Design vorhanden, sauber gestapelt abgeleitet */
 @media (max-width: 767px) {
-  .lve-e4 { padding: 52px 0 44px; }
-  .lve-e4-head { gap: 18px; margin-bottom: 36px; }
-  .lve-e4-title { letter-spacing: -0.02em; }
-  .lve-e4-sub { line-height: 1.45; letter-spacing: 0.3px; }
-  .lve-e4-grid { grid-template-columns: 1fr; gap: 14px; }
+  .lve-e4 {
+    padding: 52px 0 44px;
+  }
+
+  .lve-e4-head {
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+
+  .lve-e4-title {
+    letter-spacing: -0.02em;
+  }
+
+  .lve-e4-sub {
+    line-height: 1.45;
+    letter-spacing: 0.3px;
+  }
+
+  .lve-e4-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
   .lve-e4-card {
     min-height: 0;
     padding: 18px;
     gap: 16px;
     border-radius: 14px;
   }
-  .lve-e4-pill { font-size: 16px; min-height: 44px; white-space: normal; }
+
+  .lve-e4-pill {
+    font-size: 16px;
+    min-height: 44px;
+    white-space: normal;
+  }
+
   .lve-e4-desc {
     padding-inline: 4px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.2px;
   }
-  .lve-e4-proof { margin-top: 52px; font-size: 13px; }
+
+  .lve-e4-proof {
+    margin-top: 52px;
+    font-size: 13px;
+  }
 }
 
 
@@ -1835,7 +2159,10 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    (`section.lve-e4`, 0-1-1), darum 0-2-1 und nur Desktop.
    =========================================================================== */
 @media (min-width: 1024px) {
-  .lve-e4-proof { margin-top: 133px; }
+  .lve-e4-proof {
+    margin-top: 133px;
+  }
+
   /* 16,58 statt 16: siehe Hoehenbilanz im letzten Block dieser Datei. Der
      Umbau des Kartenrasters macht die Sektion 0,58 px kuerzer; die 0,58
      stehen hier, weil das der einzige Abstand der Sektion ohne eigenen
@@ -1843,7 +2170,9 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
      e5, e6, e7 und der Fuss bleiben auf ihrer bisherigen Zeile - sonst
      verschieben sich die Naehte gegenueber referenz-neu/dom-sektionen.json,
      gegen die gemessen wird. */
-  .lvf-page section.lve-e4 { padding-bottom: 16.58px; }
+  .lvf-page section.lve-e4 {
+    padding-bottom: 16.58px;
+  }
 }
 
 
@@ -1915,6 +2244,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    Uebergabebericht.
    =========================================================================== */
 @media (min-width: 1024px) {
+
   /* 1. Haarlinie: Deckkraft von 0,55 auf 0,06, Achse auf die Diagonale des
      Entwurfs (133 Grad, Spitze bei 66 Prozent der CSS-Verlaufslinie). */
   .lve-e4 .lve-e4-card::before {
@@ -1933,7 +2263,8 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
       -49px -23px 32px rgba(0, 0, 0, 0.18),
       -87px -41px 38px rgba(0, 0, 0, 0.05);
   }
-  .lve-e4 .lve-e4-grid > .lve-e4-card:nth-child(even) {
+
+  .lve-e4 .lve-e4-grid>.lve-e4-card:nth-child(even) {
     background:
       linear-gradient(179deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.92) 100%),
       linear-gradient(90deg, rgba(255, 150, 10, 0.055) 0%, rgba(255, 150, 10, 0.11) 50%, rgba(255, 150, 10, 0.055) 100%),
@@ -1975,7 +2306,9 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    Nur ab 1024 px, darunter faellt der Grad per clamp kleiner aus und die
    Zeile bricht um. */
 @media (min-width: 1024px) {
-  .lve-e4 .lve-e4-title { line-height: 0.677; }
+  .lve-e4 .lve-e4-title {
+    line-height: 0.677;
+  }
 }
 
 
@@ -2007,9 +2340,17 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    aendert sich nicht: es sind dieselben drei Flex-Kinder mit demselben `gap`.
    =========================================================================== */
 @media (max-width: 1023px) {
-  .lve-e4 .lve-e4-card--flip > .lve-e4-card-head { order: 1; }
-  .lve-e4 .lve-e4-card--flip > .lve-e4-desc { order: 2; }
-  .lve-e4 .lve-e4-card--flip > .lve-e4-media { order: 3; }
+  .lve-e4 .lve-e4-card--flip>.lve-e4-card-head {
+    order: 1;
+  }
+
+  .lve-e4 .lve-e4-card--flip>.lve-e4-desc {
+    order: 2;
+  }
+
+  .lve-e4 .lve-e4-card--flip>.lve-e4-media {
+    order: 3;
+  }
 }
 
 
@@ -2239,10 +2580,21 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    scrollHeight in beiden Faellen 6919.
    =========================================================================== */
 @media (min-width: 1024px) {
-  .lve-e4 .lve-e4-head { margin-bottom: 68px; }
-  .lve-e4 .lve-e4-desc { padding-inline: 8px 0; }
-  .lve-e4 .lve-e4-card--flip > .lve-e4-card-head { margin-top: auto; }
-  .lve-e4 .lve-e4-proof { padding: 6px 18px; }
+  .lve-e4 .lve-e4-head {
+    margin-bottom: 68px;
+  }
+
+  .lve-e4 .lve-e4-desc {
+    padding-inline: 8px 0;
+  }
+
+  .lve-e4 .lve-e4-card--flip>.lve-e4-card-head {
+    margin-top: auto;
+  }
+
+  .lve-e4 .lve-e4-proof {
+    padding: 6px 18px;
+  }
 }
 
 /* == e5-recognition == */
@@ -2289,6 +2641,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   gap: 26px;
   margin-bottom: 60px;
 }
+
 .lve-e5-title {
   font-size: clamp(36px, 4.6vw, 65px);
   font-weight: 500;
@@ -2299,12 +2652,14 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   background-clip: text;
   color: transparent;
 }
+
 .lve-e5-title-gold {
   background: linear-gradient(180deg, #ffbc54 0%, #ff9200 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
 .lve-e5-sub {
   max-width: 776px;
   font-size: clamp(16px, 1.3vw, 18px);
@@ -2340,6 +2695,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   backdrop-filter: blur(160px);
   -webkit-backdrop-filter: blur(160px);
 }
+
 /* Konzentrische Deko-Ringe hinter dem Icon (im Design 5% Deckkraft) */
 .lve-e5-card::before {
   content: "";
@@ -2354,6 +2710,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.04);
   pointer-events: none;
 }
+
 /* Goldene Haarlinie oben links auf der Kartenkante */
 .lve-e5-card-line {
   position: absolute;
@@ -2375,6 +2732,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   align-items: center;
   gap: 30px;
 }
+
 .lve-e5-icon {
   display: flex;
   align-items: center;
@@ -2388,10 +2746,12 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
     inset 0 0 18px rgba(255, 188, 84, 0.12),
     6px 5px 10px rgba(0, 0, 0, 0.45);
 }
+
 .lve-e5-icon svg {
   width: 49px;
   height: 49px;
 }
+
 /* Kartentitel: gold statt weiss (Soll-Messung 127/92/38, warm statt neutral) */
 .lve-e5-card-title {
   font-size: clamp(26px, 2.4vw, 35px);
@@ -2416,8 +2776,14 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   letter-spacing: 0.9px;
   color: rgba(250, 248, 246, 0.6);
 }
-.lve-e5-desc p + p { margin-top: 8px; }
-.lve-e5-desc-gold { color: #ff9e2c; }
+
+.lve-e5-desc p+p {
+  margin-top: 8px;
+}
+
+.lve-e5-desc-gold {
+  color: #ff9e2c;
+}
 
 /* Abschluss-Pille unter dem Raster */
 .lve-e5-proof {
@@ -2443,37 +2809,100 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
 
 /* Tablet */
 @media (max-width: 1023px) {
-  .lve-e5 { padding: 48px 0 64px; }
-  .lve-e5-head { margin-bottom: 48px; }
-  .lve-e5-proof { margin-top: 72px; }
-  .lve-e5-card { min-height: 0; padding: 32px 26px 36px; }
-  .lve-e5-icon { width: 72px; height: 72px; }
-  .lve-e5-icon svg { width: 40px; height: 40px; }
+  .lve-e5 {
+    padding: 48px 0 64px;
+  }
+
+  .lve-e5-head {
+    margin-bottom: 48px;
+  }
+
+  .lve-e5-proof {
+    margin-top: 72px;
+  }
+
+  .lve-e5-card {
+    min-height: 0;
+    padding: 32px 26px 36px;
+  }
+
+  .lve-e5-icon {
+    width: 72px;
+    height: 72px;
+  }
+
+  .lve-e5-icon svg {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* Mobile: kein Design vorhanden, sauber gestapelt abgeleitet */
 @media (max-width: 767px) {
-  .lve-e5 { padding: 52px 0 56px; }
-  .lve-e5-head { gap: 18px; margin-bottom: 36px; }
-  .lve-e5-title { letter-spacing: -0.02em; }
-  .lve-e5-sub { line-height: 1.45; letter-spacing: 0.3px; }
-  .lve-e5-grid { grid-template-columns: 1fr; gap: 14px; }
+  .lve-e5 {
+    padding: 52px 0 56px;
+  }
+
+  .lve-e5-head {
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+
+  .lve-e5-title {
+    letter-spacing: -0.02em;
+  }
+
+  .lve-e5-sub {
+    line-height: 1.45;
+    letter-spacing: 0.3px;
+  }
+
+  .lve-e5-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
   .lve-e5-card {
     gap: 22px;
     padding: 28px 20px 30px;
     border-radius: 22px;
   }
-  .lve-e5-card::before { width: 340px; height: 190px; top: -100px; }
-  .lve-e5-card-main { gap: 20px; }
-  .lve-e5-icon { width: 64px; height: 64px; border-radius: 12px; }
-  .lve-e5-icon svg { width: 36px; height: 36px; }
+
+  .lve-e5-card::before {
+    width: 340px;
+    height: 190px;
+    top: -100px;
+  }
+
+  .lve-e5-card-main {
+    gap: 20px;
+  }
+
+  .lve-e5-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+  }
+
+  .lve-e5-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
   .lve-e5-desc {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.2px;
   }
-  .lve-e5-desc p + p { margin-top: 10px; }
-  .lve-e5-proof { margin-top: 52px; font-size: 13px; }
+
+  .lve-e5-desc p+p {
+    margin-top: 10px;
+  }
+
+  .lve-e5-proof {
+    margin-top: 52px;
+    font-size: 13px;
+  }
 }
 
 
@@ -2551,8 +2980,14 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
       in e6). Also 21 statt 8.
    =========================================================================== */
 @media (min-width: 1024px) {
-  .lvf-page .lve-e5 .lve-e5-proof { margin-top: 133px; min-height: 0; }
-  .lvf-page section.lve-e5 { padding-bottom: 21px; }
+  .lvf-page .lve-e5 .lve-e5-proof {
+    margin-top: 133px;
+    min-height: 0;
+  }
+
+  .lvf-page section.lve-e5 {
+    padding-bottom: 21px;
+  }
 }
 
 
@@ -2563,7 +2998,9 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    Nur ab 1024 px, darunter faellt der Grad per clamp kleiner aus und die
    Zeile bricht um. */
 @media (min-width: 1024px) {
-  .lve-e5 .lve-e5-title { line-height: 0.677; }
+  .lve-e5 .lve-e5-title {
+    line-height: 0.677;
+  }
 }
 
 
@@ -2616,7 +3053,9 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    im neuen Verlauf enthalten, doppelt gemalt waren sie zu hell und zu grau.
    ============================================================ */
 @media (min-width: 1024px) {
-  .lvf-page .lve-e5::before { background: none; }
+  .lvf-page .lve-e5::before {
+    background: none;
+  }
 
   .lvf-page .lve-e5 .lve-e5-bg {
     background:
@@ -2748,7 +3187,10 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    margin-bottom nimmt sie aus dem Layout wieder heraus. Die Seitenhoehe
    aendert sich dadurch nicht. */
 @media (min-width: 1024px) {
-  .lve-e5-title { padding-bottom: 14px; margin-bottom: -14px; }
+  .lve-e5-title {
+    padding-bottom: 14px;
+    margin-bottom: -14px;
+  }
 }
 
 
@@ -2810,10 +3252,16 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    galten (Verhaeltnis 49/87 = 0,563).
    =========================================================================== */
 @media (min-width: 1024px) {
-  .lvf-page .lve-e5 .lve-e5-icon { width: 87px; height: 87px; }
+  .lvf-page .lve-e5 .lve-e5-icon {
+    width: 87px;
+    height: 87px;
+  }
 }
 
-.lve-e5 .lve-e5-icon > svg { display: none; }
+.lve-e5 .lve-e5-icon>svg {
+  display: none;
+}
+
 .lve-e5 .lve-e5-icon::after {
   content: "";
   display: block;
@@ -2829,11 +3277,19 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   -webkit-mask-position: center;
   mask-position: center;
 }
+
 @media (max-width: 1023px) {
-  .lve-e5 .lve-e5-icon::after { width: 40px; height: 40px; }
+  .lve-e5 .lve-e5-icon::after {
+    width: 40px;
+    height: 40px;
+  }
 }
+
 @media (max-width: 767px) {
-  .lve-e5 .lve-e5-icon::after { width: 36px; height: 36px; }
+  .lve-e5 .lve-e5-icon::after {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 /* == e6-earned-steps == */
@@ -2874,6 +3330,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   gap: 33px;
   margin-bottom: 60px;
 }
+
 .lve-e6-title {
   font-size: clamp(36px, 4.6vw, 65px);
   font-weight: 500;
@@ -2884,12 +3341,14 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   background-clip: text;
   color: transparent;
 }
+
 .lve-e6-title-gold {
   background: linear-gradient(180deg, #ffbc54 0%, #ff9200 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
 /* Untertitel: breit genug, damit er auf Desktop in einer Zeile steht (Soll) */
 .lve-e6-sub {
   max-width: 920px;
@@ -2907,6 +3366,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   grid-template-columns: repeat(5, 1fr);
   gap: 29px;
 }
+
 .lve-e6-line {
   position: absolute;
   top: 115px;
@@ -2933,6 +3393,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   -webkit-backdrop-filter: blur(56px);
   text-align: center;
 }
+
 .lve-e6-card--alt {
   background:
     linear-gradient(327deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%),
@@ -2991,6 +3452,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   line-height: 20px;
   color: #ffbc54;
 }
+
 .lve-e6-card-text {
   margin-top: 18px;
   font-size: 12px;
@@ -3011,31 +3473,77 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    Deshalb 6 px mehr Abstand unter dem Kopfbereich und 8 px mehr unten.
    =========================================================== */
 @media (min-width: 1024px) {
+
   /* Spezifitaet (0,2,1), weil r3-elite.css spaeter "section.lve-e6
      { padding: 0 0 46px }" (0,1,1) setzt. Oben bleibt 0: die Ueberschrift
      sitzt in Soll wie Ist 7 px unter der Sektionskante. */
-  section.lve-e6.lve-e6 { padding: 0 0 54px; }
-  .lve-e6-head { margin-bottom: 66px; }
+  section.lve-e6.lve-e6 {
+    padding: 0 0 54px;
+  }
+
+  .lve-e6-head {
+    margin-bottom: 66px;
+  }
 }
 
 /* Tablet: 3 Spalten */
 @media (max-width: 1023px) {
-  .lve-e6 { padding: 40px 0 90px; }
-  .lve-e6-head { margin-bottom: 52px; }
-  .lve-e6-steps { grid-template-columns: repeat(3, 1fr); }
-  .lve-e6-line { display: none; }
+  .lve-e6 {
+    padding: 40px 0 90px;
+  }
+
+  .lve-e6-head {
+    margin-bottom: 52px;
+  }
+
+  .lve-e6-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lve-e6-line {
+    display: none;
+  }
 }
 
 /* Mobile: kein Design vorhanden, sauber gestapelt abgeleitet */
 @media (max-width: 767px) {
-  .lve-e6 { padding: 52px 0 72px; }
-  .lve-e6-head { gap: 18px; margin-bottom: 40px; }
-  .lve-e6-title { letter-spacing: -0.02em; }
-  .lve-e6-sub { line-height: 1.45; letter-spacing: 0.3px; }
-  .lve-e6-steps { grid-template-columns: 1fr; gap: 16px; }
-  .lve-e6-card { min-height: 0; padding: 34px 20px 26px; }
-  .lve-e6-card-bgnum { font-size: 150px; top: -46px; }
-  .lve-e6-card-title { font-size: 18px; }
+  .lve-e6 {
+    padding: 52px 0 72px;
+  }
+
+  .lve-e6-head {
+    gap: 18px;
+    margin-bottom: 40px;
+  }
+
+  .lve-e6-title {
+    letter-spacing: -0.02em;
+  }
+
+  .lve-e6-sub {
+    line-height: 1.45;
+    letter-spacing: 0.3px;
+  }
+
+  .lve-e6-steps {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .lve-e6-card {
+    min-height: 0;
+    padding: 34px 20px 26px;
+  }
+
+  .lve-e6-card-bgnum {
+    font-size: 150px;
+    top: -46px;
+  }
+
+  .lve-e6-card-title {
+    font-size: 18px;
+  }
+
   .lve-e6-card-text {
     font-size: 16px;
     line-height: 1.5;
@@ -3067,6 +3575,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   background-clip: text;
   color: transparent;
 }
+
 .lve-e6 h3.lve-e6-card-title {
   background: linear-gradient(180deg, #ffbc54 0%, #ff9200 100%);
   -webkit-background-clip: text;
@@ -3074,6 +3583,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
 .lve-e6-hl {
   background: linear-gradient(180deg, #ffbc54 0%, #ff9200 100%);
   -webkit-background-clip: text;
@@ -3115,7 +3625,9 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    oben sind im neuen Verlauf enthalten und waren doppelt gemalt zu hell.
    ============================================================ */
 @media (min-width: 1024px) {
-  .lvf-page .lve-e6::before { background: none; }
+  .lvf-page .lve-e6::before {
+    background: none;
+  }
 
   .lvf-page .lve-e6 .lve-e6-bg {
     background:
@@ -3159,7 +3671,9 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    Nur ab 1024 px, darunter faellt der Grad per clamp kleiner aus und die
    Zeile bricht um. */
 @media (min-width: 1024px) {
-  .lve-e6 .lve-e6-title { line-height: 0.677; }
+  .lve-e6 .lve-e6-title {
+    line-height: 0.677;
+  }
 }
 
 
@@ -3194,8 +3708,8 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
         rgba(255, 205, 110, 0.14) 58%,
         rgba(255, 205, 110, 0.06) 80%,
         rgba(255, 205, 110, 0) 100%),
-      radial-gradient(ellipse 40% 420% at -8% -140%, rgba(255,255,252,1) 0%, rgba(255,222,160,1) 42%, rgba(255,206,124,.96) 45%, rgba(254,192,96,.92) 48%, rgba(253,180,74,.87) 52%, rgba(252,172,60,.81) 56%, rgba(251,166,52,.76) 59%, rgba(255,146,0,0) 86%),
-      radial-gradient(ellipse 30% 420% at 106% 240%, rgba(254,176,58,.62) 0%, rgba(255,150,8,.22) 48%, rgba(255,146,0,0) 82%);
+      radial-gradient(ellipse 40% 420% at -8% -140%, rgba(255, 255, 252, 1) 0%, rgba(255, 222, 160, 1) 42%, rgba(255, 206, 124, .96) 45%, rgba(254, 192, 96, .92) 48%, rgba(253, 180, 74, .87) 52%, rgba(252, 172, 60, .81) 56%, rgba(251, 166, 52, .76) 59%, rgba(255, 146, 0, 0) 86%),
+      radial-gradient(ellipse 30% 420% at 106% 240%, rgba(254, 176, 58, .62) 0%, rgba(255, 150, 8, .22) 48%, rgba(255, 146, 0, 0) 82%);
   }
 }
 
@@ -3273,24 +3787,39 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
       /* Linkes Goldfeld, neu gerechnet. Prozentwerte = Ellipsenabstand der
          jeweiligen Stuetzstelle x auf der Nahtzeile. */
       radial-gradient(ellipse 70% 735% at -14% -245%,
-        rgba(255, 218, 159, 0.980) 39.55%,   /* x  16  Soll 250,214,156 */
-        rgba(255, 209, 124, 0.937) 42.58%,   /* x  80  Soll 239,196,116 */
-        rgba(255, 198,  90, 0.863) 45.99%,   /* x 144  Soll 220,171, 78 */
-        rgba(255, 185,  70, 0.725) 49.71%,   /* x 208  Soll 185,134, 51 */
-        rgba(255, 173,  62, 0.549) 53.68%,   /* x 272  Soll 140, 95, 34 */
-        rgba(255, 168,  57, 0.369) 57.84%,   /* x 336  Soll  94, 62, 21 */
-        rgba(255, 171,  50, 0.239) 62.16%,   /* x 400  Soll  61, 41, 12 */
-        rgba(255, 170,  42, 0.165) 66.60%,   /* x 464  Soll  42, 28,  7 */
-        rgba(255, 158,  26, 0.114) 71.15%,   /* x 528  Soll  29, 18,  3 */
-        rgba(255, 153,  26, 0.078) 75.78%,   /* x 592  Soll  20, 12,  2 */
-        rgba(255, 164,  18, 0.055) 80.47%,   /* x 656  Soll  14,  9,  1 */
-        rgba(255, 153,  26, 0.039) 85.23%,   /* x 720  Soll  10,  6,  1 */
-        rgba(255, 204,   0, 0.020) 90.03%,   /* x 784  Soll   5,  4,  0 */
-        rgba(255, 170,   0, 0.012) 94.88%,   /* x 848  Soll   3,  2,  0 */
-        rgba(255, 170,   0, 0.004) 99.76%,   /* x 912  Soll   1,  1,  0 */
+        rgba(255, 218, 159, 0.980) 39.55%,
+        /* x  16  Soll 250,214,156 */
+        rgba(255, 209, 124, 0.937) 42.58%,
+        /* x  80  Soll 239,196,116 */
+        rgba(255, 198, 90, 0.863) 45.99%,
+        /* x 144  Soll 220,171, 78 */
+        rgba(255, 185, 70, 0.725) 49.71%,
+        /* x 208  Soll 185,134, 51 */
+        rgba(255, 173, 62, 0.549) 53.68%,
+        /* x 272  Soll 140, 95, 34 */
+        rgba(255, 168, 57, 0.369) 57.84%,
+        /* x 336  Soll  94, 62, 21 */
+        rgba(255, 171, 50, 0.239) 62.16%,
+        /* x 400  Soll  61, 41, 12 */
+        rgba(255, 170, 42, 0.165) 66.60%,
+        /* x 464  Soll  42, 28,  7 */
+        rgba(255, 158, 26, 0.114) 71.15%,
+        /* x 528  Soll  29, 18,  3 */
+        rgba(255, 153, 26, 0.078) 75.78%,
+        /* x 592  Soll  20, 12,  2 */
+        rgba(255, 164, 18, 0.055) 80.47%,
+        /* x 656  Soll  14,  9,  1 */
+        rgba(255, 153, 26, 0.039) 85.23%,
+        /* x 720  Soll  10,  6,  1 */
+        rgba(255, 204, 0, 0.020) 90.03%,
+        /* x 784  Soll   5,  4,  0 */
+        rgba(255, 170, 0, 0.012) 94.88%,
+        /* x 848  Soll   3,  2,  0 */
+        rgba(255, 170, 0, 0.004) 99.76%,
+        /* x 912  Soll   1,  1,  0 */
         rgba(255, 170, 0, 0) 100%),
       /* rechte Flanke, unveraendert uebernommen */
-      radial-gradient(ellipse 30% 420% at 106% 240%, rgba(254,176,58,.62) 0%, rgba(255,150,8,.22) 48%, rgba(255,146,0,0) 82%);
+      radial-gradient(ellipse 30% 420% at 106% 240%, rgba(254, 176, 58, .62) 0%, rgba(255, 150, 8, .22) 48%, rgba(255, 146, 0, 0) 82%);
   }
 }
 
@@ -3366,8 +3895,14 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   pointer-events: none;
   filter: drop-shadow(0 21px 62px rgba(0, 0, 0, 0.2)) drop-shadow(0 0 42px rgba(255, 146, 0, 0.35));
 }
-.lve-e7-arrows--left { left: -90px; }
-.lve-e7-arrows--right { right: -90px; }
+
+.lve-e7-arrows--left {
+  left: -90px;
+}
+
+.lve-e7-arrows--right {
+  right: -90px;
+}
 
 .lve-e7-content {
   position: relative;
@@ -3389,6 +3924,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   align-items: center;
   gap: 34px;
 }
+
 .lve-e7-title {
   font-size: clamp(36px, 4.4vw, 70px);
   font-weight: 500;
@@ -3399,12 +3935,14 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   background-clip: text;
   color: transparent;
 }
+
 .lve-e7-title-gold {
   background: linear-gradient(180deg, #ffbc54 0%, #ff9200 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
 .lve-e7-sub {
   max-width: 1080px;
   font-size: clamp(16px, 1.6vw, 24px);
@@ -3422,21 +3960,25 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   gap: clamp(36px, 6.7vw, 96px);
   flex-wrap: wrap;
 }
+
 .lve-e7-stat {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 9px;
 }
+
 .lve-e7-stat-top {
   display: flex;
   align-items: center;
   gap: 9px;
 }
+
 .lve-e7-stat-icon {
   color: #ffb24b;
   flex: none;
 }
+
 .lve-e7-stat-value {
   font-size: clamp(28px, 2.6vw, 37px);
   font-weight: 555;
@@ -3447,6 +3989,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   background-clip: text;
   color: transparent;
 }
+
 .lve-e7-stat-label {
   font-size: 13px;
   font-weight: 500;
@@ -3462,6 +4005,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   gap: 8px;
   filter: drop-shadow(6px 6px 18px rgba(0, 0, 0, 0.25));
 }
+
 .lve-e7-btn {
   display: inline-flex;
   align-items: center;
@@ -3472,9 +4016,11 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   line-height: 25px;
   transition: filter 0.2s ease, transform 0.2s ease;
 }
+
 .lve-e7-btn:hover {
   filter: brightness(1.08);
 }
+
 .lve-e7-btn--primary {
   gap: 8px;
   padding: 5px 12px 5px 5px;
@@ -3489,8 +4035,12 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   border: 0.5px solid rgba(255, 188, 84, 0.6);
   box-shadow: inset 0 1px 18px rgba(255, 202, 131, 0.9);
 }
+
 /* Doppelte Klasse, damit die Farbe gegen ".lvf-page a" (0-1-1) gewinnt */
-.lve-e7-btn.lve-e7-btn--primary { color: #060606; }
+.lve-e7-btn.lve-e7-btn--primary {
+  color: #060606;
+}
+
 .lve-e7-btn-chip {
   display: inline-flex;
   align-items: center;
@@ -3502,6 +4052,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
   color: #ffffff;
   flex: none;
 }
+
 .lve-e7-btn--ghost {
   padding: 10px 32px;
   font-weight: 400;
@@ -3528,48 +4079,109 @@ a.lve-e1-btn--primary .lve-e1-btn-icon { color: #ffffff; }
    Tablet setzt dort ohnehin schon wieder 10 px.
    =========================================================== */
 @media (min-width: 1024px) {
-  section.lve-e7 .lve-e7-frame { padding: 10px; }
+  section.lve-e7 .lve-e7-frame {
+    padding: 10px;
+  }
 }
 
 /* Tablet */
 @media (max-width: 1023px) {
-  .lve-e7 { padding: 50px 0 90px; }
-  .lve-e7-content { padding: 64px 40px; }
-  .lve-e7-arrows { width: 300px; height: auto; bottom: -50px; }
-  .lve-e7-arrows--left { left: -80px; }
-  .lve-e7-arrows--right { right: -80px; }
+  .lve-e7 {
+    padding: 50px 0 90px;
+  }
+
+  .lve-e7-content {
+    padding: 64px 40px;
+  }
+
+  .lve-e7-arrows {
+    width: 300px;
+    height: auto;
+    bottom: -50px;
+  }
+
+  .lve-e7-arrows--left {
+    left: -80px;
+  }
+
+  .lve-e7-arrows--right {
+    right: -80px;
+  }
 }
 
 /* Mobile: kein Design vorhanden, sauber gestapelt abgeleitet */
 @media (max-width: 767px) {
-  .lve-e7 { padding: 44px 0 72px; }
-  .lve-e7-frame { padding: 6px; border-radius: 34px; }
-  .lve-e7-panel { border-radius: 28px; }
-  .lve-e7-content { padding: 52px 22px; gap: 36px; }
-  .lve-e7-head { gap: 18px; }
-  .lve-e7-title { letter-spacing: -0.02em; line-height: 1.05; }
-  .lve-e7-sub { letter-spacing: 0.3px; }
+  .lve-e7 {
+    padding: 44px 0 72px;
+  }
+
+  .lve-e7-frame {
+    padding: 6px;
+    border-radius: 34px;
+  }
+
+  .lve-e7-panel {
+    border-radius: 28px;
+  }
+
+  .lve-e7-content {
+    padding: 52px 22px;
+    gap: 36px;
+  }
+
+  .lve-e7-head {
+    gap: 18px;
+  }
+
+  .lve-e7-title {
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  .lve-e7-sub {
+    letter-spacing: 0.3px;
+  }
+
   .lve-e7-stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 26px 12px;
     width: 100%;
   }
+
   .lve-e7-actions {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
     gap: 12px;
   }
-  .lve-e7-btn { width: 100%; min-height: 52px; }
-  .lve-e7-arrows { width: 190px; bottom: -120px; opacity: 0.55; }
-  .lve-e7-arrows--left { left: -80px; }
-  .lve-e7-arrows--right { right: -80px; }
+
+  .lve-e7-btn {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  .lve-e7-arrows {
+    width: 190px;
+    bottom: -120px;
+    opacity: 0.55;
+  }
+
+  .lve-e7-arrows--left {
+    left: -80px;
+  }
+
+  .lve-e7-arrows--right {
+    right: -80px;
+  }
 }
 
 
 /* Abnahme 06.08.: dunkle Schrift auf Gold-Button */
-a.lve-e7-btn--primary { color: #1c1200; }
+a.lve-e7-btn--primary {
+  color: #1c1200;
+}
+
 /* Panel: Headline-Zone startet fast schwarz wie im Design (11,7,2) */
 .lve-e7-panel {
   background:
@@ -3654,9 +4266,21 @@ a.lve-e7-btn--primary { color: #1c1200; }
     filter: none;
     overflow: visible;
   }
-  .lve-e7 .lve-e7-panel .lve-e7-arrows--left { left: 40px; right: auto; }
-  .lve-e7 .lve-e7-panel .lve-e7-arrows--right { right: 40px; left: auto; }
-  .lve-e7 .lve-e7-panel .lve-e7-arrows > svg { width: 320px; height: 275px; }
+
+  .lve-e7 .lve-e7-panel .lve-e7-arrows--left {
+    left: 40px;
+    right: auto;
+  }
+
+  .lve-e7 .lve-e7-panel .lve-e7-arrows--right {
+    right: 40px;
+    left: auto;
+  }
+
+  .lve-e7 .lve-e7-panel .lve-e7-arrows>svg {
+    width: 320px;
+    height: 275px;
+  }
 }
 
 
@@ -3725,9 +4349,18 @@ a.lve-e7-btn--primary { color: #1c1200; }
    Markup, nicht im Stylesheet.
    ============================================================ */
 @media (min-width: 1024px) {
-  .lve-e7 .lve-e7-panel .lve-e7-arrows { opacity: 0.8; bottom: -36px; }
-  .lve-e7 .lve-e7-panel .lve-e7-arrows--left { left: 46px; }
-  .lve-e7 .lve-e7-panel .lve-e7-arrows--right { right: 46px; }
+  .lve-e7 .lve-e7-panel .lve-e7-arrows {
+    opacity: 0.8;
+    bottom: -36px;
+  }
+
+  .lve-e7 .lve-e7-panel .lve-e7-arrows--left {
+    left: 46px;
+  }
+
+  .lve-e7 .lve-e7-panel .lve-e7-arrows--right {
+    right: 46px;
+  }
 }
 
 
@@ -3834,12 +4467,12 @@ a.lve-e7-btn--primary { color: #1c1200; }
   .lvf-page .lve-e7-btn--ghost {
     box-shadow:
       rgb(255, 196, 110) -2px -6px 19px 0 inset,
-      rgb(255, 146, 0)   -5px -4px 16px 0 inset,
-      rgb(255, 146, 0)   -1px -2px 5px 0 inset,
-      rgb(0, 0, 0)        9px  7px 12px 0 inset,
-      rgba(0, 0, 0, .36)  7px  3px 11px 0,
-      rgba(0, 0, 0, .25)  0 0 0 2px,
-      rgba(0, 0, 0, .16)  0 0 0 3px;
+      rgb(255, 146, 0) -5px -4px 16px 0 inset,
+      rgb(255, 146, 0) -1px -2px 5px 0 inset,
+      rgb(0, 0, 0) 9px 7px 12px 0 inset,
+      rgba(0, 0, 0, .36) 7px 3px 11px 0,
+      rgba(0, 0, 0, .25) 0 0 0 2px,
+      rgba(0, 0, 0, .16) 0 0 0 3px;
   }
 }
 
@@ -3855,8 +4488,8 @@ a.lve-e7-btn--primary { color: #1c1200; }
 @media (min-width: 1024px) {
   .lvf-page .lve-e7 .lve-e7-bg {
     background:
-      radial-gradient(ellipse 31% 600% at -8% -220%, rgba(255,246,228,1) 0%, rgba(252,179,62,.74) 49%, rgba(251,168,44,.67) 53%, rgba(250,158,28,.61) 56%, rgba(250,150,14,.58) 58%, rgba(255,146,0,0) 84%),
-      radial-gradient(ellipse 30% 600% at 106% 320%, rgba(255,194,96,.72) 0%, rgba(254,172,48,.42) 46%, rgba(255,146,0,0) 84%);
+      radial-gradient(ellipse 31% 600% at -8% -220%, rgba(255, 246, 228, 1) 0%, rgba(252, 179, 62, .74) 49%, rgba(251, 168, 44, .67) 53%, rgba(250, 158, 28, .61) 56%, rgba(250, 150, 14, .58) 58%, rgba(255, 146, 0, 0) 84%),
+      radial-gradient(ellipse 30% 600% at 106% 320%, rgba(255, 194, 96, .72) 0%, rgba(254, 172, 48, .42) 46%, rgba(255, 146, 0, 0) 84%);
   }
 }
 
@@ -3939,14 +4572,19 @@ a.lve-e7-btn--primary { color: #1c1200; }
 @media (min-width: 1500px) {
   .lvf-page .lve-e7 .lve-e7-bg {
     background:
-      radial-gradient(ellipse 31% 600% at -8% -220%, rgba(255,246,228,1) 0%, rgba(252,179,62,.74) 49%, rgba(251,168,44,.67) 53%, rgba(250,158,28,.61) 56%, rgba(250,150,14,.58) 58%, rgba(255,146,0,0) 84%),
+      radial-gradient(ellipse 31% 600% at -8% -220%, rgba(255, 246, 228, 1) 0%, rgba(252, 179, 62, .74) 49%, rgba(251, 168, 44, .67) 53%, rgba(250, 158, 28, .61) 56%, rgba(250, 150, 14, .58) 58%, rgba(255, 146, 0, 0) 84%),
       radial-gradient(ellipse 30% 600% at 106% 320%,
         rgba(255, 148, 5, 0.550) 0%,
-        rgba(255, 148, 5, 0.471) 41.77%,   /* x 1760  Soll 120 (Kante) */
-        rgba(255, 148, 5, 0.431) 46.34%,   /* x 1716  Soll 110 */
-        rgba(255, 148, 5, 0.200) 58.05%,   /* x 1628  Soll  51 */
-        rgba(255, 148, 5, 0.082) 71.74%,   /* x 1540  Soll  21 */
-        rgba(255, 148, 5, 0.035) 86.49%,   /* x 1452  Soll   9 */
+        rgba(255, 148, 5, 0.471) 41.77%,
+        /* x 1760  Soll 120 (Kante) */
+        rgba(255, 148, 5, 0.431) 46.34%,
+        /* x 1716  Soll 110 */
+        rgba(255, 148, 5, 0.200) 58.05%,
+        /* x 1628  Soll  51 */
+        rgba(255, 148, 5, 0.082) 71.74%,
+        /* x 1540  Soll  21 */
+        rgba(255, 148, 5, 0.035) 86.49%,
+        /* x 1452  Soll   9 */
         rgba(255, 148, 5, 0) 100%);
   }
 }
@@ -3972,25 +4610,37 @@ a.lve-e7-btn--primary { color: #1c1200; }
     inset: 0;
     pointer-events: none;
     background: linear-gradient(90deg,
-      rgba(255, 189, 115, 0)     9.09%,   /* x  160  kein Zuschlag */
-      rgba(255, 189, 115, 0.122) 10.91%,  /* x  192  +31 */
-      rgba(255, 170,  47, 0.212) 14.55%,  /* x  256  +54 */
-      rgba(255, 170,  39, 0.153) 18.18%,  /* x  320  +39 */
-      rgba(255, 158,  26, 0.114) 21.82%,  /* x  384  +29 */
-      rgba(255, 158,  24, 0.082) 25.45%,  /* x  448  +21 */
-      rgba(255, 170,  17, 0.059) 29.09%,  /* x  512  +15 */
-      rgba(255, 162,  23, 0.043) 32.73%,  /* x  576  +11 */
-      rgba(255, 182,   0, 0.027) 36.36%,  /* x  640   +7 */
-      rgba(255, 191,   0, 0.016) 40.00%,  /* x  704   +4 */
-      rgba(255, 128,   0, 0.008) 43.64%,  /* x  768   +2 */
-      rgba(255, 128,   0, 0)     47.27%); /* x  832    0, Mitte bleibt frei */
+        rgba(255, 189, 115, 0) 9.09%,
+        /* x  160  kein Zuschlag */
+        rgba(255, 189, 115, 0.122) 10.91%,
+        /* x  192  +31 */
+        rgba(255, 170, 47, 0.212) 14.55%,
+        /* x  256  +54 */
+        rgba(255, 170, 39, 0.153) 18.18%,
+        /* x  320  +39 */
+        rgba(255, 158, 26, 0.114) 21.82%,
+        /* x  384  +29 */
+        rgba(255, 158, 24, 0.082) 25.45%,
+        /* x  448  +21 */
+        rgba(255, 170, 17, 0.059) 29.09%,
+        /* x  512  +15 */
+        rgba(255, 162, 23, 0.043) 32.73%,
+        /* x  576  +11 */
+        rgba(255, 182, 0, 0.027) 36.36%,
+        /* x  640   +7 */
+        rgba(255, 191, 0, 0.016) 40.00%,
+        /* x  704   +4 */
+        rgba(255, 128, 0, 0.008) 43.64%,
+        /* x  768   +2 */
+        rgba(255, 128, 0, 0) 47.27%);
+    /* x  832    0, Mitte bleibt frei */
     /* Senkrechte Auslaufmaske, Begruendung im Kopfkommentar */
     -webkit-mask-image: linear-gradient(180deg,
-      #000 0%, rgba(0, 0, 0, 0.72) 30%, rgba(0, 0, 0, 0.34) 60%,
-      rgba(0, 0, 0, 0.08) 84%, rgba(0, 0, 0, 0) 94%);
+        #000 0%, rgba(0, 0, 0, 0.72) 30%, rgba(0, 0, 0, 0.34) 60%,
+        rgba(0, 0, 0, 0.08) 84%, rgba(0, 0, 0, 0) 94%);
     mask-image: linear-gradient(180deg,
-      #000 0%, rgba(0, 0, 0, 0.72) 30%, rgba(0, 0, 0, 0.34) 60%,
-      rgba(0, 0, 0, 0.08) 84%, rgba(0, 0, 0, 0) 94%);
+        #000 0%, rgba(0, 0, 0, 0.72) 30%, rgba(0, 0, 0, 0.34) 60%,
+        rgba(0, 0, 0, 0.08) 84%, rgba(0, 0, 0, 0) 94%);
   }
 }
 
@@ -4007,24 +4657,29 @@ a.lve-e7-btn--primary { color: #1c1200; }
 @media (min-width: 1500px) {
   .lvf-page .lve-e7 .lve-e7-bg::before {
     background: linear-gradient(90deg,
-      rgba(255, 189, 115, 0)     9.09%,
-      rgba(255, 189, 115, 0.122) 10.91%,
-      rgba(255, 170,  47, 0.212) 14.55%,
-      rgba(255, 170,  39, 0.153) 18.18%,
-      rgba(255, 158,  26, 0.114) 21.82%,
-      rgba(255, 158,  24, 0.082) 25.45%,
-      rgba(255, 170,  17, 0.059) 29.09%,
-      rgba(255, 162,  23, 0.043) 32.73%,
-      rgba(255, 182,   0, 0.027) 36.36%,
-      rgba(255, 191,   0, 0.016) 40.00%,
-      rgba(255, 128,   0, 0.008) 43.64%,
-      rgba(255, 128,   0, 0)     47.27%,
-      rgba(255, 155,  20, 0)     82.00%,
-      rgba(255, 155,  20, 0.008) 85.00%,  /* Block 17   +2 */
-      rgba(255, 155,  20, 0.024) 87.50%,  /* Block 17   +6 */
-      rgba(255, 155,  20, 0.047) 90.00%,  /* Block 18  +12 */
-      rgba(255, 155,  20, 0.067) 92.50%,  /* Block 18  +17 */
-      rgba(255, 155,  20, 0.071) 95.00%,  /* Block 19  +18 */
-      rgba(255, 155,  20, 0.071) 100%);
+        rgba(255, 189, 115, 0) 9.09%,
+        rgba(255, 189, 115, 0.122) 10.91%,
+        rgba(255, 170, 47, 0.212) 14.55%,
+        rgba(255, 170, 39, 0.153) 18.18%,
+        rgba(255, 158, 26, 0.114) 21.82%,
+        rgba(255, 158, 24, 0.082) 25.45%,
+        rgba(255, 170, 17, 0.059) 29.09%,
+        rgba(255, 162, 23, 0.043) 32.73%,
+        rgba(255, 182, 0, 0.027) 36.36%,
+        rgba(255, 191, 0, 0.016) 40.00%,
+        rgba(255, 128, 0, 0.008) 43.64%,
+        rgba(255, 128, 0, 0) 47.27%,
+        rgba(255, 155, 20, 0) 82.00%,
+        rgba(255, 155, 20, 0.008) 85.00%,
+        /* Block 17   +2 */
+        rgba(255, 155, 20, 0.024) 87.50%,
+        /* Block 17   +6 */
+        rgba(255, 155, 20, 0.047) 90.00%,
+        /* Block 18  +12 */
+        rgba(255, 155, 20, 0.067) 92.50%,
+        /* Block 18  +17 */
+        rgba(255, 155, 20, 0.071) 95.00%,
+        /* Block 19  +18 */
+        rgba(255, 155, 20, 0.071) 100%);
   }
 }

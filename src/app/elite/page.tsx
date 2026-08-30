@@ -10,13 +10,14 @@ export default function Page() {
         {/* e1-hero */}
         <section className="lve-e1" id="elite-hero">
           <div className="lve-e1-bg" aria-hidden="true">
-            <img className="lve-e1-bg-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-c67debacc1.webp" width={1920} height={1080} alt loading="eager" fetchpriority="high" />
+            <img className="lve-e1-bg-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-c67debacc1.webp" width={1920} height={1080} alt="true" loading="eager" fetchPriority="high" />
             <div className="lve-e1-bg-shade" />
           </div>
           <div className="lvf-container lve-e1-inner">
-            <p className="lve-e1-kicker"><span className="lve-e1-kicker-dot" aria-hidden="true" /><span className="lve-e1-kicker-gold">The Lvlup Elite</span> Experience</p>
+            {/* lve-e1-kicker-gold */}
+            <p className="lve-e1-kicker" ><span className="lve-e1-kicker-dot" aria-hidden="true" /> <span className="" style={{ color: "#E0B958" }}>The Lvlup Elite</span>Experience</p>
             <h1 className="lve-e1-title">
-              <span className="lve-e1-title-line lve-e1-title-line--gold">Beyond Funded.</span>
+              <span style={{ fontWeight: "600" }} className="lve-e1-title-line lve-e1-title-line--gold">Beyond Funded.</span>
               <span className="lve-e1-title-line lve-e1-title-line--white">Welcome to Lvlup Elite.</span>
             </h1>
             <p className="lve-e1-sub">A private recognition tier for traders who prove consistent performance, earn their place, and unlock a world that begins where the payout ends.</p>
@@ -182,9 +183,39 @@ export default function Page() {
                   <p className="lve-e3-desc">Once your verified balance reaches 10,000 points, Elite membership becomes available. The 10,000 entry points are redeemed when your membership begins. Any points earned above that amount remain in your balance.</p>
                 </div>
                 <div className="lve-e3-icon lve-e3-icon--xl" aria-hidden="true">
-                  <svg width={140} height={140} viewBox="0 0 24 24" fill="none">
+                  {/* <svg width={140} height={140} viewBox="0 0 24 24" fill="none">
                     <defs><linearGradient id="lve-e3-g5" x1={0} y1={0} x2={0} y2={1}><stop offset={0} stopColor="#ffbc54" /><stop offset={1} stopColor="#ff9200" /></linearGradient></defs>
-                    <path d="M8 4v11l8-8M11.5 7H16v4.5" stroke="url(#lve-e3-g5)" strokeWidth="3.6" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M8 4v11h4l4-8M11 7h5v5" stroke="url(#lve-e3-g5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg> */}
+                  {/* <svg width={140} height={140} viewBox="0 0 24 24" fill="none">
+                    <defs>
+                      <linearGradient id="lve-e3-g5" x1={0} y1={0} x2={0} y2={1}>
+                        <stop offset={0} stopColor="#ffbc54" />
+                        <stop offset={1} stopColor="#ff9200" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M7 6v10h3l8-8M12 8h6v6"
+                      stroke="url(#lve-e3-g5)"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg> */}
+                  <svg width={140} height={140} viewBox="0 0 24 24" fill="none">
+                    <defs>
+                      <linearGradient id="lve-e3-g5" x1={0} y1={0} x2={0} y2={1}>
+                        <stop offset={0} stopColor="#ffbc54" />
+                        <stop offset={1} stopColor="#ff9200" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M8 4v11h4l4-8M11.5 8.5l4.5-1.5l1.5 4.5"
+                      stroke="url(#lve-e3-g5)"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </div>
               </article>
