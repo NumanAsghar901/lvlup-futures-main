@@ -10,7 +10,16 @@ export default function Page() {
         {/* e1-hero */}
         <section className="lve-e1" id="elite-hero">
           <div className="lve-e1-bg" aria-hidden="true">
-            <img className="lve-e1-bg-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-c67debacc1.webp" width={1920} height={1080} alt="true" loading="eager" fetchPriority="high" />
+            <video
+              className="lve-e1-bg-video"
+              src="/assets/media/Comp 8.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              width={2304}
+              height={1296}
+            />
             <div className="lve-e1-bg-shade" />
           </div>
           <div className="lvf-container lve-e1-inner">
@@ -31,9 +40,9 @@ export default function Page() {
               <a className="lve-e1-btn lve-e1-btn--ghost" href="#elite-world-beyond">View Benefits</a>
             </div>
           </div>
-        </section>
+        </section >
         {/* e2-what-is */}
-        <section className="lve-e2" id="what-is-elite">
+        < section className="lve-e2" id="what-is-elite" >
           <div className="lvf-container lve-e2-inner">
             <div className="lve-e2-grid">
               <div className="lve-e2-copy">
@@ -85,9 +94,9 @@ export default function Page() {
               </div>
             </div>
           </div>
-        </section>
+        </section >
         {/* e3-performance */}
-        <section className="lve-e3" id="elite-performance">
+        < section className="lve-e3" id="elite-performance" >
           <div className="lve-e3-bg" aria-hidden="true" />
           <div className="lvf-container lve-e3-inner">
             <div className="lve-e3-head">
@@ -222,9 +231,9 @@ export default function Page() {
             </div>
             <p className="lve-e3-pill">Private Member Privileges</p>
           </div>
-        </section>
+        </section >
         {/* e4-world-beyond */}
-        <section className="lve-e4" id="elite-world-beyond">
+        < section className="lve-e4" id="elite-world-beyond" >
           <div className="lve-e4-bg" aria-hidden="true" />
           <div className="lvf-container lve-e4-inner">
             <div className="lve-e4-head">
@@ -347,9 +356,9 @@ export default function Page() {
             </div>
             <p className="lve-e4-proof">Proof of Performance</p>
           </div>
-        </section>
+        </section >
         {/* e5-recognition */}
-        <section className="lve-e5" id="elite-recognition">
+        < section className="lve-e5" id="elite-recognition" >
           <div className="lve-e5-bg" aria-hidden="true" />
           <div className="lvf-container lve-e5-inner">
             <div className="lve-e5-head">
@@ -428,9 +437,9 @@ export default function Page() {
             </div>
             <p className="lve-e5-proof">Maintain Your Position</p>
           </div>
-        </section>
+        </section >
         {/* e6-earned-steps */}
-        <section className="lve-e6" id="elite-earned-steps">
+        < section className="lve-e6" id="elite-earned-steps" >
           <div className="lve-e6-bg" aria-hidden="true" />
           <div className="lvf-container lve-e6-inner">
             <div className="lve-e6-head">
@@ -476,9 +485,9 @@ export default function Page() {
               </article>
             </div>
           </div>
-        </section>
+        </section >
         {/* e7-points-cta */}
-        <section className="lve-e7" id="elite-points-cta">
+        < section className="lve-e7" id="elite-points-cta" >
           <div className="lve-e7-bg" aria-hidden="true" />
           <div className="lvf-container lve-e7-inner">
             <div className="lve-e7-frame">
@@ -578,8 +587,8 @@ export default function Page() {
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </section >
+      </div >
       <Script src="/assets/js/live/elite.js" strategy="lazyOnload" />
     </>
   );

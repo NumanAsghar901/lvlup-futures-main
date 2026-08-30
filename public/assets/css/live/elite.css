@@ -13,32 +13,33 @@
   pointer-events: none;
 }
 
+.lve-e1-bg-video,
 .lve-e1-bg-img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 790px;
+  width: 150%;
+  height: 150%;
+  max-height: 860px;
   object-fit: cover;
   object-position: center top;
-  opacity: 0.9;
-  /* Befund 1: das Ausgangsbild ist blau/violett, das Soll leuchtet warm gold.
-     Sepia + Hue-Shift dreht die Farbgebung nach Bernstein, bevor die Glows
-     darueberliegen. */
-  filter: sepia(0.92) hue-rotate(-12deg) saturate(2.3) brightness(0.82);
-  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  opacity: 0.85;
+  mix-blend-mode: screen;
+  filter: sepia(0.9) hue-rotate(-12deg) saturate(2.4) brightness(0.92);
+  -webkit-mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
 }
 
 .lve-e1-bg-shade {
   position: absolute;
   inset: 0;
-  /* Oben schwaecher abdunkeln: das Hero-Bild soll wie im Soll bis hinter die
-     Nav sichtbar bleiben (Header schwebt ueber dem Bild). Zusaetzlich warme
-     Bernstein-Toenung, damit keine blauen Reste durchschlagen. */
   background:
-    linear-gradient(180deg, rgba(64, 34, 2, 0.38) 0%, rgba(52, 28, 2, 0.22) 40%, rgba(20, 12, 2, 0.3) 72%, rgba(5, 6, 15, 0) 100%),
-    linear-gradient(180deg, rgba(5, 6, 15, 0.35) 0%, rgba(5, 6, 15, 0.15) 38%, rgba(5, 6, 15, 0.42) 72%, var(--lvf-bg) 100%);
+    /* Layer 1: Black to transparent gradient (#000000 to #000000 0%) */
+    linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.85) 85%, var(--lvf-bg) 100%),
+    /* Layer 2: Gold Linear Gradient (#FFBC54 to #FF9200) */
+    linear-gradient(180deg, rgba(255, 188, 84, 0.38) 0%, rgba(255, 146, 0, 0.28) 55%, rgba(255, 146, 0, 0) 90%),
+    /* Layer 3: White 50% glow / highlight */
+    radial-gradient(ellipse 55% 35% at 50% 0%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
 /* Grosser Bernstein-Glow oben (die "Star"-Vektoren aus dem Figma, angenaehert) */
@@ -216,6 +217,7 @@
     padding: 220px 0 200px;
   }
 
+  .lve-e1-bg-video,
   .lve-e1-bg-img {
     height: 640px;
   }
@@ -227,6 +229,7 @@
     padding: 160px 0 120px;
   }
 
+  .lve-e1-bg-video,
   .lve-e1-bg-img {
     height: 520px;
   }
