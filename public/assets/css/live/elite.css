@@ -2706,8 +2706,9 @@ a.lve-e1-btn--primary .lve-e1-btn-icon {
   width: 480px;
   height: 264px;
   border-radius: 50%;
-  border: 1.8px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.04);
+  border: 1.8px solid rgba(255, 255, 255, 0.025);
+  box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.02);
+  opacity: 0.5;
   pointer-events: none;
 }
 
