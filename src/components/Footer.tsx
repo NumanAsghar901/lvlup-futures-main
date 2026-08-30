@@ -13,52 +13,6 @@ export default function Footer() {
         .lvf-s11-social a:not([href]):not([tabindex]):hover{transform:none}
         .lvf-s11-nl-discord:not([href]):not([tabindex]):hover{transform:none;filter:none}
       `}} />
-      <style dangerouslySetInnerHTML={{
-        __html: `
-        /* Elite page-specific footer overrides (loaded after the default footer rules) */
-        body.page-elite .lvf-s11-social a:not([href]):not([tabindex]){color:#ffbc54}
-        @media (min-width:1024px){body.page-elite .lvf-s11-social a:not([href]):not([tabindex]){color:#ffbc54}}
-        body.page-elite .lvf-s11-tagline{color:#ffdca3}
-        body.page-elite .lvf-s11-blau{color:#ffbc54}
-        body.page-elite .lvf-s11-nl-input{background:rgba(255,255,255,0.03);color:#fff;border:1px solid rgba(255,255,255,0.04)}
-        body.page-elite .lvf-s11-nl-submit{background:linear-gradient(180deg,#ffbc54 0%,#ff9200 100%);color:#000;border:0}
-      `}} />
-      <style dangerouslySetInnerHTML={{
-        __html: `
-        /* Newsletter panel: darken and add subtle gold highlight on Elite page */
-        body.page-elite .lvf-s11-nl-inner{
-          background: linear-gradient(180deg, #0b0f14 0%, #05060a 100%);
-          box-shadow: inset 0 40px 90px rgba(0,0,0,0.6), 0 12px 40px rgba(0,0,0,0.6);
-          border-radius: 12px;
-        }
-        body.page-elite .lvf-s11-nl-body{color: #fff}
-        body.page-elite .lvf-s11-nl-title-accent{color: #ffbc54}
-        body.page-elite .lvf-s11-nl-sub{color: rgba(255,255,255,0.8)}
-        body.page-elite .lvf-s11-nl-field input::placeholder{color: rgba(255,255,255,0.35)}
-      `}} />
-      <style dangerouslySetInnerHTML={{
-        __html: `
-        body.page-elite .lvf-s11-newsletter{background: linear-gradient(180deg, rgba(12,10,8,0.95) 0%, rgba(6,6,8,0.9) 100%); box-shadow: inset 0 40px 90px rgba(0,0,0,0.6), 0 12px 40px rgba(0,0,0,0.6); border-radius: 12px}
-        body.page-elite .lvf-s11-newsletter .lvf-s11-nl-inner{background:transparent}
-      `}} />
-      <style dangerouslySetInnerHTML={{
-        __html: `
-        /* Strong overrides for remaining Elite footer blue accents */
-        body.page-elite .lvf-s11-newsletter::before {
-          box-shadow: inset 0 0 0 1px rgba(255,196,90,0.16) !important;
-        }
-        body.page-elite .lvf-s11-newsletter {
-          background-color: #090603 !important;
-          background-image:
-            linear-gradient(180deg, rgba(255,255,255,0) 72%, rgba(255,235,200,0.45) 86%, rgba(255,244,222,0.88) 97%, rgba(255,247,230,0.94) 100%),
-            radial-gradient(44% 75% at 97% 103%, rgba(255,168,32,0.8) 0%, rgba(235,150,20,0.3) 50%, rgba(235,150,20,0) 78%),
-            radial-gradient(30% 45% at 3% 103%, rgba(220,140,20,0.28) 0%, rgba(220,140,20,0) 70%),
-            linear-gradient(rgb(9,6,3) 0%, rgb(27,18,6) 80%, rgb(56,36,8) 100%) !important;
-        }
-        body.page-elite .lvf-s11-social a { color: #febd4b !important; }
-        body.page-elite .lvf-s11-social a:hover { color: #ffd98a !important; }
-      `}} />
-
       <section className="lvf-s11" id="footer">
         <div className="lvf-s11-shell">
           <div className="lvf-s11-card">
