@@ -11,7 +11,9 @@
    Viewport UND der Schein der Kontaktsektion reicht ueber die Seitenunterkante
    hinaus. Ohne den senkrechten Schnitt wuchs das Dokument live um 1809px
    leeren Raum unter dem Footer. */
-.lvab-page { overflow: clip; }
+.lvab-page {
+  overflow: clip;
+}
 
 /* Das Werkzeug-Plugin gibt jeder Seite ohne Body-Klasse "lvlup-home-v2"
    250px padding-top mit (sofort.css, Regel 1). Der Body ist weiss, darum
@@ -19,8 +21,9 @@
    Referenz den Glow bei y=0 beginnen laesst. Diese Seite bringt ihren
    Abstand selbst mit (222px im Hero), deshalb wird das Polster hier
    zurueckgenommen - nur fuer den Container, der DIESE Seite enthaelt. */
-body:not(.lvlup-home-v2):not(.elementor-editor-active)
-  [data-elementor-type="wp-page"]:has(.lvab-page) { padding-top: 0; }
+body:not(.lvlup-home-v2):not(.elementor-editor-active) [data-elementor-type="wp-page"]:has(.lvab-page) {
+  padding-top: 0;
+}
 
 .lvab-hero,
 .lvab-purpose,
@@ -56,6 +59,7 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   background-clip: text;
   color: transparent;
 }
+
 .lvab-h1 .lvab-grad-blue,
 .lvab-h2 .lvab-grad-blue,
 .lvab-value-title .lvab-grad-blue,
@@ -65,11 +69,15 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   background-clip: text;
   color: transparent;
 }
+
 /* Der blaue Teil der grossen Ueberschriften ist im Entwurf fetter als der
    weisse. Mit echter Clash Grotesk gemessen: weisser Teil deckt sich bei
    Gewicht 500, der blaue ist 4,3 bis 4,9% breiter -> 600. */
 .lvab-h1 .lvab-grad-blue,
-.lvab-h2 .lvab-grad-blue { font-weight: 600; }
+.lvab-h2 .lvab-grad-blue {
+  font-weight: 600;
+}
+
 /* Hero-Zeile 1 laeuft von grau ueber weiss (Zeilenmitte) zurueck nach grau.
    R3-A1: Der Verlaufskasten war der ganze 1240px-Block, der Text ist aber nur
    783px breit (x488-1271). Dadurch traf 0,86 an den Textenden 232 statt der
@@ -94,6 +102,48 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   text-align: center;
 }
 
+/* Video-Hintergrund mit 50% Deckkraft und #8CD5FF -> #12A9FF Linear Gradient mit Blend Color */
+.lvab-hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.lvab-hero-video-wrap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  min-width: 1760px;
+  isolation: isolate;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+}
+
+.lvab-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.lvab-hero-video-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #8cd5ff 0%, #12a9ff 100%);
+  mix-blend-mode: color;
+  pointer-events: none;
+}
+
 .lvab-hero-art {
   position: absolute;
   top: 0;
@@ -105,7 +155,11 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   transform: translateX(-50%);
   pointer-events: none;
 }
-.lvab-hero-art > span { position: absolute; display: block; }
+
+.lvab-hero-art>span {
+  position: absolute;
+  display: block;
+}
 
 /* breiter, schwacher Deckenschein ueber die ganze Breite */
 .lvab-hero-fill {
@@ -129,6 +183,7 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   width: 800px;
   height: 116px;
 }
+
 .lvab-hero-beam-l {
   left: -170px;
   width: 800px;
@@ -136,6 +191,7 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   background: radial-gradient(closest-side, rgba(0, 162, 255, 0.4) 0%, rgba(0, 162, 255, 0.35) 26%, rgba(0, 162, 255, 0.2) 52%, rgba(0, 162, 255, 0.07) 76%, transparent 100%);
   transform: rotate(13deg);
 }
+
 .lvab-hero-beam-r {
   right: -90px;
   width: 700px;
@@ -150,16 +206,25 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   width: 420px;
   height: 379px;
   background: rgba(255, 255, 255, 0.013);
-  clip-path: polygon(
-    130px 0, 409px 0, 409px 203px, 399px 226px, 381px 240px, 360px 245px,
-    276px 182px, 128px 379px, 22px 379px, 207px 130px, 130px 57px
-  );
+  clip-path: polygon(130px 0, 409px 0, 409px 203px, 399px 226px, 381px 240px, 360px 245px,
+      276px 182px, 128px 379px, 22px 379px, 207px 130px, 130px 57px);
 }
-.lvab-hero-arrow-l { left: 0; }
-.lvab-hero-arrow-r { right: 0; transform: scaleX(-1); }
+
+.lvab-hero-arrow-l {
+  left: 0;
+}
+
+.lvab-hero-arrow-r {
+  right: 0;
+  transform: scaleX(-1);
+}
 
 /* Bodenschein, unten hart von der Sektion beschnitten */
-.lvab-hero-bglow { border-radius: 50%; left: 50%; }
+.lvab-hero-bglow {
+  border-radius: 50%;
+  left: 50%;
+}
+
 .lvab-hero-bglow-a {
   bottom: -174px;
   margin-left: -230px;
@@ -167,6 +232,7 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   height: 311px;
   background: radial-gradient(closest-side, rgba(0, 162, 255, 0.521) 0%, rgba(0, 162, 255, 0.203) 38%, rgba(0, 162, 255, 0.026) 66%, rgba(0, 162, 255, 0.026) 86%, transparent 100%);
 }
+
 .lvab-hero-bglow-b {
   bottom: -110px;
   margin-left: 140px;
@@ -174,6 +240,7 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   height: 195px;
   background: radial-gradient(closest-side, rgba(0, 162, 255, 0.397) 0%, rgba(0, 162, 255, 0.268) 42%, rgba(0, 162, 255, 0.074) 70%, transparent 100%);
 }
+
 /* R3-B2: Der neue Schnipsel zeigt in der letzten Zeile des Hero (y=672) einen
    breiten flachen Saum von x=275 bis x=825 mit Werten 10-29; live stand dort
    0. Dieser dritte, sehr weiche Schein traegt ihn nach. */
@@ -184,6 +251,7 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   height: 130px;
   background: radial-gradient(closest-side, rgba(0, 162, 255, 0.27) 0%, rgba(0, 162, 255, 0.146) 50%, rgba(0, 162, 255, 0.042) 78%, transparent 100%);
 }
+
 /* R3-ABNAHME-1: Im Schnipsel liegt an der rechten Herokante ein weisslich
    blauer Dunst, der von y=280 (Wert 4) bis zur Hero-Unterkante (Wert 21)
    ansteigt und nach links bis x=1520 ausklingt; live stand dort 0 (nur das
@@ -202,7 +270,10 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   background: radial-gradient(closest-side, rgba(94, 178, 255, 0.11) 0%, rgba(94, 178, 255, 0.062) 42%, rgba(94, 178, 255, 0.024) 72%, rgba(94, 178, 255, 0) 100%);
 }
 
-.lvab-hero-inner { position: relative; z-index: 1; }
+.lvab-hero-inner {
+  position: relative;
+  z-index: 1;
+}
 
 .lvab-hero-eyebrow {
   display: flex;
@@ -215,6 +286,7 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   font-weight: 400;
   color: rgba(255, 255, 255, 0.66);
 }
+
 .lvab-hero-dot {
   width: 6px;
   height: 6px;
@@ -223,6 +295,7 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   background: var(--lvf-grad-blue);
   flex: none;
 }
+
 .lvab-hero-eyebrow-hl {
   margin-right: 4px;
   background-image: var(--lvab-grad-text);
@@ -240,12 +313,17 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   letter-spacing: 0;
   overflow-wrap: break-word;
 }
+
 /* R3-A1: fit-content, damit der Verlaufskasten dem Text entspricht (siehe
    Kommentar bei .lvab-h1 .lvab-grad-dim). Zentriert bleibt es ueber die
    automatischen Seitenraender; bricht der Text schmal um, ist fit-content
    wieder die volle verfuegbare Breite - also kein Verhalten schlechter als
    vorher. */
-.lvab-h1 > span { display: block; width: fit-content; margin-inline: auto; }
+.lvab-h1>span {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+}
 
 .lvab-hero-sub {
   max-width: 700px;
@@ -287,8 +365,15 @@ a.lvab-btn-primary {
   white-space: nowrap;
   transition: filter 0.15s ease;
 }
-a.lvab-btn-primary:hover { filter: brightness(1.07); }
-a.lvab-btn-primary:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+
+a.lvab-btn-primary:hover {
+  filter: brightness(1.07);
+}
+
+a.lvab-btn-primary:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
 
 .lvab-btn-ico {
   display: inline-flex;
@@ -301,7 +386,10 @@ a.lvab-btn-primary:focus-visible { outline: 2px solid #ffffff; outline-offset: 3
   background: #05060b;
   color: #ffffff;
 }
-.lvab-btn-ico svg { display: block; }
+
+.lvab-btn-ico svg {
+  display: block;
+}
 
 a.lvab-btn-ghost {
   display: inline-flex;
@@ -341,8 +429,15 @@ a.lvab-btn-ghost {
   white-space: nowrap;
   transition: filter 0.15s ease;
 }
-a.lvab-btn-ghost:hover { filter: brightness(1.15); }
-a.lvab-btn-ghost:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+
+a.lvab-btn-ghost:hover {
+  filter: brightness(1.15);
+}
+
+a.lvab-btn-ghost:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
 
 /* =========================================================================
    Wiederkehrende Bausteine der Inhaltssektionen
@@ -369,6 +464,7 @@ a.lvab-btn-ghost:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px
   color: rgba(255, 255, 255, 0.95);
   white-space: nowrap;
 }
+
 /* C10 gilt auch fuer die linke Pille: die Referenz laesst die Oberkante zu
    beiden Enden auslaufen (y763: 5 / 10 / 16 / 16 / 9 / 6) und zeigt die
    Seitenkanten gar nicht, live stand dort ueberall 14 bis 15. Nur die
@@ -390,7 +486,10 @@ a.lvab-btn-ghost:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px
   text-align: center;
   overflow-wrap: break-word;
 }
-.lvab-h2-left { text-align: left; }
+
+.lvab-h2-left {
+  text-align: left;
+}
 
 .lvab-lead {
   max-width: 820px;
@@ -422,7 +521,12 @@ a.lvab-btn-ghost:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px
   z-index: 0;
   pointer-events: none;
 }
-.lvab-purpose-art > span { position: absolute; display: block; border-radius: 50%; }
+
+.lvab-purpose-art>span {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+}
 
 /* Lichtkante am unteren Rand: links der helle Kern, in der Mitte ein flaches
    Band, rechts eine zweite Kuppe. Unten hart bei y=1405 beschnitten (im
@@ -445,23 +549,25 @@ a.lvab-btn-ghost:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px
   width: 3600px;
   height: 560px;
   background: radial-gradient(closest-side,
-    rgba(46, 172, 255, 0.045) 0%,
-    rgba(46, 172, 255, 0.0324) 40%,
-    rgba(46, 172, 255, 0.0153) 70%,
-    rgba(46, 172, 255, 0) 100%);
+      rgba(46, 172, 255, 0.045) 0%,
+      rgba(46, 172, 255, 0.0324) 40%,
+      rgba(46, 172, 255, 0.0153) 70%,
+      rgba(46, 172, 255, 0) 100%);
 }
+
 .lvab-purpose-glow-l {
   left: -841px;
   bottom: -367px;
   width: 1613px;
   height: 702px;
   background: radial-gradient(closest-side,
-    rgba(94, 196, 255, 1) 0%,
-    rgba(43, 178, 255, 0.711) 28%,
-    rgba(0, 162, 255, 0.325) 52%,
-    rgba(0, 162, 255, 0.136) 76%,
-    rgba(0, 162, 255, 0) 100%);
+      rgba(94, 196, 255, 1) 0%,
+      rgba(43, 178, 255, 0.711) 28%,
+      rgba(0, 162, 255, 0.325) 52%,
+      rgba(0, 162, 255, 0.136) 76%,
+      rgba(0, 162, 255, 0) 100%);
 }
+
 .lvab-purpose-glow-c {
   left: 50%;
   bottom: -261px;
@@ -469,42 +575,59 @@ a.lvab-btn-ghost:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px
   height: 510px;
   margin-left: -2826px;
   background: radial-gradient(closest-side,
-    rgba(72, 182, 255, 0.472) 0%,
-    rgba(72, 182, 255, 0.269) 18%,
-    rgba(74, 183, 255, 0.175) 35%,
-    rgba(60, 178, 255, 0.125) 51%,
-    rgba(50, 174, 255, 0.092) 67%,
-    rgba(46, 172, 255, 0.051) 84%,
-    rgba(0, 162, 255, 0) 100%);
+      rgba(72, 182, 255, 0.472) 0%,
+      rgba(72, 182, 255, 0.269) 18%,
+      rgba(74, 183, 255, 0.175) 35%,
+      rgba(60, 178, 255, 0.125) 51%,
+      rgba(50, 174, 255, 0.092) 67%,
+      rgba(46, 172, 255, 0.051) 84%,
+      rgba(0, 162, 255, 0) 100%);
 }
+
 .lvab-purpose-glow-r {
   right: -629px;
   bottom: -283px;
   width: 1232px;
   height: 565px;
   background: radial-gradient(closest-side,
-    rgba(56, 182, 255, 0.802) 0%,
-    rgba(56, 182, 255, 0.328) 30%,
-    rgba(0, 162, 255, 0.115) 54%,
-    rgba(0, 162, 255, 0.045) 78%,
-    rgba(0, 162, 255, 0) 100%);
+      rgba(56, 182, 255, 0.802) 0%,
+      rgba(56, 182, 255, 0.328) 30%,
+      rgba(0, 162, 255, 0.115) 54%,
+      rgba(0, 162, 255, 0.045) 78%,
+      rgba(0, 162, 255, 0) 100%);
 }
 
-.lvab-purpose-inner { position: relative; z-index: 1; }
+.lvab-purpose-inner {
+  position: relative;
+  z-index: 1;
+}
 
-.lvab-purpose .lvab-h2 { margin-top: 16px; }
+.lvab-purpose .lvab-h2 {
+  margin-top: 16px;
+}
 
 .lvab-purpose-copy {
-max-width: 960px; /* Reduced from 1190px to match Figma's narrower, more focused text column */
-margin-top: 24px; /* Tightened slightly to match the denser vertical rhythm */
-font-size: 18px;  /* Dropped from 21.6px to fix the "oversized" WP body text */
-line-height: 26px;/* Maintains a comfortable ~1.44 reading ratio for the new 18px size */
-font-weight: 400;
-letter-spacing: -0.01em; /* Added tight tracking to eliminate the wide WP spacing */
-color: rgba(255, 255, 255, 0.92);
+  max-width: 960px;
+  /* Reduced from 1190px to match Figma's narrower, more focused text column */
+  margin-top: 24px;
+  /* Tightened slightly to match the denser vertical rhythm */
+  font-size: 18px;
+  /* Dropped from 21.6px to fix the "oversized" WP body text */
+  line-height: 26px;
+  /* Maintains a comfortable ~1.44 reading ratio for the new 18px size */
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  /* Added tight tracking to eliminate the wide WP spacing */
+  color: rgba(255, 255, 255, 0.92);
 }
-.lvab-purpose-copy p { overflow-wrap: break-word; }
-.lvab-purpose-copy p + p { margin-top: 26px; }
+
+.lvab-purpose-copy p {
+  overflow-wrap: break-word;
+}
+
+.lvab-purpose-copy p+p {
+  margin-top: 26px;
+}
 
 /* --- die vier Wertekarten --- */
 .lvab-values {
@@ -513,6 +636,7 @@ color: rgba(255, 255, 255, 0.92);
   gap: 16px;
   margin-top: 55px;
 }
+
 .lvab-value {
   display: flex;
   flex-direction: column;
@@ -522,6 +646,7 @@ color: rgba(255, 255, 255, 0.92);
   background: rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
+
 .lvab-value-head {
   display: flex;
   align-items: center;
@@ -531,14 +656,24 @@ color: rgba(255, 255, 255, 0.92);
   background: rgba(0, 0, 0, 0.86);
   border-radius: 15px 15px 12px 12px;
 }
-.lvab-value-ico { width: 24px; height: 24px; flex: none; }
+
+.lvab-value-ico {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+
 .lvab-value-title {
   font-size: 16.4px;
   line-height: 24px;
   font-weight: 500;
   white-space: nowrap;
 }
-.lvab-value-title-w { color: #ffffff; }
+
+.lvab-value-title-w {
+  color: #ffffff;
+}
+
 .lvab-value-text {
   padding: 5px 30px 10px 20px;
   font-size: 12.25px;
@@ -564,13 +699,19 @@ color: rgba(255, 255, 255, 0.92);
   overflow: clip;
   background: #000000;
 }
+
 .lvab-lower-art {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
 }
-.lvab-lower-art > span { position: absolute; display: block; border-radius: 50%; }
+
+.lvab-lower-art>span {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+}
 
 /* riesiger Schein von rechts: harter, fast weisser Kern bei Referenz
    (1830|1500) plus langer Hof nach unten. Zwei Ellipsen, weil eine allein
@@ -583,27 +724,29 @@ color: rgba(255, 255, 255, 0.92);
   width: 1560px;
   height: 1240px;
   background: radial-gradient(closest-side,
-    rgba(255, 255, 255, 0.891) 0%,
-    rgba(135, 211, 255, 0.969) 16%,
-    rgba(93, 196, 255, 0.578) 39%,
-    rgba(159, 220, 255, 0.167) 61%,
-    rgba(255, 255, 255, 0.024) 84%,
-    rgba(0, 162, 255, 0) 100%);
+      rgba(255, 255, 255, 0.891) 0%,
+      rgba(135, 211, 255, 0.969) 16%,
+      rgba(93, 196, 255, 0.578) 39%,
+      rgba(159, 220, 255, 0.167) 61%,
+      rgba(255, 255, 255, 0.024) 84%,
+      rgba(0, 162, 255, 0) 100%);
 }
+
 .lvab-lower-glow-r2 {
   top: -900px;
   right: -550px;
   width: 960px;
   height: 2953px;
   background: radial-gradient(closest-side,
-    rgba(255, 255, 255, 0.804) 0%,
-    rgba(62, 185, 255, 0.740) 12%,
-    rgba(59, 184, 255, 0.447) 30%,
-    rgba(40, 176, 255, 0.203) 52%,
-    rgba(12, 166, 255, 0.105) 74%,
-    rgba(32, 174, 255, 0.075) 90%,
-    rgba(0, 162, 255, 0) 100%);
+      rgba(255, 255, 255, 0.804) 0%,
+      rgba(62, 185, 255, 0.740) 12%,
+      rgba(59, 184, 255, 0.447) 30%,
+      rgba(40, 176, 255, 0.203) 52%,
+      rgba(12, 166, 255, 0.105) 74%,
+      rgba(32, 174, 255, 0.075) 90%,
+      rgba(0, 162, 255, 0) 100%);
 }
+
 /* Gegenstueck von links unten. Der sichtbare Teil des linken Scheins ab
    y=3641 kommt aus der Kontaktsektion (Fragment 2), deshalb endet dieser
    hier am Sektionsrand. */
@@ -614,6 +757,7 @@ color: rgba(255, 255, 255, 0.92);
   height: 1640px;
   background: radial-gradient(closest-side, rgba(0, 162, 255, 0.9) 0%, rgba(0, 162, 255, 0.72) 24%, rgba(0, 162, 255, 0.4) 44%, rgba(0, 162, 255, 0.15) 64%, rgba(0, 162, 255, 0.04) 84%, transparent 100%);
 }
+
 .lvab-lower-glow-l2 {
   bottom: -1308px;
   left: -850px;
@@ -623,15 +767,26 @@ color: rgba(255, 255, 255, 0.92);
 }
 
 .lvab-found,
-.lvab-team { position: relative; z-index: 1; }
+.lvab-team {
+  position: relative;
+  z-index: 1;
+}
 
 /* =========================================================================
    3) A REAL COMPANY BEHIND THE BRAND   Referenz y 1406 - 2052
    ========================================================================= */
 
-.lvab-found { padding: 115px 0 0; }
-.lvab-found .lvab-h2 { margin-top: 16px; }
-.lvab-found .lvab-lead { margin-top: 17px; }
+.lvab-found {
+  padding: 115px 0 0;
+}
+
+.lvab-found .lvab-h2 {
+  margin-top: 16px;
+}
+
+.lvab-found .lvab-lead {
+  margin-top: 17px;
+}
 
 .lvab-facts {
   display: grid;
@@ -639,6 +794,7 @@ color: rgba(255, 255, 255, 0.92);
   gap: 27px;
   margin-top: 73px;
 }
+
 .lvab-fact {
   position: relative;
   display: flex;
@@ -654,7 +810,10 @@ color: rgba(255, 255, 255, 0.92);
   background: rgba(255, 255, 255, 0.005);
   text-align: center;
 }
-.lvab-fact-tint { background: rgba(0, 162, 255, 0.05); }
+
+.lvab-fact-tint {
+  background: rgba(0, 162, 255, 0.05);
+}
 
 .lvab-fact-num {
   position: absolute;
@@ -669,6 +828,7 @@ color: rgba(255, 255, 255, 0.92);
   pointer-events: none;
   user-select: none;
 }
+
 .lvab-fact-label {
   position: relative;
   font-size: 15.8px;
@@ -677,6 +837,7 @@ color: rgba(255, 255, 255, 0.92);
   color: rgba(255, 255, 255, 0.68);
   overflow-wrap: break-word;
 }
+
 .lvab-fact-value {
   position: relative;
   margin-top: 5.5px;
@@ -685,6 +846,7 @@ color: rgba(255, 255, 255, 0.92);
   font-weight: 500;
   overflow-wrap: break-word;
 }
+
 .lvab-fact-dot {
   position: absolute;
   left: 50%;
@@ -702,9 +864,18 @@ color: rgba(255, 255, 255, 0.92);
    109px Abstand bis zur Pille "Contact Lvlup" bringt die Kontaktsektion mit.
    ========================================================================= */
 
-.lvab-team { padding: 112px 0 0; }
-.lvab-team .lvab-h2 { margin-top: 16px; }
-.lvab-team .lvab-lead { margin-top: 17px; max-width: 700px; }
+.lvab-team {
+  padding: 112px 0 0;
+}
+
+.lvab-team .lvab-h2 {
+  margin-top: 16px;
+}
+
+.lvab-team .lvab-lead {
+  margin-top: 17px;
+  max-width: 700px;
+}
 
 .lvab-crew {
   display: grid;
@@ -729,6 +900,7 @@ color: rgba(255, 255, 255, 0.92);
   border-radius: 16px;
   background: radial-gradient(120% 70% at 50% 8%, rgba(0, 162, 255, 0.155) 0%, rgba(0, 0, 0, 0.4) 62%, rgba(0, 0, 0, 0.6) 100%);
 }
+
 .lvab-crew-photo {
   display: block;
   width: 100%;
@@ -736,6 +908,7 @@ color: rgba(255, 255, 255, 0.92);
   aspect-ratio: 300 / 288;
   object-fit: cover;
 }
+
 .lvab-crew-plate {
   position: absolute;
   left: 2.67%;
@@ -754,6 +927,7 @@ color: rgba(255, 255, 255, 0.92);
     #000000;
   text-align: center;
 }
+
 .lvab-crew-plate::before {
   content: "";
   position: absolute;
@@ -761,29 +935,31 @@ color: rgba(255, 255, 255, 0.92);
   border-radius: inherit;
   padding: 1px;
   background: linear-gradient(170deg,
-    rgba(0, 162, 255, 0.235) 0%,
-    rgba(0, 162, 255, 0.1) 17%,
-    rgba(0, 162, 255, 0) 32%,
-    rgba(0, 162, 255, 0) 74%,
-    rgba(0, 162, 255, 0.045) 100%);
+      rgba(0, 162, 255, 0.235) 0%,
+      rgba(0, 162, 255, 0.1) 17%,
+      rgba(0, 162, 255, 0) 32%,
+      rgba(0, 162, 255, 0) 74%,
+      rgba(0, 162, 255, 0.045) 100%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   pointer-events: none;
 }
+
 .lvab-crew-name {
   position: relative;
   font-size: 24.6px;
   line-height: 28px;
   font-weight: 600;
   background-image: linear-gradient(90deg,
-    rgba(255, 255, 255, 0.72) 0%, #ffffff 50%, rgba(255, 255, 255, 0.74) 100%);
+      rgba(255, 255, 255, 0.72) 0%, #ffffff 50%, rgba(255, 255, 255, 0.74) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   overflow-wrap: break-word;
 }
+
 .lvab-crew-role {
   position: relative;
   font-size: 15.4px;
@@ -833,14 +1009,14 @@ color: rgba(255, 255, 255, 0.92);
   width: 1958px;
   height: 4909px;
   background: radial-gradient(ellipse closest-side at 50% 50%,
-    #a0e0fd 0%,
-    #78cdfc 55%,
-    #53bdf4 64%,
-    #2091cc 72%,
-    #155072 80%,
-    #0b2635 88%,
-    rgba(3, 16, 24, 0.51) 96%,
-    rgba(2, 10, 16, 0) 100%);
+      #a0e0fd 0%,
+      #78cdfc 55%,
+      #53bdf4 64%,
+      #2091cc 72%,
+      #155072 80%,
+      #0b2635 88%,
+      rgba(3, 16, 24, 0.51) 96%,
+      rgba(2, 10, 16, 0) 100%);
 }
 
 .lvab-contact .lvab-glow--core {
@@ -849,19 +1025,19 @@ color: rgba(255, 255, 255, 0.92);
   width: 1383px;
   height: 2165px;
   background: radial-gradient(ellipse closest-side at 50% 50%,
-    #fdfeff 0%,
-    #f7fcff 17%,
-    #e8f6ff 25%,
-    #caeafe 32%,
-    #8fdafa 40%,
-    rgba(93, 209, 255, 0.734) 48%,
-    rgba(60, 196, 255, 0.64) 55%,
-    rgba(39, 181, 255, 0.511) 63%,
-    rgba(21, 170, 255, 0.367) 71%,
-    rgba(17, 169, 255, 0.232) 79%,
-    rgba(12, 166, 255, 0.135) 86%,
-    rgba(21, 159, 255, 0.075) 94%,
-    rgba(21, 159, 255, 0) 100%);
+      #fdfeff 0%,
+      #f7fcff 17%,
+      #e8f6ff 25%,
+      #caeafe 32%,
+      #8fdafa 40%,
+      rgba(93, 209, 255, 0.734) 48%,
+      rgba(60, 196, 255, 0.64) 55%,
+      rgba(39, 181, 255, 0.511) 63%,
+      rgba(21, 170, 255, 0.367) 71%,
+      rgba(17, 169, 255, 0.232) 79%,
+      rgba(12, 166, 255, 0.135) 86%,
+      rgba(21, 159, 255, 0.075) 94%,
+      rgba(21, 159, 255, 0) 100%);
 }
 
 /* R3-B4: Der weisse Schein links ist im Entwurf ein KEGEL - oben schmal
@@ -877,19 +1053,19 @@ color: rgba(255, 255, 255, 0.92);
   width: 766px;
   height: 891px;
   background: radial-gradient(ellipse closest-side at 50% 50%,
-    rgba(253, 254, 255, 0.41) 0%,
-    rgba(247, 252, 255, 0.41) 17%,
-    rgba(232, 246, 255, 0.41) 25%,
-    rgba(202, 234, 254, 0.41) 32%,
-    rgba(143, 218, 250, 0.41) 40%,
-    rgba(93, 209, 255, 0.301) 48%,
-    rgba(60, 196, 255, 0.262) 55%,
-    rgba(39, 181, 255, 0.21) 63%,
-    rgba(21, 170, 255, 0.15) 71%,
-    rgba(17, 169, 255, 0.095) 79%,
-    rgba(12, 166, 255, 0.055) 86%,
-    rgba(21, 159, 255, 0.031) 94%,
-    rgba(21, 159, 255, 0) 100%);
+      rgba(253, 254, 255, 0.41) 0%,
+      rgba(247, 252, 255, 0.41) 17%,
+      rgba(232, 246, 255, 0.41) 25%,
+      rgba(202, 234, 254, 0.41) 32%,
+      rgba(143, 218, 250, 0.41) 40%,
+      rgba(93, 209, 255, 0.301) 48%,
+      rgba(60, 196, 255, 0.262) 55%,
+      rgba(39, 181, 255, 0.21) 63%,
+      rgba(21, 170, 255, 0.15) 71%,
+      rgba(17, 169, 255, 0.095) 79%,
+      rgba(12, 166, 255, 0.055) 86%,
+      rgba(21, 159, 255, 0.031) 94%,
+      rgba(21, 159, 255, 0) 100%);
 }
 
 /* Ellipse rechts: Mittelpunkt 180px hinter der rechten Kante, y=5000,
@@ -900,11 +1076,11 @@ color: rgba(255, 255, 255, 0.92);
   width: 1027px;
   height: 5950px;
   background: radial-gradient(ellipse closest-side at 50% 50%,
-    rgba(0, 162, 255, 0.837) 0%,
-    rgba(0, 162, 255, 0.564) 35%,
-    rgba(0, 152, 238, 0.146) 66%,
-    rgba(0, 140, 220, 0.046) 84%,
-    rgba(0, 130, 210, 0) 100%);
+      rgba(0, 162, 255, 0.837) 0%,
+      rgba(0, 162, 255, 0.564) 35%,
+      rgba(0, 152, 238, 0.146) 66%,
+      rgba(0, 140, 220, 0.046) 84%,
+      rgba(0, 130, 210, 0) 100%);
 }
 
 /* ---- Naht zum Theme-Footer bei y=4796 ----------------------------------
@@ -982,14 +1158,14 @@ color: rgba(255, 255, 255, 0.92);
   height: 8px;
   pointer-events: none;
   background-image: linear-gradient(90deg,
-    rgb(3, 65, 100) 0%, rgb(3, 77, 119) 10%, rgb(2, 87, 133) 20%,
-    rgb(2, 96, 145) 30%, rgb(2, 101, 156) 40%, rgb(2, 104, 158) 50%,
-    rgb(2, 101, 156) 60%, rgb(2, 97, 148) 70%, rgb(2, 91, 140) 80%,
-    rgb(3, 82, 129) 90%, rgb(3, 72, 112) 100%);
+      rgb(3, 65, 100) 0%, rgb(3, 77, 119) 10%, rgb(2, 87, 133) 20%,
+      rgb(2, 96, 145) 30%, rgb(2, 101, 156) 40%, rgb(2, 104, 158) 50%,
+      rgb(2, 101, 156) 60%, rgb(2, 97, 148) 70%, rgb(2, 91, 140) 80%,
+      rgb(3, 82, 129) 90%, rgb(3, 72, 112) 100%);
   -webkit-mask-image: linear-gradient(to bottom,
-    rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 45%, rgba(0, 0, 0, 0.42) 75%, #000 100%);
-          mask-image: linear-gradient(to bottom,
-    rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 45%, rgba(0, 0, 0, 0.42) 75%, #000 100%);
+      rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 45%, rgba(0, 0, 0, 0.42) 75%, #000 100%);
+  mask-image: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 45%, rgba(0, 0, 0, 0.42) 75%, #000 100%);
 }
 
 /* ---- Inhaltsbreite: Karte ist 1237px breit, mittig ---------------------- */
@@ -1090,7 +1266,9 @@ color: rgba(255, 255, 255, 0.92);
   background: rgba(255, 255, 255, 0.05);
 }
 
-.lvab-contact .lvab-frow--msg { align-items: flex-start; }
+.lvab-contact .lvab-frow--msg {
+  align-items: flex-start;
+}
 
 .lvab-contact .lvab-flabel {
   flex: 0 0 auto;
@@ -1104,7 +1282,9 @@ color: rgba(255, 255, 255, 0.92);
   overflow-wrap: break-word;
 }
 
-.lvab-contact .lvab-frow--msg .lvab-flabel { padding-top: 20px; }
+.lvab-contact .lvab-frow--msg .lvab-flabel {
+  padding-top: 20px;
+}
 
 .lvab-contact .lvab-req {
   color: #ff0000;
@@ -1165,9 +1345,14 @@ color: rgba(255, 255, 255, 0.92);
 }
 
 /* leerer Zustand: "Select here" wird gedimmt dargestellt */
-.lvab-contact.lvab-contact .lvab-select:invalid { color: rgba(255, 255, 255, 0.3); }
+.lvab-contact.lvab-contact .lvab-select:invalid {
+  color: rgba(255, 255, 255, 0.3);
+}
 
-.lvab-contact.lvab-contact .lvab-select option { color: #05060f; background: #ffffff; }
+.lvab-contact.lvab-contact .lvab-select option {
+  color: #05060f;
+  background: #ffffff;
+}
 
 .lvab-contact .lvab-caret {
   position: absolute;
@@ -1199,8 +1384,14 @@ color: rgba(255, 255, 255, 0.92);
   transition: filter 0.18s ease;
 }
 
-.lvab-contact.lvab-contact .lvab-submit:hover { filter: brightness(1.06); }
-.lvab-contact.lvab-contact .lvab-submit:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+.lvab-contact.lvab-contact .lvab-submit:hover {
+  filter: brightness(1.06);
+}
+
+.lvab-contact.lvab-contact .lvab-submit:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
 
 .lvab-contact .lvab-submit-label {
   font-size: 26px;
@@ -1221,7 +1412,9 @@ color: rgba(255, 255, 255, 0.92);
   background: #060606;
 }
 
-.lvab-contact .lvab-submit-ico svg { display: block; }
+.lvab-contact .lvab-submit-ico svg {
+  display: block;
+}
 
 /* ---- Kontaktzeilen unter dem Formular ----------------------------------- */
 .lvab-contact .lvab-ci {
@@ -1251,7 +1444,10 @@ color: rgba(255, 255, 255, 0.92);
   overflow-wrap: break-word;
 }
 
-.lvab-contact .lvab-ci-ico { flex: 0 0 auto; display: block; }
+.lvab-contact .lvab-ci-ico {
+  flex: 0 0 auto;
+  display: block;
+}
 
 .lvab-contact .lvab-ci-text {
   background: var(--lvf-grad-blue);
@@ -1262,9 +1458,19 @@ color: rgba(255, 255, 255, 0.92);
 }
 
 /* Element + Klasse + Sektion, sonst gewinnt .lvf-page a { color: inherit } */
-.lvab-contact a.lvab-ci-line { transition: filter 0.18s ease; }
-.lvab-contact a.lvab-ci-line:hover { filter: brightness(1.12); }
-.lvab-contact a.lvab-ci-line:focus-visible { outline: 2px solid var(--lvf-blue); outline-offset: 4px; border-radius: 4px; }
+.lvab-contact a.lvab-ci-line {
+  transition: filter 0.18s ease;
+}
+
+.lvab-contact a.lvab-ci-line:hover {
+  filter: brightness(1.12);
+}
+
+.lvab-contact a.lvab-ci-line:focus-visible {
+  outline: 2px solid var(--lvf-blue);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
 
 .lvab-contact .lvab-ci-cap {
   font-size: 19.8px;
@@ -1278,16 +1484,22 @@ color: rgba(255, 255, 255, 0.92);
    Bewegung nur, wenn der Nutzer sie zulaesst
    ========================================================================= */
 @media (prefers-reduced-motion: reduce) {
+
   a.lvab-btn-primary,
   a.lvab-btn-ghost,
   .lvab-contact.lvab-contact .lvab-input,
   .lvab-contact.lvab-contact .lvab-submit,
-  .lvab-contact a.lvab-ci-line { transition: none; }
+  .lvab-contact a.lvab-ci-line {
+    transition: none;
+  }
 }
 
 /* Trefferflaeche auf Touch-Geraeten vergroessern, Optik bleibt gleich */
 @media (pointer: coarse) {
-  .lvab-contact a.lvab-ci-line { padding-block: 11px; margin-block: -11px; }
+  .lvab-contact a.lvab-ci-line {
+    padding-block: 11px;
+    margin-block: -11px;
+  }
 }
 
 /* Tablet 768-1023px, 13.08.2026: die Vergroesserung oben reicht bei
@@ -1300,7 +1512,10 @@ color: rgba(255, 255, 255, 0.92);
    Erscheinungsbild etwas aendert. Nachgemessen per elementFromPoint-Abtastung
    (nicht die Box): 37 -> 48px bei 768/900/1023px, 767 und 1024px unveraendert. */
 @media (pointer: coarse) and (min-width: 768px) and (max-width: 1023px) {
-  .lvab-contact a.lvab-ci-line { position: relative; z-index: 1; }
+  .lvab-contact a.lvab-ci-line {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 /* =========================================================================
@@ -1309,96 +1524,282 @@ color: rgba(255, 255, 255, 0.92);
    ========================================================================= */
 
 @media (max-width: 1320px) {
-  .lvab-hero { padding-top: 200px; }
-  .lvab-h1 { font-size: clamp(38px, 5.16vw, 68.15px); line-height: 1.0; }
-  .lvab-h2 { font-size: clamp(34px, 4.7vw, 62.3px); line-height: 1.0; }
-  .lvab-fact-num { font-size: clamp(142px, 18vw, 238px); line-height: 1.0; }
-  .lvab-fact-value { font-size: clamp(21px, 2.21vw, 29.2px); line-height: 1.28; }
-  .lvab-crew-name { font-size: clamp(17px, 1.86vw, 24.6px); line-height: 1.2; }
-  .lvab-crew-role { font-size: clamp(11px, 1.17vw, 15.4px); line-height: 1.35; }
-  .lvab-value-title { font-size: clamp(14px, 1.24vw, 16.4px); white-space: normal; }
-  .lvab-tag { font-size: clamp(13px, 1.2vw, 15.8px); }
-  .lvab-lead { font-size: clamp(16px, 1.48vw, 19.5px); }
-  .lvab-hero-sub { font-size: clamp(16px, 1.47vw, 19.4px); }
-  .lvab-purpose-copy { font-size: clamp(17px, 1.64vw, 21.6px); }
-  .lvab-fact-label { font-size: clamp(14px, 1.2vw, 15.8px); }
-  .lvab-values { gap: 12px; }
-  .lvab-facts { gap: 20px; }
+  .lvab-hero {
+    padding-top: 200px;
+  }
+
+  .lvab-h1 {
+    font-size: clamp(38px, 5.16vw, 68.15px);
+    line-height: 1.0;
+  }
+
+  .lvab-h2 {
+    font-size: clamp(34px, 4.7vw, 62.3px);
+    line-height: 1.0;
+  }
+
+  .lvab-fact-num {
+    font-size: clamp(142px, 18vw, 238px);
+    line-height: 1.0;
+  }
+
+  .lvab-fact-value {
+    font-size: clamp(21px, 2.21vw, 29.2px);
+    line-height: 1.28;
+  }
+
+  .lvab-crew-name {
+    font-size: clamp(17px, 1.86vw, 24.6px);
+    line-height: 1.2;
+  }
+
+  .lvab-crew-role {
+    font-size: clamp(11px, 1.17vw, 15.4px);
+    line-height: 1.35;
+  }
+
+  .lvab-value-title {
+    font-size: clamp(14px, 1.24vw, 16.4px);
+    white-space: normal;
+  }
+
+  .lvab-tag {
+    font-size: clamp(13px, 1.2vw, 15.8px);
+  }
+
+  .lvab-lead {
+    font-size: clamp(16px, 1.48vw, 19.5px);
+  }
+
+  .lvab-hero-sub {
+    font-size: clamp(16px, 1.47vw, 19.4px);
+  }
+
+  .lvab-purpose-copy {
+    font-size: clamp(17px, 1.64vw, 21.6px);
+  }
+
+  .lvab-fact-label {
+    font-size: clamp(14px, 1.2vw, 15.8px);
+  }
+
+  .lvab-values {
+    gap: 12px;
+  }
+
+  .lvab-facts {
+    gap: 20px;
+  }
 }
 
 @media (max-width: 1199px) {
-  .lvab-contact { padding-top: 88px; }
-  .lvab-contact h2.lvab-title { font-size: 47px; line-height: 53px; }
-  .lvab-contact .lvab-card { margin-top: 52px; padding: 30px 30px 38px; }
-  .lvab-contact .lvab-frow { padding: 12px 12px 12px 28px; }
-  .lvab-contact .lvab-flabel { width: 132px; }
-  .lvab-contact.lvab-contact .lvab-input { height: 58px; padding: 0 24px; }
-  .lvab-contact.lvab-contact .lvab-textarea { height: 180px; padding: 16px 24px; }
-  .lvab-contact.lvab-contact .lvab-select { padding-right: 52px; }
-  .lvab-contact .lvab-caret { right: 22px; }
-  .lvab-contact.lvab-contact .lvab-submit { height: 64px; padding-left: 32px; }
-  .lvab-contact .lvab-submit-label { font-size: 22px; }
-  .lvab-contact .lvab-submit-ico { width: 240px; }
-  .lvab-contact .lvab-ci { gap: 12px 64px; }
-  .lvab-contact .lvab-ci-line { font-size: 18.5px; line-height: 26px; }
-  .lvab-contact .lvab-ci-cap { font-size: 17.8px; line-height: 24px; }
-  .lvab-contact .lvab-sub { font-size: 18px; line-height: 24px; }
-  .lvab-contact.lvab-contact .lvab-input { font-size: 17px; }
+  .lvab-contact {
+    padding-top: 88px;
+  }
+
+  .lvab-contact h2.lvab-title {
+    font-size: 47px;
+    line-height: 53px;
+  }
+
+  .lvab-contact .lvab-card {
+    margin-top: 52px;
+    padding: 30px 30px 38px;
+  }
+
+  .lvab-contact .lvab-frow {
+    padding: 12px 12px 12px 28px;
+  }
+
+  .lvab-contact .lvab-flabel {
+    width: 132px;
+  }
+
+  .lvab-contact.lvab-contact .lvab-input {
+    height: 58px;
+    padding: 0 24px;
+  }
+
+  .lvab-contact.lvab-contact .lvab-textarea {
+    height: 180px;
+    padding: 16px 24px;
+  }
+
+  .lvab-contact.lvab-contact .lvab-select {
+    padding-right: 52px;
+  }
+
+  .lvab-contact .lvab-caret {
+    right: 22px;
+  }
+
+  .lvab-contact.lvab-contact .lvab-submit {
+    height: 64px;
+    padding-left: 32px;
+  }
+
+  .lvab-contact .lvab-submit-label {
+    font-size: 22px;
+  }
+
+  .lvab-contact .lvab-submit-ico {
+    width: 240px;
+  }
+
+  .lvab-contact .lvab-ci {
+    gap: 12px 64px;
+  }
+
+  .lvab-contact .lvab-ci-line {
+    font-size: 18.5px;
+    line-height: 26px;
+  }
+
+  .lvab-contact .lvab-ci-cap {
+    font-size: 17.8px;
+    line-height: 24px;
+  }
+
+  .lvab-contact .lvab-sub {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .lvab-contact.lvab-contact .lvab-input {
+    font-size: 17px;
+  }
 
   /* Glows proportional verkleinert (Faktor ~0,68) */
   .lvab-contact .lvab-glow--beam {
-    left: -1130px; top: -845px; width: 1500px; height: 3270px;
+    left: -1130px;
+    top: -845px;
+    width: 1500px;
+    height: 3270px;
   }
+
   .lvab-contact .lvab-glow--core {
-    left: -1020px; top: -28px; width: 1900px; height: 1500px;
+    left: -1020px;
+    top: -28px;
+    width: 1900px;
+    height: 1500px;
   }
+
   .lvab-contact .lvab-glow--right {
-    right: -430px; top: -913px; width: 610px; height: 3670px;
+    right: -430px;
+    top: -913px;
+    width: 610px;
+    height: 3670px;
   }
 
   /* Footer-Oberkante ist hier dunkler als bei 1760px (Faktor 0,93) */
   .lvab-contact::after {
     background-image: linear-gradient(90deg,
-      rgb(3, 60, 93) 0%, rgb(3, 72, 111) 10%, rgb(2, 81, 124) 20%,
-      rgb(2, 89, 135) 30%, rgb(2, 94, 145) 40%, rgb(2, 97, 147) 50%,
-      rgb(2, 94, 145) 60%, rgb(2, 90, 138) 70%, rgb(2, 85, 130) 80%,
-      rgb(3, 76, 120) 90%, rgb(3, 67, 104) 100%);
+        rgb(3, 60, 93) 0%, rgb(3, 72, 111) 10%, rgb(2, 81, 124) 20%,
+        rgb(2, 89, 135) 30%, rgb(2, 94, 145) 40%, rgb(2, 97, 147) 50%,
+        rgb(2, 94, 145) 60%, rgb(2, 90, 138) 70%, rgb(2, 85, 130) 80%,
+        rgb(3, 76, 120) 90%, rgb(3, 67, 104) 100%);
   }
 }
 
 @media (max-width: 1024px) {
-  .lvab-hero { min-height: 0; padding: 190px 0 90px; }
-  .lvab-purpose { padding: 72px 0 60px; }
-  .lvab-found { padding-top: 84px; }
-  .lvab-team { padding-top: 84px; }
-  .lvab-purpose-copy { font-size: 18.5px; line-height: 25px; }
-  .lvab-values { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .lvab-facts { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .lvab-fact { min-height: 240px; padding-bottom: 40px; }
-  .lvab-fact-dot { bottom: 34px; }
-  .lvab-crew { grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 52px; }
-  .lvab-value-title { white-space: normal; }
+  .lvab-hero {
+    min-height: 0;
+    padding: 190px 0 90px;
+  }
+
+  .lvab-purpose {
+    padding: 72px 0 60px;
+  }
+
+  .lvab-found {
+    padding-top: 84px;
+  }
+
+  .lvab-team {
+    padding-top: 84px;
+  }
+
+  .lvab-purpose-copy {
+    font-size: 18.5px;
+    line-height: 25px;
+  }
+
+  .lvab-values {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .lvab-facts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .lvab-fact {
+    min-height: 240px;
+    padding-bottom: 40px;
+  }
+
+  .lvab-fact-dot {
+    bottom: 34px;
+  }
+
+  .lvab-crew {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 52px;
+  }
+
+  .lvab-value-title {
+    white-space: normal;
+  }
 
   /* Footer-Oberkante, Faktor 0,82 */
   .lvab-contact::after {
     background-image: linear-gradient(90deg,
-      rgb(2, 53, 82) 0%, rgb(2, 63, 98) 10%, rgb(2, 71, 109) 20%,
-      rgb(2, 79, 119) 30%, rgb(2, 83, 128) 40%, rgb(2, 85, 130) 50%,
-      rgb(2, 83, 128) 60%, rgb(2, 80, 121) 70%, rgb(2, 75, 115) 80%,
-      rgb(2, 67, 106) 90%, rgb(2, 59, 92) 100%);
+        rgb(2, 53, 82) 0%, rgb(2, 63, 98) 10%, rgb(2, 71, 109) 20%,
+        rgb(2, 79, 119) 30%, rgb(2, 83, 128) 40%, rgb(2, 85, 130) 50%,
+        rgb(2, 83, 128) 60%, rgb(2, 80, 121) 70%, rgb(2, 75, 115) 80%,
+        rgb(2, 67, 106) 90%, rgb(2, 59, 92) 100%);
   }
 }
 
 @media (max-width: 767px) {
-  .lvab-contact { padding-top: 64px; }
-  .lvab-contact .lvab-wrap { padding-inline: 16px; }
+  .lvab-contact {
+    padding-top: 64px;
+  }
 
-  .lvab-contact .lvab-eyebrow { height: 28px; padding: 0 16px; font-size: 13px; line-height: 28px; }
-  .lvab-contact h2.lvab-title { margin-top: 14px; font-size: 32px; line-height: 38px; }
-  .lvab-contact .lvab-sub { margin-top: 12px; font-size: 15px; line-height: 22px; }
+  .lvab-contact .lvab-wrap {
+    padding-inline: 16px;
+  }
 
-  .lvab-contact .lvab-card { margin-top: 32px; padding: 16px 14px 26px; border-radius: 18px; }
-  .lvab-contact .lvab-form { gap: 10px; }
+  .lvab-contact .lvab-eyebrow {
+    height: 28px;
+    padding: 0 16px;
+    font-size: 13px;
+    line-height: 28px;
+  }
+
+  .lvab-contact h2.lvab-title {
+    margin-top: 14px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .lvab-contact .lvab-sub {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .lvab-contact .lvab-card {
+    margin-top: 32px;
+    padding: 16px 14px 26px;
+    border-radius: 18px;
+  }
+
+  .lvab-contact .lvab-form {
+    gap: 10px;
+  }
 
   .lvab-contact .lvab-frow,
   .lvab-contact .lvab-frow--msg {
@@ -1408,13 +1809,35 @@ color: rgba(255, 255, 255, 0.92);
     padding: 14px;
     border-radius: 14px;
   }
-  .lvab-contact .lvab-flabel { width: auto; padding: 0 0 0 4px; font-size: 15px; }
-  .lvab-contact .lvab-frow--msg .lvab-flabel { padding-top: 0; }
 
-  .lvab-contact.lvab-contact .lvab-input { height: 52px; padding: 0 16px; font-size: 15px; }
-  .lvab-contact.lvab-contact .lvab-textarea { height: 150px; padding: 14px 16px; }
-  .lvab-contact.lvab-contact .lvab-select { padding-right: 44px; }
-  .lvab-contact .lvab-caret { right: 16px; }
+  .lvab-contact .lvab-flabel {
+    width: auto;
+    padding: 0 0 0 4px;
+    font-size: 15px;
+  }
+
+  .lvab-contact .lvab-frow--msg .lvab-flabel {
+    padding-top: 0;
+  }
+
+  .lvab-contact.lvab-contact .lvab-input {
+    height: 52px;
+    padding: 0 16px;
+    font-size: 15px;
+  }
+
+  .lvab-contact.lvab-contact .lvab-textarea {
+    height: 150px;
+    padding: 14px 16px;
+  }
+
+  .lvab-contact.lvab-contact .lvab-select {
+    padding-right: 44px;
+  }
+
+  .lvab-contact .lvab-caret {
+    right: 16px;
+  }
 
   .lvab-contact.lvab-contact .lvab-submit {
     height: 56px;
@@ -1422,129 +1845,370 @@ color: rgba(255, 255, 255, 0.92);
     border-radius: 14px;
     gap: 10px;
   }
-  .lvab-contact .lvab-submit-label { font-size: 17px; line-height: 22px; }
-  .lvab-contact .lvab-submit-ico { width: 62px; border-radius: 9px; }
-  .lvab-contact .lvab-submit-ico svg { width: 17px; height: 17px; }
 
-  .lvab-contact .lvab-ci { flex-direction: column; align-items: center; gap: 20px; margin-top: 28px; }
-  .lvab-contact .lvab-ci-line { flex-wrap: wrap; justify-content: center; gap: 7px; font-size: 16px; line-height: 22px; }
+  .lvab-contact .lvab-submit-label {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .lvab-contact .lvab-submit-ico {
+    width: 62px;
+    border-radius: 9px;
+  }
+
+  .lvab-contact .lvab-submit-ico svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .lvab-contact .lvab-ci {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 28px;
+  }
+
+  .lvab-contact .lvab-ci-line {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
   /* Trefferflaeche des Mailto-Links: 22px Text + 2x11px = 44px. Fragment 2 hat
      das nur ueber "@media (pointer: coarse)" geloest; auf einem schmalen
      Fenster ohne Grobzeiger blieben 22px uebrig, also unter den 40px aus dem
      Vertrag. Die negative Aussenkante haelt die Optik unveraendert. */
-  .lvab-contact a.lvab-ci-line { padding-block: 11px; margin-block: -11px; }
-  .lvab-contact .lvab-ci-ico { width: 18px; height: auto; }
-  .lvab-contact .lvab-ci-cap { font-size: 14px; line-height: 20px; }
+  .lvab-contact a.lvab-ci-line {
+    padding-block: 11px;
+    margin-block: -11px;
+  }
+
+  .lvab-contact .lvab-ci-ico {
+    width: 18px;
+    height: auto;
+  }
+
+  .lvab-contact .lvab-ci-cap {
+    font-size: 14px;
+    line-height: 20px;
+  }
 
   /* Glows proportional verkleinert (Faktor ~0,36). Die Masken sind hier wie
      am Desktop entfallen; die Naht faengt .lvab-contact::after ab. Mobil ist
      das der groessere Hebel: die Naht lag bei 390px im Mittel bei Stufe 94
      (Abnahme N2), weil ueber der Kante reines Schwarz stand. */
   .lvab-contact .lvab-glow--beam {
-    left: -600px; top: -447px; width: 790px; height: 1730px;
+    left: -600px;
+    top: -447px;
+    width: 790px;
+    height: 1730px;
   }
+
   .lvab-contact .lvab-glow--core {
-    left: -540px; top: -15px; width: 1010px; height: 790px;
+    left: -540px;
+    top: -15px;
+    width: 1010px;
+    height: 790px;
   }
+
   .lvab-contact .lvab-glow--right {
-    right: -227px; top: -483px; width: 324px; height: 1945px;
+    right: -227px;
+    top: -483px;
+    width: 324px;
+    height: 1945px;
   }
 
   /* Footer-Oberkante, Faktor 0,75 */
   .lvab-contact::after {
     height: 56px;
     background-image: linear-gradient(90deg,
-      rgb(2, 49, 75) 0%, rgb(2, 58, 89) 10%, rgb(2, 65, 100) 20%,
-      rgb(2, 72, 109) 30%, rgb(2, 76, 117) 40%, rgb(2, 78, 118) 50%,
-      rgb(2, 76, 117) 60%, rgb(2, 73, 111) 70%, rgb(2, 68, 105) 80%,
-      rgb(2, 62, 97) 90%, rgb(2, 54, 84) 100%);
+        rgb(2, 49, 75) 0%, rgb(2, 58, 89) 10%, rgb(2, 65, 100) 20%,
+        rgb(2, 72, 109) 30%, rgb(2, 76, 117) 40%, rgb(2, 78, 118) 50%,
+        rgb(2, 76, 117) 60%, rgb(2, 73, 111) 70%, rgb(2, 68, 105) 80%,
+        rgb(2, 62, 97) 90%, rgb(2, 54, 84) 100%);
   }
 }
 
 @media (max-width: 720px) {
-  .lvab-hero { padding: 170px 0 70px; }
-  .lvab-hero-art { min-width: 900px; height: 100%; }
-  .lvab-hero-arrow {
-    top: auto; bottom: 0; width: 260px; height: 235px;
-    clip-path: polygon(
-      80.5px 0, 253px 0, 253px 126px, 247px 140px, 236px 149px, 223px 152px,
-      171px 113px, 79px 235px, 14px 235px, 128px 81px, 80.5px 35px
-    );
+  .lvab-hero {
+    padding: 170px 0 70px;
   }
-  .lvab-hero-beam { width: 640px; height: 140px; top: 60px; }
-  .lvab-hero-beam-l { left: -220px; }
-  .lvab-hero-beam-r { right: -220px; }
-  .lvab-hero-sub { font-size: 16.6px; line-height: 23px; }
-  .lvab-hero-cta { flex-direction: column; gap: 12px; }
+
+  .lvab-hero-art {
+    min-width: 900px;
+    height: 100%;
+  }
+
+  .lvab-hero-arrow {
+    top: auto;
+    bottom: 0;
+    width: 260px;
+    height: 235px;
+    clip-path: polygon(80.5px 0, 253px 0, 253px 126px, 247px 140px, 236px 149px, 223px 152px,
+        171px 113px, 79px 235px, 14px 235px, 128px 81px, 80.5px 35px);
+  }
+
+  .lvab-hero-beam {
+    width: 640px;
+    height: 140px;
+    top: 60px;
+  }
+
+  .lvab-hero-beam-l {
+    left: -220px;
+  }
+
+  .lvab-hero-beam-r {
+    right: -220px;
+  }
+
+  .lvab-hero-sub {
+    font-size: 16.6px;
+    line-height: 23px;
+  }
+
+  .lvab-hero-cta {
+    flex-direction: column;
+    gap: 12px;
+  }
+
   a.lvab-btn-primary,
-  a.lvab-btn-ghost { width: 100%; max-width: 320px; min-width: 0; }
-  a.lvab-btn-primary { justify-content: flex-start; }
+  a.lvab-btn-ghost {
+    width: 100%;
+    max-width: 320px;
+    min-width: 0;
+  }
 
-  .lvab-purpose { padding: 56px 0 48px; }
-  .lvab-purpose-copy { font-size: 17.6px; line-height: 25px; margin-top: 20px; }
-  .lvab-purpose-copy p + p { margin-top: 20px; }
-  .lvab-values { grid-template-columns: 1fr; gap: 12px; margin-top: 36px; }
-  .lvab-value-head { height: auto; min-height: 44px; padding: 10px 16px; }
-  .lvab-value-text { padding: 10px 16px 14px; font-size: 13px; line-height: 19px; }
+  a.lvab-btn-primary {
+    justify-content: flex-start;
+  }
 
-  .lvab-found { padding-top: 60px; }
-  .lvab-team { padding-top: 60px; }
-  .lvab-lead { font-size: 17px; line-height: 24px; }
-  .lvab-facts { grid-template-columns: 1fr; gap: 14px; margin-top: 36px; }
-  .lvab-fact { min-height: 0; padding: 30px 18px 56px; }
-  .lvab-fact-num { font-size: 175px; }
-  .lvab-fact-dot { bottom: 24px; }
+  .lvab-purpose {
+    padding: 56px 0 48px;
+  }
 
-  .lvab-crew { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 36px; }
-  .lvab-crew-plate { height: 26%; border-radius: 11px; }
+  .lvab-purpose-copy {
+    font-size: 17.6px;
+    line-height: 25px;
+    margin-top: 20px;
+  }
+
+  .lvab-purpose-copy p+p {
+    margin-top: 20px;
+  }
+
+  .lvab-values {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 36px;
+  }
+
+  .lvab-value-head {
+    height: auto;
+    min-height: 44px;
+    padding: 10px 16px;
+  }
+
+  .lvab-value-text {
+    padding: 10px 16px 14px;
+    font-size: 13px;
+    line-height: 19px;
+  }
+
+  .lvab-found {
+    padding-top: 60px;
+  }
+
+  .lvab-team {
+    padding-top: 60px;
+  }
+
+  .lvab-lead {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .lvab-facts {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 36px;
+  }
+
+  .lvab-fact {
+    min-height: 0;
+    padding: 30px 18px 56px;
+  }
+
+  .lvab-fact-num {
+    font-size: 175px;
+  }
+
+  .lvab-fact-dot {
+    bottom: 24px;
+  }
+
+  .lvab-crew {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 36px;
+  }
+
+  .lvab-crew-plate {
+    height: 26%;
+    border-radius: 11px;
+  }
 
   /* Auf schmalen Schirmen ruecken die Glows sonst mitten unter die Schrift.
      Geometrie wie oben, rund halbiert. */
-  .lvab-lower-glow-r  { top: -263px; right: -425px; width: 780px; height: 620px; }
-  .lvab-lower-glow-r2 { top: -450px; right: -275px; width: 480px; height: 1480px; opacity: 0.8; }
-  .lvab-lower-glow-l  { bottom: -640px; left: -360px; width: 620px; height: 1100px; }
-  .lvab-lower-glow-l2 { bottom: -820px; left: -560px; width: 900px; height: 1800px; opacity: 0.8; }
-  .lvab-purpose-glow-l { left: -304px; bottom: -163px; width: 631px; height: 335px; }
-  .lvab-purpose-glow-r { right: -326px; bottom: -141px; width: 629px; height: 313px; }
-  .lvab-purpose-glow-c { width: 1683px; margin-left: -842px; height: 306px; bottom: -153px; }
-  .lvab-hero-bglow-a { margin-left: -260px; width: 620px; height: 150px; bottom: -78px; }
-  .lvab-hero-bglow-b { margin-left: 60px; width: 380px; height: 120px; bottom: -62px; }
+  .lvab-lower-glow-r {
+    top: -263px;
+    right: -425px;
+    width: 780px;
+    height: 620px;
+  }
+
+  .lvab-lower-glow-r2 {
+    top: -450px;
+    right: -275px;
+    width: 480px;
+    height: 1480px;
+    opacity: 0.8;
+  }
+
+  .lvab-lower-glow-l {
+    bottom: -640px;
+    left: -360px;
+    width: 620px;
+    height: 1100px;
+  }
+
+  .lvab-lower-glow-l2 {
+    bottom: -820px;
+    left: -560px;
+    width: 900px;
+    height: 1800px;
+    opacity: 0.8;
+  }
+
+  .lvab-purpose-glow-l {
+    left: -304px;
+    bottom: -163px;
+    width: 631px;
+    height: 335px;
+  }
+
+  .lvab-purpose-glow-r {
+    right: -326px;
+    bottom: -141px;
+    width: 629px;
+    height: 313px;
+  }
+
+  .lvab-purpose-glow-c {
+    width: 1683px;
+    margin-left: -842px;
+    height: 306px;
+    bottom: -153px;
+  }
+
+  .lvab-hero-bglow-a {
+    margin-left: -260px;
+    width: 620px;
+    height: 150px;
+    bottom: -78px;
+  }
+
+  .lvab-hero-bglow-b {
+    margin-left: 60px;
+    width: 380px;
+    height: 120px;
+    bottom: -62px;
+  }
+
   /* R3-ABNAHME-2 mobil: gleiche Halbierung wie bei den uebrigen Scheinen,
      sonst wandert der Dunst auf schmalen Schirmen unter die Schrift.
      (.lvab-hero-rglow braucht keine Regel: es haengt wie .lvab-hero-beam-r
      am rechten Rand der 1760px-Kunstflaeche und ist unterhalb von rund
      1400px Fensterbreite ohnehin herausgeschnitten - gemessen bei 1024 und
      768px keine Aenderung, bei 1440px nur 1,3 von 255 in der letzten Spalte.) */
-  .lvab-purpose-haze { margin-left: -900px; width: 1800px; height: 280px; bottom: 10px; }
+  .lvab-purpose-haze {
+    margin-left: -900px;
+    width: 1800px;
+    height: 280px;
+    bottom: 10px;
+  }
 }
 
 @media (max-width: 420px) {
-  .lvab-hero { padding-top: 156px; }
-  .lvab-h1 { font-size: 32px; line-height: 1.08; }
-  .lvab-h2 { font-size: 30px; line-height: 1.1; }
-  .lvab-tag { font-size: 12px; padding-inline: 16px; white-space: normal; height: auto; min-height: 32px; line-height: 1.35; padding-block: 6px; }
-  .lvab-purpose-copy { font-size: 16px; }
-  .lvab-fact-num { font-size: 153px; }
-  .lvab-crew { grid-template-columns: 1fr; }
+  .lvab-hero {
+    padding-top: 156px;
+  }
+
+  .lvab-h1 {
+    font-size: 32px;
+    line-height: 1.08;
+  }
+
+  .lvab-h2 {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  .lvab-tag {
+    font-size: 12px;
+    padding-inline: 16px;
+    white-space: normal;
+    height: auto;
+    min-height: 32px;
+    line-height: 1.35;
+    padding-block: 6px;
+  }
+
+  .lvab-purpose-copy {
+    font-size: 16px;
+  }
+
+  .lvab-fact-num {
+    font-size: 153px;
+  }
+
+  .lvab-crew {
+    grid-template-columns: 1fr;
+  }
+
   /* Ohne "width: 100%" faellt die Karte in einer einspaltigen Grid-Spur mit
      "aspect-ratio" und "max-width" auf 2px zusammen (das Foto haengt mit
      width:100% an der unbestimmten Breite). Live bei 390px nachgewiesen. */
-  .lvab-crew-card { width: 100%; max-width: 302px; margin-inline: auto; }
-  .lvab-crew-name { font-size: 21px; }
-  .lvab-crew-role { font-size: 14px; }
+  .lvab-crew-card {
+    width: 100%;
+    max-width: 302px;
+    margin-inline: auto;
+  }
+
+  .lvab-crew-name {
+    font-size: 21px;
+  }
+
+  .lvab-crew-role {
+    font-size: 14px;
+  }
 
   /* Footer-Oberkante, Faktor 0,66 (bei 390px gemessen) */
   .lvab-contact::after {
     background-image: linear-gradient(90deg,
-      rgb(2, 43, 66) 0%, rgb(2, 51, 79) 10%, rgb(2, 57, 88) 20%,
-      rgb(2, 63, 96) 30%, rgb(2, 67, 103) 40%, rgb(2, 69, 104) 50%,
-      rgb(2, 67, 103) 60%, rgb(2, 64, 98) 70%, rgb(2, 60, 92) 80%,
-      rgb(2, 54, 85) 90%, rgb(2, 48, 74) 100%);
+        rgb(2, 43, 66) 0%, rgb(2, 51, 79) 10%, rgb(2, 57, 88) 20%,
+        rgb(2, 63, 96) 30%, rgb(2, 67, 103) 40%, rgb(2, 69, 104) 50%,
+        rgb(2, 67, 103) 60%, rgb(2, 64, 98) 70%, rgb(2, 60, 92) 80%,
+        rgb(2, 54, 85) 90%, rgb(2, 48, 74) 100%);
   }
 }
 
 @media (min-width: 1024px) {
-  .lvab-contact { padding-bottom: 60px; }
+  .lvab-contact {
+    padding-bottom: 60px;
+  }
 }
 
 /* =========================================================================
@@ -1614,16 +2278,21 @@ color: rgba(255, 255, 255, 0.92);
   pointer-events: none;
 }
 
-.lvab-fussnaht > span { display: none; }
+.lvab-fussnaht>span {
+  display: none;
+}
 
 @media (min-width: 1024px) {
+
   /* Die 8px-Leiste vom 08.08. hat die Kante nur kaschiert und drueckte den
      Schein in der letzten Zeile von (233,245,253) auf (169,202,222). Mit dem
      durchlaufenden Band wird sie nicht mehr gebraucht; das Band y4849-4857
      faellt dadurch von 62,4 auf 1,2. Unterhalb 1024px bleibt sie. */
-  .lvab-contact::after { content: none; }
+  .lvab-contact::after {
+    content: none;
+  }
 
-  .lvab-fussnaht > span {
+  .lvab-fussnaht>span {
     display: block;
     position: absolute;
     left: 0;
@@ -1662,9 +2331,9 @@ color: rgba(255, 255, 255, 0.92);
         rgba(1, 15, 23, 0.7) 308px,
         rgba(2, 14, 22, 0) 396px);
     -webkit-mask-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0) 0%, #000 22%, #000 85%, rgba(0, 0, 0, 0) 100%);
-            mask-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0) 0%, #000 22%, #000 85%, rgba(0, 0, 0, 0) 100%);
+        rgba(0, 0, 0, 0) 0%, #000 22%, #000 85%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0) 0%, #000 22%, #000 85%, rgba(0, 0, 0, 0) 100%);
   }
 
   /* Der freie Rand links neben der Fusskarte. Seine Breite ist genau der
@@ -1676,19 +2345,19 @@ color: rgba(255, 255, 255, 0.92);
     height: 730px;
     --lvab-kante: max((100% - 1608px) / 2, 30px);
     background-image: linear-gradient(to bottom,
-      rgb(250, 253, 255) 0%,
-      rgb(249, 253, 255) 4.4%,
-      rgb(248, 252, 255) 11.2%,
-      rgb(243, 251, 254) 20.8%,
-      rgb(233, 247, 255) 34.5%,
-      rgb(214, 240, 255) 51%,
-      rgb(189, 230, 254) 70%,
-      rgb(146, 219, 253) 89%,
-      rgba(130, 213, 251, 0) 100%);
+        rgb(250, 253, 255) 0%,
+        rgb(249, 253, 255) 4.4%,
+        rgb(248, 252, 255) 11.2%,
+        rgb(243, 251, 254) 20.8%,
+        rgb(233, 247, 255) 34.5%,
+        rgb(214, 240, 255) 51%,
+        rgb(189, 230, 254) 70%,
+        rgb(146, 219, 253) 89%,
+        rgba(130, 213, 251, 0) 100%);
     -webkit-mask-image: linear-gradient(90deg,
-      #000 0, #000 calc(var(--lvab-kante) - 14px), rgba(0, 0, 0, 0) var(--lvab-kante));
-            mask-image: linear-gradient(90deg,
-      #000 0, #000 calc(var(--lvab-kante) - 14px), rgba(0, 0, 0, 0) var(--lvab-kante));
+        #000 0, #000 calc(var(--lvab-kante) - 14px), rgba(0, 0, 0, 0) var(--lvab-kante));
+    mask-image: linear-gradient(90deg,
+        #000 0, #000 calc(var(--lvab-kante) - 14px), rgba(0, 0, 0, 0) var(--lvab-kante));
   }
 }
 
@@ -1727,7 +2396,9 @@ color: rgba(255, 255, 255, 0.92);
         rgba(0, 4, 7, 0) 190px);
   }
 
-  .lvab-fussnaht-rand { display: none; }
+  .lvab-fussnaht-rand {
+    display: none;
+  }
 }
 
 /* =========================================================================
@@ -1752,8 +2423,11 @@ color: rgba(255, 255, 255, 0.92);
    Es handelt sich um eine Impressumsangabe, deshalb keine Kosmetik.
    ========================================================================= */
 @media (max-width: 1024px) {
+
   .lvab-fact-value .lvab-adr-ort,
-  .lvab-ci-text .lvab-adr-ort { display: block; }
+  .lvab-ci-text .lvab-adr-ort {
+    display: block;
+  }
 }
 
 /* =========================================================================
@@ -1767,16 +2441,19 @@ color: rgba(255, 255, 255, 0.92);
 @media (min-width: 1024px) {
   .lvab-fussnaht-band {
     -webkit-mask-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0) 0%, #000 22%, #000 99.35%, rgba(0, 0, 0, 0) 100%);
-            mask-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0) 0%, #000 22%, #000 99.35%, rgba(0, 0, 0, 0) 100%);
+        rgba(0, 0, 0, 0) 0%, #000 22%, #000 99.35%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0) 0%, #000 22%, #000 99.35%, rgba(0, 0, 0, 0) 100%);
   }
 
   /* Der Randstreifen begann exakt an der Bandunterkante, deshalb blieb links
      genau eine Bildzeile (y4904) nur teilbelichtet: vorher (11,83,125),
      Entwurf (249,253,255). Er beginnt jetzt eine Zeile hoeher und behaelt
      seine Unterkante. */
-  .lvab-fussnaht-rand { top: 47px; height: 731px; }
+  .lvab-fussnaht-rand {
+    top: 47px;
+    height: 731px;
+  }
 }
 
 /* --- 8b) Der Schein unter der Naht --------------------------------------
@@ -1799,24 +2476,24 @@ color: rgba(255, 255, 255, 0.92);
     z-index: 1;
     pointer-events: none;
     background-image: linear-gradient(90deg,
-      rgb(23, 58, 79) 0,
-      rgb(23, 58, 79) 120px,
-      rgb(20, 57, 80) 200px,
-      rgb(16, 56, 81) 280px,
-      rgb(12, 54, 78) 360px,
-      rgb(8, 49, 74) 440px,
-      rgb(5, 45, 67) 520px,
-      rgb(3, 39, 58) 600px,
-      rgb(1, 32, 50) 680px,
-      rgb(0, 25, 38) 760px,
-      rgb(0, 19, 31) 840px,
-      rgb(0, 15, 22) 920px,
-      rgb(0, 10, 17) 1000px,
-      rgb(0, 7, 10) 1080px,
-      rgb(0, 4, 7) 1160px,
-      rgba(0, 3, 6, 0.8) 1240px,
-      rgba(1, 2, 4, 0.5) 1320px,
-      rgba(1, 2, 4, 0) 1420px);
+        rgb(23, 58, 79) 0,
+        rgb(23, 58, 79) 120px,
+        rgb(20, 57, 80) 200px,
+        rgb(16, 56, 81) 280px,
+        rgb(12, 54, 78) 360px,
+        rgb(8, 49, 74) 440px,
+        rgb(5, 45, 67) 520px,
+        rgb(3, 39, 58) 600px,
+        rgb(1, 32, 50) 680px,
+        rgb(0, 25, 38) 760px,
+        rgb(0, 19, 31) 840px,
+        rgb(0, 15, 22) 920px,
+        rgb(0, 10, 17) 1000px,
+        rgb(0, 7, 10) 1080px,
+        rgb(0, 4, 7) 1160px,
+        rgba(0, 3, 6, 0.8) 1240px,
+        rgba(1, 2, 4, 0.5) 1320px,
+        rgba(1, 2, 4, 0) 1420px);
   }
 }
 
@@ -1828,24 +2505,24 @@ color: rgba(255, 255, 255, 0.92);
 @media (min-width: 1024px) and (max-width: 1199px) {
   .lvab-fussnaht::before {
     background-image: linear-gradient(90deg,
-      rgb(23, 58, 79) 0,
-      rgb(23, 58, 79) 82px,
-      rgb(20, 57, 80) 136px,
-      rgb(16, 56, 81) 190px,
-      rgb(12, 54, 78) 245px,
-      rgb(8, 49, 74) 299px,
-      rgb(5, 45, 67) 354px,
-      rgb(3, 39, 58) 408px,
-      rgb(1, 32, 50) 462px,
-      rgb(0, 25, 38) 517px,
-      rgb(0, 19, 31) 571px,
-      rgb(0, 15, 22) 626px,
-      rgb(0, 10, 17) 680px,
-      rgb(0, 7, 10) 734px,
-      rgb(0, 4, 7) 789px,
-      rgba(0, 3, 6, 0.8) 843px,
-      rgba(1, 2, 4, 0.5) 898px,
-      rgba(1, 2, 4, 0) 966px);
+        rgb(23, 58, 79) 0,
+        rgb(23, 58, 79) 82px,
+        rgb(20, 57, 80) 136px,
+        rgb(16, 56, 81) 190px,
+        rgb(12, 54, 78) 245px,
+        rgb(8, 49, 74) 299px,
+        rgb(5, 45, 67) 354px,
+        rgb(3, 39, 58) 408px,
+        rgb(1, 32, 50) 462px,
+        rgb(0, 25, 38) 517px,
+        rgb(0, 19, 31) 571px,
+        rgb(0, 15, 22) 626px,
+        rgb(0, 10, 17) 680px,
+        rgb(0, 7, 10) 734px,
+        rgb(0, 4, 7) 789px,
+        rgba(0, 3, 6, 0.8) 843px,
+        rgba(1, 2, 4, 0.5) 898px,
+        rgba(1, 2, 4, 0) 966px);
   }
 }
 
@@ -1857,9 +2534,9 @@ color: rgba(255, 255, 255, 0.92);
   .lvab-fussnaht-rand {
     --lvab-kante: calc((100% - 1608px) / 2 + 16px);
     -webkit-mask-image: linear-gradient(90deg,
-      #000 0, #000 calc(var(--lvab-kante) - 4px), rgba(0, 0, 0, 0) var(--lvab-kante));
-            mask-image: linear-gradient(90deg,
-      #000 0, #000 calc(var(--lvab-kante) - 4px), rgba(0, 0, 0, 0) var(--lvab-kante));
+        #000 0, #000 calc(var(--lvab-kante) - 4px), rgba(0, 0, 0, 0) var(--lvab-kante));
+    mask-image: linear-gradient(90deg,
+        #000 0, #000 calc(var(--lvab-kante) - 4px), rgba(0, 0, 0, 0) var(--lvab-kante));
   }
 }
 
@@ -1877,10 +2554,21 @@ color: rgba(255, 255, 255, 0.92);
 
    Die Faktkarte bekommt das NICHT: dort zeigt der Entwurf den Verlauf
    durchlaufend ueber drei Zeilen (128 / 81 / 32 im Rotkanal). */
-.lvab-contact .lvab-ci-line { --lvab-ci-lh: 30px; }
+.lvab-contact .lvab-ci-line {
+  --lvab-ci-lh: 30px;
+}
 
-@media (max-width: 1199px) { .lvab-contact .lvab-ci-line { --lvab-ci-lh: 26px; } }
-@media (max-width: 767px)  { .lvab-contact .lvab-ci-line { --lvab-ci-lh: 22px; } }
+@media (max-width: 1199px) {
+  .lvab-contact .lvab-ci-line {
+    --lvab-ci-lh: 26px;
+  }
+}
+
+@media (max-width: 767px) {
+  .lvab-contact .lvab-ci-line {
+    --lvab-ci-lh: 22px;
+  }
+}
 
 .lvab-contact .lvab-ci-text {
   background-size: 100% var(--lvab-ci-lh);
@@ -1893,16 +2581,30 @@ color: rgba(255, 255, 255, 0.92);
    13,0px ueber Zeile 2. Mit flex-start plus dem halben Zeilenueberschuss
    sitzt es in Zeile 1; bei einzeiligem Text ist das rechnerisch genau die
    bisherige Lage, 1760px aendert sich also nicht. */
-.lvab-contact .lvab-ci-line { align-items: flex-start; }
+.lvab-contact .lvab-ci-line {
+  align-items: flex-start;
+}
 
 .lvab-contact .lvab-ci-ico {
   margin-top: calc((var(--lvab-ci-lh) - var(--lvab-ci-ih)) / 2);
 }
-.lvab-contact .lvab-ci-ico[height="17"] { --lvab-ci-ih: 17px; }
-.lvab-contact .lvab-ci-ico[height="20"] { --lvab-ci-ih: 20px; }
+
+.lvab-contact .lvab-ci-ico[height="17"] {
+  --lvab-ci-ih: 17px;
+}
+
+.lvab-contact .lvab-ci-ico[height="20"] {
+  --lvab-ci-ih: 20px;
+}
 
 @media (max-width: 767px) {
+
   /* dort gilt width:18px, height:auto -> 17/21 bzw. 20/23 davon */
-  .lvab-contact .lvab-ci-ico[height="17"] { --lvab-ci-ih: 14.57px; }
-  .lvab-contact .lvab-ci-ico[height="20"] { --lvab-ci-ih: 15.65px; }
+  .lvab-contact .lvab-ci-ico[height="17"] {
+    --lvab-ci-ih: 14.57px;
+  }
+
+  .lvab-contact .lvab-ci-ico[height="20"] {
+    --lvab-ci-ih: 15.65px;
+  }
 }
