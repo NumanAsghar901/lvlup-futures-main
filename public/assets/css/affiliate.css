@@ -59,6 +59,7 @@
   color: rgba(255, 255, 255, 0.9);
   white-space: nowrap;
 }
+
 /* Hero-Pille: die Referenz zeigt eine gefuellte Pille OHNE Kontur
    (Randpixel bei x 787 und x 972 gab es nur im Nachbau) und misst
    197 px. Ohne Rahmen fallen 2 px weg, der Innenabstand faengt sie
@@ -69,7 +70,11 @@
   font-size: 14px;
   color: rgba(255, 255, 255, 0.70);
 }
-.lvf-page .lvaf-pill--solid { background: #05080d; }
+
+.lvf-page .lvaf-pill--solid {
+  background: #05080d;
+}
+
 .lvf-page .lvaf-pill-dot {
   width: 6px;
   height: 6px;
@@ -78,7 +83,11 @@
   border-radius: 50%;
   background: #38b6ff;
 }
-.lvf-page .lvaf-pill-hl { color: #4db4f5; font-weight: 700; }
+
+.lvf-page .lvaf-pill-hl {
+  color: #4db4f5;
+  font-weight: 700;
+}
 
 /* Verlaufstext. Element + Klasse, damit die Heading-Resets des Themes
    nicht gewinnen (Falle 2 im Vertrag).                              */
@@ -106,16 +115,33 @@
    Hero Zeile 1  #b1bdc3 (links) -> #f4f4f4 (Mitte) -> #bcbdbf (rechts)
    S2/S4/S5      #b4b8bb -> #ffffff
    S3            #e0e0e0 -> #ffffff -> #b4bcc1                       */
-.lvf-page .lvaf-t-fade { background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, #ffffff 92%); }
-.lvf-page .lvaf-h1 .lvaf-t-fade { background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, #ffffff 55%, rgba(255, 255, 255, 0.73) 100%); }
-.lvf-page .lvaf-t-fade2 { background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.88) 0%, #ffffff 30%, rgba(255, 255, 255, 0.7) 100%); }
-.lvf-page .lvaf-t-blue { background-image: var(--lvaf-blue); }
+.lvf-page .lvaf-t-fade {
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, #ffffff 92%);
+}
+
+.lvf-page .lvaf-h1 .lvaf-t-fade {
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, #ffffff 55%, rgba(255, 255, 255, 0.73) 100%);
+}
+
+.lvf-page .lvaf-t-fade2 {
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.88) 0%, #ffffff 30%, rgba(255, 255, 255, 0.7) 100%);
+}
+
+.lvf-page .lvaf-t-blue {
+  background-image: var(--lvaf-blue);
+}
+
 /* Im Entwurf ist der blaue Teil jeder Ueberschrift eine Gewichtsstufe
    schwerer als der weisse (an den Buchstabenstegen und der Textbreite
    gemessen: weiss 500, blau 600).                                    */
 .lvf-page .lvaf-h1 .lvaf-t-blue,
-.lvf-page .lvaf-h2 .lvaf-t-blue { font-weight: 600; }
-.lvf-page .lvaf-t-blue2 { color: #35b0ff; }
+.lvf-page .lvaf-h2 .lvaf-t-blue {
+  font-weight: 600;
+}
+
+.lvf-page .lvaf-t-blue2 {
+  color: #35b0ff;
+}
 
 .lvf-page .lvaf-h1 {
   margin: 21px 0 0;
@@ -126,7 +152,10 @@
   letter-spacing: normal;
   text-align: center;
 }
-.lvf-page .lvaf-h1 span { display: block; }
+
+.lvf-page .lvaf-h1 span {
+  display: block;
+}
 
 .lvf-page .lvaf-h2 {
   margin: 14px 0 0;
@@ -148,7 +177,12 @@
   text-align: center;
   overflow-wrap: break-word;
 }
-.lvf-page .lvaf-sub--tight { max-width: 900px; margin-top: 17px; font-size: clamp(16px, 1.11vw, 19.5px); }
+
+.lvf-page .lvaf-sub--tight {
+  max-width: 900px;
+  margin-top: 17px;
+  font-size: clamp(16px, 1.11vw, 19.5px);
+}
 
 /* ================================================ 1  HERO  y 0 - 746 */
 
@@ -187,6 +221,7 @@
       rgba(0, 100, 165, 0.2) 65%, rgba(0, 52, 90, 0.09) 90%, rgba(0, 0, 0, 0) 100%),
     linear-gradient(180deg, #000102 0%, #01080e 45%, #01111a 100%);
 }
+
 /* Die Sektion blendet an der Unterkante ab (y 720-746 gemessen). */
 .lvf-page .lvaf-hero-bg::after {
   content: "";
@@ -196,7 +231,50 @@
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 
-.lvf-page .lvaf-hero-in { text-align: center; }
+/* Video-Hintergrund mit 50% Deckkraft, #8CD5FF -> #12A9FF Linear Gradient mit Blend Color und Black Gradient Shade */
+.lvf-page .lvaf-hero-video-wrap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  min-width: 1760px;
+  isolation: isolate;
+  mix-blend-mode: screen;
+  opacity: 0.8;
+  -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+}
+
+.lvf-page .lvaf-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.lvf-page .lvaf-hero-video-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #8cd5ff 0%, #12a9ff 100%);
+  mix-blend-mode: color;
+  pointer-events: none;
+}
+
+.lvf-page .lvaf-hero-video-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+.lvf-page .lvaf-hero-in {
+  text-align: center;
+}
 
 .lvf-page .lvaf-hero-sub {
   max-width: 700px;
@@ -217,6 +295,7 @@
   gap: 10px;
   margin-top: 37px;
 }
+
 .lvf-page a.lvaf-btn {
   position: relative;
   display: inline-flex;
@@ -233,6 +312,7 @@
   white-space: nowrap;
   transition: filter 0.18s ease, transform 0.18s ease;
 }
+
 .lvf-page a.lvaf-btn--fill {
   /* gemessen oben #a9ecff, unten #1acfff.
      Die 28 px Innenabstand aus der Sammelregel sind fuer den
@@ -245,6 +325,7 @@
   background: linear-gradient(180deg, #aeeeff 0%, #16d3ff 100%);
   color: #05131b;
 }
+
 .lvf-page .lvaf-btn-ico {
   display: inline-flex;
   align-items: center;
@@ -256,6 +337,7 @@
   background: #05070a;
   color: #ffffff;
 }
+
 .lvf-page a.lvaf-btn--ghost {
   /* dunkle Flaeche mit blauem Schein an Unter- und rechter Kante */
   background-color: #04121a;
@@ -264,8 +346,15 @@
     radial-gradient(55% 210% at 112% 62%, rgba(10, 160, 245, 0.8) 0%, rgba(10, 160, 245, 0) 70%);
   color: #ffffff;
 }
-.lvf-page a.lvaf-btn:hover { filter: brightness(1.08); }
-.lvf-page a.lvaf-btn:focus-visible { outline: 2px solid var(--lvf-blue-light); outline-offset: 3px; }
+
+.lvf-page a.lvaf-btn:hover {
+  filter: brightness(1.08);
+}
+
+.lvf-page a.lvaf-btn:focus-visible {
+  outline: 2px solid var(--lvf-blue-light);
+  outline-offset: 3px;
+}
 
 /* Kennzahlen y 618 - 671, Gruppen mit 95 px Abstand */
 .lvf-page .lvaf-stats {
@@ -278,18 +367,27 @@
   padding: 0;
   list-style: none;
 }
+
 .lvf-page .lvaf-stat {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .lvf-page .lvaf-stat-row {
   display: flex;
   align-items: center;
   gap: 8px;
   height: 33px;
 }
-.lvf-page .lvaf-stat-ico { display: block; width: 26px; height: auto; flex: 0 0 auto; }
+
+.lvf-page .lvaf-stat-ico {
+  display: block;
+  width: 26px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
 .lvf-page .lvaf-stat-val {
   font-size: 34px;
   line-height: 1;
@@ -300,6 +398,7 @@
   background-image: var(--lvaf-blue);
   white-space: nowrap;
 }
+
 .lvf-page .lvaf-stat-lab {
   margin-top: 2px;
   font-size: 14px;
@@ -315,6 +414,7 @@
   position: relative;
   padding: 92px 0 60px;
 }
+
 /* Der Schein dieser Sektion bricht im Referenzbild hart bei y 1397 ab
    (651 px unter der Sektionsoberkante). Deshalb eigene, beschnittene
    Ebene statt eines durchlaufenden Verlaufs.                          */
@@ -370,6 +470,7 @@
       rgba(2, 60, 90, 0.45) 65%, rgba(2, 60, 90, 0.15) 85%, rgba(0, 0, 0, 0) 100%),
     linear-gradient(180deg, #000306 0%, #01131d 42%, #01131d 100%);
 }
+
 /* Haarlinie an der Oberkante, Mitte #0a5f8e, zu den Seiten transparent */
 .lvf-page .lvaf-part-bg::before {
   content: "";
@@ -377,10 +478,12 @@
   inset: 0 0 auto;
   height: 1px;
   background: linear-gradient(90deg,
-    rgba(10, 95, 142, 0) 24%, rgba(10, 95, 142, 0.95) 50%, rgba(10, 95, 142, 0) 76%);
+      rgba(10, 95, 142, 0) 24%, rgba(10, 95, 142, 0.95) 50%, rgba(10, 95, 142, 0) 76%);
 }
 
-.lvf-page .lvaf-part-in { text-align: center; }
+.lvf-page .lvaf-part-in {
+  text-align: center;
+}
 
 /* Kartenraster: 3 x 405 px, Reihe 2 = 405 + 821, Luecke 12 px,
    Kartenhoehe 187 px, y 1078 / 1276                                  */
@@ -391,6 +494,7 @@
   margin-top: 75px;
   text-align: center;
 }
+
 .lvf-page .lvaf-card {
   position: relative;
   overflow: hidden;
@@ -401,7 +505,11 @@
   background-color: #010305;
   background-image: radial-gradient(170px 86px at 50% 14px, #0d2c40 0%, rgba(8, 28, 42, 0.6) 42%, rgba(0, 0, 0, 0) 80%);
 }
-.lvf-page .lvaf-card--wide { grid-column: span 2; }
+
+.lvf-page .lvaf-card--wide {
+  grid-column: span 2;
+}
+
 .lvf-page .lvaf-card-ghost {
   position: absolute;
   top: -11px;
@@ -419,6 +527,7 @@
   pointer-events: none;
   user-select: none;
 }
+
 /* Symbolkasten 62 x 62 (Karten 1-4), 96 x 96 (Karte 5) */
 .lvf-page .lvaf-ibox {
   position: relative;
@@ -432,9 +541,23 @@
   border-radius: 16px;
   background: #010204;
 }
-.lvf-page .lvaf-ibox img { display: block; width: 30px; height: auto; }
-.lvf-page .lvaf-ibox--lg { width: 96px; height: 96px; border-radius: 28px; flex: 0 0 auto; }
-.lvf-page .lvaf-ibox--lg img { width: 48px; }
+
+.lvf-page .lvaf-ibox img {
+  display: block;
+  width: 30px;
+  height: auto;
+}
+
+.lvf-page .lvaf-ibox--lg {
+  width: 96px;
+  height: 96px;
+  border-radius: 28px;
+  flex: 0 0 auto;
+}
+
+.lvf-page .lvaf-ibox--lg img {
+  width: 48px;
+}
 
 .lvf-page .lvaf-card-h {
   position: relative;
@@ -445,6 +568,7 @@
   font-weight: 500;
   background-image: var(--lvaf-blue);
 }
+
 .lvf-page .lvaf-card-p {
   position: relative;
   z-index: 1;
@@ -465,7 +589,14 @@
   padding: 24px 52px 24px 36px;
   text-align: left;
 }
-.lvf-page .lvaf-card-txt { position: relative; z-index: 1; min-width: 0; padding-top: 48px; }
+
+.lvf-page .lvaf-card-txt {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  padding-top: 48px;
+}
+
 .lvf-page .lvaf-card-h2 {
   margin: 0;
   font-size: 41px;
@@ -473,6 +604,7 @@
   font-weight: 500;
   color: #ffffff;
 }
+
 .lvf-page .lvaf-card-p2 {
   margin: 9px 0 0;
   font-size: 11.6px;
@@ -491,14 +623,33 @@
   border-radius: 50%;
   background: #4ebfff;
 }
-.lvf-page .lvaf-dot--bl { left: 13px; bottom: 11px; }
-.lvf-page .lvaf-dot--br { right: 13px; bottom: 11px; }
-.lvf-page .lvaf-dot--tl { left: 13px; top: 11px; }
-.lvf-page .lvaf-dot--tr { right: 13px; top: 11px; }
+
+.lvf-page .lvaf-dot--bl {
+  left: 13px;
+  bottom: 11px;
+}
+
+.lvf-page .lvaf-dot--br {
+  right: 13px;
+  bottom: 11px;
+}
+
+.lvf-page .lvaf-dot--tl {
+  left: 13px;
+  top: 11px;
+}
+
+.lvf-page .lvaf-dot--tr {
+  right: 13px;
+  top: 11px;
+}
 
 /* ============== untere Haelfte: durchlaufende Hintergrundscheine ==== */
 
-.lvf-page .lvaf-lower { position: relative; }
+.lvf-page .lvaf-lower {
+  position: relative;
+}
+
 /* Beginnt 126 px oberhalb der eigenen Oberkante, also exakt an der
    harten Kante y 1397, und reicht bis unter das Fragment.            */
 .lvf-page .lvaf-lower::before {
@@ -570,35 +721,35 @@
        Daempfung ist am gerenderten Stand zurueckgerechnet
        (x 0-258 / y 2000-3000): mittlerer Blaufehler 6,41 -> 3,20.   */
     radial-gradient(393px 791px at 259px 1029px,
-        rgba(0, 0, 0, 0.1253) 0%,
-        rgba(0, 0, 0, 0.1062) 5%,
-        rgba(0, 0, 0, 0.1062) 30%,
-        rgba(0, 0, 0, 0.0702) 35%,
-        rgba(0, 0, 0, 0.0322) 40%,
-        rgba(0, 0, 0, 0.0146) 45%,
-        rgba(0, 0, 0, 0.0025) 50%,
-        rgba(0, 0, 0, 0) 55%),
+      rgba(0, 0, 0, 0.1253) 0%,
+      rgba(0, 0, 0, 0.1062) 5%,
+      rgba(0, 0, 0, 0.1062) 30%,
+      rgba(0, 0, 0, 0.0702) 35%,
+      rgba(0, 0, 0, 0.0322) 40%,
+      rgba(0, 0, 0, 0.0146) 45%,
+      rgba(0, 0, 0, 0.0025) 50%,
+      rgba(0, 0, 0, 0) 55%),
     radial-gradient(278px 400px at 173px 1277px,
-        rgba(0, 150, 245, 0.2830) 0%,
-        rgba(0, 150, 245, 0.2830) 18.18%,
-        rgba(0, 150, 245, 0.2887) 22.73%,
-        rgba(0, 150, 245, 0.2965) 27.27%,
-        rgba(0, 150, 245, 0.2868) 31.82%,
-        rgba(0, 150, 245, 0.2797) 36.36%,
-        rgba(0, 150, 245, 0.2719) 40.91%,
-        rgba(0, 150, 245, 0.2627) 45.45%,
-        rgba(0, 150, 245, 0.2521) 50%,
-        rgba(0, 150, 245, 0.2237) 54.55%,
-        rgba(0, 150, 245, 0.1908) 59.09%,
-        rgba(0, 150, 245, 0.1654) 63.64%,
-        rgba(0, 150, 245, 0.1344) 68.18%,
-        rgba(0, 150, 245, 0.1170) 72.73%,
-        rgba(0, 150, 245, 0.1009) 77.27%,
-        rgba(0, 150, 245, 0.0912) 81.82%,
-        rgba(0, 150, 245, 0.0775) 86.36%,
-        rgba(0, 150, 245, 0.0505) 90.91%,
-        rgba(0, 150, 245, 0.0155) 95.45%,
-        rgba(0, 150, 245, 0) 100%),
+      rgba(0, 150, 245, 0.2830) 0%,
+      rgba(0, 150, 245, 0.2830) 18.18%,
+      rgba(0, 150, 245, 0.2887) 22.73%,
+      rgba(0, 150, 245, 0.2965) 27.27%,
+      rgba(0, 150, 245, 0.2868) 31.82%,
+      rgba(0, 150, 245, 0.2797) 36.36%,
+      rgba(0, 150, 245, 0.2719) 40.91%,
+      rgba(0, 150, 245, 0.2627) 45.45%,
+      rgba(0, 150, 245, 0.2521) 50%,
+      rgba(0, 150, 245, 0.2237) 54.55%,
+      rgba(0, 150, 245, 0.1908) 59.09%,
+      rgba(0, 150, 245, 0.1654) 63.64%,
+      rgba(0, 150, 245, 0.1344) 68.18%,
+      rgba(0, 150, 245, 0.1170) 72.73%,
+      rgba(0, 150, 245, 0.1009) 77.27%,
+      rgba(0, 150, 245, 0.0912) 81.82%,
+      rgba(0, 150, 245, 0.0775) 86.36%,
+      rgba(0, 150, 245, 0.0505) 90.91%,
+      rgba(0, 150, 245, 0.0155) 95.45%,
+      rgba(0, 150, 245, 0) 100%),
     radial-gradient(1085px 2044px at -187px calc(100% - 256px),
       #ffffff 0%, #f7fdff 34%, #d3f0ff 46%, #63c6f8 52%,
       #1e9ce6 59%, rgba(10, 122, 198, 0.6) 66%,
@@ -625,22 +776,17 @@
        sind aus (Referenz minus gerendertem Stand) zurueckgerechnet,
        deshalb steht sie ueber der schmalen Ellipse.               */
     radial-gradient(758px 430px at 1710px 175px,
-      rgba(185, 231, 255, 0.555) 2.4%, rgba(185, 231, 255, 0.555)
-      7.3%, rgba(185, 231, 255, 0.520) 17.1%, rgba(185, 231, 255,
-      0.404) 26.8%, rgba(185, 231, 255, 0.317) 36.6%, rgba(185, 231,
-      255, 0.271) 46.3%, rgba(185, 231, 255, 0.188) 56.1%, rgba(185,
-      231, 255, 0.106) 65.9%, rgba(185, 231, 255, 0.054) 75.6%,
-      rgba(185, 231, 255, 0.021) 85.4%, rgba(185, 231, 255, 0.005)
-      95.1%, rgba(185, 231, 255, 0) 100%),
+      rgba(185, 231, 255, 0.555) 2.4%, rgba(185, 231, 255, 0.555) 7.3%, rgba(185, 231, 255, 0.520) 17.1%, rgba(185, 231, 255,
+        0.404) 26.8%, rgba(185, 231, 255, 0.317) 36.6%, rgba(185, 231,
+        255, 0.271) 46.3%, rgba(185, 231, 255, 0.188) 56.1%, rgba(185,
+        231, 255, 0.106) 65.9%, rgba(185, 231, 255, 0.054) 75.6%,
+      rgba(185, 231, 255, 0.021) 85.4%, rgba(185, 231, 255, 0.005) 95.1%, rgba(185, 231, 255, 0) 100%),
     radial-gradient(575px 2260px at 1850px 170px,
       rgb(185, 231, 255) 0%, rgb(183, 229, 254) 10%, rgb(180, 227,
-      253) 17%, rgb(145, 210, 240) 20%, rgb(128, 202, 235) 23%,
+        253) 17%, rgb(145, 210, 240) 20%, rgb(128, 202, 235) 23%,
       rgb(103, 187, 222) 26%, rgb(70, 160, 199) 29%, rgb(50, 135,
-      177) 32%, rgb(40, 117, 160) 35%, rgb(33, 105, 146) 38%,
-      rgb(28, 95, 134) 41%, rgb(23, 87, 124) 44%, rgb(18, 80, 116)
-      47%, rgb(15, 73, 107) 50%, rgb(11, 66, 99) 53%, rgb(8, 59, 90)
-      56%, rgb(5, 51, 76) 60%, rgb(3, 40, 62) 64%, rgb(2, 31, 48)
-      68%, rgb(2, 18, 29) 73%, rgb(2, 9, 14) 78%, rgb(2, 3, 4) 84%,
+        177) 32%, rgb(40, 117, 160) 35%, rgb(33, 105, 146) 38%,
+      rgb(28, 95, 134) 41%, rgb(23, 87, 124) 44%, rgb(18, 80, 116) 47%, rgb(15, 73, 107) 50%, rgb(11, 66, 99) 53%, rgb(8, 59, 90) 56%, rgb(5, 51, 76) 60%, rgb(3, 40, 62) 64%, rgb(2, 31, 48) 68%, rgb(2, 18, 29) 73%, rgb(2, 9, 14) 78%, rgb(2, 3, 4) 84%,
       rgb(1, 1, 2) 90%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0) 100%);
 }
 
@@ -660,6 +806,7 @@
   overflow: hidden;
   text-align: left;
 }
+
 .lvf-page .lvaf-tr {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -668,14 +815,19 @@
   background: rgba(0, 170, 255, 0.06);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
+
 /* Der Entwurf wechselt hell/dunkel/hell (Messspalte x 850 ohne Text:
    14 / 10 / 14 gegen durchgehend 11 im Nachbau).                    */
-.lvf-page .lvaf-tr:nth-child(even) { background: rgba(0, 170, 255, 0.075); }
+.lvf-page .lvaf-tr:nth-child(even) {
+  background: rgba(0, 170, 255, 0.075);
+}
+
 .lvf-page .lvaf-tr--head {
   min-height: 68px;
   border-top: 0;
   background: rgba(255, 255, 255, 0.012);
 }
+
 .lvf-page .lvaf-th {
   padding: 10px 20px;
   font-size: 17px;
@@ -684,6 +836,7 @@
   text-align: center;
   background-image: var(--lvaf-blue);
 }
+
 .lvf-page .lvaf-td {
   padding: 10px 20px 10px 39px;
   font-size: 15px;
@@ -692,6 +845,7 @@
   color: rgba(255, 255, 255, 0.68);
   overflow-wrap: break-word;
 }
+
 .lvf-page .lvaf-td--val {
   padding-inline: 20px;
   font-size: 17px;
@@ -699,8 +853,12 @@
   text-align: center;
   background-image: var(--lvaf-blue);
 }
+
 /* Senkrechte Trennlinie in der Mitte (x 880) */
-.lvf-page .lvaf-tr { position: relative; }
+.lvf-page .lvaf-tr {
+  position: relative;
+}
+
 .lvf-page .lvaf-tr::after {
   content: "";
   position: absolute;
@@ -728,6 +886,7 @@
   padding: 0;
   list-style: none;
 }
+
 .lvf-page .lvaf-step {
   position: relative;
   min-height: 324px;
@@ -741,6 +900,7 @@
   background: rgba(2, 8, 14, 0.28);
   text-align: center;
 }
+
 /* Verbindungsstrich in der Luecke, y 2544 (114 px unter Kartenkante).
    Der Strich fuellt genau den Zwischenraum und hoert an der Kartenkante
    auf. Die Luecke ist 30 px breit (grid gap), also right: -30px bei
@@ -758,6 +918,7 @@
   height: 2px;
   background: rgba(255, 255, 255, 0.16);
 }
+
 .lvf-page .lvaf-step-n {
   display: block;
   font-size: 40px;
@@ -765,6 +926,7 @@
   font-weight: 500;
   background-image: var(--lvaf-blue);
 }
+
 .lvf-page .lvaf-step-dot {
   display: block;
   width: 9px;
@@ -773,6 +935,7 @@
   border-radius: 50%;
   background: #50bffe;
 }
+
 .lvf-page .lvaf-step-h {
   margin: 27px 0 0;
   font-size: 15.4px;
@@ -781,6 +944,7 @@
   color: #ffffff;
   overflow-wrap: break-word;
 }
+
 .lvf-page .lvaf-step-p {
   margin: 12px 0 0;
   font-size: 12.6px;
@@ -890,6 +1054,7 @@
   border-radius: 44px 44px 140px 140px;
   background: rgba(255, 255, 255, 0.05);
 }
+
 .lvf-page .lvaf-panel {
   position: relative;
   overflow: hidden;
@@ -943,13 +1108,18 @@
       rgba(2, 92, 142, 0.95) 0px, rgba(3, 66, 102, 0.8) 60px,
       rgba(2, 22, 34, 0.35) 180px, rgba(0, 0, 0, 0) 330px);
 }
+
 .lvf-page .lvaf-panel-in {
   position: relative;
   z-index: 1;
   padding: 84px clamp(20px, 3vw, 60px) 51px;
   text-align: center;
 }
-.lvf-page .lvaf-h2--panel { margin-top: 14px; font-size: clamp(30px, 4.06vw, 71.5px); }
+
+.lvf-page .lvaf-h2--panel {
+  margin-top: 14px;
+  font-size: clamp(30px, 4.06vw, 71.5px);
+}
 
 .lvf-page .lvaf-panel-sub {
   max-width: 780px;
@@ -970,6 +1140,7 @@
   height: 4px;
   margin: 48px auto 0;
 }
+
 .lvf-page .lvaf-rule i {
   width: 4px;
   height: 4px;
@@ -977,6 +1148,7 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.62);
 }
+
 .lvf-page .lvaf-rule b {
   flex: 1 1 auto;
   height: 1px;
@@ -1003,6 +1175,7 @@
   padding: 0;
   list-style: none;
 }
+
 .lvf-page .lvaf-metric {
   position: relative;
   min-height: 222px;
@@ -1012,6 +1185,7 @@
   background: #010407;
   text-align: left;
 }
+
 .lvf-page .lvaf-metric--light {
   border-color: rgba(255, 255, 255, 0.4);
   /* gemessen: unten links #0f8ac8, Mitte #bdeefd, oben rechts #ffffff */
@@ -1019,6 +1193,7 @@
     linear-gradient(55deg, #0d84c4 0%, #7ad4f4 30%, #bdeefd 52%, #eafaff 78%, #ffffff 100%);
   color: #04131d;
 }
+
 .lvf-page .lvaf-metric-arrow {
   position: absolute;
   top: -5px;
@@ -1032,6 +1207,7 @@
   border-radius: 50%;
   background: linear-gradient(180deg, #6fd0ff 0%, #17a4f5 100%);
 }
+
 .lvf-page .lvaf-metric-n {
   display: block;
   font-size: 56px;
@@ -1040,11 +1216,13 @@
   text-align: center;
   background-image: var(--lvaf-blue);
 }
+
 .lvf-page .lvaf-metric--light .lvaf-metric-n {
   background-image: none;
   -webkit-text-fill-color: #04131d;
   color: #04131d;
 }
+
 .lvf-page .lvaf-metric-l {
   display: block;
   margin-top: 37px;
@@ -1054,7 +1232,11 @@
   color: rgba(255, 255, 255, 0.92);
   overflow-wrap: break-word;
 }
-.lvf-page .lvaf-metric--light .lvaf-metric-l { font-weight: 600; color: #04131d; }
+
+.lvf-page .lvaf-metric--light .lvaf-metric-l {
+  font-weight: 600;
+  color: #04131d;
+}
 
 .lvf-page .lvaf-note {
   margin: 51px 0 0;
@@ -1069,21 +1251,60 @@
 /* ================================================== Zwischengroessen */
 
 @media (max-width: 1320px) {
-  .lvf-page .lvaf-step { padding: 60px 18px 22px; min-height: 0; }
-  .lvf-page .lvaf-step-n { font-size: 34px; }
-  .lvf-page .lvaf-step-dot { margin-top: 24px; }
-  .lvf-page .lvaf-step-h { margin-top: 20px; }
-  .lvf-page .lvaf-card-h2 { font-size: 27px; }
-  .lvf-page .lvaf-metric-n { font-size: 42px; }
-  .lvf-page .lvaf-metric-l { font-size: 17px; line-height: 24px; margin-top: 28px; }
-  .lvf-page .lvaf-metric { padding: 34px 20px 24px; min-height: 0; }
+  .lvf-page .lvaf-step {
+    padding: 60px 18px 22px;
+    min-height: 0;
+  }
+
+  .lvf-page .lvaf-step-n {
+    font-size: 34px;
+  }
+
+  .lvf-page .lvaf-step-dot {
+    margin-top: 24px;
+  }
+
+  .lvf-page .lvaf-step-h {
+    margin-top: 20px;
+  }
+
+  .lvf-page .lvaf-card-h2 {
+    font-size: 27px;
+  }
+
+  .lvf-page .lvaf-metric-n {
+    font-size: 42px;
+  }
+
+  .lvf-page .lvaf-metric-l {
+    font-size: 17px;
+    line-height: 24px;
+    margin-top: 28px;
+  }
+
+  .lvf-page .lvaf-metric {
+    padding: 34px 20px 24px;
+    min-height: 0;
+  }
 }
 
 @media (max-width: 1060px) {
-  .lvf-page .lvaf-hero { padding-top: 190px; }
-  .lvf-page .lvaf-steps { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .lvf-page .lvaf-step:not(:last-child)::after { display: none; }
-  .lvf-page .lvaf-stats { gap: 22px 46px; }
+  .lvf-page .lvaf-hero {
+    padding-top: 190px;
+  }
+
+  .lvf-page .lvaf-steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .lvf-page .lvaf-step:not(:last-child)::after {
+    display: none;
+  }
+
+  .lvf-page .lvaf-stats {
+    gap: 22px 46px;
+  }
 }
 
 /* -------------------------------------------------------------------
@@ -1120,7 +1341,10 @@
         rgba(0, 150, 240, 0.42) 0%, rgba(0, 96, 156, 0.2) 45%, rgba(0, 0, 0, 0) 80%),
       linear-gradient(180deg, #000306 0%, #01131d 42%, #01131d 100%);
   }
-  .lvf-page .lvaf-part-bg::before { display: none; }
+
+  .lvf-page .lvaf-part-bg::before {
+    display: none;
+  }
 
   .lvf-page .lvaf-lower::before {
     top: 0;
@@ -1144,71 +1368,208 @@
   }
 
   /* Karten auf dem Handy dichter fuellen, sonst frisst der Schein den Text */
-  .lvf-page .lvaf-step { background: rgba(2, 8, 14, 0.72); }
-  .lvf-page .lvaf-table { background: rgba(2, 8, 14, 0.6); }
+  .lvf-page .lvaf-step {
+    background: rgba(2, 8, 14, 0.72);
+  }
+
+  .lvf-page .lvaf-table {
+    background: rgba(2, 8, 14, 0.6);
+  }
 }
 
 @media (max-width: 900px) {
-  .lvf-page .lvaf-nb { display: none; }
-  .lvf-page .lvaf-cards { grid-template-columns: repeat(2, 1fr); }
-  .lvf-page .lvaf-card--wide { grid-column: span 2; }
-  .lvf-page .lvaf-metrics { grid-template-columns: 1fr; }
-  .lvf-page .lvaf-metric-arrow { top: -22px; left: 50%; transform: translateX(-50%) rotate(90deg); }
-  .lvf-page .lvaf-metrics .lvaf-metric + .lvaf-metric { margin-top: 14px; }
-  .lvf-page .lvaf-frame { border-radius: 30px 30px 60px 60px; }
-  .lvf-page .lvaf-panel { border-radius: 22px 22px 52px 52px; }
-  .lvf-page .lvaf-panel-in { padding: 54px 20px 40px; }
-  .lvf-page .lvaf-panel-p { line-height: 28px; margin-top: 34px; }
-  .lvf-page .lvaf-panel-p .lvaf-t-blue2 { color: #8fd8ff; }
-  .lvf-page .lvaf-rule { margin-top: 34px; }
+  .lvf-page .lvaf-nb {
+    display: none;
+  }
+
+  .lvf-page .lvaf-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lvf-page .lvaf-card--wide {
+    grid-column: span 2;
+  }
+
+  .lvf-page .lvaf-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .lvf-page .lvaf-metric-arrow {
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  .lvf-page .lvaf-metrics .lvaf-metric+.lvaf-metric {
+    margin-top: 14px;
+  }
+
+  .lvf-page .lvaf-frame {
+    border-radius: 30px 30px 60px 60px;
+  }
+
+  .lvf-page .lvaf-panel {
+    border-radius: 22px 22px 52px 52px;
+  }
+
+  .lvf-page .lvaf-panel-in {
+    padding: 54px 20px 40px;
+  }
+
+  .lvf-page .lvaf-panel-p {
+    line-height: 28px;
+    margin-top: 34px;
+  }
+
+  .lvf-page .lvaf-panel-p .lvaf-t-blue2 {
+    color: #8fd8ff;
+  }
+
+  .lvf-page .lvaf-rule {
+    margin-top: 34px;
+  }
 }
 
 @media (max-width: 760px) {
-  .lvf-page .lvaf-hero { padding: 168px 0 56px; }
-  .lvf-page .lvaf-part { padding: 64px 0 48px; }
-  .lvf-page .lvaf-rate { padding: 40px 0 42px; }
-  .lvf-page .lvaf-journey { padding: 42px 0 34px; }
-  .lvf-page .lvaf-retainer { padding: 30px 0 40px; }
+  .lvf-page .lvaf-hero {
+    padding: 168px 0 56px;
+  }
 
-  .lvf-page .lvaf-shell { width: calc(100% - 32px); }
-  .lvf-page .lvaf-h1 { font-size: clamp(28px, 8.2vw, 40px); }
-  .lvf-page .lvaf-h2 { font-size: clamp(26px, 7.6vw, 38px); }
-  .lvf-page .lvaf-hero-cta { gap: 10px; }
-  .lvf-page a.lvaf-btn { width: 100%; max-width: 320px; }
+  .lvf-page .lvaf-part {
+    padding: 64px 0 48px;
+  }
 
-  .lvf-page .lvaf-cards { grid-template-columns: 1fr; margin-top: 44px; }
+  .lvf-page .lvaf-rate {
+    padding: 40px 0 42px;
+  }
+
+  .lvf-page .lvaf-journey {
+    padding: 42px 0 34px;
+  }
+
+  .lvf-page .lvaf-retainer {
+    padding: 30px 0 40px;
+  }
+
+  .lvf-page .lvaf-shell {
+    width: calc(100% - 32px);
+  }
+
+  .lvf-page .lvaf-h1 {
+    font-size: clamp(28px, 8.2vw, 40px);
+  }
+
+  .lvf-page .lvaf-h2 {
+    font-size: clamp(26px, 7.6vw, 38px);
+  }
+
+  .lvf-page .lvaf-hero-cta {
+    gap: 10px;
+  }
+
+  .lvf-page a.lvaf-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .lvf-page .lvaf-cards {
+    grid-template-columns: 1fr;
+    margin-top: 44px;
+  }
+
   .lvf-page .lvaf-card--wide,
-  .lvf-page .lvaf-card--w1 { grid-column: span 1; }
+  .lvf-page .lvaf-card--w1 {
+    grid-column: span 1;
+  }
+
   .lvf-page .lvaf-card--wide {
     flex-direction: column-reverse;
     align-items: flex-start;
     gap: 18px;
     padding: 24px 22px;
   }
-  .lvf-page .lvaf-card-txt { padding-top: 0; }
-  .lvf-page .lvaf-card-h2 { font-size: 24px; }
 
-  .lvf-page .lvaf-steps { grid-template-columns: 1fr; margin-top: 44px; }
-  .lvf-page .lvaf-table { margin-top: 44px; }
-  .lvf-page .lvaf-th { font-size: 15px; padding-inline: 14px; }
-  .lvf-page .lvaf-td { font-size: 14px; padding-left: 18px; padding-right: 14px; }
-  .lvf-page .lvaf-td--val { font-size: 15px; }
+  .lvf-page .lvaf-card-txt {
+    padding-top: 0;
+  }
 
-  .lvf-page .lvaf-stats { gap: 22px 30px; }
-  .lvf-page .lvaf-stat-val { font-size: 26px; }
-  .lvf-page .lvaf-stat-row { height: 28px; }
-  .lvf-page .lvaf-stat-ico { width: 21px; }
-  .lvf-page .lvaf-stat-lab { font-size: 12px; }
+  .lvf-page .lvaf-card-h2 {
+    font-size: 24px;
+  }
 
-  .lvf-page .lvaf-panel-p { font-size: 16px; line-height: 25px; }
-  .lvf-page .lvaf-metric-n { font-size: 38px; }
-  .lvf-page .lvaf-note { font-size: 12px; margin-top: 34px; }
+  .lvf-page .lvaf-steps {
+    grid-template-columns: 1fr;
+    margin-top: 44px;
+  }
+
+  .lvf-page .lvaf-table {
+    margin-top: 44px;
+  }
+
+  .lvf-page .lvaf-th {
+    font-size: 15px;
+    padding-inline: 14px;
+  }
+
+  .lvf-page .lvaf-td {
+    font-size: 14px;
+    padding-left: 18px;
+    padding-right: 14px;
+  }
+
+  .lvf-page .lvaf-td--val {
+    font-size: 15px;
+  }
+
+  .lvf-page .lvaf-stats {
+    gap: 22px 30px;
+  }
+
+  .lvf-page .lvaf-stat-val {
+    font-size: 26px;
+  }
+
+  .lvf-page .lvaf-stat-row {
+    height: 28px;
+  }
+
+  .lvf-page .lvaf-stat-ico {
+    width: 21px;
+  }
+
+  .lvf-page .lvaf-stat-lab {
+    font-size: 12px;
+  }
+
+  .lvf-page .lvaf-panel-p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .lvf-page .lvaf-metric-n {
+    font-size: 38px;
+  }
+
+  .lvf-page .lvaf-note {
+    font-size: 12px;
+    margin-top: 34px;
+  }
 }
 
 @media (max-width: 420px) {
-  .lvf-page .lvaf-stats { gap: 18px 22px; }
-  .lvf-page .lvaf-stat { flex: 0 0 calc(50% - 11px); }
-  .lvf-page .lvaf-card-ghost { font-size: 96px; top: -3px; left: -10px; }
+  .lvf-page .lvaf-stats {
+    gap: 18px 22px;
+  }
+
+  .lvf-page .lvaf-stat {
+    flex: 0 0 calc(50% - 11px);
+  }
+
+  .lvf-page .lvaf-card-ghost {
+    font-size: 96px;
+    top: -3px;
+    left: -10px;
+  }
 }
 
 /* ############################ FRAGMENT 2 (y 3770 - 7855) ########### */
@@ -1261,7 +1622,10 @@
    dunkler und der Text nicht reinweiss (Ist 258 Pixel ueber 240,
    Soll 7). Die Pillen der Sektionen 7 und 8 stimmen dagegen und
    bleiben deshalb unveraendert.                                 */
-.lvf-page .lvaf-aud-badge { background: #000b12; color: rgba(255, 255, 255, 0.86); }
+.lvf-page .lvaf-aud-badge {
+  background: #000b12;
+  color: rgba(255, 255, 255, 0.86);
+}
 
 /* ============================================================
    6) WHO WE PARTNER WITH   y 3770 - 4442
@@ -1311,37 +1675,42 @@
   z-index: 0;
   pointer-events: none;
   background: radial-gradient(closest-side,
-    rgb(255, 255, 255) 0%,
-    rgb(255, 255, 255) 23.21%,
-    rgb(255, 251, 255) 26.79%,
-    rgb(232, 242, 254) 30.36%,
-    rgb(182, 229, 252) 33.93%,
-    rgb(144, 217, 248) 37.5%,
-    rgb(118, 205, 242) 41.07%,
-    rgb(92, 190, 233) 44.64%,
-    rgb(70, 176, 222) 48.21%,
-    rgb(56, 162, 208) 51.79%,
-    rgb(43, 144, 191) 55.36%,
-    rgb(34, 124, 171) 58.93%,
-    rgb(25, 106, 152) 62.5%,
-    rgb(17, 91, 135) 66.07%,
-    rgb(10, 79, 119) 69.64%,
-    rgb(6, 68, 103) 73.21%,
-    rgb(3, 57, 89) 76.79%,
-    rgb(2, 48, 75) 80.36%,
-    rgb(1, 40, 62) 83.93%,
-    rgb(1, 31, 49) 87.5%,
-    rgb(1, 22, 35) 91.07%,
-    rgb(1, 13, 20) 94.64%,
-    rgb(1, 8, 12) 98.21%,
-    rgba(0, 3, 6, 0) 100%);
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 23.21%,
+      rgb(255, 251, 255) 26.79%,
+      rgb(232, 242, 254) 30.36%,
+      rgb(182, 229, 252) 33.93%,
+      rgb(144, 217, 248) 37.5%,
+      rgb(118, 205, 242) 41.07%,
+      rgb(92, 190, 233) 44.64%,
+      rgb(70, 176, 222) 48.21%,
+      rgb(56, 162, 208) 51.79%,
+      rgb(43, 144, 191) 55.36%,
+      rgb(34, 124, 171) 58.93%,
+      rgb(25, 106, 152) 62.5%,
+      rgb(17, 91, 135) 66.07%,
+      rgb(10, 79, 119) 69.64%,
+      rgb(6, 68, 103) 73.21%,
+      rgb(3, 57, 89) 76.79%,
+      rgb(2, 48, 75) 80.36%,
+      rgb(1, 40, 62) 83.93%,
+      rgb(1, 31, 49) 87.5%,
+      rgb(1, 22, 35) 91.07%,
+      rgb(1, 13, 20) 94.64%,
+      rgb(1, 8, 12) 98.21%,
+      rgba(0, 3, 6, 0) 100%);
 }
 
 /* Ellipsenoberkante liegt im Original bei y=450; mit der kuerzeren
    Halbachse (3440 -> 3000) rueckt sie um 440 px nach unten, damit der
    Mittelpunkt an derselben Stelle bleibt.                          */
-.lvf-page .lvaf-aud-glow { top: -3428px; }
-.lvf-page .lvaf-app-glow { top: -4100px; }
+.lvf-page .lvaf-aud-glow {
+  top: -3428px;
+}
+
+.lvf-page .lvaf-app-glow {
+  top: -4100px;
+}
 
 /* Letzte 200 px der Sektion 7 ausblenden. Die Referenz ist dort
    unten links schwarz (y 6100 x 0..60 im Mittel (1.9,3.4,4.9)), die
@@ -1355,25 +1724,25 @@
 @media (min-width: 1101px) {
   .lvf-page .lvaf-app-glow {
     -webkit-mask-image: linear-gradient(180deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 88.5%,
-      rgba(0, 0, 0, 0.95) 89.9%,
-      rgba(0, 0, 0, 0.86) 91.2%,
-      rgba(0, 0, 0, 0.72) 92.5%,
-      rgba(0, 0, 0, 0.54) 93.9%,
-      rgba(0, 0, 0, 0.26) 95.2%,
-      rgba(0, 0, 0, 0) 96.5%,
-      rgba(0, 0, 0, 0) 100%);
-            mask-image: linear-gradient(180deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 88.5%,
-      rgba(0, 0, 0, 0.95) 89.9%,
-      rgba(0, 0, 0, 0.86) 91.2%,
-      rgba(0, 0, 0, 0.72) 92.5%,
-      rgba(0, 0, 0, 0.54) 93.9%,
-      rgba(0, 0, 0, 0.26) 95.2%,
-      rgba(0, 0, 0, 0) 96.5%,
-      rgba(0, 0, 0, 0) 100%);
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 1) 88.5%,
+        rgba(0, 0, 0, 0.95) 89.9%,
+        rgba(0, 0, 0, 0.86) 91.2%,
+        rgba(0, 0, 0, 0.72) 92.5%,
+        rgba(0, 0, 0, 0.54) 93.9%,
+        rgba(0, 0, 0, 0.26) 95.2%,
+        rgba(0, 0, 0, 0) 96.5%,
+        rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 1) 88.5%,
+        rgba(0, 0, 0, 0.95) 89.9%,
+        rgba(0, 0, 0, 0.86) 91.2%,
+        rgba(0, 0, 0, 0.72) 92.5%,
+        rgba(0, 0, 0, 0.54) 93.9%,
+        rgba(0, 0, 0, 0.26) 95.2%,
+        rgba(0, 0, 0, 0) 96.5%,
+        rgba(0, 0, 0, 0) 100%);
   }
 }
 
@@ -1388,15 +1757,20 @@
   z-index: 0;
   pointer-events: none;
   background: radial-gradient(closest-side,
-    rgba(230, 247, 255, 0.88) 0%,
-    rgba(210, 242, 255, 0.78) 30%,
-    rgba(160, 222, 255, 0.55) 55%,
-    rgba(70, 190, 252, 0.25) 76%,
-    rgba(0, 162, 255, 0) 100%);
+      rgba(230, 247, 255, 0.88) 0%,
+      rgba(210, 242, 255, 0.78) 30%,
+      rgba(160, 222, 255, 0.55) 55%,
+      rgba(70, 190, 252, 0.25) 76%,
+      rgba(0, 162, 255, 0) 100%);
 }
 
-.lvf-page .lvaf-aud-glow2 { top: -1220px; }
-.lvf-page .lvaf-app-glow2 { top: -1892px; }
+.lvf-page .lvaf-aud-glow2 {
+  top: -1220px;
+}
+
+.lvf-page .lvaf-app-glow2 {
+  top: -1892px;
+}
 
 /* Versalhoehe 3878..3921 = 44 px  ->  62 px Schrift.
    Zeilenabstand Oberkante zu Oberkante 60 px.                   */
@@ -1411,13 +1785,15 @@
   overflow-wrap: break-word;
 }
 
-.lvf-page h2.lvaf-aud-title .lvaf-aud-title-b { font-weight: 600; }
+.lvf-page h2.lvaf-aud-title .lvaf-aud-title-b {
+  font-weight: 600;
+}
 
 .lvf-page h2.lvaf-aud-title .lvaf-aud-title-w,
 .lvf-page h2.lvaf-aud-title .lvaf-aud-title-b {
   display: block;
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
@@ -1425,10 +1801,10 @@
 /* Zeile 1: waagerecht, aussen (224,228,230), Mitte reines Weiss */
 .lvf-page h2.lvaf-aud-title .lvaf-aud-title-w {
   background-image: linear-gradient(90deg,
-    rgba(255, 255, 255, 0.87) 0%,
-    #ffffff 32%,
-    #ffffff 77%,
-    rgba(255, 255, 255, 0.88) 100%);
+      rgba(255, 255, 255, 0.87) 0%,
+      #ffffff 32%,
+      #ffffff 77%,
+      rgba(255, 255, 255, 0.88) 100%);
 }
 
 /* Zeile 2: senkrecht, an der Versaloberkante (115,215,255),
@@ -1519,21 +1895,23 @@
   overflow-wrap: break-word;
 }
 
-.lvf-page h2.lvaf-app-title .lvaf-app-title-b { font-weight: 600; }
+.lvf-page h2.lvaf-app-title .lvaf-app-title-b {
+  font-weight: 600;
+}
 
 .lvf-page h2.lvaf-app-title .lvaf-app-title-w,
 .lvf-page h2.lvaf-app-title .lvaf-app-title-b {
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
 .lvf-page h2.lvaf-app-title .lvaf-app-title-w {
   background-image: linear-gradient(90deg,
-    rgba(255, 255, 255, 0.85) 0%,
-    #ffffff 66%,
-    #ffffff 100%);
+      rgba(255, 255, 255, 0.85) 0%,
+      #ffffff 66%,
+      #ffffff 100%);
 }
 
 /* gemessen: (170,238,255) an der Versaloberkante, (24,182,255)
@@ -1579,11 +1957,18 @@
   background: rgba(255, 255, 255, 0.055);
 }
 
-.lvf-page .lvaf-app-row + .lvaf-app-row { margin-top: 10px; }
+.lvf-page .lvaf-app-row+.lvaf-app-row {
+  margin-top: 10px;
+}
 
 /* Grosse Felder: Zeile 169 px, Beschriftung oben ausgerichtet.  */
-.lvf-page .lvaf-app-row-tall { align-items: flex-start; }
-.lvf-page .lvaf-app-row-tall .lvaf-app-lab { padding-top: 21px; }
+.lvf-page .lvaf-app-row-tall {
+  align-items: flex-start;
+}
+
+.lvf-page .lvaf-app-row-tall .lvaf-app-lab {
+  padding-top: 21px;
+}
 
 /* Beschriftung: Spalte 153 px (x 346..499), Versalhoehe 11 px
    -> 16 px, Zeilenabstand 20 px, Hoechstwert 227.               */
@@ -1599,7 +1984,9 @@
 }
 
 /* Pflichtstern gemessen (212,3,3) */
-.lvf-page .lvaf-app-req { color: #d40303; }
+.lvf-page .lvaf-app-req {
+  color: #d40303;
+}
 
 .lvf-page .lvaf-app-ctrl {
   position: relative;
@@ -1633,8 +2020,8 @@
       rgba(0, 35, 57, 0.5) 42%,
       rgba(7, 21, 29, 0.5) 100%) border-box;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .lvf-page.lvf-page .lvaf-app-input:focus-visible {
@@ -1654,7 +2041,10 @@
   cursor: pointer;
 }
 
-.lvf-page.lvf-page .lvaf-app-select option { color: #ffffff; background: #050a10; }
+.lvf-page.lvf-page .lvaf-app-select option {
+  color: #ffffff;
+  background: #050a10;
+}
 
 /* Dreieck x 1391..1412, y 5117..5129, also 22 x 13,
    32 px vom rechten Rand des Feldes.
@@ -1673,7 +2063,9 @@
   pointer-events: none;
 }
 
-.lvf-page .lvaf-app-caret svg { display: block; }
+.lvf-page .lvaf-app-caret svg {
+  display: block;
+}
 
 /* Grosses Textfeld: Hoehe 143 px, Text oben mit 21 px Abstand.  */
 .lvf-page.lvf-page .lvaf-app-area {
@@ -1720,13 +2112,13 @@
   color: transparent;
 }
 
-.lvf-page.lvf-page .lvaf-app-check:checked + .lvaf-app-box {
+.lvf-page.lvf-page .lvaf-app-check:checked+.lvaf-app-box {
   border-color: rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.4);
   color: #05060f;
 }
 
-.lvf-page.lvf-page .lvaf-app-check:focus-visible + .lvaf-app-box {
+.lvf-page.lvf-page .lvaf-app-check:focus-visible+.lvaf-app-box {
   outline: 2px solid rgba(140, 213, 255, 0.9);
   outline-offset: 2px;
 }
@@ -1743,7 +2135,9 @@
 }
 
 .lvf-page .lvaf-app-agree-t a:hover,
-.lvf-page .lvaf-app-agree-t a:focus-visible { color: rgba(255, 255, 255, 0.9); }
+.lvf-page .lvaf-app-agree-t a:focus-visible {
+  color: rgba(255, 255, 255, 0.9);
+}
 
 .lvf-page .lvaf-app-agree-t {
   font-family: var(--lvf-font-display);
@@ -1770,15 +2164,17 @@
   border: 0;
   border-radius: 16px;
   background-image: linear-gradient(180deg,
-    #b8eeff 0%,
-    #4ebfff 50%,
-    #2cb4ff 80%,
-    #18cfff 100%);
+      #b8eeff 0%,
+      #4ebfff 50%,
+      #2cb4ff 80%,
+      #18cfff 100%);
   cursor: pointer;
   transition: filter 0.18s ease;
 }
 
-.lvf-page button.lvaf-app-submit:hover { filter: brightness(1.06); }
+.lvf-page button.lvaf-app-submit:hover {
+  filter: brightness(1.06);
+}
 
 .lvf-page button.lvaf-app-submit:focus-visible {
   outline: 2px solid #ffffff;
@@ -1809,7 +2205,9 @@
   color: #ffffff;
 }
 
-.lvf-page .lvaf-app-submit-ico svg { display: block; }
+.lvf-page .lvaf-app-submit-ico svg {
+  display: block;
+}
 
 /* ============================================================
    8) AFFILIATE FAQS   y 6136 - 7855
@@ -1839,45 +2237,51 @@
   z-index: 0;
   pointer-events: none;
   background-image: linear-gradient(90deg,
-    rgba(0, 162, 255, 1)     0,
-    rgba(0, 162, 255, 0.855) 20px,
-    rgba(0, 162, 255, 0.727) 40px,
-    rgba(0, 162, 255, 0.610) 60px,
-    rgba(0, 162, 255, 0.505) 80px,
-    rgba(0, 162, 255, 0.423) 100px,
-    rgba(0, 162, 255, 0.333) 120px,
-    rgba(0, 162, 255, 0.260) 140px,
-    rgba(0, 162, 255, 0.199) 160px,
-    rgba(0, 162, 255, 0.169) 180px,
-    rgba(0, 162, 255, 0.136) 200px,
-    rgba(0, 162, 255, 0.099) 240px,
-    rgba(0, 162, 255, 0.078) 280px,
-    rgba(0, 162, 255, 0.060) 320px,
-    rgba(0, 162, 255, 0.040) 380px,
-    rgba(0, 162, 255, 0.026) 440px,
-    rgba(0, 162, 255, 0.014) 520px,
-    rgba(0, 162, 255, 0.006) 600px,
-    rgba(0, 162, 255, 0)     700px);
+      rgba(0, 162, 255, 1) 0,
+      rgba(0, 162, 255, 0.855) 20px,
+      rgba(0, 162, 255, 0.727) 40px,
+      rgba(0, 162, 255, 0.610) 60px,
+      rgba(0, 162, 255, 0.505) 80px,
+      rgba(0, 162, 255, 0.423) 100px,
+      rgba(0, 162, 255, 0.333) 120px,
+      rgba(0, 162, 255, 0.260) 140px,
+      rgba(0, 162, 255, 0.199) 160px,
+      rgba(0, 162, 255, 0.169) 180px,
+      rgba(0, 162, 255, 0.136) 200px,
+      rgba(0, 162, 255, 0.099) 240px,
+      rgba(0, 162, 255, 0.078) 280px,
+      rgba(0, 162, 255, 0.060) 320px,
+      rgba(0, 162, 255, 0.040) 380px,
+      rgba(0, 162, 255, 0.026) 440px,
+      rgba(0, 162, 255, 0.014) 520px,
+      rgba(0, 162, 255, 0.006) 600px,
+      rgba(0, 162, 255, 0) 700px);
   -webkit-mask-image: linear-gradient(180deg,
-    rgba(0, 0, 0, 0)     0%,
-    rgba(0, 0, 0, 0.004) 9.5%,
-    rgba(0, 0, 0, 0.031) 27%,
-    rgba(0, 0, 0, 0.157) 50.3%,
-    rgba(0, 0, 0, 0.322) 73.6%,
-    rgba(0, 0, 0, 0.392) 91%,
-    rgba(0, 0, 0, 0.427) 100%);
-          mask-image: linear-gradient(180deg,
-    rgba(0, 0, 0, 0)     0%,
-    rgba(0, 0, 0, 0.004) 9.5%,
-    rgba(0, 0, 0, 0.031) 27%,
-    rgba(0, 0, 0, 0.157) 50.3%,
-    rgba(0, 0, 0, 0.322) 73.6%,
-    rgba(0, 0, 0, 0.392) 91%,
-    rgba(0, 0, 0, 0.427) 100%);
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.004) 9.5%,
+      rgba(0, 0, 0, 0.031) 27%,
+      rgba(0, 0, 0, 0.157) 50.3%,
+      rgba(0, 0, 0, 0.322) 73.6%,
+      rgba(0, 0, 0, 0.392) 91%,
+      rgba(0, 0, 0, 0.427) 100%);
+  mask-image: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.004) 9.5%,
+      rgba(0, 0, 0, 0.031) 27%,
+      rgba(0, 0, 0, 0.157) 50.3%,
+      rgba(0, 0, 0, 0.322) 73.6%,
+      rgba(0, 0, 0, 0.392) 91%,
+      rgba(0, 0, 0, 0.427) 100%);
 }
 
-.lvf-page .lvaf-fq-glow-l { left: 0; }
-.lvf-page .lvaf-fq-glow-r { right: 0; transform: scaleX(-1); }
+.lvf-page .lvaf-fq-glow-l {
+  left: 0;
+}
+
+.lvf-page .lvaf-fq-glow-r {
+  right: 0;
+  transform: scaleX(-1);
+}
 
 /* Pille "FAQ'S" ist 102 px breit bei 39 px Text -> 31 px Rand,
    30 px hoch. (Schreibweise mit Apostroph steht so im Entwurf.) */
@@ -1902,16 +2306,16 @@
 .lvf-page h2.lvaf-fq-title .lvaf-fq-title-w,
 .lvf-page h2.lvaf-fq-title .lvaf-fq-title-b {
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
 .lvf-page h2.lvaf-fq-title .lvaf-fq-title-w {
   background-image: linear-gradient(90deg,
-    rgba(255, 255, 255, 0.87) 0%,
-    #ffffff 40%,
-    #ffffff 100%);
+      rgba(255, 255, 255, 0.87) 0%,
+      #ffffff 40%,
+      #ffffff 100%);
 }
 
 /* gemessen (166,230,255) oben, (38,180,255) unten, auf die
@@ -1931,7 +2335,9 @@
   overflow-wrap: break-word;
 }
 
-.lvf-page .lvaf-fq-list { margin-top: 84px; }
+.lvf-page .lvaf-fq-list {
+  margin-top: 84px;
+}
 
 /* Karte 116 px hoch (aufgeklappt, einzeilige Antwort),
    Abstand 12 px, Radius 20. Rand oben links rgba(20,180,255,0.17),
@@ -1949,9 +2355,13 @@
       rgba(20, 180, 255, 0) 100%) border-box;
 }
 
-.lvf-page .lvaf-fq-item + .lvaf-fq-item { margin-top: 12px; }
+.lvf-page .lvaf-fq-item+.lvaf-fq-item {
+  margin-top: 12px;
+}
 
-.lvf-page h3.lvaf-fq-head { margin: 0; }
+.lvf-page h3.lvaf-fq-head {
+  margin: 0;
+}
 
 .lvf-page button.lvaf-fq-btn {
   display: flex;
@@ -1976,7 +2386,9 @@
 
 /* Eingeklappt faellt die Antwort samt ihrem Innenabstand weg,
    deshalb bekommt der Kopf denselben Abstand nach unten.        */
-.lvf-page .lvaf-fq-item.lvaf-fq-closed .lvaf-fq-btn { padding-bottom: 26px; }
+.lvf-page .lvaf-fq-item.lvaf-fq-closed .lvaf-fq-btn {
+  padding-bottom: 26px;
+}
 
 .lvf-page button.lvaf-fq-btn:focus-visible {
   outline: 2px solid rgba(140, 213, 255, 0.9);
@@ -1989,7 +2401,9 @@
    in einem 276 px breiten Kasten). Auf dem Desktop bleiben sie
    einzeilig, die Regel aendert dort also nichts.                  */
 .lvf-page button.lvaf-fq-btn,
-.lvf-page .lvaf-fq-q { white-space: normal; }
+.lvf-page .lvaf-fq-q {
+  white-space: normal;
+}
 
 /* Versalhoehe 6459..6470 = 12 px -> 18 px, reines Weiss.        */
 .lvf-page .lvaf-fq-q {
@@ -2046,7 +2460,9 @@
   transition: transform 0.32s ease;
 }
 
-.lvf-page .lvaf-fq-item.lvaf-fq-closed .lvaf-fq-ico::after { transform: scaleY(1); }
+.lvf-page .lvaf-fq-item.lvaf-fq-closed .lvaf-fq-ico::after {
+  transform: scaleY(1);
+}
 
 /* Aufklappen ohne Hoehenmessung: Rasterzeile von 1fr auf 0fr.
    Dauer projektweit einheitlich 0.32s wie in s09 der Startseite und
@@ -2057,9 +2473,14 @@
   transition: grid-template-rows 0.32s ease;
 }
 
-.lvf-page .lvaf-fq-item.lvaf-fq-closed .lvaf-fq-wrap { grid-template-rows: 0fr; }
+.lvf-page .lvaf-fq-item.lvaf-fq-closed .lvaf-fq-wrap {
+  grid-template-rows: 0fr;
+}
 
-.lvf-page .lvaf-fq-clip { overflow: hidden; min-height: 0; }
+.lvf-page .lvaf-fq-clip {
+  overflow: hidden;
+  min-height: 0;
+}
 
 /* Versalhoehe 12 px -> 17 px, Zeilenabstand 26 px,
    Hoechstwert (140,139,139) -> rgba(255,255,255,0.55).          */
@@ -2079,91 +2500,265 @@
    Schmalere Bildschirme
    ============================================================ */
 @media (max-width: 1320px) {
-  .lvf-page .lvaf-app-row { padding-left: 32px; }
-  .lvf-page .lvaf-app-lab { flex-basis: 140px; max-width: 140px; }
-  .lvf-page button.lvaf-app-submit { padding-left: 36px; }
-  .lvf-page .lvaf-app-submit-ico { flex-basis: 280px; }
+  .lvf-page .lvaf-app-row {
+    padding-left: 32px;
+  }
+
+  .lvf-page .lvaf-app-lab {
+    flex-basis: 140px;
+    max-width: 140px;
+  }
+
+  .lvf-page button.lvaf-app-submit {
+    padding-left: 36px;
+  }
+
+  .lvf-page .lvaf-app-submit-ico {
+    flex-basis: 280px;
+  }
 }
 
 @media (max-width: 1100px) {
-  .lvf-page .lvaf-aud { padding: 44px 20px 50px; }
-  .lvf-page h2.lvaf-aud-title { font-size: 50px; line-height: 50px; }
-  .lvf-page ul.lvaf-aud-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 54px; }
-  .lvf-page .lvaf-app { padding: 44px 20px 50px; }
-  .lvf-page h2.lvaf-app-title { font-size: 58px; line-height: 58px; }
-  .lvf-page .lvaf-app-card { margin-top: 54px; padding: 30px; }
-  .lvf-page .lvaf-app-submit-ico { flex-basis: 200px; }
-  .lvf-page .lvaf-fq { padding-top: 44px; }
-  .lvf-page h2.lvaf-fq-title { font-size: 50px; line-height: 50px; }
-  .lvf-page .lvaf-fq-list { margin-top: 56px; }
-  .lvf-page .lvaf-fq-glow { width: 300px; }
+  .lvf-page .lvaf-aud {
+    padding: 44px 20px 50px;
+  }
+
+  .lvf-page h2.lvaf-aud-title {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .lvf-page ul.lvaf-aud-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 54px;
+  }
+
+  .lvf-page .lvaf-app {
+    padding: 44px 20px 50px;
+  }
+
+  .lvf-page h2.lvaf-app-title {
+    font-size: 58px;
+    line-height: 58px;
+  }
+
+  .lvf-page .lvaf-app-card {
+    margin-top: 54px;
+    padding: 30px;
+  }
+
+  .lvf-page .lvaf-app-submit-ico {
+    flex-basis: 200px;
+  }
+
+  .lvf-page .lvaf-fq {
+    padding-top: 44px;
+  }
+
+  .lvf-page h2.lvaf-fq-title {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .lvf-page .lvaf-fq-list {
+    margin-top: 56px;
+  }
+
+  .lvf-page .lvaf-fq-glow {
+    width: 300px;
+  }
+
   /* Rechte Kante der Ellipse bleibt bei x=0, deshalb mit der neuen
      Breite (1400 -> 1500) mitgezogen.                              */
   .lvf-page .lvaf-aud-glow,
-  .lvf-page .lvaf-app-glow { left: -1500px; }
+  .lvf-page .lvaf-app-glow {
+    left: -1500px;
+  }
 }
 
 @media (max-width: 780px) {
-  .lvf-page h2.lvaf-aud-title { font-size: 38px; line-height: 40px; }
-  .lvf-page .lvaf-aud-lead { font-size: 16px; line-height: 23px; }
-  .lvf-page li.lvaf-aud-card { min-height: 104px; border-radius: 14px; }
-  .lvf-page .lvaf-aud-card-t { font-size: 16px; line-height: 21px; }
+  .lvf-page h2.lvaf-aud-title {
+    font-size: 38px;
+    line-height: 40px;
+  }
 
-  .lvf-page h2.lvaf-app-title { font-size: 40px; line-height: 42px; }
+  .lvf-page .lvaf-aud-lead {
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+  .lvf-page li.lvaf-aud-card {
+    min-height: 104px;
+    border-radius: 14px;
+  }
+
+  .lvf-page .lvaf-aud-card-t {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .lvf-page h2.lvaf-app-title {
+    font-size: 40px;
+    line-height: 42px;
+  }
+
   .lvf-page h2.lvaf-app-title .lvaf-app-title-w,
-  .lvf-page h2.lvaf-app-title .lvaf-app-title-b { display: block; }
-  .lvf-page .lvaf-app-lead { font-size: 16px; line-height: 23px; margin-top: 14px; }
+  .lvf-page h2.lvaf-app-title .lvaf-app-title-b {
+    display: block;
+  }
+
+  .lvf-page .lvaf-app-lead {
+    font-size: 16px;
+    line-height: 23px;
+    margin-top: 14px;
+  }
 
   /* Beschriftung ueber das Feld, damit bei 390 px nichts kippt. */
-  .lvf-page .lvaf-app-card { padding: 20px; border-radius: 20px; }
+  .lvf-page .lvaf-app-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
   .lvf-page .lvaf-app-row,
   .lvf-page .lvaf-app-row-tall {
     display: block;
     padding: 16px;
     border-radius: 16px;
   }
-  .lvf-page .lvaf-app-row-tall .lvaf-app-lab { padding-top: 0; }
+
+  .lvf-page .lvaf-app-row-tall .lvaf-app-lab {
+    padding-top: 0;
+  }
+
   .lvf-page .lvaf-app-lab {
     display: block;
     flex-basis: auto;
     max-width: none;
     margin-bottom: 10px;
   }
-  .lvf-page.lvf-page .lvaf-app-input { height: 54px; padding: 0 18px; }
-  .lvf-page.lvf-page .lvaf-app-select { padding-right: 46px; }
-  .lvf-page .lvaf-app-caret { right: 16px; }
-  .lvf-page.lvf-page .lvaf-app-area { height: 128px; padding: 16px 18px; }
-  .lvf-page .lvaf-app-agree { padding-left: 0; }
+
+  .lvf-page.lvf-page .lvaf-app-input {
+    height: 54px;
+    padding: 0 18px;
+  }
+
+  .lvf-page.lvf-page .lvaf-app-select {
+    padding-right: 46px;
+  }
+
+  .lvf-page .lvaf-app-caret {
+    right: 16px;
+  }
+
+  .lvf-page.lvf-page .lvaf-app-area {
+    height: 128px;
+    padding: 16px 18px;
+  }
+
+  .lvf-page .lvaf-app-agree {
+    padding-left: 0;
+  }
 
   .lvf-page button.lvaf-app-submit {
     min-height: 62px;
     padding: 6px 6px 6px 22px;
     gap: 12px;
   }
-  .lvf-page .lvaf-app-submit-t { font-size: 18px; line-height: 24px; }
-  .lvf-page .lvaf-app-submit-ico { flex-basis: 88px; min-height: 50px; }
 
-  .lvf-page h2.lvaf-fq-title { font-size: 38px; line-height: 40px; }
-  .lvf-page .lvaf-fq-lead { font-size: 16px; line-height: 23px; margin-top: 16px; }
-  .lvf-page .lvaf-fq-list { margin-top: 40px; }
-  .lvf-page button.lvaf-fq-btn { padding: 20px 18px 0; gap: 14px; }
-  .lvf-page .lvaf-fq-q { font-size: 16px; line-height: 24px; }
-  .lvf-page p.lvaf-fq-a { padding: 14px 18px 18px; font-size: 15px; line-height: 24px; }
-  .lvf-page .lvaf-fq-glow { width: 200px; }
+  .lvf-page .lvaf-app-submit-t {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .lvf-page .lvaf-app-submit-ico {
+    flex-basis: 88px;
+    min-height: 50px;
+  }
+
+  .lvf-page h2.lvaf-fq-title {
+    font-size: 38px;
+    line-height: 40px;
+  }
+
+  .lvf-page .lvaf-fq-lead {
+    font-size: 16px;
+    line-height: 23px;
+    margin-top: 16px;
+  }
+
+  .lvf-page .lvaf-fq-list {
+    margin-top: 40px;
+  }
+
+  .lvf-page button.lvaf-fq-btn {
+    padding: 20px 18px 0;
+    gap: 14px;
+  }
+
+  .lvf-page .lvaf-fq-q {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .lvf-page p.lvaf-fq-a {
+    padding: 14px 18px 18px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .lvf-page .lvaf-fq-glow {
+    width: 200px;
+  }
 }
 
 @media (max-width: 560px) {
-  .lvf-page .lvaf-aud { padding: 36px 16px 40px; }
-  .lvf-page .lvaf-app { padding: 36px 16px 40px; }
-  .lvf-page .lvaf-fq { padding: 36px 16px 0; }
-  .lvf-page h2.lvaf-aud-title { font-size: 31px; line-height: 34px; }
-  .lvf-page h2.lvaf-app-title { font-size: 31px; line-height: 34px; }
-  .lvf-page h2.lvaf-fq-title { font-size: 31px; line-height: 34px; }
-  .lvf-page ul.lvaf-aud-grid { grid-template-columns: minmax(0, 1fr); }
-  .lvf-page li.lvaf-aud-card { min-height: 84px; }
-  .lvf-page .lvaf-app-card { padding: 14px; }
-  .lvf-page .lvaf-app-submit-t { font-size: 16px; line-height: 22px; }
-  .lvf-page .lvaf-app-submit-ico { flex-basis: 62px; }
+  .lvf-page .lvaf-aud {
+    padding: 36px 16px 40px;
+  }
+
+  .lvf-page .lvaf-app {
+    padding: 36px 16px 40px;
+  }
+
+  .lvf-page .lvaf-fq {
+    padding: 36px 16px 0;
+  }
+
+  .lvf-page h2.lvaf-aud-title {
+    font-size: 31px;
+    line-height: 34px;
+  }
+
+  .lvf-page h2.lvaf-app-title {
+    font-size: 31px;
+    line-height: 34px;
+  }
+
+  .lvf-page h2.lvaf-fq-title {
+    font-size: 31px;
+    line-height: 34px;
+  }
+
+  .lvf-page ul.lvaf-aud-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lvf-page li.lvaf-aud-card {
+    min-height: 84px;
+  }
+
+  .lvf-page .lvaf-app-card {
+    padding: 14px;
+  }
+
+  .lvf-page .lvaf-app-submit-t {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .lvf-page .lvaf-app-submit-ico {
+    flex-basis: 62px;
+  }
 }
 
 /* ############################ FRAGMENT 3 (y 7854 - 8637) ########### */
@@ -2225,43 +2820,43 @@
   z-index: -1;
   pointer-events: none;
   background-image: linear-gradient(90deg,
-    rgba(0, 162, 255, 1)     0,
-    rgba(0, 162, 255, 0.855) 20px,
-    rgba(0, 162, 255, 0.727) 40px,
-    rgba(0, 162, 255, 0.610) 60px,
-    rgba(0, 162, 255, 0.505) 80px,
-    rgba(0, 162, 255, 0.423) 100px,
-    rgba(0, 162, 255, 0.333) 120px,
-    rgba(0, 162, 255, 0.260) 140px,
-    rgba(0, 162, 255, 0.199) 160px,
-    rgba(0, 162, 255, 0.169) 180px,
-    rgba(0, 162, 255, 0.136) 200px,
-    rgba(0, 162, 255, 0.099) 240px,
-    rgba(0, 162, 255, 0.078) 280px,
-    rgba(0, 162, 255, 0.060) 320px,
-    rgba(0, 162, 255, 0.040) 380px,
-    rgba(0, 162, 255, 0.026) 440px,
-    rgba(0, 162, 255, 0.014) 520px,
-    rgba(0, 162, 255, 0.006) 600px,
-    rgba(0, 162, 255, 0)     700px);
+      rgba(0, 162, 255, 1) 0,
+      rgba(0, 162, 255, 0.855) 20px,
+      rgba(0, 162, 255, 0.727) 40px,
+      rgba(0, 162, 255, 0.610) 60px,
+      rgba(0, 162, 255, 0.505) 80px,
+      rgba(0, 162, 255, 0.423) 100px,
+      rgba(0, 162, 255, 0.333) 120px,
+      rgba(0, 162, 255, 0.260) 140px,
+      rgba(0, 162, 255, 0.199) 160px,
+      rgba(0, 162, 255, 0.169) 180px,
+      rgba(0, 162, 255, 0.136) 200px,
+      rgba(0, 162, 255, 0.099) 240px,
+      rgba(0, 162, 255, 0.078) 280px,
+      rgba(0, 162, 255, 0.060) 320px,
+      rgba(0, 162, 255, 0.040) 380px,
+      rgba(0, 162, 255, 0.026) 440px,
+      rgba(0, 162, 255, 0.014) 520px,
+      rgba(0, 162, 255, 0.006) 600px,
+      rgba(0, 162, 255, 0) 700px);
   -webkit-mask-image: linear-gradient(180deg,
-    rgba(0, 0, 0, 0.427) 0%,
-    rgba(0, 0, 0, 0.439) 5.9%,
-    rgba(0, 0, 0, 0.459) 18.6%,
-    rgba(0, 0, 0, 0.490) 31.4%,
-    rgba(0, 0, 0, 0.557) 56.9%,
-    rgba(0, 0, 0, 0.651) 82.5%,
-    rgba(0, 0, 0, 0.710) 95.3%,
-    rgba(0, 0, 0, 0.62) 100%);
-          mask-image: linear-gradient(180deg,
-    rgba(0, 0, 0, 0.427) 0%,
-    rgba(0, 0, 0, 0.439) 5.9%,
-    rgba(0, 0, 0, 0.459) 18.6%,
-    rgba(0, 0, 0, 0.490) 31.4%,
-    rgba(0, 0, 0, 0.557) 56.9%,
-    rgba(0, 0, 0, 0.651) 82.5%,
-    rgba(0, 0, 0, 0.710) 95.3%,
-    rgba(0, 0, 0, 0.62) 100%);
+      rgba(0, 0, 0, 0.427) 0%,
+      rgba(0, 0, 0, 0.439) 5.9%,
+      rgba(0, 0, 0, 0.459) 18.6%,
+      rgba(0, 0, 0, 0.490) 31.4%,
+      rgba(0, 0, 0, 0.557) 56.9%,
+      rgba(0, 0, 0, 0.651) 82.5%,
+      rgba(0, 0, 0, 0.710) 95.3%,
+      rgba(0, 0, 0, 0.62) 100%);
+  mask-image: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.427) 0%,
+      rgba(0, 0, 0, 0.439) 5.9%,
+      rgba(0, 0, 0, 0.459) 18.6%,
+      rgba(0, 0, 0, 0.490) 31.4%,
+      rgba(0, 0, 0, 0.557) 56.9%,
+      rgba(0, 0, 0, 0.651) 82.5%,
+      rgba(0, 0, 0, 0.710) 95.3%,
+      rgba(0, 0, 0, 0.62) 100%);
 }
 
 /* Naht zum Theme-Footer, Aufloesung des Zielkonflikts U1 gegen Zone2-A1.
@@ -2290,17 +2885,29 @@
   body .lvf-s11::before {
     background-repeat: no-repeat;
     background-position:
-      0 0,          /* Schein links oben   */
-      0 0,          /* Schein rechts oben  */
-      0 -6000px,    /* blauer Wash, hier aus dem Bild geschoben */
-      0 0,          /* Rinne links   */
-      0 0,          /* Rinne rechts  */
-      0 0;          /* Boden         */
+      0 0,
+      /* Schein links oben   */
+      0 0,
+      /* Schein rechts oben  */
+      0 -6000px,
+      /* blauer Wash, hier aus dem Bild geschoben */
+      0 0,
+      /* Rinne links   */
+      0 0,
+      /* Rinne rechts  */
+      0 0;
+    /* Boden         */
   }
 }
 
-.lvf-page .lvaf-cta-glow--l { left: 0; }
-.lvf-page .lvaf-cta-glow--r { right: 0; transform: scaleX(-1); }
+.lvf-page .lvaf-cta-glow--l {
+  left: 0;
+}
+
+.lvf-page .lvaf-cta-glow--r {
+  right: 0;
+  transform: scaleX(-1);
+}
 
 /* ---------- Rahmen und Karte --------------------------------
    Aussenrahmen x 251..1510, y 7967..8534  -> 1260 x 568, Radius 58.
@@ -2324,9 +2931,9 @@
      Stuetzstellen aus dem Referenzbild gerastert. */
   background-color: #01060c;
   background-image:
-    radial-gradient(52% 40% at 0% 92%,   rgba(150, 228, 255, 0.98) 0%, rgba(30, 150, 220, 0.50) 42%, rgba(0, 0, 0, 0) 76%),
+    radial-gradient(52% 40% at 0% 92%, rgba(150, 228, 255, 0.98) 0%, rgba(30, 150, 220, 0.50) 42%, rgba(0, 0, 0, 0) 76%),
     radial-gradient(52% 40% at 100% 92%, rgba(150, 228, 255, 0.95) 0%, rgba(30, 150, 220, 0.45) 42%, rgba(0, 0, 0, 0) 76%),
-    radial-gradient(34% 58% at 0% 40%,   rgba(30, 140, 215, 0.85) 0%, rgba(8, 70, 115, 0.32) 48%, rgba(0, 0, 0, 0) 80%),
+    radial-gradient(34% 58% at 0% 40%, rgba(30, 140, 215, 0.85) 0%, rgba(8, 70, 115, 0.32) 48%, rgba(0, 0, 0, 0) 80%),
     radial-gradient(36% 60% at 100% 24%, rgba(70, 185, 248, 0.95) 0%, rgba(12, 95, 150, 0.40) 46%, rgba(0, 0, 0, 0) 80%),
     linear-gradient(180deg, #01050b 0%, #02141f 62%, #06334c 100%);
 }
@@ -2380,7 +2987,7 @@
   max-width: 100%;
   margin-inline: auto;
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
@@ -2396,11 +3003,11 @@
    zwischen 28 % und 56 % reines Weiss, rechts leicht blaustichig. */
 .lvf-page h2.lvaf-cta-title .lvaf-cta-title-b {
   background-image: linear-gradient(90deg,
-    #e9e9ea 0%,
-    #ffffff 28%,
-    #ffffff 56%,
-    #e5e5e7 84%,
-    #dee1e5 100%);
+      #e9e9ea 0%,
+      #ffffff 28%,
+      #ffffff 56%,
+      #e5e5e7 84%,
+      #dee1e5 100%);
 }
 
 /* ---------- Unterzeile --------------------------------------
@@ -2453,10 +3060,21 @@
 
 /* Symbolgroessen gemessen (Tintenbreite):
    Geschenk 24, Kalender 21, Tresor 22, Kreisdiagramm 23.       */
-.lvf-page .lvaf-cta-stat-icon--gift     { width: 29px; }
-.lvf-page .lvaf-cta-stat-icon--calendar { width: 25px; }
-.lvf-page .lvaf-cta-stat-icon--vault    { width: 26px; }
-.lvf-page .lvaf-cta-stat-icon--retainer { width: 27px; }
+.lvf-page .lvaf-cta-stat-icon--gift {
+  width: 29px;
+}
+
+.lvf-page .lvaf-cta-stat-icon--calendar {
+  width: 25px;
+}
+
+.lvf-page .lvaf-cta-stat-icon--vault {
+  width: 26px;
+}
+
+.lvf-page .lvaf-cta-stat-icon--retainer {
+  width: 27px;
+}
 
 /* Versalhoehe 8301..8321 (20,5 px) -> 29 px. Verlauf pipettiert:
    (140,213,255) an der Versaloberkante, (18,169,255) auf der
@@ -2471,7 +3089,7 @@
   white-space: nowrap;
   background-image: linear-gradient(180deg, #8cd5ff 16%, #12a9ff 76%);
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
@@ -2515,7 +3133,9 @@
   transition: filter 0.18s ease;
 }
 
-.lvf-page a.lvaf-cta-btn:hover { filter: brightness(1.07); }
+.lvf-page a.lvaf-cta-btn:hover {
+  filter: brightness(1.07);
+}
 
 .lvf-page a.lvaf-cta-btn:focus-visible {
   outline: 2px solid var(--lvf-blue-light);
@@ -2530,16 +3150,16 @@
   padding: 0 14px 0 5px;
   color: #000000;
   background-image: linear-gradient(180deg,
-    #c2f3ff 0%,
-    #b8f0ff 2%,
-    #93dfff 13%,
-    #76d3ff 26%,
-    #62c9fe 39%,
-    #51c5ff 52%,
-    #41c0ff 65%,
-    #32c2ff 78%,
-    #21cdff 91%,
-    #17deff 100%);
+      #c2f3ff 0%,
+      #b8f0ff 2%,
+      #93dfff 13%,
+      #76d3ff 26%,
+      #62c9fe 39%,
+      #51c5ff 52%,
+      #41c0ff 65%,
+      #32c2ff 78%,
+      #21cdff 91%,
+      #17deff 100%);
 }
 
 /* Symbolkasten x 683..718, y 8391..8426 -> 36 x 36, Radius 9. */
@@ -2589,68 +3209,172 @@
 
 /* ---------- Grosse, aber schmalere Bildschirme --------------- */
 @media (max-width: 1320px) {
-  .lvf-page .lvaf-cta-inner { padding: 76px 40px 80px; }
-  .lvf-page ul.lvaf-cta-stats { gap: 22px 60px; }
+  .lvf-page .lvaf-cta-inner {
+    padding: 76px 40px 80px;
+  }
+
+  .lvf-page ul.lvaf-cta-stats {
+    gap: 22px 60px;
+  }
 }
 
 @media (max-width: 1100px) {
-  .lvf-page .lvaf-cta { padding: 88px 20px 72px; }
-  .lvf-page .lvaf-cta-frame { border-radius: 44px; padding: 8px; }
+  .lvf-page .lvaf-cta {
+    padding: 88px 20px 72px;
+  }
+
+  .lvf-page .lvaf-cta-frame {
+    border-radius: 44px;
+    padding: 8px;
+  }
+
   .lvf-page .lvaf-cta-card,
-  .lvf-page .lvaf-cta-card .lvaf-cta-art { border-radius: 36px; }
-  .lvf-page .lvaf-cta-inner { padding: 62px 32px 66px; }
-  .lvf-page h2.lvaf-cta-title { font-size: 52px; line-height: 54px; }
-  .lvf-page .lvaf-cta-sub { font-size: 19px; line-height: 30px; margin-top: 18px; }
-  .lvf-page ul.lvaf-cta-stats { gap: 24px 44px; margin-top: 34px; }
-  .lvf-page .lvaf-cta-glow { width: 320px; }
+  .lvf-page .lvaf-cta-card .lvaf-cta-art {
+    border-radius: 36px;
+  }
+
+  .lvf-page .lvaf-cta-inner {
+    padding: 62px 32px 66px;
+  }
+
+  .lvf-page h2.lvaf-cta-title {
+    font-size: 52px;
+    line-height: 54px;
+  }
+
+  .lvf-page .lvaf-cta-sub {
+    font-size: 19px;
+    line-height: 30px;
+    margin-top: 18px;
+  }
+
+  .lvf-page ul.lvaf-cta-stats {
+    gap: 24px 44px;
+    margin-top: 34px;
+  }
+
+  .lvf-page .lvaf-cta-glow {
+    width: 320px;
+  }
 }
 
 /* Unter 900 px traegt der CSS-Verlauf die Karte allein: das
    Motiv ist 1240 x 548 und wuerde bei schmalen, hohen Karten
    nur noch seinen dunklen Mittelteil zeigen.                   */
 @media (max-width: 899px) {
-  .lvf-page .lvaf-cta-card .lvaf-cta-art { display: none; }
+  .lvf-page .lvaf-cta-card .lvaf-cta-art {
+    display: none;
+  }
+
   /* schmale, hohe Karte: Scheine flacher ansetzen, damit die
      Kartenmitte so dunkel bleibt wie in der Referenz. */
   .lvf-page .lvaf-cta-card {
     background-image:
-      radial-gradient(62% 22% at 0% 96%,   rgba(150, 228, 255, 0.95) 0%, rgba(30, 150, 220, 0.45) 42%, rgba(0, 0, 0, 0) 78%),
+      radial-gradient(62% 22% at 0% 96%, rgba(150, 228, 255, 0.95) 0%, rgba(30, 150, 220, 0.45) 42%, rgba(0, 0, 0, 0) 78%),
       radial-gradient(62% 22% at 100% 96%, rgba(150, 228, 255, 0.92) 0%, rgba(30, 150, 220, 0.42) 42%, rgba(0, 0, 0, 0) 78%),
-      radial-gradient(40% 30% at 0% 30%,   rgba(30, 140, 215, 0.75) 0%, rgba(8, 70, 115, 0.26) 48%, rgba(0, 0, 0, 0) 80%),
+      radial-gradient(40% 30% at 0% 30%, rgba(30, 140, 215, 0.75) 0%, rgba(8, 70, 115, 0.26) 48%, rgba(0, 0, 0, 0) 80%),
       radial-gradient(42% 30% at 100% 16%, rgba(70, 185, 248, 0.85) 0%, rgba(12, 95, 150, 0.32) 46%, rgba(0, 0, 0, 0) 80%),
       linear-gradient(180deg, #01050b 0%, #020e17 58%, #042135 100%);
   }
 }
 
 @media (max-width: 780px) {
-  .lvf-page .lvaf-cta { padding: 70px 16px 56px; }
-  .lvf-page .lvaf-cta-inner { padding: 48px 24px 52px; }
-  .lvf-page h2.lvaf-cta-title { font-size: 40px; line-height: 44px; }
-  .lvf-page .lvaf-cta-sub { font-size: 17px; line-height: 27px; }
+  .lvf-page .lvaf-cta {
+    padding: 70px 16px 56px;
+  }
+
+  .lvf-page .lvaf-cta-inner {
+    padding: 48px 24px 52px;
+  }
+
+  .lvf-page h2.lvaf-cta-title {
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .lvf-page .lvaf-cta-sub {
+    font-size: 17px;
+    line-height: 27px;
+  }
+
   .lvf-page ul.lvaf-cta-stats {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 26px 16px;
     margin-top: 30px;
   }
-  .lvf-page .lvaf-cta-stat-value { font-size: 25px; line-height: 30px; }
-  .lvf-page .lvaf-cta-stat-label { white-space: normal; }
-  .lvf-page .lvaf-cta-actions { margin-top: 32px; }
+
+  .lvf-page .lvaf-cta-stat-value {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .lvf-page .lvaf-cta-stat-label {
+    white-space: normal;
+  }
+
+  .lvf-page .lvaf-cta-actions {
+    margin-top: 32px;
+  }
 }
 
 @media (max-width: 560px) {
-  .lvf-page .lvaf-cta { padding: 56px 14px 44px; }
-  .lvf-page .lvaf-cta-frame { border-radius: 30px; padding: 6px; }
-  .lvf-page .lvaf-cta-card { border-radius: 24px; }
-  .lvf-page .lvaf-cta-inner { padding: 36px 18px 40px; }
-  .lvf-page h2.lvaf-cta-title { font-size: 31px; line-height: 35px; }
-  .lvf-page .lvaf-cta-sub { font-size: 15px; line-height: 24px; margin-top: 14px; }
-  .lvf-page .lvaf-cta-stat-value { font-size: 22px; line-height: 26px; }
-  .lvf-page .lvaf-cta-stat-label { font-size: 11px; line-height: 16px; }
-  .lvf-page .lvaf-cta-actions { flex-direction: column; gap: 10px; }
-  .lvf-page a.lvaf-cta-btn { width: 100%; justify-content: center; white-space: normal; }
-  .lvf-page a.lvaf-cta-btn--primary { justify-content: flex-start; }
-  .lvf-page .lvaf-cta-glow { width: 220px; }
+  .lvf-page .lvaf-cta {
+    padding: 56px 14px 44px;
+  }
+
+  .lvf-page .lvaf-cta-frame {
+    border-radius: 30px;
+    padding: 6px;
+  }
+
+  .lvf-page .lvaf-cta-card {
+    border-radius: 24px;
+  }
+
+  .lvf-page .lvaf-cta-inner {
+    padding: 36px 18px 40px;
+  }
+
+  .lvf-page h2.lvaf-cta-title {
+    font-size: 31px;
+    line-height: 35px;
+  }
+
+  .lvf-page .lvaf-cta-sub {
+    font-size: 15px;
+    line-height: 24px;
+    margin-top: 14px;
+  }
+
+  .lvf-page .lvaf-cta-stat-value {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .lvf-page .lvaf-cta-stat-label {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .lvf-page .lvaf-cta-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lvf-page a.lvaf-cta-btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+  }
+
+  .lvf-page a.lvaf-cta-btn--primary {
+    justify-content: flex-start;
+  }
+
+  .lvf-page .lvaf-cta-glow {
+    width: 220px;
+  }
 }
 
 /* ################## ZUSAMMENFUEHRUNG: NAEHTE, ANKER, MOBIL ########## */
@@ -2658,9 +3382,13 @@
 /* ---- Bewegungsreduktion: die drei gleichlautenden Bloecke der
    Fragmente sind hier zu einem zusammengefasst.                       */
 @media (prefers-reduced-motion: reduce) {
+
   .lvf-page.lvaf-page *,
   .lvf-page.lvaf-page *::before,
-  .lvf-page.lvaf-page *::after { transition: none !important; animation: none !important; }
+  .lvf-page.lvaf-page *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 /* ---- Sprungziele. Der Kopf liegt fixiert ueber der Seite (Banner +
@@ -2669,12 +3397,18 @@
 .lvf-page #lvaf-rate,
 .lvf-page #lvaf-apply,
 .lvf-page #lvaf-app-title,
-.lvf-page #lvaf-cta-title { scroll-margin-top: 150px; }
+.lvf-page #lvaf-cta-title {
+  scroll-margin-top: 150px;
+}
+
 @media (max-width: 767px) {
+
   .lvf-page #lvaf-rate,
   .lvf-page #lvaf-apply,
   .lvf-page #lvaf-app-title,
-  .lvf-page #lvaf-cta-title { scroll-margin-top: 120px; }
+  .lvf-page #lvaf-cta-title {
+    scroll-margin-top: 120px;
+  }
 }
 
 /* ---- Naht 1 (y = 3770): Grundton.
@@ -2684,8 +3418,13 @@
    --lvf-bg (#05060f) durch, und an der Naht steht eine sichtbare
    Farbkante. In der Referenz ist der Grund dort nahezu Schwarz
    (y=4000 x=1700 -> 0,0,0; y=8600 x=600 -> 0,0,0).                    */
-body { background: #000306; }
-.lvf-page.lvaf-page { background-color: #000306; }
+body {
+  background: #000306;
+}
+
+.lvf-page.lvaf-page {
+  background-color: #000306;
+}
 
 /* ---- Newsletter-Unterzeile im Theme-Footer (Abnahme Zone2-A3).
    `.lvf-s11-nl-sub { color: #ffffff }` steht im 1024er-Block des
@@ -2696,7 +3435,9 @@ body { background: #000306; }
    seitenweise zurechtgerueckt; mobil ist die Zeile bereits dunkel und
    bleibt unberuehrt.                                                 */
 @media (min-width: 1024px) {
-  body .lvf-s11-nl-sub { color: #061a26; }
+  body .lvf-s11-nl-sub {
+    color: #061a26;
+  }
 
   /* ---- Zwischenraum CTA zu Footer kuerzen (Abnahme Zone2-A2).
      Nur ab 1024 px, denn nur dort bringt das Theme die 128 px
@@ -2709,8 +3450,14 @@ body { background: #000306; }
      (gemessen (5,9,19) statt (2,109,168) in der Referenz). Dahinter
      steht der Body mit #000306, also derselbe Ton wie im Rest der
      Seite und naeher an der Referenz als (5,6,15).                 */
-  .lvf-page .lvaf-cta { margin-bottom: 0; overflow: clip visible; }
-  body .lvf-page.lvf-theme-teil { background-color: transparent; }
+  .lvf-page .lvaf-cta {
+    margin-bottom: 0;
+    overflow: clip visible;
+  }
+
+  body .lvf-page.lvf-theme-teil {
+    background-color: transparent;
+  }
 
   /* ---- Rinnen durchziehen. Bisher endete der seitliche Schein an der
      Sektionsunterkante und der Footer setzte mit seinen eigenen, dort
@@ -2734,21 +3481,21 @@ body { background: #000306; }
   .lvf-page .lvaf-cta-glow {
     bottom: -400px;
     -webkit-mask-image: linear-gradient(180deg,
-      rgba(0, 0, 0, 0.427) 0px, rgba(0, 0, 0, 0.439) 46px,
-      rgba(0, 0, 0, 0.459) 146px, rgba(0, 0, 0, 0.490) 246px,
-      rgba(0, 0, 0, 0.557) 446px, rgba(0, 0, 0, 0.651) 646px,
-      rgba(0, 0, 0, 0.720) 746px, rgba(0, 0, 0, 0.780) 791px,
-      rgba(0, 0, 0, 0.840) 851px, rgba(0, 0, 0, 0.880) 913px,
-      rgba(0, 0, 0, 0.700) 1000px, rgba(0, 0, 0, 0.430) 1090px,
-      rgba(0, 0, 0, 0) 1183px);
-            mask-image: linear-gradient(180deg,
-      rgba(0, 0, 0, 0.427) 0px, rgba(0, 0, 0, 0.439) 46px,
-      rgba(0, 0, 0, 0.459) 146px, rgba(0, 0, 0, 0.490) 246px,
-      rgba(0, 0, 0, 0.557) 446px, rgba(0, 0, 0, 0.651) 646px,
-      rgba(0, 0, 0, 0.720) 746px, rgba(0, 0, 0, 0.780) 791px,
-      rgba(0, 0, 0, 0.840) 851px, rgba(0, 0, 0, 0.880) 913px,
-      rgba(0, 0, 0, 0.700) 1000px, rgba(0, 0, 0, 0.430) 1090px,
-      rgba(0, 0, 0, 0) 1183px);
+        rgba(0, 0, 0, 0.427) 0px, rgba(0, 0, 0, 0.439) 46px,
+        rgba(0, 0, 0, 0.459) 146px, rgba(0, 0, 0, 0.490) 246px,
+        rgba(0, 0, 0, 0.557) 446px, rgba(0, 0, 0, 0.651) 646px,
+        rgba(0, 0, 0, 0.720) 746px, rgba(0, 0, 0, 0.780) 791px,
+        rgba(0, 0, 0, 0.840) 851px, rgba(0, 0, 0, 0.880) 913px,
+        rgba(0, 0, 0, 0.700) 1000px, rgba(0, 0, 0, 0.430) 1090px,
+        rgba(0, 0, 0, 0) 1183px);
+    mask-image: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.427) 0px, rgba(0, 0, 0, 0.439) 46px,
+        rgba(0, 0, 0, 0.459) 146px, rgba(0, 0, 0, 0.490) 246px,
+        rgba(0, 0, 0, 0.557) 446px, rgba(0, 0, 0, 0.651) 646px,
+        rgba(0, 0, 0, 0.720) 746px, rgba(0, 0, 0, 0.780) 791px,
+        rgba(0, 0, 0, 0.840) 851px, rgba(0, 0, 0, 0.880) 913px,
+        rgba(0, 0, 0, 0.700) 1000px, rgba(0, 0, 0, 0.430) 1090px,
+        rgba(0, 0, 0, 0) 1183px);
   }
 }
 
@@ -2759,8 +3506,9 @@ body { background: #000306; }
    schwebt. Diese Seite bringt ihren Abstand selbst mit (214px im Hero),
    deshalb wird das Polster hier zurueckgenommen - nur fuer den
    Container, der DIESE Seite enthaelt.                                */
-body:not(.lvlup-home-v2):not(.elementor-editor-active)
-  [data-elementor-type="wp-page"]:has(.lvaf-page) { padding-top: 0; }
+body:not(.lvlup-home-v2):not(.elementor-editor-active) [data-elementor-type="wp-page"]:has(.lvaf-page) {
+  padding-top: 0;
+}
 
 /* ---- Naht 1 (y = 3770): grosser Schein links.
    Beide Baender bauen denselben Schein mit verschiedenen Formeln:
@@ -2796,34 +3544,34 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
     z-index: 0;
     pointer-events: none;
     background-image: linear-gradient(90deg,
-      rgba(250, 254, 255, 1)      0px,
-      rgba(248, 253, 255, 1)    100px,
-      rgba(245, 252, 255, 1)    160px,
-      rgba(234, 249, 255, 1)    200px,
-      rgba(224, 245, 255, 1)    240px,
-      rgba(213, 241, 255, 1)    280px,
-      rgba(192, 233, 255, 0.98) 300px,
-      rgba(160, 224, 255, 0.951) 320px,
-      rgba(127, 212, 255, 0.930) 340px,
-      rgba(97, 202, 255, 0.904)  360px,
-      rgba(79, 194, 255, 0.863)  380px,
-      rgba(60, 184, 255, 0.843)  400px,
-      rgba(41, 177, 255, 0.818)  420px,
-      rgba(25, 168, 255, 0.731)  440px,
-      rgba(13, 163, 255, 0.568)  460px,
-      rgba(2, 152, 255, 0.432)   480px,
-      rgba(0, 140, 255, 0.301)   500px,
-      rgba(0, 128, 255, 0.224)   520px,
-      rgba(0, 123, 255, 0.176)   540px,
-      rgba(0, 109, 255, 0.129)   560px,
-      rgba(0, 63, 255, 0.073)    580px,
-      rgba(0, 40, 255, 0)        610px);
+        rgba(250, 254, 255, 1) 0px,
+        rgba(248, 253, 255, 1) 100px,
+        rgba(245, 252, 255, 1) 160px,
+        rgba(234, 249, 255, 1) 200px,
+        rgba(224, 245, 255, 1) 240px,
+        rgba(213, 241, 255, 1) 280px,
+        rgba(192, 233, 255, 0.98) 300px,
+        rgba(160, 224, 255, 0.951) 320px,
+        rgba(127, 212, 255, 0.930) 340px,
+        rgba(97, 202, 255, 0.904) 360px,
+        rgba(79, 194, 255, 0.863) 380px,
+        rgba(60, 184, 255, 0.843) 400px,
+        rgba(41, 177, 255, 0.818) 420px,
+        rgba(25, 168, 255, 0.731) 440px,
+        rgba(13, 163, 255, 0.568) 460px,
+        rgba(2, 152, 255, 0.432) 480px,
+        rgba(0, 140, 255, 0.301) 500px,
+        rgba(0, 128, 255, 0.224) 520px,
+        rgba(0, 123, 255, 0.176) 540px,
+        rgba(0, 109, 255, 0.129) 560px,
+        rgba(0, 63, 255, 0.073) 580px,
+        rgba(0, 40, 255, 0) 610px);
     -webkit-mask-image: linear-gradient(180deg,
-      rgba(0, 0, 0, 1) 0px, rgba(0, 0, 0, 0.72) 40px, rgba(0, 0, 0, 0.42) 100px,
-      rgba(0, 0, 0, 0.20) 180px, rgba(0, 0, 0, 0.07) 260px, rgba(0, 0, 0, 0) 320px);
-            mask-image: linear-gradient(180deg,
-      rgba(0, 0, 0, 1) 0px, rgba(0, 0, 0, 0.72) 40px, rgba(0, 0, 0, 0.42) 100px,
-      rgba(0, 0, 0, 0.20) 180px, rgba(0, 0, 0, 0.07) 260px, rgba(0, 0, 0, 0) 320px);
+        rgba(0, 0, 0, 1) 0px, rgba(0, 0, 0, 0.72) 40px, rgba(0, 0, 0, 0.42) 100px,
+        rgba(0, 0, 0, 0.20) 180px, rgba(0, 0, 0, 0.07) 260px, rgba(0, 0, 0, 0) 320px);
+    mask-image: linear-gradient(180deg,
+        rgba(0, 0, 0, 1) 0px, rgba(0, 0, 0, 0.72) 40px, rgba(0, 0, 0, 0.42) 100px,
+        rgba(0, 0, 0, 0.20) 180px, rgba(0, 0, 0, 0.07) 260px, rgba(0, 0, 0, 0) 320px);
   }
 }
 
@@ -2842,8 +3590,8 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
    auf rund rgb(50,66,80) und damit ueber 6:1.                       */
 @media (max-width: 900px) {
   .lvf-page .lvaf-aud-glow2 {
-    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0) 1220px, rgba(0,0,0,1) 1520px);
-            mask-image: linear-gradient(180deg, rgba(0,0,0,0) 1220px, rgba(0,0,0,1) 1520px);
+    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 1220px, rgba(0, 0, 0, 1) 1520px);
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 1220px, rgba(0, 0, 0, 1) 1520px);
   }
 }
 
@@ -2851,39 +3599,88 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
    Bildschirmen gemeinsam fuehren, sonst springt die Breite genau an
    der Naht. Ersetzt die einzelnen Angaben aus Fragment 2 und 3.       */
 @media (max-width: 1100px) {
+
   .lvf-page .lvaf-fq-glow,
-  .lvf-page .lvaf-cta-glow { width: 480px; }
+  .lvf-page .lvaf-cta-glow {
+    width: 480px;
+  }
 }
+
 @media (max-width: 780px) {
+
   .lvf-page .lvaf-fq-glow,
-  .lvf-page .lvaf-cta-glow { width: 340px; }
+  .lvf-page .lvaf-cta-glow {
+    width: 340px;
+  }
 }
+
 @media (max-width: 560px) {
+
   .lvf-page .lvaf-fq-glow,
-  .lvf-page .lvaf-cta-glow { width: 260px; }
+  .lvf-page .lvaf-cta-glow {
+    width: 260px;
+  }
 }
 
 /* ---- Mobil (Pflicht laut Vertrag): bei 390 px darf nichts
    abgeschnitten sein und nichts waagerecht scrollen.                  */
 
 /* Nichts darf aus dem Seitenwrapper herauslaufen. */
-.lvf-page.lvaf-page { max-width: 100%; overflow-x: clip; }
+.lvf-page.lvaf-page {
+  max-width: 100%;
+  overflow-x: clip;
+}
 
 @media (max-width: 560px) {
+
   /* Tabelle: zwei Spalten bleiben, aber mit weniger Innenabstand,
      damit "One-Time Evaluation Payments" nicht zerbricht.            */
-  .lvf-page .lvaf-table { margin-top: 34px; }
-  .lvf-page .lvaf-tr { grid-template-columns: 1.55fr 1fr; }
-  .lvf-page .lvaf-th { font-size: 13px; padding: 12px 8px; line-height: 1.25; }
-  .lvf-page .lvaf-td { font-size: 13px; line-height: 1.3; padding: 12px 8px 12px 12px; }
-  .lvf-page .lvaf-td--val { font-size: 14px; padding-inline: 8px; }
+  .lvf-page .lvaf-table {
+    margin-top: 34px;
+  }
+
+  .lvf-page .lvaf-tr {
+    grid-template-columns: 1.55fr 1fr;
+  }
+
+  .lvf-page .lvaf-th {
+    font-size: 13px;
+    padding: 12px 8px;
+    line-height: 1.25;
+  }
+
+  .lvf-page .lvaf-td {
+    font-size: 13px;
+    line-height: 1.3;
+    padding: 12px 8px 12px 12px;
+  }
+
+  .lvf-page .lvaf-td--val {
+    font-size: 14px;
+    padding-inline: 8px;
+  }
 
   /* Kennzahlen im Hero zweispaltig, damit die Beschriftungen
      ("Monthly Retainer Path") nicht ueber den Rand laufen.           */
-  .lvf-page .lvaf-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
-  .lvf-page .lvaf-stat { flex: none; min-width: 0; }
-  .lvf-page .lvaf-stat-lab { white-space: normal; text-align: center; }
-  .lvf-page .lvaf-stat-val { font-size: 24px; }
+  .lvf-page .lvaf-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 12px;
+  }
+
+  .lvf-page .lvaf-stat {
+    flex: none;
+    min-width: 0;
+  }
+
+  .lvf-page .lvaf-stat-lab {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .lvf-page .lvaf-stat-val {
+    font-size: 24px;
+  }
 
   /* Pillen duerfen umbrechen statt zu ueberlaufen. */
   .lvf-page .lvaf-pill,
@@ -2895,20 +3692,44 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
     text-align: center;
     overflow-wrap: break-word;
   }
-  .lvf-page .lvaf-pill { height: auto; min-height: 33px; padding-block: 6px; line-height: 1.25; }
+
+  .lvf-page .lvaf-pill {
+    height: auto;
+    min-height: 33px;
+    padding-block: 6px;
+    line-height: 1.25;
+  }
+
   .lvf-page .lvaf-aud-badge,
   .lvf-page .lvaf-app-badge,
-  .lvf-page .lvaf-fq-badge { display: block; width: fit-content; padding-block: 4px; line-height: 22px; }
+  .lvf-page .lvaf-fq-badge {
+    display: block;
+    width: fit-content;
+    padding-block: 4px;
+    line-height: 22px;
+  }
 
   /* Absendeknopf: Text darf umbrechen, Symbolfeld bleibt quadratisch. */
-  .lvf-page button.lvaf-app-submit { padding-left: 16px; gap: 10px; }
-  .lvf-page .lvaf-app-submit-t { min-width: 0; }
-  .lvf-page .lvaf-app-submit-ico { flex: 0 0 56px; }
+  .lvf-page button.lvaf-app-submit {
+    padding-left: 16px;
+    gap: 10px;
+  }
+
+  .lvf-page .lvaf-app-submit-t {
+    min-width: 0;
+  }
+
+  .lvf-page .lvaf-app-submit-ico {
+    flex: 0 0 56px;
+  }
 
   /* Sehr lange Kartentitel und Antworten sicher umbrechen. */
   /* 10,5 px Fliesstext ist auf dem Telefon zu klein (gemessen: rund
      8 px Schriftbild). Die Referenz zeigt nur die Desktop-Ansicht.   */
-  .lvf-page .lvaf-card-p { font-size: 12.5px; line-height: 16px; }
+  .lvf-page .lvaf-card-p {
+    font-size: 12.5px;
+    line-height: 16px;
+  }
 
   .lvf-page .lvaf-card-h,
   .lvf-page .lvaf-card-h2,
@@ -2916,24 +3737,47 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
   .lvf-page .lvaf-metric-n,
   .lvf-page .lvaf-fq-q,
   .lvf-page p.lvaf-fq-a,
-  .lvf-page .lvaf-cta-stat-label { overflow-wrap: break-word; word-break: normal; }
+  .lvf-page .lvaf-cta-stat-label {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
 }
 
 @media (max-width: 420px) {
+
   /* Kennzahlen der Abschluss-Karte: Wert und Beschriftung passen bei
      390 px nur ohne Zeilensperre. */
-  .lvf-page .lvaf-cta-stat-value { white-space: normal; }
-  .lvf-page ul.lvaf-cta-stats { gap: 22px 10px; }
+  .lvf-page .lvaf-cta-stat-value {
+    white-space: normal;
+  }
+
+  .lvf-page ul.lvaf-cta-stats {
+    gap: 22px 10px;
+  }
 
   /* Grosse Karte: Innenabstaende weiter herunter, Ecken kleiner. */
-  .lvf-page .lvaf-panel-in { padding: 34px 14px 30px; }
-  .lvf-page .lvaf-frame { width: calc(100% - 20px); border-radius: 24px 24px 44px 44px; }
-  .lvf-page .lvaf-panel { border-radius: 18px 18px 38px 38px; }
+  .lvf-page .lvaf-panel-in {
+    padding: 34px 14px 30px;
+  }
+
+  .lvf-page .lvaf-frame {
+    width: calc(100% - 20px);
+    border-radius: 24px 24px 44px 44px;
+  }
+
+  .lvf-page .lvaf-panel {
+    border-radius: 18px 18px 38px 38px;
+  }
 
   /* Schrittkarten und Formularzeilen etwas enger. */
-  .lvf-page .lvaf-step { padding: 44px 16px 20px; }
+  .lvf-page .lvaf-step {
+    padding: 44px 16px 20px;
+  }
+
   .lvf-page .lvaf-app-row,
-  .lvf-page .lvaf-app-row-tall { padding: 14px; }
+  .lvf-page .lvaf-app-row-tall {
+    padding: 14px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -2956,10 +3800,10 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
     width: fit-content;
     margin-inline: auto;
     background-image: linear-gradient(90deg,
-      rgba(255, 255, 255, 0.76) 0%,
-      #ffffff 32%,
-      #ffffff 77%,
-      rgba(255, 255, 255, 0.76) 100%);
+        rgba(255, 255, 255, 0.76) 0%,
+        #ffffff 32%,
+        #ffffff 77%,
+        rgba(255, 255, 255, 0.76) 100%);
   }
 }
 
@@ -3037,17 +3881,17 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
         rgba(1, 4, 8, 0.015) 96px,
         rgba(1, 4, 8, 0) 112px);
     -webkit-mask-image: linear-gradient(0deg,
-      rgba(0, 0, 0, 1) 0,
-      rgba(0, 0, 0, 1) 12px,
-      rgba(0, 0, 0, 0.55) 26px,
-      rgba(0, 0, 0, 0.2) 36px,
-      rgba(0, 0, 0, 0) 46px);
-            mask-image: linear-gradient(0deg,
-      rgba(0, 0, 0, 1) 0,
-      rgba(0, 0, 0, 1) 12px,
-      rgba(0, 0, 0, 0.55) 26px,
-      rgba(0, 0, 0, 0.2) 36px,
-      rgba(0, 0, 0, 0) 46px);
+        rgba(0, 0, 0, 1) 0,
+        rgba(0, 0, 0, 1) 12px,
+        rgba(0, 0, 0, 0.55) 26px,
+        rgba(0, 0, 0, 0.2) 36px,
+        rgba(0, 0, 0, 0) 46px);
+    mask-image: linear-gradient(0deg,
+        rgba(0, 0, 0, 1) 0,
+        rgba(0, 0, 0, 1) 12px,
+        rgba(0, 0, 0, 0.55) 26px,
+        rgba(0, 0, 0, 0.2) 36px,
+        rgba(0, 0, 0, 0) 46px);
   }
 }
 
@@ -3071,4 +3915,4 @@ body:not(.lvlup-home-v2):not(.elementor-editor-active)
    mitgezogen (per getComputedStyle bestaetigt). */
 .lvf-page .lvaf-metric:not(.lvaf-metric--light) {
   border-color: rgba(255, 255, 255, 0.22);
-}
+}

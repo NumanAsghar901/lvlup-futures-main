@@ -29,7 +29,20 @@ export default function Page() {
 <div className="lvf-page lvaf-page">
   {/* ============================== 1  HERO  y 0 - 746 ============ */}
   <section className="lvaf-hero">
-    <div className="lvaf-hero-bg" aria-hidden="true" />
+    <div className="lvaf-hero-bg" aria-hidden="true">
+      <div className="lvaf-hero-video-wrap">
+        <video
+          className="lvaf-hero-video"
+          src="/assets/media/Affilaite_PAGE.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        <div className="lvaf-hero-video-tint" />
+        <div className="lvaf-hero-video-shade" />
+      </div>
+    </div>
     <div className="lvaf-shell lvaf-hero-in">
       <p className="lvaf-pill lvaf-pill--dot">
         <span className="lvaf-pill-dot" aria-hidden="true" /><span className="lvaf-pill-hl">Lvlup</span>&nbsp;Affiliate Program
