@@ -1,6 +1,6 @@
 'use client';
 // @ts-nocheck
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import Script from 'next/script';
 
 const RULES_INDEX = [
@@ -78,10 +78,65 @@ const RULES_INDEX = [
   { id: 'rule-prohibited-trading', title: 'Prohibited Trading Rules', category: 'Prohibited Trading', sectionId: 'prohibited-trading-rules', text: 'Latency exploitation, front-running, cross-account hedging, group trading prohibited.' },
 ];
 
+// Keep this navigation data separate from the display copy above so a future API
+// can replace it without changing the accordion interaction.
+const RULE_SECTIONS = [
+  { id: 'evaluation', number: 1, title: 'Evaluation', accent: 'Rules', target: 'evaluation-drawdown' },
+  { id: 'drawdown', number: 2, title: 'Drawdown', accent: 'Rules', target: 'evaluation-drawdown' },
+  { id: 'consistency', number: 3, title: 'Consistency', accent: 'Rules', target: 'consistency-rules' },
+  { id: 'trading', number: 4, title: 'Trading', accent: 'Conditions', target: 'consistency-rules' },
+  { id: 'contracts', number: 5, title: 'Contracts and Account', accent: 'Limits', target: 'contracts-and-payout' },
+  { id: 'payouts', number: 6, title: 'Lvlup Funded Payout', accent: 'Rules', target: 'contracts-and-payout' },
+  { id: 'profit-split', number: 7, title: 'Profit Split', accent: 'Rules', target: 'profit-split-rules' },
+  { id: 'starter-payouts', number: 8, title: 'Starter Funded Payout', accent: 'Rules', target: 'profit-split-rules' },
+  { id: 'billing', number: 9, title: 'Billing and Account', accent: 'Lifecycle', target: 'billing-protector' },
+  { id: 'protector', number: 10, title: 'Payout', accent: 'Protector', target: 'billing-protector' },
+  { id: 'platforms', number: 11, title: 'Platforms and', accent: 'Execution', target: 'platforms-verification' },
+  { id: 'verification', number: 12, title: 'Verification and Account', accent: 'Ownership', target: 'platforms-verification' },
+  { id: 'prohibited', number: 13, title: 'Prohibited and Allowed Trading', accent: 'Activity', target: 'prohibited-trading-rules' },
+] as const;
+
+const CATEGORY_SECTION_IDS: Record<string, string> = {
+  'Evaluation': 'evaluation',
+  'Drawdown': 'drawdown',
+  'Consistency': 'consistency',
+  'Trading Conditions': 'trading',
+  'Contracts & Limits': 'contracts',
+  'Payouts': 'payouts',
+  'Starter Payouts': 'starter-payouts',
+  'Billing & Lifecycle': 'billing',
+  'Payout Protector': 'protector',
+  'Platforms': 'platforms',
+  'Prohibited Trading': 'prohibited',
+};
+
 export default function Page() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const searchContainerRef = useRef<HTMLDivElement | null>(null);
+  const pageRef = useRef<HTMLDivElement | null>(null);
+
+  // The original rules are intentionally kept as one source of truth below.
+  // Move each existing rule grid into its matching inline accordion panel once
+  // the client has mounted, rather than duplicating legal/rule copy.
+  useLayoutEffect(() => {
+    const page = pageRef.current;
+    if (!page) return;
+
+    page.querySelectorAll<HTMLElement>('[data-rule-content]').forEach((content) => {
+      if (!content.className.includes('grid')) return;
+      const sectionId = content.dataset.ruleContent;
+      const slot = page.querySelector<HTMLElement>(`[data-rule-slot="${sectionId}"]`);
+      if (!slot) return;
+
+      // Preserve the existing scoped CSS when a grid is moved out of its
+      // legacy section wrapper.
+      const family = content.className.match(/(lvr-r[3-9])-grid/);
+      if (family) slot.classList.add(family[1]);
+      if (content.parentElement !== slot) slot.appendChild(content);
+    });
+  }, []);
 
   const filteredRules = useMemo(() => {
     if (!searchQuery.trim()) return [];
@@ -106,14 +161,18 @@ export default function Page() {
 
   const handleSelectRule = (rule: (typeof RULES_INDEX)[0]) => {
     setIsOpen(false);
-    const element = document.getElementById(rule.id) || document.getElementById(rule.sectionId);
-    if (element) {
+    const sectionId = CATEGORY_SECTION_IDS[rule.category];
+    if (sectionId) setExpandedSection(sectionId);
+
+    // Wait for React to reveal the collapsed group before trying to scroll to
+    // the rule card; otherwise browser scrolling targets a hidden element.
+    requestAnimationFrame(() => {
+      const element = document.getElementById(rule.id) || document.getElementById(rule.sectionId);
+      if (!element) return;
       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
       element.classList.add('lvr-card-highlight');
-      setTimeout(() => {
-        element.classList.remove('lvr-card-highlight');
-      }, 3000);
-    }
+      setTimeout(() => element.classList.remove('lvr-card-highlight'), 3000);
+    });
   };
 
   const handleSearchSubmit = (e?: React.FormEvent) => {
@@ -121,6 +180,21 @@ export default function Page() {
     if (filteredRules.length > 0) {
       handleSelectRule(filteredRules[0]);
     }
+  };
+
+  const toggleRuleSection = (sectionId: string, isExpanded: boolean, trigger: HTMLButtonElement) => {
+    // Closing one long panel changes the document height above the next title.
+    // Preserve the clicked title's screen position so browser scroll anchoring
+    // cannot pull the visitor to the old panel's former location.
+    const topBeforeChange = trigger.getBoundingClientRect().top;
+    setExpandedSection(isExpanded ? null : sectionId);
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const topAfterChange = trigger.getBoundingClientRect().top;
+        window.scrollBy({ top: topAfterChange - topBeforeChange, behavior: 'auto' });
+      });
+    });
   };
 
   return (
@@ -178,15 +252,17 @@ export default function Page() {
 
         /* Ambient Left & Right Glow Orbs - Smooth Gradient rgb(37,145,202) -> rgb(150,218,247) */
         @keyframes lvrGlowLeftFloat {
-          0% { transform: translateY(0) scale(1); opacity: 0.85; }
-          50% { transform: translateY(50px) scale(1.1); opacity: 1; }
-          100% { transform: translateY(0) scale(1); opacity: 0.85; }
+          0% { transform: translateY(-180px) scale(0.96); opacity: 0; }
+          12% { opacity: 0.72; }
+          82% { opacity: 0.68; }
+          100% { transform: translateY(680px) scale(1.08); opacity: 0; }
         }
 
         @keyframes lvrGlowRightFloat {
-          0% { transform: translateY(0) scale(1); opacity: 0.85; }
-          50% { transform: translateY(-45px) scale(1.12); opacity: 1; }
-          100% { transform: translateY(0) scale(1); opacity: 0.85; }
+          0% { transform: translateY(-220px) scale(1.06); opacity: 0; }
+          15% { opacity: 0.76; }
+          80% { opacity: 0.66; }
+          100% { transform: translateY(720px) scale(0.95); opacity: 0; }
         }
 
         .lvr-page-glow-layer {
@@ -206,7 +282,7 @@ export default function Page() {
           height: 1100px;
           background: radial-gradient(ellipse at center, rgba(150, 218, 247, 0.55) 0%, rgba(37, 145, 202, 0.42) 45%, rgba(0, 3, 5, 0) 75%);
           filter: blur(85px);
-          animation: lvrGlowRightFloat 16s ease-in-out infinite;
+          animation: lvrGlowRightFloat 24s linear infinite;
         }
 
         /* Left Side Heavy Glow */
@@ -218,7 +294,7 @@ export default function Page() {
           height: 1200px;
           background: radial-gradient(ellipse at center, rgba(150, 218, 247, 0.48) 0%, rgba(37, 145, 202, 0.38) 45%, rgba(0, 3, 5, 0) 75%);
           filter: blur(90px);
-          animation: lvrGlowLeftFloat 14s ease-in-out infinite;
+          animation: lvrGlowLeftFloat 21s linear -6s infinite;
         }
 
         /* Right Side Heavy Glow */
@@ -230,7 +306,7 @@ export default function Page() {
           height: 1300px;
           background: radial-gradient(ellipse at center, rgba(150, 218, 247, 0.52) 0%, rgba(37, 145, 202, 0.42) 45%, rgba(0, 3, 5, 0) 75%);
           filter: blur(95px);
-          animation: lvrGlowRightFloat 16s ease-in-out infinite;
+          animation: lvrGlowRightFloat 27s linear -14s infinite;
         }
 
         /* Lower Left Side Glow */
@@ -242,7 +318,7 @@ export default function Page() {
           height: 1250px;
           background: radial-gradient(ellipse at center, rgba(150, 218, 247, 0.45) 0%, rgba(37, 145, 202, 0.36) 45%, rgba(0, 3, 5, 0) 75%);
           filter: blur(90px);
-          animation: lvrGlowLeftFloat 12s ease-in-out infinite;
+          animation: lvrGlowLeftFloat 23s linear -10s infinite;
         }
 
         /* Lower Right Side Glow */
@@ -254,7 +330,7 @@ export default function Page() {
           height: 1200px;
           background: radial-gradient(ellipse at center, rgba(150, 218, 247, 0.48) 0%, rgba(37, 145, 202, 0.4) 45%, rgba(0, 3, 5, 0) 75%);
           filter: blur(90px);
-          animation: lvrGlowRightFloat 15s ease-in-out infinite;
+          animation: lvrGlowRightFloat 25s linear -18s infinite;
         }
 
         /* Semi-transparent Cards allowing Glow to brighten from behind */
@@ -392,7 +468,7 @@ export default function Page() {
       `}</style>
       <link rel="stylesheet" href="/assets/css/live/post-8048.css" />
       <link rel="stylesheet" href="/assets/css/live/rules.css" />
-      <div className="lvf-page" style={{ position: 'relative' }}>
+      <div ref={pageRef} className={`lvf-page lvr-rules-page${expandedSection ? ' lvr-rules-page--expanded' : ''}`} data-expanded-section={expandedSection ?? undefined} style={{ position: 'relative' }}>
         {/* Layer 1: Ambient Floating Glow Orbs (Left & Right Sides) */}
         <div className="lvr-page-glow-layer" aria-hidden="true">
           <div className="lvr-glow-top-right" />
@@ -412,13 +488,13 @@ export default function Page() {
             playsInline
             style={{
               position: 'absolute',
-              top: '78%',
+              top: '56%',
               left: '50%',
-              transform: 'translate(-50%, -50%)',
+              transform: 'translate(-50%, -50%) scale(1.22)',
               minWidth: '100%',
               minHeight: '100%',
               objectFit: 'cover',
-              opacity: 0.6,
+              opacity: 0.42,
               pointerEvents: 'none',
               zIndex: 0,
               mixBlendMode: 'screen'
@@ -591,17 +667,25 @@ export default function Page() {
                 </div>
               )}
             </div>
-            <nav className="lvr-r1-chips" aria-label="Rule categories">
-              <a className="lvr-r1-chip lvr-r1-chip--active" href="#account-overview" aria-current="true">All Rules</a>
-              <a className="lvr-r1-chip" href="#evaluation-drawdown">Evaluation</a>
-              <a className="lvr-r1-chip" href="#drawdown-rules">Drawdown</a>
-              <a className="lvr-r1-chip" href="#consistency-rules">Consistency</a>
-              <a className="lvr-r1-chip" href="#trading-conditions">Trading Conditions</a>
-              <a className="lvr-r1-chip" href="#contracts-and-payout">Contracts &amp; Limits</a>
-              <a className="lvr-r1-chip" href="#payout-rules">Payouts</a>
-              <a className="lvr-r1-chip" href="#profit-split-rules">Profit Split</a>
-              <a className="lvr-r1-chip" href="#platforms-verification">Platforms</a>
-              <a className="lvr-r1-chip" href="#billing-protector">Billing &amp; Account Lifecycle</a>
+            <nav className="lvr-rule-accordion" aria-label="Rules sections">
+              {RULE_SECTIONS.map((section) => {
+                const isExpanded = expandedSection === section.id;
+                return (
+                  <React.Fragment key={section.id}>
+                  <button
+                    type="button"
+                    className="lvr-rule-accordion-trigger"
+                    aria-expanded={isExpanded}
+                    aria-controls={section.target}
+                    onClick={(event) => toggleRuleSection(section.id, isExpanded, event.currentTarget)}
+                  >
+                    <span className="lvr-rule-accordion-number">{section.number}</span>
+                    <span>{section.title} <strong>{section.accent}</strong></span>
+                  </button>
+                  <div className={`lvr-rule-accordion-panel${isExpanded ? ' is-open' : ''}`} data-rule-slot={section.id} />
+                  </React.Fragment>
+                );
+              })}
             </nav>
           </div>
         </section>
@@ -781,11 +865,11 @@ export default function Page() {
           <div className="lvr-r3-glow" aria-hidden="true" />
           <div className="lvf-container">
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r3-head">
+            <div className="lvr-r3-head" data-rule-content="evaluation">
               <span className="lvr-r3-badge" aria-hidden="true">1</span>
               <h2 className="lvr-r3-title">Evaluation <span className="lvr-r3-accent">Rules</span></h2>
             </div>
-            <div className="lvr-r3-grid lvr-r3-grid--eval">
+            <div className="lvr-r3-grid lvr-r3-grid--eval" data-rule-content="evaluation">
               <div className="lvr-r3-col">
                 <article className="lvr-r3-card" id="rule-account-types">
                   <div className="lvr-r3-cardhead">
@@ -909,11 +993,11 @@ export default function Page() {
               </div>
             </div>
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r3-head lvr-r3-head--dd" id="drawdown-rules">
+            <div className="lvr-r3-head lvr-r3-head--dd" id="drawdown-rules" data-rule-content="drawdown">
               <span className="lvr-r3-badge" aria-hidden="true">2</span>
               <h2 className="lvr-r3-title">Drawdown <span className="lvr-r3-accent">Rules</span></h2>
             </div>
-            <div className="lvr-r3-grid lvr-r3-grid--dd">
+            <div className="lvr-r3-grid lvr-r3-grid--dd" data-rule-content="drawdown">
               <div className="lvr-r3-col">                <article className="lvr-r3-card lvr-r3-card--solid" id="drawdown-lvlup-max">
                   <div className="lvr-r3-cardhead">
                     <h3 className="lvr-r3-cardtitle">Lvlup Accounts Maximum Drawdown</h3>
@@ -1013,11 +1097,11 @@ export default function Page() {
           <div className="lvr-r4-glow" aria-hidden="true" />
           <div className="lvf-container">
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r4-head">
+            <div className="lvr-r4-head" data-rule-content="consistency">
               <span className="lvr-r4-badge" aria-hidden="true">3</span>
               <h2 className="lvr-r4-title">Consistency <span className="lvr-r4-accent">Rules</span></h2>
             </div>
-            <div className="lvr-r4-grid">
+            <div className="lvr-r4-grid" data-rule-content="consistency">
               <div className="lvr-r4-col">
                 <article className="lvr-r4-card lvr-r4-card--dark" id="consistency-not-breach">
                   <div className="lvr-r4-cardhead">
@@ -1086,11 +1170,11 @@ export default function Page() {
               </div>
             </div>
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r4-head lvr-r4-head--cond" id="trading-conditions">
+            <div className="lvr-r4-head lvr-r4-head--cond" id="trading-conditions" data-rule-content="trading">
               <span className="lvr-r4-badge" aria-hidden="true">4</span>
               <h2 className="lvr-r4-title">Trading <span className="lvr-r4-accent">Conditions</span></h2>
             </div>
-            <div className="lvr-r4-grid">
+            <div className="lvr-r4-grid" data-rule-content="trading">
               <div className="lvr-r4-col">
                 <article className="lvr-r4-card lvr-r4-card--dark" id="rule-news-trading">
                   <div className="lvr-r4-cardhead">
@@ -1188,11 +1272,11 @@ export default function Page() {
           <div className="lvr-r5-glow" aria-hidden="true" />
           <div className="lvf-container">
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r5-head">
+            <div className="lvr-r5-head" data-rule-content="contracts">
               <span className="lvr-r5-badge" aria-hidden="true">5</span>
               <h2 className="lvr-r5-title">Contracts and Account <span className="lvr-r5-accent">Limits</span></h2>
             </div>
-            <div className="lvr-r5-grid">
+            <div className="lvr-r5-grid" data-rule-content="contracts">
               <div className="lvr-r5-col">
                 <article className="lvr-r5-card" id="rule-emini-micro-conversion">
                   <div className="lvr-r5-cardhead">
@@ -1263,11 +1347,11 @@ export default function Page() {
               </div>
             </div>
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r5-head lvr-r5-head--payout" id="payout-rules">
+            <div className="lvr-r5-head lvr-r5-head--payout" id="payout-rules" data-rule-content="payouts">
               <span className="lvr-r5-badge" aria-hidden="true">6</span>
               <h2 className="lvr-r5-title">Lvlup Funded Payout <span className="lvr-r5-accent">Rules</span></h2>
             </div>
-            <div className="lvr-r5-grid">
+            <div className="lvr-r5-grid" data-rule-content="payouts">
               <div className="lvr-r5-col">
                 <article className="lvr-r5-card" id="rule-payout-eligibility">
                   <div className="lvr-r5-cardhead">
@@ -1363,11 +1447,11 @@ export default function Page() {
           <div className="lvr-r6-glow" aria-hidden="true" />
           <div className="lvf-container">
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r6-head">
+            <div className="lvr-r6-head" data-rule-content="profit-split">
               <span className="lvr-r6-badge" aria-hidden="true">7</span>
               <h2 className="lvr-r6-title">Profit Split <span className="lvr-r6-accent">Rules</span></h2>
             </div>
-            <div className="lvr-r6-grid lvr-r6-grid--even">
+            <div className="lvr-r6-grid lvr-r6-grid--even" data-rule-content="profit-split">
               <div className="lvr-r6-col">
                 <article className="lvr-r6-card" id="rule-lvlup-accounts-split">
                   <div className="lvr-r6-cardhead">
@@ -1401,11 +1485,11 @@ export default function Page() {
               </div>
             </div>
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r6-head lvr-r6-head--starter">
+            <div className="lvr-r6-head lvr-r6-head--starter" data-rule-content="starter-payouts">
               <span className="lvr-r6-badge" aria-hidden="true">8</span>
               <h2 className="lvr-r6-title">Starter Funded Payout <span className="lvr-r6-accent">Rules</span></h2>
             </div>
-            <div className="lvr-r6-grid">
+            <div className="lvr-r6-grid" data-rule-content="starter-payouts">
               <div className="lvr-r6-col">
                 <article className="lvr-r6-card" id="rule-starter-reward-cycle">
                   <div className="lvr-r6-cardhead">
@@ -1546,11 +1630,11 @@ export default function Page() {
           <div className="lvr-r7-glow" aria-hidden="true" />
           <div className="lvf-container">
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r7-head">
+            <div className="lvr-r7-head" data-rule-content="billing">
               <span className="lvr-r7-badge" aria-hidden="true">9</span>
               <h2 className="lvr-r7-title">Billing and Account <span className="lvr-r7-title-accent">Lifecycle</span></h2>
             </div>
-            <div className="lvr-r7-grid">
+            <div className="lvr-r7-grid" data-rule-content="billing">
               <div className="lvr-r7-col">
                 <article className="lvr-r7-card" id="rule-dashboard-checkout">
                   <div className="lvr-r7-cardhead">
@@ -1689,11 +1773,11 @@ export default function Page() {
               </div>
             </div>
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r7-head lvr-r7-head--protector">
+            <div className="lvr-r7-head lvr-r7-head--protector" data-rule-content="protector">
               <span className="lvr-r7-badge" aria-hidden="true">10</span>
               <h2 className="lvr-r7-title">Payout <span className="lvr-r7-title-accent">Protector</span></h2>
             </div>
-            <div className="lvr-r7-grid">
+            <div className="lvr-r7-grid" data-rule-content="protector">
               <div className="lvr-r7-col">
                 <article className="lvr-r7-card" id="rule-protector-both-types">
                   <div className="lvr-r7-cardhead">
@@ -1760,11 +1844,11 @@ export default function Page() {
           <div className="lvr-r8-glow" aria-hidden="true" />
           <div className="lvf-container">
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r8-head">
+            <div className="lvr-r8-head" data-rule-content="platforms">
               <span className="lvr-r8-badge" aria-hidden="true">11</span>
               <h2 className="lvr-r8-title">Platforms and <span className="lvr-r8-title-accent">Execution</span></h2>
             </div>
-            <div className="lvr-r8-grid">
+            <div className="lvr-r8-grid" data-rule-content="platforms">
               <article className="lvr-r8-card">
                 <div className="lvr-r8-cardhead">
                   <h3 className="lvr-r8-cardtitle">Supported Trading Platforms</h3>
@@ -1827,11 +1911,11 @@ export default function Page() {
               </article>
             </div>
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r8-head lvr-r8-head--verification">
+            <div className="lvr-r8-head lvr-r8-head--verification" data-rule-content="verification">
               <span className="lvr-r8-badge" aria-hidden="true">12</span>
               <h2 className="lvr-r8-title">Verification and Account <span className="lvr-r8-title-accent">Ownership</span></h2>
             </div>
-            <div className="lvr-r8-grid">
+            <div className="lvr-r8-grid" data-rule-content="verification">
               <article className="lvr-r8-card lvr-r8-card--d80">
                 <div className="lvr-r8-cardhead">
                   <h3 className="lvr-r8-cardtitle">KYC Verification</h3>
@@ -1890,11 +1974,11 @@ export default function Page() {
           <div className="lvr-r9-glow" aria-hidden="true" />
           <div className="lvf-container">
             <div className="lvr-section-divider" aria-hidden="true" />
-            <div className="lvr-r9-head">
+            <div className="lvr-r9-head" data-rule-content="prohibited">
               <span className="lvr-r9-badge" aria-hidden="true">13</span>
               <h2 className="lvr-r9-title">Prohibited and Allowed Trading <span className="lvr-r9-accent">Activity</span></h2>
             </div>
-            <div className="lvr-r9-grid">
+            <div className="lvr-r9-grid" data-rule-content="prohibited">
               {/* LEFT COLUMN */}
               <div className="lvr-r9-col">
                 <article className="lvr-r9-card" id="rule-pricing-latency-exploitation">

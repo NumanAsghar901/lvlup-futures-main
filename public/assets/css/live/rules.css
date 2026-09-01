@@ -236,6 +236,182 @@
   font-weight: 400;
 }
 
+/* Rules index: the page starts as a compact, scannable list. The matching
+   content section is revealed by the numbered control in the hero. */
+.lvr-rule-accordion {
+  width: min(100%, 940px);
+  margin: 48px auto 0;
+  display: grid;
+  gap: 6px;
+  text-align: left;
+}
+.lvr-rule-accordion-trigger {
+  width: 100%;
+  min-height: 42px;
+  display: grid;
+  grid-template-columns: 26px 1fr 24px;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 10px 4px 0;
+  color: rgba(255, 255, 255, 0.92);
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 19px;
+  line-height: 1.25;
+  text-align: left;
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+.lvr-rule-accordion-trigger:hover,
+.lvr-rule-accordion-trigger:focus-visible {
+  color: #fff;
+  background: rgba(0, 162, 255, 0.09);
+  outline: none;
+}
+.lvr-rule-accordion-trigger:focus-visible { box-shadow: 0 0 0 2px rgba(45, 182, 255, 0.85); }
+.lvr-rule-accordion-trigger strong { color: #28baff; font-weight: 600; }
+.lvr-rule-accordion-number {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #31c8ff, #0588dd);
+  color: #00121d;
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow: 0 0 12px rgba(0, 174, 255, 0.34);
+}
+.lvr-rule-accordion-icon { color: #28baff; font-size: 23px; font-weight: 300; text-align: center; }
+
+/* The legacy comparison table is intentionally absent from this revision. */
+.lvr-r2 { display: none; }
+
+/* Collapse all detailed rule blocks until a category is chosen. A single
+   category is deliberately exposed at a time to keep the long rules page easy
+   to navigate on desktop and mobile. */
+.lvr-rules-page:not(.lvr-rules-page--expanded) .lvr-r3,
+.lvr-rules-page:not(.lvr-rules-page--expanded) .lvr-r4,
+.lvr-rules-page:not(.lvr-rules-page--expanded) .lvr-r5,
+.lvr-rules-page:not(.lvr-rules-page--expanded) .lvr-r6,
+.lvr-rules-page:not(.lvr-rules-page--expanded) .lvr-r7,
+.lvr-rules-page:not(.lvr-rules-page--expanded) .lvr-r8,
+.lvr-rules-page:not(.lvr-rules-page--expanded) .lvr-r9 { display: none; }
+.lvr-rules-page[data-expanded-section="evaluation"] .lvr-r4,
+.lvr-rules-page[data-expanded-section="evaluation"] .lvr-r5,
+.lvr-rules-page[data-expanded-section="evaluation"] .lvr-r6,
+.lvr-rules-page[data-expanded-section="evaluation"] .lvr-r7,
+.lvr-rules-page[data-expanded-section="evaluation"] .lvr-r8,
+.lvr-rules-page[data-expanded-section="evaluation"] .lvr-r9,
+.lvr-rules-page[data-expanded-section="drawdown"] .lvr-r4,
+.lvr-rules-page[data-expanded-section="drawdown"] .lvr-r5,
+.lvr-rules-page[data-expanded-section="drawdown"] .lvr-r6,
+.lvr-rules-page[data-expanded-section="drawdown"] .lvr-r7,
+.lvr-rules-page[data-expanded-section="drawdown"] .lvr-r8,
+.lvr-rules-page[data-expanded-section="drawdown"] .lvr-r9 { display: none; }
+.lvr-rules-page[data-expanded-section="consistency"] .lvr-r3,
+.lvr-rules-page[data-expanded-section="consistency"] .lvr-r5,
+.lvr-rules-page[data-expanded-section="consistency"] .lvr-r6,
+.lvr-rules-page[data-expanded-section="consistency"] .lvr-r7,
+.lvr-rules-page[data-expanded-section="consistency"] .lvr-r8,
+.lvr-rules-page[data-expanded-section="consistency"] .lvr-r9,
+.lvr-rules-page[data-expanded-section="trading"] .lvr-r3,
+.lvr-rules-page[data-expanded-section="trading"] .lvr-r5,
+.lvr-rules-page[data-expanded-section="trading"] .lvr-r6,
+.lvr-rules-page[data-expanded-section="trading"] .lvr-r7,
+.lvr-rules-page[data-expanded-section="trading"] .lvr-r8,
+.lvr-rules-page[data-expanded-section="trading"] .lvr-r9 { display: none; }
+.lvr-rules-page[data-expanded-section="contracts"] .lvr-r3,
+.lvr-rules-page[data-expanded-section="contracts"] .lvr-r4,
+.lvr-rules-page[data-expanded-section="contracts"] .lvr-r6,
+.lvr-rules-page[data-expanded-section="contracts"] .lvr-r7,
+.lvr-rules-page[data-expanded-section="contracts"] .lvr-r8,
+.lvr-rules-page[data-expanded-section="contracts"] .lvr-r9,
+.lvr-rules-page[data-expanded-section="payouts"] .lvr-r3,
+.lvr-rules-page[data-expanded-section="payouts"] .lvr-r4,
+.lvr-rules-page[data-expanded-section="payouts"] .lvr-r6,
+.lvr-rules-page[data-expanded-section="payouts"] .lvr-r7,
+.lvr-rules-page[data-expanded-section="payouts"] .lvr-r8,
+.lvr-rules-page[data-expanded-section="payouts"] .lvr-r9 { display: none; }
+.lvr-rules-page[data-expanded-section="profit-split"] .lvr-r3,
+.lvr-rules-page[data-expanded-section="profit-split"] .lvr-r4,
+.lvr-rules-page[data-expanded-section="profit-split"] .lvr-r5,
+.lvr-rules-page[data-expanded-section="profit-split"] .lvr-r7,
+.lvr-rules-page[data-expanded-section="profit-split"] .lvr-r8,
+.lvr-rules-page[data-expanded-section="profit-split"] .lvr-r9,
+.lvr-rules-page[data-expanded-section="starter-payouts"] .lvr-r3,
+.lvr-rules-page[data-expanded-section="starter-payouts"] .lvr-r4,
+.lvr-rules-page[data-expanded-section="starter-payouts"] .lvr-r5,
+.lvr-rules-page[data-expanded-section="starter-payouts"] .lvr-r7,
+.lvr-rules-page[data-expanded-section="starter-payouts"] .lvr-r8,
+.lvr-rules-page[data-expanded-section="starter-payouts"] .lvr-r9 { display: none; }
+.lvr-rules-page[data-expanded-section="billing"] .lvr-r3,
+.lvr-rules-page[data-expanded-section="billing"] .lvr-r4,
+.lvr-rules-page[data-expanded-section="billing"] .lvr-r5,
+.lvr-rules-page[data-expanded-section="billing"] .lvr-r6,
+.lvr-rules-page[data-expanded-section="billing"] .lvr-r8,
+.lvr-rules-page[data-expanded-section="billing"] .lvr-r9,
+.lvr-rules-page[data-expanded-section="protector"] .lvr-r3,
+.lvr-rules-page[data-expanded-section="protector"] .lvr-r4,
+.lvr-rules-page[data-expanded-section="protector"] .lvr-r5,
+.lvr-rules-page[data-expanded-section="protector"] .lvr-r6,
+.lvr-rules-page[data-expanded-section="protector"] .lvr-r8,
+.lvr-rules-page[data-expanded-section="protector"] .lvr-r9 { display: none; }
+.lvr-rules-page[data-expanded-section="platforms"] .lvr-r3,
+.lvr-rules-page[data-expanded-section="platforms"] .lvr-r4,
+.lvr-rules-page[data-expanded-section="platforms"] .lvr-r5,
+.lvr-rules-page[data-expanded-section="platforms"] .lvr-r6,
+.lvr-rules-page[data-expanded-section="platforms"] .lvr-r7,
+.lvr-rules-page[data-expanded-section="platforms"] .lvr-r9,
+.lvr-rules-page[data-expanded-section="verification"] .lvr-r3,
+.lvr-rules-page[data-expanded-section="verification"] .lvr-r4,
+.lvr-rules-page[data-expanded-section="verification"] .lvr-r5,
+.lvr-rules-page[data-expanded-section="verification"] .lvr-r6,
+.lvr-rules-page[data-expanded-section="verification"] .lvr-r7,
+.lvr-rules-page[data-expanded-section="verification"] .lvr-r9 { display: none; }
+.lvr-rules-page[data-expanded-section="prohibited"] .lvr-r3,
+.lvr-rules-page[data-expanded-section="prohibited"] .lvr-r4,
+.lvr-rules-page[data-expanded-section="prohibited"] .lvr-r5,
+.lvr-rules-page[data-expanded-section="prohibited"] .lvr-r6,
+.lvr-rules-page[data-expanded-section="prohibited"] .lvr-r7,
+.lvr-rules-page[data-expanded-section="prohibited"] .lvr-r8 { display: none; }
+
+/* The search suggestions must always sit above the section that was just
+   opened; a stacking context on the hero prevents the old overlap bug. */
+.lvr-r1 { z-index: 20; overflow: visible; }
+.lvr-r1-inner { position: relative; z-index: 2; }
+.lvr-r1-search { position: relative; z-index: 100; }
+
+/* A parent section may contain two rule groups. These attributes let the
+   accordion reveal the exact group instead of its neighbouring group. */
+.lvr-rules-page[data-expanded-section="evaluation"] [data-rule-content]:not([data-rule-content="evaluation"]),
+.lvr-rules-page[data-expanded-section="drawdown"] [data-rule-content]:not([data-rule-content="drawdown"]),
+.lvr-rules-page[data-expanded-section="consistency"] [data-rule-content]:not([data-rule-content="consistency"]),
+.lvr-rules-page[data-expanded-section="trading"] [data-rule-content]:not([data-rule-content="trading"]),
+.lvr-rules-page[data-expanded-section="contracts"] [data-rule-content]:not([data-rule-content="contracts"]),
+.lvr-rules-page[data-expanded-section="payouts"] [data-rule-content]:not([data-rule-content="payouts"]),
+.lvr-rules-page[data-expanded-section="profit-split"] [data-rule-content]:not([data-rule-content="profit-split"]),
+.lvr-rules-page[data-expanded-section="starter-payouts"] [data-rule-content]:not([data-rule-content="starter-payouts"]),
+.lvr-rules-page[data-expanded-section="billing"] [data-rule-content]:not([data-rule-content="billing"]),
+.lvr-rules-page[data-expanded-section="protector"] [data-rule-content]:not([data-rule-content="protector"]),
+.lvr-rules-page[data-expanded-section="platforms"] [data-rule-content]:not([data-rule-content="platforms"]),
+.lvr-rules-page[data-expanded-section="verification"] [data-rule-content]:not([data-rule-content="verification"]),
+.lvr-rules-page[data-expanded-section="prohibited"] [data-rule-content]:not([data-rule-content="prohibited"]) { display: none; }
+
+/* Tighter, more focused ambient light to match the supplied Figma. */
+.lvr-r1-bg { height: 610px; background-size: 132% auto; background-position: center top; }
+.lvr-r1-glow { top: 105px; width: min(760px, 92vw); height: 400px; filter: blur(14px); }
+.lvr-r1-glow--low { top: 495px; height: 280px; opacity: 0.66; }
+
+@media (max-width: 767px) {
+  .lvr-rule-accordion { margin-top: 32px; gap: 3px; }
+  .lvr-rule-accordion-trigger { grid-template-columns: 22px 1fr 20px; gap: 8px; min-height: 39px; font-size: 16px; }
+  .lvr-rule-accordion-number { width: 18px; height: 18px; font-size: 10px; }
+  .lvr-r1-bg { height: 540px; background-size: auto 100%; }
+}
+
 /* --- Tablet --- */
 @media (max-width: 1023px) {
   .lvr-r1-inner { padding-top: 190px; padding-bottom: 80px; }
@@ -4311,4 +4487,40 @@
    =========================================================================== */
 @media (max-width: 1023px) {
   .lvf-page .lvf-s10-stat-label { font-size: max(13px, 0.36em); }
+}
+
+/* Inline accordion panels. Rule grids are moved here on mount so the selected
+   section opens exactly below its heading and naturally pushes later headings
+   down the page. */
+.lvr-rules-page .lvr-r3,
+.lvr-rules-page .lvr-r4,
+.lvr-rules-page .lvr-r5,
+.lvr-rules-page .lvr-r6,
+.lvr-rules-page .lvr-r7,
+.lvr-rules-page .lvr-r8,
+.lvr-rules-page .lvr-r9 { display: none !important; }
+.lvr-rule-accordion-trigger { grid-template-columns: 26px 1fr; }
+.lvr-rule-accordion-panel {
+  display: none;
+  margin: 8px 0 22px;
+  overflow: hidden;
+}
+.lvr-rule-accordion-panel.is-open { display: block; }
+.lvr-rule-accordion-panel > [data-rule-content] {
+  animation: lvr-inline-rule-reveal 220ms ease-out;
+}
+.lvr-rule-accordion-panel .lvr-r3-grid,
+.lvr-rule-accordion-panel .lvr-r4-grid,
+.lvr-rule-accordion-panel .lvr-r5-grid,
+.lvr-rule-accordion-panel .lvr-r6-grid,
+.lvr-rule-accordion-panel .lvr-r7-grid,
+.lvr-rule-accordion-panel .lvr-r8-grid,
+.lvr-rule-accordion-panel .lvr-r9-grid { width: 100%; }
+@keyframes lvr-inline-rule-reveal {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 767px) {
+  .lvr-rule-accordion-trigger { grid-template-columns: 22px 1fr; }
+  .lvr-rule-accordion-panel { margin-bottom: 16px; }
 }
