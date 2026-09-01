@@ -672,7 +672,6 @@ export default function Page() {
                 const isExpanded = expandedSection === section.id;
                 return (
                   <React.Fragment key={section.id}>
-<<<<<<< HEAD
                     <button
                       type="button"
                       className="lvr-rule-accordion-trigger"
@@ -684,19 +683,6 @@ export default function Page() {
                       <span>{section.title} <strong>{section.accent}</strong></span>
                     </button>
                     <div className={`lvr-rule-accordion-panel${isExpanded ? ' is-open' : ''}`} data-rule-slot={section.id} />
-=======
-                  <button
-                    type="button"
-                    className="lvr-rule-accordion-trigger"
-                    aria-expanded={isExpanded}
-                    aria-controls={section.target}
-                    onClick={(event) => toggleRuleSection(section.id, isExpanded, event.currentTarget)}
-                  >
-                    <span className="lvr-rule-accordion-number">{section.number}</span>
-                    <span>{section.title} <strong>{section.accent}</strong></span>
-                  </button>
-                  <div className={`lvr-rule-accordion-panel${isExpanded ? ' is-open' : ''}`} data-rule-slot={section.id} />
->>>>>>> 15fad86d034c641721d6368ac0655387852bf9f7
                   </React.Fragment>
                 );
               })}
