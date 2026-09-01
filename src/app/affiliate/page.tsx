@@ -1,7 +1,36 @@
+"use client";
+
 // @ts-nocheck
 import Script from 'next/script';
+import { useEffect } from 'react';
 
 export default function Page() {
+  useEffect(() => {
+    const buttons = document.querySelectorAll('.lvaf-fq-btn');
+
+    const handleClick = (e: Event) => {
+      const btn = e.currentTarget as HTMLButtonElement;
+      const item = btn.closest('.lvaf-fq-item');
+      if (!item) return;
+
+      const isClosed = item.classList.contains('lvaf-fq-closed');
+
+      if (isClosed) {
+        item.classList.remove('lvaf-fq-closed');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        item.classList.add('lvaf-fq-closed');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    };
+
+    buttons.forEach(btn => btn.addEventListener('click', handleClick));
+
+    return () => {
+      buttons.forEach(btn => btn.removeEventListener('click', handleClick));
+    };
+  }, []);
+
   return (
     <>
       <link rel="stylesheet" href="/assets/css/live/post-5024.css" />
@@ -315,7 +344,7 @@ export default function Page() {
            Feld zugeordnet. Der frueher hier stehende Hinweis, die Liste
            sei im Entwurf nicht sichtbar, war falsch. */}
                   <select className="lvaf-app-input lvaf-app-select" id="lvaf-app-platform" name="primary-platform" required>
-                    <option value selected disabled>Select here</option>
+                    <option value="select here" selected disabled>Select here</option>
                     <option value="youtube">YouTube</option>
                     <option value="instagram">Instagram</option>
                     <option value="tiktok">TikTok</option>
@@ -345,7 +374,7 @@ export default function Page() {
                 <span className="lvaf-app-ctrl lvaf-app-ctrl-sel">
                   {/* Optionen aus dem Kundenentwurf "mockups/affiliate page/form.png". */}
                   <select className="lvaf-app-input lvaf-app-select" id="lvaf-app-size" name="audience-size" required>
-                    <option value selected disabled>Select here</option>
+                    <option value="select here" selected disabled>Select here</option>
                     <option value="under-1000">Under 1,000</option>
                     <option value="1000-to-10000">1,000 to 10,000</option>
                     <option value="10000-to-50000">10,000 to 50,000</option>
