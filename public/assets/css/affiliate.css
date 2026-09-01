@@ -211,12 +211,12 @@
          rechts 800x420 at 1810|730 ->  765x387 at 1915|746
        Mittlere Abweichung ueber alle Kanaele 8,75 -> 6,66.
        Der rechte Rand war im Band y 400-700 um bis zu +21 zu hell.      */
-    radial-gradient(846px 907px at 185px 747px,
+    radial-gradient(600px 807px at 185px 747px,
       #3ab4fb 0%, rgba(52, 178, 250, 0.95) 20%, rgba(44, 164, 244, 0.76) 28%,
       rgba(34, 148, 228, 0.63) 36%, rgba(24, 126, 205, 0.5) 42%,
       rgba(16, 106, 178, 0.4) 50%, rgba(10, 80, 138, 0.28) 60%,
       rgba(5, 50, 90, 0.16) 72%, rgba(2, 26, 48, 0.09) 88%, rgba(0, 0, 0, 0) 100%),
-    radial-gradient(765px 387px at 1915px 746px,
+    radial-gradient(600px 300px at 1915px 746px,
       rgba(0, 150, 235, 0.44) 0%, rgba(0, 132, 210, 0.3) 40%,
       rgba(0, 100, 165, 0.2) 65%, rgba(0, 52, 90, 0.09) 90%, rgba(0, 0, 0, 0) 100%),
     linear-gradient(180deg, #000102 0%, #01080e 45%, #01111a 100%);
@@ -775,13 +775,13 @@
        Ebene traegt genau diese Differenz nach: Lage und Deckkraft
        sind aus (Referenz minus gerendertem Stand) zurueckgerechnet,
        deshalb steht sie ueber der schmalen Ellipse.               */
-    radial-gradient(758px 430px at 1710px 175px,
-      rgba(185, 231, 255, 0.555) 2.4%, rgba(185, 231, 255, 0.555) 7.3%, rgba(185, 231, 255, 0.520) 17.1%, rgba(185, 231, 255,
+    radial-gradient(758px 430px at 100% 175px,
+      rgba(185, 231, 255) 2.4%, rgba(185, 231, 255) 7.3%, rgba(185, 231, 255) 17.1%, rgba(185, 231, 255,
         0.404) 26.8%, rgba(185, 231, 255, 0.317) 36.6%, rgba(185, 231,
         255, 0.271) 46.3%, rgba(185, 231, 255, 0.188) 56.1%, rgba(185,
-        231, 255, 0.106) 65.9%, rgba(185, 231, 255, 0.054) 75.6%,
-      rgba(185, 231, 255, 0.021) 85.4%, rgba(185, 231, 255, 0.005) 95.1%, rgba(185, 231, 255, 0) 100%),
-    radial-gradient(575px 2260px at 1850px 170px,
+        231, 255, 0) 65.9%, rgba(185, 231, 255, 0.054) 75.6%,
+      rgba(185, 231, 255, 0.021) 85.4%, rgba(185, 230, 255, 0) 95.1%, rgba(0, 0, 0, 0) 100%),
+    radial-gradient(500px 2260px at 100% 175px,
       rgb(185, 231, 255) 0%, rgb(183, 229, 254) 10%, rgb(180, 227,
         253) 17%, rgb(145, 210, 240) 20%, rgb(128, 202, 235) 23%,
       rgb(103, 187, 222) 26%, rgb(70, 160, 199) 29%, rgb(50, 135,
@@ -805,7 +805,12 @@
   border-radius: 16px;
   overflow: hidden;
   text-align: left;
+  position: relative;
+  z-index: 100;
+  background-color: #000306;
+  /* Solid background to hide glow */
 }
+
 
 .lvf-page .lvaf-tr {
   display: grid;
