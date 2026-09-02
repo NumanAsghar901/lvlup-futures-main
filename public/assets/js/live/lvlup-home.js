@@ -127,7 +127,7 @@
       if (!visible) return;
       if (reduced()) return;   /* kein Autoplay bei reduzierter Bewegung */
       var promise;
-      try { promise = video.play(); } catch (e) { return; }
+      try { promise = video.play(); } catch { return; }
       if (promise && typeof promise.catch === 'function') promise.catch(function () { /* Autoplay abgelehnt */ });
     }
 
@@ -137,7 +137,7 @@
         for (var i = 0; i < entries.length; i++) {
           visible = entries[i].isIntersecting;
           if (visible) play();
-          else if (!video.paused) { try { video.pause(); } catch (e) { /* egal */ } }
+          else if (!video.paused) { try { video.pause(); } catch { /* egal */ } }
         }
       }, { threshold: 0 });
       observer.observe(video);
@@ -152,7 +152,7 @@
       video.muted = true;              /* Autoplay ist nur stumm erlaubt */
       video.setAttribute('preload', 'metadata');
       video.setAttribute('src', src);
-      try { video.load(); } catch (e) { /* egal */ }
+      try { video.load(); } catch { /* egal */ }
       watch();
       play();
     }
@@ -165,7 +165,7 @@
     }
 
     onMotionChange(function () {
-      if (reduced()) { try { video.pause(); } catch (e) { /* egal */ } }
+      if (reduced()) { try { video.pause(); } catch { /* egal */ } }
       else play();
     });
   }

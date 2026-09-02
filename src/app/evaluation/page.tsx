@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Script from 'next/script';
 
 export default function Page() {
@@ -1373,7 +1372,7 @@ export default function Page() {
           <div className="lvf-container lvev-e7-inner">
             {/* Kopfblock: H2 + Subline (kein Kicker in diesem Design) */}
             <div className="lvev-e7-head">
-              <p className="lvev-e7-kicker">FAQ'S</p>
+              <p className="lvev-e7-kicker">FAQ&apos;S</p>
               <h2 className="lvev-e7-title" id="lvev-e7-title">Frequently Asked <span className="lvev-e7-title-accent">Questions</span></h2>
               <p className="lvev-e7-sub">Key details before entering an evaluation.</p>
             </div>

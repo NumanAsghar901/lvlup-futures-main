@@ -1,4 +1,3 @@
-// @ts-nocheck
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -748,7 +747,7 @@ export default function Page() {
             <div className="lvfq-b3-a" id="lvfq-b3-a6-4" role="region" aria-labelledby="lvfq-b3-q6-4">
               <div className="lvfq-b3-a-in">
                 <p className="lvfq-b3-p">Sumsub may request a government-issued identity document and additional verification information.</p>
-                <p className="lvfq-b3-p">The exact requirements depend on the trader's country and the verification checks required for the account.</p>
+                <p className="lvfq-b3-p">The exact requirements depend on the trader&apos;s country and the verification checks required for the account.</p>
               </div>
             </div>
           </li>
@@ -770,7 +769,7 @@ export default function Page() {
             <div className="lvfq-b3-a" id="lvfq-b3-a6-6" role="region" aria-labelledby="lvfq-b3-q6-6">
               <div className="lvfq-b3-a-in">
                 <p className="lvfq-b3-p">Approved Lvlup payout requests are generally processed within 24 to 48 hours after review.</p>
-                <p className="lvfq-b3-p">This processing period is separate from the account's payout-eligibility schedule.</p>
+                <p className="lvfq-b3-p">This processing period is separate from the account&apos;s payout-eligibility schedule.</p>
               </div>
             </div>
           </li>
@@ -929,7 +928,7 @@ export default function Page() {
             <h3 className="lvfq-b4-qwrap"><button className="lvfq-b4-q" type="button" id="lvfq-b4-q8-5" aria-expanded="false" aria-controls="lvfq-b4-a8-5"><span className="lvfq-b4-qtext">Can I purchase another account after a breach?</span><span className="lvfq-b4-icon" aria-hidden="true"><i /></span></button></h3>
             <div className="lvfq-b4-a" id="lvfq-b4-a8-5" role="region" aria-labelledby="lvfq-b4-q8-5">
               <div className="lvfq-b4-a-in">
-                <p className="lvfq-b4-p">Yes, provided your account remains eligible and you continue to comply with the program's account and allocation requirements.</p>
+                <p className="lvfq-b4-p">Yes, provided your account remains eligible and you continue to comply with the program&apos;s account and allocation requirements.</p>
               </div>
             </div>
           </li>
@@ -974,7 +973,7 @@ export default function Page() {
             <div className="lvfq-b4-a" id="lvfq-b4-a9-3" role="region" aria-labelledby="lvfq-b4-q9-3">
               <div className="lvfq-b4-a-in">
                 <p className="lvfq-b4-p">A trader qualifies by accumulating 10,000 verified Elite points.</p>
-                <p className="lvfq-b4-p">The 10,000 entry points are redeemed when membership begins. Any points above the entry requirement remain in the member's balance.</p>
+                <p className="lvfq-b4-p">The 10,000 entry points are redeemed when membership begins. Any points above the entry requirement remain in the member&apos;s balance.</p>
               </div>
             </div>
           </li>
@@ -997,7 +996,7 @@ export default function Page() {
             <h3 className="lvfq-b4-qwrap"><button className="lvfq-b4-q" type="button" id="lvfq-b4-q9-5" aria-expanded="false" aria-controls="lvfq-b4-a9-5"><span className="lvfq-b4-qtext">How long does Elite membership last?</span><span className="lvfq-b4-icon" aria-hidden="true"><i /></span></button></h3>
             <div className="lvfq-b4-a" id="lvfq-b4-a9-5" role="region" aria-labelledby="lvfq-b4-q9-5">
               <div className="lvfq-b4-a-in">
-                <p className="lvfq-b4-p">Elite membership remains active for 12 months from the member's activation date.</p>
+                <p className="lvfq-b4-p">Elite membership remains active for 12 months from the member&apos;s activation date.</p>
                 <p className="lvfq-b4-p">Members must requalify through verified performance to maintain membership for another annual period.</p>
               </div>
             </div>
@@ -1034,7 +1033,7 @@ export default function Page() {
             <div className="lvfq-b4-a" id="lvfq-b4-a9-8" role="region" aria-labelledby="lvfq-b4-q9-8">
               <div className="lvfq-b4-a-in">
                 <p className="lvfq-b4-p">The 10,000 points required for entry are redeemed when membership begins.</p>
-                <p className="lvfq-b4-p">Any verified balance above 10,000 remains available in the member's account.</p>
+                <p className="lvfq-b4-p">Any verified balance above 10,000 remains available in the member&apos;s account.</p>
               </div>
             </div>
           </li>

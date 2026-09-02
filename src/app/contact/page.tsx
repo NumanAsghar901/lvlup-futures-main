@@ -1,6 +1,3 @@
-// @ts-nocheck
-import Script from 'next/script';
-
 export default function Page() {
   return (
     <>
@@ -23,7 +20,7 @@ export default function Page() {
                 <span className="lvct-hero-l1">Need Help?</span>
                 <span className="lvct-hero-l2">You’re in the Right Place.</span>
               </h1>
-              <p className="lvct-hero-sub">Whether it's your evaluation, funded account, payout, platform, billing, or something else, our support team is here to help you find the right answer and keep moving.</p>
+              <p className="lvct-hero-sub">Whether it&apos;s your evaluation, funded account, payout, platform, billing, or something else, our support team is here to help you find the right answer and keep moving.</p>
               <div className="lvct-hero-actions">
                 {/* Ziel des Live-Chats ist nirgends bestaetigt -> bewusst ohne href */}
                 <span className="lvct-btn lvct-btn--primary lvct-btn--hero" data-lvct-link="live-chat">
@@ -105,7 +102,7 @@ export default function Page() {
                     <img src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-community.webp" alt="" width={36} height={36} />
                   </span>
                   <h3 className="lvct-card-title">Lvlup Community</h3>
-                  <p className="lvct-card-text">Connect with the wider Lvlup community, follow announcements, and<br className="lvct-brk" /> stay close to what's happening.</p>
+                  <p className="lvct-card-text">Connect with the wider Lvlup community, follow announcements, and<br className="lvct-brk" /> stay close to what&apos;s happening.</p>
                   <div className="lvct-card-foot">
                     <a
                       className="lvct-btn lvct-btn--primary lvct-btn--card"
@@ -132,7 +129,7 @@ export default function Page() {
               <h2 className="lvct-formsec-title">
                 <span className="lvct-head-silver">Tell Us What </span><span className="lvct-head-blue">You Need</span>
               </h2>
-              <p className="lvct-sectionsub">Give us a little context and we'll make sure your enquiry reaches the right place.</p>
+              <p className="lvct-sectionsub">Give us a little context and we&apos;ll make sure your enquiry reaches the right place.</p>
               <form className="lvct-panel" action="#" method="post" noValidate>
                 <div className="lvct-field">
                   <label className="lvct-label" htmlFor="lvct-name">Full Name<span className="lvct-req" aria-hidden="true">*</span></label>

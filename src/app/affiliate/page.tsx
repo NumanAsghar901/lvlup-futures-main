@@ -1,7 +1,6 @@
 "use client";
 
 // @ts-nocheck
-import Script from 'next/script';
 import { useEffect } from 'react';
 
 export default function Page() {
@@ -448,7 +447,7 @@ export default function Page() {
           <span className="lvaf-fq-glow lvaf-fq-glow-l" aria-hidden="true" />
           <span className="lvaf-fq-glow lvaf-fq-glow-r" aria-hidden="true" />
           <div className="lvaf-fq-in">
-            <p className="lvaf-fq-badge">FAQ'S</p>
+            <p className="lvaf-fq-badge">FAQ&apos;S</p>
             <h2 className="lvaf-fq-title" id="lvaf-fq-title">
               <span className="lvaf-fq-title-w">Affiliate </span><span className="lvaf-fq-title-b">FAQs</span>
             </h2>

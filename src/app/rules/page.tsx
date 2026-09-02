@@ -1,7 +1,6 @@
 'use client';
-// @ts-nocheck
 import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
-import Script from 'next/script';
+import Link from 'next/link';
 
 const RULES_INDEX = [
   { id: 'rule-account-types', title: 'Account Types', category: 'Evaluation', sectionId: 'evaluation-drawdown', text: 'Lvlup Accounts and Starter Accounts available in 25K, 50K, 100K and 150K sizes.' },
@@ -2027,7 +2026,7 @@ export default function Page() {
                   </div>
                   <div className="lvr-r9-body">
                     <p>A trader may use their own Trading Bot or automated trading system.</p>
-                    <p>The automation must be used for the verified trader's own strategy and trading activity.</p>
+                    <p>The automation must be used for the verified trader&apos;s own strategy and trading activity.</p>
                     <p>Automation may not be used to coordinate or copy trades between different traders.</p>
                   </div>
                 </article>
@@ -2036,7 +2035,7 @@ export default function Page() {
                     <h3 className="lvr-r9-cardtitle">Front-Running</h3>
                   </div>
                   <div className="lvr-r9-body">
-                    <p>Traders may not use advance knowledge of another trader's or account's pending market order to enter the market beforehand.</p>
+                    <p>Traders may not use advance knowledge of another trader&apos;s or account&apos;s pending market order to enter the market beforehand.</p>
                   </div>
                 </article>
                 <article className="lvr-r9-card">
@@ -2076,7 +2075,7 @@ export default function Page() {
                   </div>
                   <div className="lvr-r9-body">
                     <p>Third-party services may not trade, manage or pass an Evaluation on behalf of the registered trader.</p>
-                    <p>The Evaluation must reflect the registered trader's own trading activity.</p>
+                    <p>The Evaluation must reflect the registered trader&apos;s own trading activity.</p>
                   </div>
                 </article>
                 <article className="lvr-r9-card">
@@ -2140,7 +2139,7 @@ export default function Page() {
                     <p>This includes hedging:</p>
                     <ul style={{ listStyleType: 'disc' }}>
                       <li>Between separate Lvlup Accounts</li>
-                      <li>Between a Lvlup Account and another firm's account</li>
+                      <li>Between a Lvlup Account and another firm&apos;s account</li>
                     </ul>
                   </div>
                 </article>
@@ -2230,7 +2229,7 @@ export default function Page() {
             <div style={{ position: 'relative', width: '100%' }}>
               <img src="assets/media/CTA_frame.png" alt="Choose Your Evaluation - Build Toward $1M" style={{ width: '100%', height: 'auto', objectFit: 'contain', borderRadius: 40, display: 'block', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }} />
               {/* Transparent functional links mapped over the baked-in image buttons */}
-              <a href="/#evaluations" aria-label="Choose Your Evaluation" style={{ position: 'absolute', left: '25%', top: '65%', width: '24%', height: '25%', zIndex: 10, display: 'block' }} />
+              <Link href="/#evaluations" aria-label="Choose Your Evaluation" style={{ position: 'absolute', left: '25%', top: '65%', width: '24%', height: '25%', zIndex: 10, display: 'block' }} />
               <a href="/rules" aria-label="View the Rules" style={{ position: 'absolute', left: '51%', top: '65%', width: '24%', height: '25%', zIndex: 10, display: 'block' }} />
             </div>
           </div>

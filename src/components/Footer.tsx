@@ -20,9 +20,9 @@ export default function Footer() {
             {/* Brand strip: logo, tagline, social links */}
             <div className="lvf-s11-strip">
               <div className="lvf-s11-strip-inner">
-                <a className="lvf-s11-logo" href="/" aria-label="Lvlup Futures - back to top">
+                <Link className="lvf-s11-logo" href="/" aria-label="Lvlup Futures - back to top">
                   <img className="lvf-s11-logo-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-logo-nav.webp" width={780} height={120} alt="true" loading="lazy" decoding="async" />
-                </a>
+                </Link>
                 <p className="lvf-s11-tagline">A refined structure for futures evaluations, built around clarity and discipline.</p>
                 <ul className="lvf-s11-social">
                   <li>

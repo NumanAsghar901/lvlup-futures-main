@@ -214,7 +214,7 @@ window.lvevUpdateGrandTotal = lvevUpdateGrandTotal;
       });
   }
 
-  function selectCard(chip, typePanelStr) {
+  function selectCard(chip) {
       window.LVEV_CURRENT_PLAN_SIZE = chip.getAttribute('data-lvev-e2-select');
       var panels = Array.prototype.slice.call(root.querySelectorAll('.lvev-e2-cards'));
       panels.forEach(function (panel) {

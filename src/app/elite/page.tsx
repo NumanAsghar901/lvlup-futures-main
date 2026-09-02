@@ -1,5 +1,5 @@
-// @ts-nocheck
 import Script from 'next/script';
+import Link from 'next/link';
 
 export default function Page() {
   return (
@@ -572,7 +572,7 @@ export default function Page() {
                     </li>
                   </ul>
                   <div className="lve-e7-actions">
-                    <a className="lve-e7-btn lve-e7-btn--primary" href="/#evaluations">
+                    <Link className="lve-e7-btn lve-e7-btn--primary" href="/#evaluations">
                       <span className="lve-e7-btn-chip" aria-hidden="true">
                         <svg viewBox="0 0 24 24" width={18} height={18} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M7 17L17 7" />
@@ -580,7 +580,7 @@ export default function Page() {
                         </svg>
                       </span>
                       Choose Your Evaluation
-                    </a>
+                    </Link>
                     <a className="lve-e7-btn lve-e7-btn--ghost" href="/rules">View the Rules</a>
                   </div>
                 </div>

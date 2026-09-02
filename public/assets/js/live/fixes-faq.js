@@ -79,10 +79,10 @@
   var sanft = false;
   try {
     sanft = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  } catch (e) { sanft = false; }
+  } catch { sanft = false; }
 
   function tabu(el) {
-    try { return !!(el && el.closest && el.closest(TABU)); } catch (e) { return true; }
+    try { return !!(el && el.closest && el.closest(TABU)); } catch { return true; }
   }
 
   function offen(btn) {
@@ -97,7 +97,7 @@
   function schalterDerSeite() {
     var raus = [];
     var alle;
-    try { alle = document.querySelectorAll(SCHALTER); } catch (e) { return raus; }
+    try { alle = document.querySelectorAll(SCHALTER); } catch { return raus; }
     Array.prototype.forEach.call(alle, function (b) { if (!tabu(b)) { raus.push(b); } });
     return raus;
   }
@@ -246,7 +246,7 @@
       var eigenLogik = false;
       try {
         eigenLogik = !!(liste.matches(EIGENLOGIK) || liste.closest(EIGENLOGIK) || liste.querySelector(EIGENLOGIK));
-      } catch (e) { eigenLogik = false; }
+      } catch { eigenLogik = false; }
 
       var gruppe = {
         liste: liste,

@@ -1,5 +1,10 @@
-// @ts-nocheck
 import Script from 'next/script';
+import type { CSSProperties } from 'react';
+
+type FaqGlowStyle = CSSProperties & {
+  '--s09Gx': string;
+  '--s09Gw': string;
+};
 
 export default function Page() {
   return (
@@ -1192,7 +1197,7 @@ export default function Page() {
               <header className="lvf-s06-head">
                 <p className="lvf-s06-kicker"><span className="lvf-s06-kicker-text">Trading Platforms</span></p>
                 <h2 className="lvf-s06-title" id="lvf-s06-title">Your Trading <span className="lvf-s06-title-hl">Environment</span></h2>
-                <p className="lvf-s06-sub">Access the evaluation through Lvlup's supported futures trading platforms.</p>
+                <p className="lvf-s06-sub">Access the evaluation through Lvlup&apos;s supported futures trading platforms.</p>
               </header>
               <ul className="lvf-s06-grid">
                 <li className="lvf-s06-card lvf-s06-card--row">
@@ -1681,7 +1686,7 @@ export default function Page() {
                   </li>
                   <li className="lvf-s07-tcard lvf-s07-tcard--e">
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
-                    <blockquote className="lvf-s07-quote">“The profit split actually reflects the risk I'm taking as a trader.”</blockquote>
+                    <blockquote className="lvf-s07-quote">“The profit split actually reflects the risk I&apos;m taking as a trader.”</blockquote>
                     <span className="lvf-s07-person">
                       <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
@@ -1973,7 +1978,7 @@ export default function Page() {
               </div>
               {/* Akkordeon */}
               <div className="lvf-s09-list" data-lvf-s09-accordion>
-                <div className="lvf-s09-item is-open" data-lvf-s09-item style={{ '--s09Gx': 'var(--s09-glow1-x)', '--s09Gw': '71%' as any }}>
+                <div className="lvf-s09-item is-open" data-lvf-s09-item style={{ '--s09Gx': 'var(--s09-glow1-x)', '--s09Gw': '71%' } as FaqGlowStyle}>
                   <span className="lvf-s09-glow" aria-hidden="true" />
                   <span className="lvf-s09-line lvf-s09-line--a" aria-hidden="true" />
                   <span className="lvf-s09-line lvf-s09-line--b" aria-hidden="true" />
@@ -1995,7 +2000,7 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-                <div className="lvf-s09-item" data-lvf-s09-item style={{ '--s09Gx': '60.4%', '--s09Gw': '89%' as any }}>
+                <div className="lvf-s09-item" data-lvf-s09-item style={{ '--s09Gx': '60.4%', '--s09Gw': '89%' } as FaqGlowStyle}>
                   <span className="lvf-s09-glow" aria-hidden="true" />
                   <h3 className="lvf-s09-qh">
                     <button className="lvf-s09-q" type="button" id="lvf-s09-q2" aria-expanded="false" aria-controls="lvf-s09-a2">
@@ -2016,7 +2021,7 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-                <div className="lvf-s09-item" data-lvf-s09-item style={{ '--s09Gx': '68.3%', '--s09Gw': '73%' as any }}>
+                <div className="lvf-s09-item" data-lvf-s09-item style={{ '--s09Gx': '68.3%', '--s09Gw': '73%' } as FaqGlowStyle}>
                   <span className="lvf-s09-glow" aria-hidden="true" />
                   <h3 className="lvf-s09-qh">
                     <button className="lvf-s09-q" type="button" id="lvf-s09-q3" aria-expanded="false" aria-controls="lvf-s09-a3">
@@ -2037,7 +2042,7 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-                <div className="lvf-s09-item" data-lvf-s09-item style={{ '--s09Gx': '74.4%', '--s09Gw': '61%' as any }}>
+                <div className="lvf-s09-item" data-lvf-s09-item style={{ '--s09Gx': '74.4%', '--s09Gw': '61%' } as FaqGlowStyle}>
                   <span className="lvf-s09-glow" aria-hidden="true" />
                   <h3 className="lvf-s09-qh">
                     <button className="lvf-s09-q" type="button" id="lvf-s09-q4" aria-expanded="false" aria-controls="lvf-s09-a4">
@@ -2057,7 +2062,7 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-                <div className="lvf-s09-item" data-lvf-s09-item style={{ '--s09Gx': '79.7%', '--s09Gw': '51%' as any }}>
+                <div className="lvf-s09-item" data-lvf-s09-item style={{ '--s09Gx': '79.7%', '--s09Gw': '51%' } as FaqGlowStyle}>
                   <span className="lvf-s09-glow" aria-hidden="true" />
                   <h3 className="lvf-s09-qh">
                     <button className="lvf-s09-q" type="button" id="lvf-s09-q5" aria-expanded="false" aria-controls="lvf-s09-a5">
@@ -2077,7 +2082,7 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-                <div className="lvf-s09-item" data-lvf-s09-item style={{ '--s09Gx': '79.7%', '--s09Gw': '51%' as any }}>
+                <div className="lvf-s09-item" data-lvf-s09-item style={{ '--s09Gx': '79.7%', '--s09Gw': '51%' } as FaqGlowStyle}>
                   <span className="lvf-s09-glow" aria-hidden="true" />
                   <h3 className="lvf-s09-qh">
                     <button className="lvf-s09-q" type="button" id="lvf-s09-q6" aria-expanded="false" aria-controls="lvf-s09-a6">
