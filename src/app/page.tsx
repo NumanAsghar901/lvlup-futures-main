@@ -179,7 +179,7 @@ export default function Page() {
    breite Transparentraender, der Wrapper zoomt auf den sichtbaren Ausschnitt. */}
               <span className="lvf-s02-partner lvf-s02-partner--chart lvf-s02-vol" aria-label="Volumetrica">
                 <span className="lvf-s02-vol-mark" aria-hidden="true">
-                  <img src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-5b26379619.webp" width={512} height={512} loading="lazy" decoding="async" alt />
+                  <img src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-5b26379619.webp" width={512} height={512} loading="lazy" decoding="async" alt="" />
                 </span>
                 <span className="lvf-s02-vol-word" aria-hidden="true">Volumetrica</span>
               </span>
@@ -1197,7 +1197,7 @@ export default function Page() {
               <ul className="lvf-s06-grid">
                 <li className="lvf-s06-card lvf-s06-card--row">
                   <div className="lvf-s06-logo-box">
-                    <img className="lvf-s06-logo-img lvf-s06-logo-img--dx" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-9e83bcda12.webp" width={92} height={67} loading="eager" decoding="async" alt />
+                    <img className="lvf-s06-logo-img lvf-s06-logo-img--dx" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-9e83bcda12.webp" width={92} height={67} loading="eager" decoding="async" alt="" />
                   </div>
                   <div className="lvf-s06-copy">
                     <h3 className="lvf-s06-name">DX Trade</h3>
@@ -1206,7 +1206,7 @@ export default function Page() {
                 </li>
                 <li className="lvf-s06-card lvf-s06-card--row">
                   <div className="lvf-s06-logo-box">
-                    <img className="lvf-s06-logo-img lvf-s06-logo-img--vol" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-6092c95f3d.webp" width={139} height={139} loading="eager" decoding="async" alt />
+                    <img className="lvf-s06-logo-img lvf-s06-logo-img--vol" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-6092c95f3d.webp" width={139} height={139} loading="eager" decoding="async" alt="" />
                   </div>
                   <div className="lvf-s06-copy">
                     <h3 className="lvf-s06-name">Volumetrica</h3>
@@ -1215,7 +1215,7 @@ export default function Page() {
                 </li>
                 <li className="lvf-s06-card lvf-s06-card--wide">
                   <div className="lvf-s06-shot">
-                    <img className="lvf-s06-shot-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-aaa0702b84.webp" width={538} height={414} loading="lazy" decoding="async" alt />
+                    <img className="lvf-s06-shot-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-aaa0702b84.webp" width={538} height={414} loading="lazy" decoding="async" alt="" />
                     <span className="lvf-s06-shot-dark" aria-hidden="true" />
                     <span className="lvf-s06-shot-color" aria-hidden="true" />
                     <span className="lvf-s06-shot-inner" aria-hidden="true" />
@@ -1288,7 +1288,7 @@ export default function Page() {
                     <span className="lvf-s07-vshade lvf-s07-vshade--top" aria-hidden="true" />
                     <span className="lvf-s07-vshade lvf-s07-vshade--bottom" aria-hidden="true" />
                     <span className="lvf-s07-vmeta">
-                      <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt />
+                      <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt="" />
                       <span className="lvf-s07-vmeta-text">
                         <span className="lvf-s07-vtitle">Jack Just Got Paid $2,100 From LVLUP Futures | Traders Interview</span>
                         <span className="lvf-s07-vchannel">Lvlup Futures</span>
@@ -1310,7 +1310,7 @@ export default function Page() {
                       <span className="lvf-s07-vshade lvf-s07-vshade--top" aria-hidden="true" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--bottom" aria-hidden="true" />
                       <span className="lvf-s07-vmeta">
-                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt />
+                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt="" />
                         <span className="lvf-s07-vmeta-text">
                           <span className="lvf-s07-vtitle">The Man Behind LVLUP Futures | CEO Interview</span>
                           <span className="lvf-s07-vchannel">Lvlup Futures</span>
@@ -1331,7 +1331,7 @@ export default function Page() {
                       <span className="lvf-s07-vshade lvf-s07-vshade--top" aria-hidden="true" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--bottom" aria-hidden="true" />
                       <span className="lvf-s07-vmeta">
-                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt />
+                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt="" />
                         <span className="lvf-s07-vmeta-text">
                           <span className="lvf-s07-vtitle">Billing &amp; Subscription with Lvlup Futures</span>
                           <span className="lvf-s07-vchannel">Lvlup Futures</span>
@@ -1354,7 +1354,7 @@ export default function Page() {
                       <span className="lvf-s07-vshade lvf-s07-vshade--top" aria-hidden="true" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--bottom" aria-hidden="true" />
                       <span className="lvf-s07-vmeta">
-                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt />
+                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt="" />
                         <span className="lvf-s07-vmeta-text">
                           <span className="lvf-s07-vtitle">Payouts with Lvlup Futures</span>
                           <span className="lvf-s07-vchannel">Lvlup Futures</span>
@@ -1375,7 +1375,7 @@ export default function Page() {
                       <span className="lvf-s07-vshade lvf-s07-vshade--top" aria-hidden="true" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--bottom" aria-hidden="true" />
                       <span className="lvf-s07-vmeta">
-                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt />
+                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt="" />
                         <span className="lvf-s07-vmeta-text">
                           <span className="lvf-s07-vtitle">Payout Protector with Lvlup Futures</span>
                           <span className="lvf-s07-vchannel">Lvlup Futures</span>
@@ -1396,7 +1396,7 @@ export default function Page() {
                       <span className="lvf-s07-vshade lvf-s07-vshade--top" aria-hidden="true" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--bottom" aria-hidden="true" />
                       <span className="lvf-s07-vmeta">
-                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt />
+                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt="" />
                         <span className="lvf-s07-vmeta-text">
                           <span className="lvf-s07-vtitle">Getting Started with Lvlup Futures</span>
                           <span className="lvf-s07-vchannel">Lvlup Futures</span>
@@ -1417,7 +1417,7 @@ export default function Page() {
                       <span className="lvf-s07-vshade lvf-s07-vshade--top" aria-hidden="true" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--bottom" aria-hidden="true" />
                       <span className="lvf-s07-vmeta">
-                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt />
+                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt="" />
                         <span className="lvf-s07-vmeta-text">
                           <span className="lvf-s07-vtitle">Know the Rules with Lvlup Futures</span>
                           <span className="lvf-s07-vchannel">Lvlup Futures</span>
@@ -1434,11 +1434,11 @@ export default function Page() {
                       <span className="lvf-sr"> – play video</span>
                     </a>
                     <a className="lvf-s07-vcard lvf-s07-vcard--small lvf-s07-vcard--dup" href="video-payouts.html" data-lvf-video-id="wD8noZRfBrw" data-lvf-video-title="Payouts with Lvlup Futures" tabIndex={-1} aria-hidden="true">
-                      <img className="lvf-s07-vthumb" src="https://i.ytimg.com/vi/wD8noZRfBrw/maxresdefault.jpg" width={277} height={156} loading="lazy" alt />
+                      <img className="lvf-s07-vthumb" src="https://i.ytimg.com/vi/wD8noZRfBrw/maxresdefault.jpg" width={277} height={156} loading="lazy" alt="" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--top" aria-hidden="true" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--bottom" aria-hidden="true" />
                       <span className="lvf-s07-vmeta">
-                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt />
+                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt="" />
                         <span className="lvf-s07-vmeta-text">
                           <span className="lvf-s07-vtitle">Payouts with Lvlup Futures</span>
                           <span className="lvf-s07-vchannel">Lvlup Futures</span>
@@ -1454,11 +1454,11 @@ export default function Page() {
                       </span>
                     </a>
                     <a className="lvf-s07-vcard lvf-s07-vcard--small lvf-s07-vcard--dup" href="video-payout-protector.html" data-lvf-video-id="32A6zrW7sAM" data-lvf-video-title="Payout Protector with Lvlup Futures" tabIndex={-1} aria-hidden="true">
-                      <img className="lvf-s07-vthumb" src="https://i.ytimg.com/vi/32A6zrW7sAM/maxresdefault.jpg" width={277} height={156} loading="lazy" alt />
+                      <img className="lvf-s07-vthumb" src="https://i.ytimg.com/vi/32A6zrW7sAM/maxresdefault.jpg" width={277} height={156} loading="lazy" alt="" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--top" aria-hidden="true" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--bottom" aria-hidden="true" />
                       <span className="lvf-s07-vmeta">
-                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt />
+                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt="" />
                         <span className="lvf-s07-vmeta-text">
                           <span className="lvf-s07-vtitle">Payout Protector with Lvlup Futures</span>
                           <span className="lvf-s07-vchannel">Lvlup Futures</span>
@@ -1474,11 +1474,11 @@ export default function Page() {
                       </span>
                     </a>
                     <a className="lvf-s07-vcard lvf-s07-vcard--small lvf-s07-vcard--dup" href="video-getting-started.html" data-lvf-video-id="limKIS6zwuQ" data-lvf-video-title="Getting Started with Lvlup Futures" tabIndex={-1} aria-hidden="true">
-                      <img className="lvf-s07-vthumb" src="https://i.ytimg.com/vi/limKIS6zwuQ/maxresdefault.jpg" width={277} height={156} loading="lazy" alt />
+                      <img className="lvf-s07-vthumb" src="https://i.ytimg.com/vi/limKIS6zwuQ/maxresdefault.jpg" width={277} height={156} loading="lazy" alt="" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--top" aria-hidden="true" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--bottom" aria-hidden="true" />
                       <span className="lvf-s07-vmeta">
-                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt />
+                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt="" />
                         <span className="lvf-s07-vmeta-text">
                           <span className="lvf-s07-vtitle">Getting Started with Lvlup Futures</span>
                           <span className="lvf-s07-vchannel">Lvlup Futures</span>
@@ -1494,11 +1494,11 @@ export default function Page() {
                       </span>
                     </a>
                     <a className="lvf-s07-vcard lvf-s07-vcard--small lvf-s07-vcard--dup" href="video-rules.html" data-lvf-video-id="ON80eGfn6ug" data-lvf-video-title="Know the Rules with Lvlup Futures" tabIndex={-1} aria-hidden="true">
-                      <img className="lvf-s07-vthumb" src="https://i.ytimg.com/vi/ON80eGfn6ug/maxresdefault.jpg" width={277} height={156} loading="lazy" alt />
+                      <img className="lvf-s07-vthumb" src="https://i.ytimg.com/vi/ON80eGfn6ug/maxresdefault.jpg" width={277} height={156} loading="lazy" alt="" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--top" aria-hidden="true" />
                       <span className="lvf-s07-vshade lvf-s07-vshade--bottom" aria-hidden="true" />
                       <span className="lvf-s07-vmeta">
-                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt />
+                        <img className="lvf-s07-vavatar" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-a475a4c22a.webp" width={44} height={44} loading="lazy" alt="" />
                         <span className="lvf-s07-vmeta-text">
                           <span className="lvf-s07-vtitle">Know the Rules with Lvlup Futures</span>
                           <span className="lvf-s07-vchannel">Lvlup Futures</span>
@@ -1536,7 +1536,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Passed my evaluation in six trading days and got funded the same week.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Daniel Reyes</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1547,7 +1547,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“The consistency rule pushed me to trade smarter instead of chasing size.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Priya Kapoor</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1558,7 +1558,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“My first payout hit in under 48 hours, no back and forth required.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Marcus Chen</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1569,7 +1569,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Trading futures on a funded account finally feels sustainable.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Sofia Almeida</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1580,7 +1580,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“The trailing drawdown rules are fair compared to every prop firm I tried before.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Ethan Brooks</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1591,7 +1591,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Scaling my contract size as my account grew kept things realistic.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Layla Haddad</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1602,7 +1602,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Support walked me through my first payout request step by step.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Tomas Rivera</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1617,7 +1617,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“I like that the rules are the same in evaluation and funded stages.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Grace Whitfield</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1628,7 +1628,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Funded two accounts here after failing three evaluations elsewhere.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Kenji Watanabe</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1639,7 +1639,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“The dashboard makes tracking my drawdown and profit target effortless.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Amara Okafor</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1650,7 +1650,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Payout cycle every two weeks keeps my trading business cash flowing.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Lucas Fontaine</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1661,7 +1661,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“No hidden restrictions on news trading, which matters for my strategy.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Nadia Petrov</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1672,7 +1672,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Went from a 50K evaluation to a 150K funded account in two months.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Owen Sinclair</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1683,7 +1683,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“The profit split actually reflects the risk I'm taking as a trader.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Mei Lin</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1694,7 +1694,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Customer support answered my platform question in minutes, not days.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Diego Salazar</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1709,7 +1709,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“My consistency score improved once I stopped overtrading on day one.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Hannah Voss</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1720,7 +1720,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Clear rules meant I never got disqualified over a technicality.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Rajiv Menon</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1731,7 +1731,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Switched from stocks to futures and this evaluation made the transition easy.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Isabelle Laurent</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1742,7 +1742,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“The payout protector saved my payout when the market turned against me.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Caleb Osei</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1753,7 +1753,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Every account size scales the same way, so upgrading felt seamless.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Yuki Tanaka</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1764,7 +1764,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“I finally trade with a plan instead of gambling on every session.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Victor Nguyen</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1775,7 +1775,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Min trading days requirement kept me disciplined instead of rushing.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Freya Larsen</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1790,7 +1790,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Getting funded here changed how seriously I treat my trading.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Malik Johnson</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1801,7 +1801,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“The max contract limits actually protect me from my own bad days.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Elif Demir</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1812,7 +1812,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Reliable payouts let me treat this as real income, not a side bet.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Noah Kaczmarek</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1823,7 +1823,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Evaluation felt tough but fair, exactly what a real funded account should be.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Ana Belic</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1834,7 +1834,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“I recommend this to every futures trader tired of prop firm gimmicks.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Samir Farouk</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1845,7 +1845,7 @@ export default function Page() {
                     <span className="lvf-s07-stars" role="img" aria-label="Rated 5 out of 5"><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg><svg className="lvf-s07-star" aria-hidden="true" focusable="false"><use href="#lvf-s07-i-star" /></svg></span>
                     <blockquote className="lvf-s07-quote">“Two funded accounts later, this is the only firm I trade with now.”</blockquote>
                     <span className="lvf-s07-person">
-                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt /></span>
+                      <span className="lvf-s07-avatar"><img className="lvf-s07-avatar-img" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-ece298d0ec.webp" width={22} height={22} loading="lazy" alt="" /></span>
                       <span className="lvf-s07-person-text">
                         <span className="lvf-s07-name">Charlotte Byrne</span>
                         <span className="lvf-s07-role">Trader</span>
@@ -1878,7 +1878,7 @@ export default function Page() {
                   {/* Messpass 06.08.2026: Motiv als exakter Soll-Ausschnitt (x1063-1760,
        y7528-8384 der Referenz) - Skalierung, Randlicht und Hintergrund-
        Glow stimmen damit 1:1 */}
-                  <img className="lvf-s08-visual-img" src="./assets/media/lvlup-hand-soll.png" width={1400} height={1719} alt loading="eager" decoding="async" />
+                  <img className="lvf-s08-visual-img" src="./assets/media/lvlup-hand-soll.png" width={1400} height={1719} alt="" loading="eager" decoding="async" />
                 </div>
                 <div className="lvf-s08-copy">
                   <div className="lvf-s08-head">
@@ -2136,7 +2136,7 @@ export default function Page() {
           <div className="lvf-landing-backdrop" data-lvf-landing-close />
           <section className="lvf-landing-dialog" role="dialog" aria-modal="true" aria-labelledby="lvf-landing-title" aria-describedby="lvf-landing-copy">
             <button className="lvf-landing-close" type="button" data-lvf-landing-close aria-label="Close newsletter signup">×</button>
-            <img className="lvf-landing-trophy" src="assets/media/newsletter-popup-trophy.svg" width={88} height={88} alt />
+            <img className="lvf-landing-trophy" src="assets/media/newsletter-popup-trophy.svg" width={88} height={88} alt="" />
             <h2 className="lvf-landing-title" id="lvf-landing-title">Join the List. Win a <span className="lvf-landing-hl">$150K</span><br />Starter Account</h2>
             <p className="lvf-landing-copy" id="lvf-landing-copy">Get limited offers, evaluation updates and payout news, plus a<br />chance to win a <strong className="lvf-landing-hl">$150K Starter Account.</strong></p>
             <form className="lvf-landing-form" action="#" method="post" data-lvf-landing-form>
@@ -2144,7 +2144,7 @@ export default function Page() {
               <div className="lvf-landing-field">
                 <input className="lvf-landing-input" id="lvf-landing-email" type="email" name="email" placeholder="Enter your email address" autoComplete="email" required />
                 <button className="lvf-landing-submit" type="submit">
-                  <span className="lvf-landing-submit-icon" aria-hidden="true"><img src="assets/media/newsletter-popup-arrow.svg" width={20} height={20} alt /></span>
+                  <span className="lvf-landing-submit-icon" aria-hidden="true"><img src="assets/media/newsletter-popup-arrow.svg" width={20} height={20} alt="" /></span>
                   <span>Join &amp; Enter</span>
                 </button>
               </div>

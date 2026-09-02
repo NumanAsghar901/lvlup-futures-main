@@ -952,8 +952,8 @@ export default function Page() {
             <span className="lvfq-b5-field">
               {/* [PLACEHOLDER: enquiry type options needed] - die Auswahlliste ist im
              Referenzbild zugeklappt, sichtbar ist nur der Platzhalter "Select here". */}
-              <select className="lvfq-b5-in lvfq-b5-sel" id="lvfq-b5-type" name="lvfq-b5-type">
-                <option value selected disabled>Select here</option>
+              <select className="lvfq-b5-in lvfq-b5-sel" id="lvfq-b5-type" name="lvfq-b5-type" defaultValue="">
+                <option value="" disabled>Select here</option>
                 <option value="account-access">Account Access</option>
                 <option value="verification-payouts">Verification &amp; Payouts</option>
                 <option value="billing-payments">Billing &amp; Payments</option>
