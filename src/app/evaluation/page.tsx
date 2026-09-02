@@ -4,8 +4,8 @@ import Script from 'next/script';
 export default function Page() {
   return (
     <>
-      <link rel="stylesheet" href="/assets/css/live/post-8049.css" />
-      <link rel="stylesheet" href="/assets/css/live/evaluation.css" />
+      {/* <link rel="stylesheet" href="/assets/css/live/post-8049.css" />
+      <link rel="stylesheet" href="/assets/css/live/evaluation.css" /> */}
       <div className="lvf-page">
         {/* e1-hero */}
         <section className="lvev-e1" id="hero">
@@ -703,7 +703,7 @@ export default function Page() {
                 </div>
 
               </article>
-              <div style={{ paddingTop: "10px" }}>
+              <div style={{ paddingTop: "100px" }}>
               </div>
             </div>{/* /.lvev-e2-cards */}
             <div className="lvev-e2-foot" >
