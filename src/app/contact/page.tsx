@@ -55,9 +55,9 @@ export default function Page() {
               <p className="lvct-sectionsub">Different questions need different routes. Choose the option that best matches what you need.</p>
               <div className="lvct-cards">
                 <article className="lvct-card">
-                  <img className="lvct-card-wm lvct-card-wm--chat" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-livechat.webp" alt aria-hidden="true" />
+                  <img className="lvct-card-wm lvct-card-wm--chat" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-livechat.webp" alt="" aria-hidden="true" />
                   <span className="lvct-card-icobox">
-                    <img src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-livechat.webp" alt width={36} height={36} />
+                    <img src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-livechat.webp" alt="" width={36} height={36} />
                   </span>
                   <h3 className="lvct-card-title">Live Chat</h3>
                   <p className="lvct-card-text">The fastest way to get help with general account, billing, platform,<br className="lvct-brk" /> or dashboard questions.</p>
@@ -72,9 +72,9 @@ export default function Page() {
                   </div>
                 </article>
                 <article className="lvct-card">
-                  <img className="lvct-card-wm lvct-card-wm--help" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-helpcenter.webp" alt aria-hidden="true" />
+                  <img className="lvct-card-wm lvct-card-wm--help" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-helpcenter.webp" alt="" aria-hidden="true" />
                   <span className="lvct-card-icobox">
-                    <img src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-helpcenter.webp" alt width={36} height={36} />
+                    <img src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-helpcenter.webp" alt="" width={36} height={36} />
                   </span>
                   <h3 className="lvct-card-title">Help Center</h3>
                   <p className="lvct-card-text">Find answers to common questions about evaluations, billing, payouts,<br className="lvct-brk" /> platforms, account types, Elite, and more.</p>
@@ -89,9 +89,9 @@ export default function Page() {
                   </div>
                 </article>
                 <article className="lvct-card">
-                  <img className="lvct-card-wm lvct-card-wm--send" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-request.webp" alt aria-hidden="true" />
+                  <img className="lvct-card-wm lvct-card-wm--send" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-request.webp" alt="" aria-hidden="true" />
                   <span className="lvct-card-icobox">
-                    <img src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-request.webp" alt width={36} height={36} />
+                    <img src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-request.webp" alt="" width={36} height={36} />
                   </span>
                   <h3 className="lvct-card-title">Send A Request</h3>
                   <p className="lvct-card-text">Have a question that needs more detail? Send our team a message with<br className="lvct-brk" /> your account information and enquiry.</p>
@@ -103,9 +103,9 @@ export default function Page() {
                   </div>
                 </article>
                 <article className="lvct-card">
-                  <img className="lvct-card-wm lvct-card-wm--community" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-community.webp" alt aria-hidden="true" />
+                  <img className="lvct-card-wm lvct-card-wm--community" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-community.webp" alt="" aria-hidden="true" />
                   <span className="lvct-card-icobox">
-                    <img src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-community.webp" alt width={36} height={36} />
+                    <img src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-icon-community.webp" alt="" width={36} height={36} />
                   </span>
                   <h3 className="lvct-card-title">Lvlup Community</h3>
                   <p className="lvct-card-text">Connect with the wider Lvlup community, follow announcements, and<br className="lvct-brk" /> stay close to what's happening.</p>
@@ -214,7 +214,7 @@ export default function Page() {
               <div className="lvct-wrap">
                 <div className="lvct-final-card">
                   <div className="lvct-final-inner">
-                    <img className="lvct-final-plate" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-final-plate.webp" alt aria-hidden="true" width={1240} height={547} />
+                    <img className="lvct-final-plate" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvct-final-plate.webp" alt="" aria-hidden="true" width={1240} height={547} />
                     <div className="lvct-final-body">
                       <h2 className="lvct-final-h" id="lvct-final-h"><span className="lvct-final-h-b">Whatever the Question</span><span className="lvct-final-h-s">Start With the Right Team.</span></h2>
                       <p className="lvct-final-t">Account issue? Talk to support.<br />Looking for information? Visit the Help Center.<br />Business enquiry? Contact Lvlup directly.</p>

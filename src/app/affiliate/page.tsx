@@ -343,8 +343,8 @@ export default function Page() {
            dort sind beide Listen annotiert und per Pfeil dem jeweiligen
            Feld zugeordnet. Der frueher hier stehende Hinweis, die Liste
            sei im Entwurf nicht sichtbar, war falsch. */}
-                  <select className="lvaf-app-input lvaf-app-select" id="lvaf-app-platform" name="primary-platform" required>
-                    <option value="select here" selected disabled>Select here</option>
+                  <select className="lvaf-app-input lvaf-app-select" id="lvaf-app-platform" name="primary-platform" defaultValue="select here" required>
+                    <option value="select here" disabled>Select here</option>
                     <option value="youtube">YouTube</option>
                     <option value="instagram">Instagram</option>
                     <option value="tiktok">TikTok</option>
@@ -373,8 +373,8 @@ export default function Page() {
                 <label className="lvaf-app-lab" htmlFor="lvaf-app-size">Approximate<br />Audience Size<span className="lvaf-app-req">*</span></label>
                 <span className="lvaf-app-ctrl lvaf-app-ctrl-sel">
                   {/* Optionen aus dem Kundenentwurf "mockups/affiliate page/form.png". */}
-                  <select className="lvaf-app-input lvaf-app-select" id="lvaf-app-size" name="audience-size" required>
-                    <option value="select here" selected disabled>Select here</option>
+                  <select className="lvaf-app-input lvaf-app-select" id="lvaf-app-size" name="audience-size" defaultValue="select here" required>
+                    <option value="select here" disabled>Select here</option>
                     <option value="under-1000">Under 1,000</option>
                     <option value="1000-to-10000">1,000 to 10,000</option>
                     <option value="10000-to-50000">10,000 to 50,000</option>
