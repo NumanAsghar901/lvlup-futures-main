@@ -672,17 +672,17 @@ export default function Page() {
                 const isExpanded = expandedSection === section.id;
                 return (
                   <React.Fragment key={section.id}>
-                  <button
-                    type="button"
-                    className="lvr-rule-accordion-trigger"
-                    aria-expanded={isExpanded}
-                    aria-controls={section.target}
-                    onClick={(event) => toggleRuleSection(section.id, isExpanded, event.currentTarget)}
-                  >
-                    <span className="lvr-rule-accordion-number">{section.number}</span>
-                    <span>{section.title} <strong>{section.accent}</strong></span>
-                  </button>
-                  <div className={`lvr-rule-accordion-panel${isExpanded ? ' is-open' : ''}`} data-rule-slot={section.id} />
+                    <button
+                      type="button"
+                      className="lvr-rule-accordion-trigger"
+                      aria-expanded={isExpanded}
+                      aria-controls={section.target}
+                      onClick={(event) => toggleRuleSection(section.id, isExpanded, event.currentTarget)}
+                    >
+                      <span className="lvr-rule-accordion-number">{section.number}</span>
+                      <span>{section.title} <strong>{section.accent}</strong></span>
+                    </button>
+                    <div className={`lvr-rule-accordion-panel${isExpanded ? ' is-open' : ''}`} data-rule-slot={section.id} />
                   </React.Fragment>
                 );
               })}
@@ -999,27 +999,27 @@ export default function Page() {
             </div>
             <div className="lvr-r3-grid lvr-r3-grid--dd" data-rule-content="drawdown">
               <div className="lvr-r3-col">                <article className="lvr-r3-card lvr-r3-card--solid" id="drawdown-lvlup-max">
-                  <div className="lvr-r3-cardhead">
-                    <h3 className="lvr-r3-cardtitle">Lvlup Accounts Maximum Drawdown</h3>
-                  </div>
-                  <div className="lvr-r3-body">
-                    <p>Lvlup Accounts use a 5% Maximum Drawdown.</p>
-                  </div>
-                  <table className="lvr-r3-table">
-                    <thead>
-                      <tr><th scope="col">Account Size</th><th scope="col">Maximum Drawdown</th></tr>
-                    </thead>
-                    <tbody>
-                      <tr><td>25K</td><td>$1,250</td></tr>
-                      <tr><td>50K</td><td>$2,500</td></tr>
-                      <tr><td>100K</td><td>$5,000</td></tr>
-                      <tr><td>150K</td><td>$7,500</td></tr>
-                    </tbody>
-                  </table>
-                  <div className="lvr-r3-body">
-                    <p>Reaching or falling below the active Maximum Drawdown threshold results in a Hard Breach.</p>
-                  </div>
-                </article>
+                <div className="lvr-r3-cardhead">
+                  <h3 className="lvr-r3-cardtitle">Lvlup Accounts Maximum Drawdown</h3>
+                </div>
+                <div className="lvr-r3-body">
+                  <p>Lvlup Accounts use a 5% Maximum Drawdown.</p>
+                </div>
+                <table className="lvr-r3-table">
+                  <thead>
+                    <tr><th scope="col">Account Size</th><th scope="col">Maximum Drawdown</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>25K</td><td>$1,250</td></tr>
+                    <tr><td>50K</td><td>$2,500</td></tr>
+                    <tr><td>100K</td><td>$5,000</td></tr>
+                    <tr><td>150K</td><td>$7,500</td></tr>
+                  </tbody>
+                </table>
+                <div className="lvr-r3-body">
+                  <p>Reaching or falling below the active Maximum Drawdown threshold results in a Hard Breach.</p>
+                </div>
+              </article>
                 <article className="lvr-r3-card lvr-r3-card--solid" id="drawdown-starter-max">
                   <div className="lvr-r3-cardhead">
                     <h3 className="lvr-r3-cardtitle">Starter Accounts Maximum Drawdown</h3>
@@ -2216,4 +2216,3 @@ export default function Page() {
     </>
   );
 }
-
