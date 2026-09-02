@@ -349,9 +349,21 @@ a.lvct-btn--ghost .lvct-btn-label { color: #ffffff; }
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(max(1705px, 96.9vw) 792px at calc(50% - 39px) calc(100% - 753px), rgba(137,217,255,0) 92%, rgba(137,217,255,0.223) 93.14%, rgba(137,217,255,0.381) 94.29%, rgba(137,217,255,0.521) 95.43%, rgba(137,217,255,0.65) 96.57%, rgba(137,217,255,0.772) 97.71%, rgba(137,217,255,0.888) 98.86%, rgba(137,217,255,1) 100%),
-    radial-gradient(max(1766px, 100.3vw) 686px at calc(50% + 152px) calc(100% - 698px), rgba(0,157,251,0) 85%, rgba(0,157,251,0.122) 87.14%, rgba(0,157,251,0.256) 89.29%, rgba(0,157,251,0.396) 91.43%, rgba(0,157,251,0.538) 93.57%, rgba(0,157,251,0.684) 95.71%, rgba(0,157,251,0.831) 97.86%, rgba(0,157,251,0.98) 100%),
-    linear-gradient(180deg, #000000 0, rgb(0,5,7) 130px, rgb(0,16,24) 470px, rgb(0,16,24) 100%);
+    /* A broad dark arch keeps the hero copy readable while allowing the
+       lower cyan horizon to remain continuous across the full viewport. */
+    radial-gradient(64% 58% at 50% 48%,
+      rgba(0, 4, 8, 0.96) 0%,
+      rgba(0, 5, 9, 0.9) 44%,
+      rgba(0, 7, 12, 0.62) 67%,
+      rgba(0, 8, 14, 0.2) 86%,
+      transparent 100%),
+    linear-gradient(180deg,
+      #000000 0%,
+      #000509 48%,
+      #001622 66%,
+      #005f94 82%,
+      #18a9eb 94%,
+      #80d8fb 100%);
 }
 
 /* 68 px statt 66 und ohne Laufweitenkorrektur: die Versalhoehe des N von
@@ -664,6 +676,27 @@ a.lvct-btn--ghost .lvct-btn-label { color: #ffffff; }
   padding: 56px 0 0;
   background: #000000;
   text-align: center;
+}
+
+/* Keep the moving side light, but protect the heading and supporting copy
+   from the brightest part of the glow. This overlay sits below the content. */
+.lvct-formsec::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 22px;
+  left: 50%;
+  width: min(920px, 88vw);
+  height: 270px;
+  pointer-events: none;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 5, 10, 0.78) 0%,
+    rgba(0, 5, 10, 0.64) 48%,
+    rgba(0, 5, 10, 0.28) 72%,
+    transparent 100%
+  );
 }
 .lvct-formsec-glow {
   position: absolute;
@@ -1194,11 +1227,18 @@ h2.lvct-quick-h,
 
 .lvct-qcard {
   position: relative;
+  display: block;
   min-height: 146px;
   padding: 41px 18px 0;
   border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
   /* gemessen: die Karte dunkelt den Hintergrund auf rund die Haelfte ab */
   background: rgba(0, 0, 0, 0.5);
+}
+.lvct-qcard:focus-visible {
+  outline: 2px solid #8cd5ff;
+  outline-offset: 3px;
 }
 /* 1-px-Rand als Verlauf (oben blaeulich, unten fast weg) ueber Maskentrick,
    damit der Radius sauber bleibt. Gemessen oben (12,40,55), unten (6,7,8). */
@@ -1849,4 +1889,4 @@ body { background: #05060f; }
     -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 40px, rgba(0, 0, 0, 0) 48px);
             mask-image: linear-gradient(to bottom, #000 0, #000 40px, rgba(0, 0, 0, 0) 48px);
   }
-}
+}

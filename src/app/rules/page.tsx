@@ -197,6 +197,28 @@ export default function Page() {
     });
   };
 
+  useEffect(() => {
+    // Open rule-card deep links after the legacy rule grid has been moved into
+    // its accordion slot, then scroll once the expanded panel is rendered.
+    const openRuleFromHash = () => {
+      const ruleId = decodeURIComponent(window.location.hash.slice(1));
+      const rule = RULES_INDEX.find((candidate) => candidate.id === ruleId);
+      if (!rule) return;
+
+      const sectionId = CATEGORY_SECTION_IDS[rule.category];
+      if (sectionId) setExpandedSection(sectionId);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.getElementById(ruleId)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      });
+    };
+
+    openRuleFromHash();
+    window.addEventListener('hashchange', openRuleFromHash);
+    return () => window.removeEventListener('hashchange', openRuleFromHash);
+  }, []);
+
   return (
     <>
       <style>{`

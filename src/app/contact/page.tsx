@@ -79,12 +79,9 @@ export default function Page() {
                   <h3 className="lvct-card-title">Help Center</h3>
                   <p className="lvct-card-text">Find answers to common questions about evaluations, billing, payouts,<br className="lvct-brk" /> platforms, account types, Elite, and more.</p>
                   <div className="lvct-card-foot">
-                    {/* Ziel des Help Centers ist nirgends bestaetigt -> bewusst ohne href.
-           Als button statt span, damit die Flaeche wenigstens per Tastatur
-           erreichbar und ausloesbar ist (Korrektur 12.08.). */}
-                    <button type="button" className="lvct-btn lvct-btn--primary lvct-btn--card" data-lvct-link="help-center">
+                    <a className="lvct-btn lvct-btn--primary lvct-btn--card" href="/faqs">
                       <span className="lvct-btn-label">Visit Help Center</span>
-                    </button>
+                    </a>
                     <span className="lvct-card-note">Browse guides and FAQs anytime.</span>
                   </div>
                 </article>
@@ -110,12 +107,14 @@ export default function Page() {
                   <h3 className="lvct-card-title">Lvlup Community</h3>
                   <p className="lvct-card-text">Connect with the wider Lvlup community, follow announcements, and<br className="lvct-brk" /> stay close to what's happening.</p>
                   <div className="lvct-card-foot">
-                    {/* Discord-Einladung ist nirgends bestaetigt -> bewusst ohne href.
-           Als button statt span, damit die Flaeche wenigstens per Tastatur
-           erreichbar und ausloesbar ist (Korrektur 12.08.). */}
-                    <button type="button" className="lvct-btn lvct-btn--primary lvct-btn--card" data-lvct-link="community">
+                    <a
+                      className="lvct-btn lvct-btn--primary lvct-btn--card"
+                      href="https://discord.gg/kDBURck97e"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <span className="lvct-btn-label">Join the Community</span>
-                    </button>
+                    </a>
                     <span className="lvct-card-note">Community, updates and discussions.</span>
                   </div>
                 </article>
@@ -181,30 +180,30 @@ export default function Page() {
                 <p className="lvct-quick-sub">Our Help Center covers the most common questions about accounts, payments, verification, <br className="lvct-nl" />payouts, platforms, billing, and more.</p>
                 <p className="lvct-quick-lbl">Quick Links:</p>
                 <div className="lvct-qgrid">
-                  <article className="lvct-qcard">
+                  <a className="lvct-qcard" href="/faqs#lvfq-account-types">
                     <h3 className="lvct-qcard-h">Account Types</h3>
                     <p className="lvct-qcard-t">Understand The Difference Between <br className="lvct-nl" />Lvlup And Starter Accounts.</p>
-                  </article>
-                  <article className="lvct-qcard">
+                  </a>
+                  <a className="lvct-qcard" href="/faqs#lvfq-billing-payments">
                     <h3 className="lvct-qcard-h">Billing &amp; Payments</h3>
                     <p className="lvct-qcard-t">Learn How Monthly, One-Time And <br className="lvct-nl" />Activation Payments Work.</p>
-                  </article>
-                  <article className="lvct-qcard">
+                  </a>
+                  <a className="lvct-qcard" href="/rules#rule-payout-eligibility">
                     <h3 className="lvct-qcard-h">Payouts</h3>
                     <p className="lvct-qcard-t">Find Answers About Payout Access, <br className="lvct-nl" />Processing And Verification.</p>
-                  </article>
-                  <article className="lvct-qcard">
+                  </a>
+                  <a className="lvct-qcard" href="/faqs#lvfq-platforms">
                     <h3 className="lvct-qcard-h">Platforms</h3>
                     <p className="lvct-qcard-t">Get Information About DXtrade, <br className="lvct-nl" />Volumetrica And Platform Access.</p>
-                  </article>
-                  <article className="lvct-qcard">
+                  </a>
+                  <a className="lvct-qcard" href="/faqs#lvfq-verification-payouts">
                     <h3 className="lvct-qcard-h">KYC &amp; Verification</h3>
                     <p className="lvct-qcard-t">Understand When Verification Is <br className="lvct-nl" />Required And How It Works.</p>
-                  </article>
-                  <article className="lvct-qcard">
+                  </a>
+                  <a className="lvct-qcard" href="/faqs#lvfq-account-breach">
                     <h3 className="lvct-qcard-h">Account Breach</h3>
                     <p className="lvct-qcard-t">See What Happens When An Account <br className="lvct-nl" />Is Breached.</p>
-                  </article>
+                  </a>
                 </div>
                 <p className="lvct-quick-act"><a className="lvct-faqbtn" href="/faqs">Explore All FAQs</a></p>
               </div>

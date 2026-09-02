@@ -1,12 +1,208 @@
 // @ts-nocheck
-import Script from 'next/script';
+'use client';
+
+import { useEffect, useMemo, useRef, useState } from 'react';
+
+type FaqSearchEntry = {
+  id: string;
+  question: string;
+  answer: string;
+  category: string;
+  button: HTMLButtonElement;
+};
+
+const FAQ_ITEM_SELECTOR = '.lvfq-item, .lvfq-b2-item, .lvfq-b3-item, .lvfq-b4-item';
+const FAQ_QUESTION_SELECTOR = '.lvfq-q, .lvfq-b2-q, .lvfq-b3-q, .lvfq-b4-q';
+const FAQ_CATEGORY_SELECTOR = '.lvfq-cat, .lvfq-b2-cat, .lvfq-b3-cat, .lvfq-b4-cat';
+const FAQ_HEADING_SELECTOR = '.lvfq-cat-h, .lvfq-b2-head, .lvfq-b3-head, .lvfq-b4-head';
+
+function setFaqItemOpen(item: HTMLElement, open: boolean) {
+  const button = item.querySelector<HTMLButtonElement>(FAQ_QUESTION_SELECTOR);
+  item.classList.toggle('lvfq-open', open && Boolean(button?.classList.contains('lvfq-q')));
+  item.classList.toggle('lvfq-b2-open', open && Boolean(button?.classList.contains('lvfq-b2-q')));
+  if (item.hasAttribute('data-lvfq-b3-open')) item.setAttribute('data-lvfq-b3-open', String(open));
+  if (item.hasAttribute('data-lvfq-b4-open')) item.setAttribute('data-lvfq-b4-open', String(open));
+  button?.setAttribute('aria-expanded', String(open));
+}
+
+function setFaqCategoryOpen(category: HTMLElement, open: boolean) {
+  category.classList.toggle('lvfq-section-open', open);
+  category.classList.toggle('lvfq-section-collapsed', !open);
+  category.querySelector<HTMLElement>(FAQ_HEADING_SELECTOR)?.setAttribute('aria-expanded', String(open));
+  category
+    .querySelector<HTMLElement>('.lvfq-list, .lvfq-b2-list, .lvfq-b3-list, .lvfq-b4-list')
+    ?.setAttribute('aria-hidden', String(!open));
+}
 
 export default function Page() {
+  const [faqIndex, setFaqIndex] = useState<FaqSearchEntry[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [activeSuggestion, setActiveSuggestion] = useState(0);
+  const pageRef = useRef<HTMLDivElement | null>(null);
+  const searchRef = useRef<HTMLDivElement | null>(null);
+
+  // Build the search index from the rendered FAQ content so future FAQ copy
+  // or backend-provided answers automatically become searchable.
+  useEffect(() => {
+    const page = pageRef.current;
+    if (!page) return;
+
+    const entries = Array.from(
+      page.querySelectorAll<HTMLButtonElement>('.lvfq-q, .lvfq-b2-q, .lvfq-b3-q, .lvfq-b4-q')
+    ).map((button, index) => {
+      const answerId = button.getAttribute('aria-controls') || '';
+      const answer = answerId ? document.getElementById(answerId)?.textContent?.trim() || '' : '';
+      const categoryContainer = button.closest<HTMLElement>('.lvfq-cat, .lvfq-b2-cat, .lvfq-b3-cat, .lvfq-b4-cat');
+      const category = categoryContainer
+        ?.querySelector<HTMLElement>('.lvfq-cat-t, .lvfq-b2-title, .lvfq-b3-title, .lvfq-b4-title')
+        ?.textContent?.trim() || 'FAQs';
+
+      return {
+        id: button.id || answerId || `faq-search-${index}`,
+        question: button.textContent?.trim() || '',
+        answer,
+        category,
+        button,
+      };
+    }).filter((entry) => entry.question);
+
+    setFaqIndex(entries);
+  }, []);
+
+  useEffect(() => {
+    const page = pageRef.current;
+    if (!page) return;
+
+    const categories = Array.from(page.querySelectorAll<HTMLElement>(FAQ_CATEGORY_SELECTOR));
+    categories.forEach((category) => {
+      const heading = category.querySelector<HTMLElement>(FAQ_HEADING_SELECTOR);
+      if (!heading) return;
+      heading.setAttribute('role', 'button');
+      heading.setAttribute('tabindex', '0');
+      heading.setAttribute('aria-controls', `${category.id}-questions`);
+      category.querySelector<HTMLElement>('.lvfq-list, .lvfq-b2-list, .lvfq-b3-list, .lvfq-b4-list')?.setAttribute('id', `${category.id}-questions`);
+      setFaqCategoryOpen(category, false);
+    });
+
+    const toggleCategory = (heading: HTMLElement) => {
+      const category = heading.closest<HTMLElement>(FAQ_CATEGORY_SELECTOR);
+      if (!category) return;
+      const shouldOpen = !category.classList.contains('lvfq-section-open');
+      categories.forEach((candidate) => setFaqCategoryOpen(candidate, shouldOpen && candidate === category));
+    };
+
+    const handleClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      const question = target.closest<HTMLButtonElement>(FAQ_QUESTION_SELECTOR);
+      if (question && page.contains(question)) {
+        event.preventDefault();
+        const item = question.closest<HTMLElement>(FAQ_ITEM_SELECTOR);
+        const list = item?.parentElement;
+        if (!item || !list) return;
+        const shouldOpen = question.getAttribute('aria-expanded') !== 'true';
+        list.querySelectorAll<HTMLElement>(FAQ_ITEM_SELECTOR).forEach((candidate) => {
+          setFaqItemOpen(candidate, shouldOpen && candidate === item);
+        });
+        return;
+      }
+
+      const heading = target.closest<HTMLElement>(FAQ_HEADING_SELECTOR);
+      if (heading && page.contains(heading)) toggleCategory(heading);
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      const heading = (event.target as HTMLElement).closest<HTMLElement>(FAQ_HEADING_SELECTOR);
+      if (!heading || !page.contains(heading)) return;
+      event.preventDefault();
+      toggleCategory(heading);
+    };
+
+    page.addEventListener('click', handleClick);
+    page.addEventListener('keydown', handleKeyDown);
+
+    // Deep links from other pages open the requested category before
+    // scrolling, so visitors never arrive at hidden accordion content.
+    const openCategoryFromHash = () => {
+      const hash = decodeURIComponent(window.location.hash.slice(1));
+      if (!hash) return;
+      const category = document.getElementById(hash);
+      if (!category?.matches(FAQ_CATEGORY_SELECTOR)) return;
+
+      categories.forEach((candidate) => setFaqCategoryOpen(candidate, candidate === category));
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => category.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      });
+    };
+
+    openCategoryFromHash();
+    window.addEventListener('hashchange', openCategoryFromHash);
+    return () => {
+      page.removeEventListener('click', handleClick);
+      page.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('hashchange', openCategoryFromHash);
+    };
+  }, []);
+
+  useEffect(() => {
+    const closeOnOutsideClick = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setIsSearchOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', closeOnOutsideClick);
+    return () => document.removeEventListener('mousedown', closeOnOutsideClick);
+  }, []);
+
+  const filteredFaqs = useMemo(() => {
+    const query = searchQuery.toLowerCase().trim();
+    if (!query) return [];
+
+    return faqIndex.filter((faq) =>
+      `${faq.question} ${faq.answer} ${faq.category}`.toLowerCase().includes(query)
+    ).slice(0, 8);
+  }, [faqIndex, searchQuery]);
+
+  const openFaq = (faq: FaqSearchEntry) => {
+    const button = faq.button;
+    const item = button.closest<HTMLElement>(FAQ_ITEM_SELECTOR);
+    const list = item?.parentElement;
+
+    const category = item?.closest<HTMLElement>(FAQ_CATEGORY_SELECTOR);
+    const page = pageRef.current;
+    if (category && page) {
+      page.querySelectorAll<HTMLElement>(FAQ_CATEGORY_SELECTOR).forEach((candidate) => {
+        setFaqCategoryOpen(candidate, candidate === category);
+      });
+    }
+
+    // Keep the FAQ accordions in their existing one-open-item state.
+    list?.querySelectorAll<HTMLElement>(FAQ_ITEM_SELECTOR).forEach((candidate) => {
+      setFaqItemOpen(candidate, candidate === item);
+    });
+
+    setSearchQuery(faq.question);
+    setIsSearchOpen(false);
+    requestAnimationFrame(() => {
+      item?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      item?.classList.add('lvfq-search-highlight');
+      window.setTimeout(() => item?.classList.remove('lvfq-search-highlight'), 2600);
+    });
+  };
+
+  const submitSearch = (event: React.FormEvent) => {
+    event.preventDefault();
+    const match = filteredFaqs[activeSuggestion] || filteredFaqs[0];
+    if (match) openFaq(match);
+  };
+
   return (
     <>
       <link rel="stylesheet" href="/assets/css/live/post-8097.css" />
       <link rel="stylesheet" href="/assets/css/faqs.css" />
-<div className="lvf-page lvfq-page">
+<div ref={pageRef} className="lvf-page lvfq-page">
+  <div className="lvfq-ambient-layer" aria-hidden="true" />
   {/* ================= Band 1 ================= */}
   {/* ===== FAQ / Band 1 – Sektion A: Hero (y 0–547) ===== */}
   <section className="lvfq-hero">
@@ -18,13 +214,71 @@ export default function Page() {
   </section>
   {/* ===== FAQ / Band 1 – Sektion B: Suche + Kategorie-Kacheln (y 547–869) ===== */}
   <section className="lvfq-cats">
-    <form className="lvfq-search" action="#" method="get" role="search">
-      <span className="lvfq-search-ico" aria-hidden="true">
-        <svg viewBox="0 0 20 20" focusable="false"><circle cx="8.4" cy="8.4" r="6.4" fill="none" stroke="currentColor" strokeWidth="2.2" /><line x1="13.2" y1="13.2" x2="18.4" y2="18.4" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" /></svg>
-      </span>
-      <label className="lvfq-vh" htmlFor="lvfq-q">Search the FAQ</label>
-      <input className="lvfq-search-in" id="lvfq-q" name="s" type="search" autoComplete="off" placeholder="Search accounts, billing, platforms, KYC, Elite, affiliate and more…" />
-    </form>
+    <div ref={searchRef} className="lvfq-search-wrap">
+      <form className="lvfq-search" role="search" onSubmit={submitSearch}>
+        <span className="lvfq-search-ico" aria-hidden="true">
+          <svg viewBox="0 0 20 20" focusable="false"><circle cx="8.4" cy="8.4" r="6.4" fill="none" stroke="currentColor" strokeWidth="2.2" /><line x1="13.2" y1="13.2" x2="18.4" y2="18.4" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" /></svg>
+        </span>
+        <label className="lvfq-vh" htmlFor="lvfq-q">Search the FAQ</label>
+        <input
+          className="lvfq-search-in"
+          id="lvfq-q"
+          name="s"
+          type="search"
+          value={searchQuery}
+          autoComplete="off"
+          placeholder="Search accounts, billing, platforms, KYC, Elite, affiliate and more…"
+          role="combobox"
+          aria-autocomplete="list"
+          aria-controls="lvfq-search-results"
+          aria-expanded={isSearchOpen && Boolean(searchQuery.trim())}
+          aria-activedescendant={filteredFaqs[activeSuggestion] ? `lvfq-suggestion-${filteredFaqs[activeSuggestion].id}` : undefined}
+          onChange={(event) => {
+            setSearchQuery(event.target.value);
+            setActiveSuggestion(0);
+            setIsSearchOpen(true);
+          }}
+          onFocus={() => searchQuery.trim() && setIsSearchOpen(true)}
+          onKeyDown={(event) => {
+            if (event.key === 'ArrowDown' && filteredFaqs.length) {
+              event.preventDefault();
+              setIsSearchOpen(true);
+              setActiveSuggestion((index) => Math.min(index + 1, filteredFaqs.length - 1));
+            } else if (event.key === 'ArrowUp' && filteredFaqs.length) {
+              event.preventDefault();
+              setActiveSuggestion((index) => Math.max(index - 1, 0));
+            } else if (event.key === 'Escape') {
+              setIsSearchOpen(false);
+            }
+          }}
+        />
+      </form>
+
+      {isSearchOpen && searchQuery.trim() && (
+        <div className="lvfq-search-results" id="lvfq-search-results" role="listbox" aria-label="FAQ suggestions">
+          {filteredFaqs.length ? filteredFaqs.map((faq, index) => (
+            <button
+              className={`lvfq-search-result${index === activeSuggestion ? ' lvfq-search-result-active' : ''}`}
+              id={`lvfq-suggestion-${faq.id}`}
+              key={faq.id}
+              type="button"
+              role="option"
+              aria-selected={index === activeSuggestion}
+              onMouseEnter={() => setActiveSuggestion(index)}
+              onClick={() => openFaq(faq)}
+            >
+              <span className="lvfq-search-result-head">
+                <strong>{faq.question}</strong>
+                <small>{faq.category}</small>
+              </span>
+              <span className="lvfq-search-result-copy">{faq.answer}</span>
+            </button>
+          )) : (
+            <p className="lvfq-search-empty">No matching FAQs found for &quot;{searchQuery}&quot;</p>
+          )}
+        </div>
+      )}
+    </div>
     <nav className="lvfq-chips" aria-label="FAQ categories">
       <a className="lvfq-chip" href="#lvfq-getting-started">Getting Started</a>
       <a className="lvfq-chip" href="#lvfq-account-types">Account Types</a>
