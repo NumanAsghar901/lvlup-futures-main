@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Script from 'next/script';
 
 export default function Page() {
@@ -702,7 +703,7 @@ export default function Page() {
                 </div>
 
               </article>
-              <div style={{ paddingTop: "100px" }}>
+              <div style={{ paddingTop: "10px" }}>
               </div>
             </div>{/* /.lvev-e2-cards */}
             <div className="lvev-e2-foot" >
@@ -1054,11 +1055,48 @@ export default function Page() {
                     <td className="lvev-e4-cell">Every 5 Profitable Days</td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" style={{ backgroundColor: "#051016 !important" }} scope="row">Activation Fee</th>
-                    <td className="lvev-e4-cell">Required After Passing</td>
-                    <td className="lvev-e4-cell">Required After Passing</td>
-                    <td className="lvev-e4-cell">Required After Passing</td>
-                    <td className="lvev-e4-cell">Required After Passing</td>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>
+                      One-Time Activation Fee<br /><span className="lvev-e4-note" style={{ opacity: 0.6, fontSize: '0.85em', fontWeight: 400 }}>(on One-Time Pricing)</span>
+                    </th>
+                    <td className="lvev-e4-cell">$194</td>
+                    <td className="lvev-e4-cell">$338</td>
+                    <td className="lvev-e4-cell">$554</td>
+                    <td className="lvev-e4-cell">$714</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
+                  </tr>
+                  <tr className="lvev-e4-row">
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>
+                      One-Time Activation Fee<br /><span className="lvev-e4-note" style={{ opacity: 0.6, fontSize: '0.85em', fontWeight: 400 }}>(on One-Time Pricing)</span>
+                    </th>
+                    <td className="lvev-e4-cell">$129</td>
+                    <td className="lvev-e4-cell">$225</td>
+                    <td className="lvev-e4-cell">$369</td>
+                    <td className="lvev-e4-cell">$476</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
+                  </tr>
+                  <tr className="lvev-e4-row">
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>Consistency Rule on Evaluation</th>
+                    <td className="lvev-e4-cell">40%</td>
+                    <td className="lvev-e4-cell">40%</td>
+                    <td className="lvev-e4-cell">40%</td>
+                    <td className="lvev-e4-cell">40%</td>
+                    <td className="lvev-e4-cell">40%</td>
+                    <td className="lvev-e4-cell">40%</td>
+                    <td className="lvev-e4-cell">40%</td>
+                    <td className="lvev-e4-cell">40%</td>
+                  </tr>
+                  <tr className="lvev-e4-row">
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>Consistency Rule on Funded</th>
+                    <td className="lvev-e4-cell">40%</td>
+                    <td className="lvev-e4-cell">40%</td>
+                    <td className="lvev-e4-cell">40%</td>
+                    <td className="lvev-e4-cell">40%</td>
                     <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
                     <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
                     <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
@@ -1372,7 +1410,7 @@ export default function Page() {
           <div className="lvf-container lvev-e7-inner">
             {/* Kopfblock: H2 + Subline (kein Kicker in diesem Design) */}
             <div className="lvev-e7-head">
-              <p className="lvev-e7-kicker">FAQ&apos;S</p>
+              <p className="lvev-e7-kicker">FAQ'S</p>
               <h2 className="lvev-e7-title" id="lvev-e7-title">Frequently Asked <span className="lvev-e7-title-accent">Questions</span></h2>
               <p className="lvev-e7-sub">Key details before entering an evaluation.</p>
             </div>

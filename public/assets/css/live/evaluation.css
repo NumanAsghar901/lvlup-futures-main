@@ -781,7 +781,7 @@
   --lvev-e2-note-fs: 11px;
   --lvev-e2-note-mt: 24px;
   --lvev-e2-foot-mt: 250px;
-  --lvev-e2-build-fs: 14px;
+  --lvev-e2-build-fs: 18px;
 
   /* --- wiederkehrende Verlaeufe --- */
   --lvev-e2-grad-blue: linear-gradient(180deg, #8cd5ff 0%, #12a9ff 100%);
@@ -1400,6 +1400,7 @@
   display: flex;
   justify-content: center;
   margin-top: var(--lvev-e2-foot-mt);
+  transform: translateY(-80px);
 }
 
 .lvev-e2 .lvev-e2-build {
@@ -1441,7 +1442,7 @@
   }
 
   .lvev-e2 {
-    --lvev-e2-foot-mt: 140px;
+    --lvev-e2-foot-mt: 100px;
   }
 }
 
@@ -1579,7 +1580,7 @@
   }
 
   .lvev-e2 .lvev-e2-build {
-    min-height: 44px;
+    min-height: 10px;
     padding-inline: 24px;
   }
 }
@@ -1796,6 +1797,7 @@
 .lvev-e3 .lvf-container {
   position: relative;
   z-index: 1;
+  transform: translateY(-80px);
 }
 
 /* ---------------------------------------------------------------- Kopf */

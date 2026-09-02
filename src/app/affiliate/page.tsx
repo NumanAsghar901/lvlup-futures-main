@@ -58,7 +58,7 @@ export default function Page() {
         {/* ============================== 1  HERO  y 0 - 746 ============ */}
         <section className="lvaf-hero">
           <div className="lvaf-hero-bg" aria-hidden="true">
-            <div className="lvaf-hero-video-wrap">
+            <div className="">
               <video
                 className="lvaf-hero-video"
                 src="/assets/media/Affilaite_PAGE.mp4"
