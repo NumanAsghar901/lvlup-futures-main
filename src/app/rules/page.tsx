@@ -481,6 +481,7 @@ export default function Page() {
         {/* r1-hero */}
         <section className="lvr-r1" id="rules-hero">
           <div className="lvr-r1-bg" aria-hidden="true" />
+          <div className="lvr-r1-top-glow" aria-hidden="true" />
           <video
             autoPlay
             loop
@@ -502,6 +503,7 @@ export default function Page() {
           >
             <source src="/assets/media/God rays.mp4" type="video/mp4" />
           </video>
+          <div className="lvr-r1-contrast-mask" aria-hidden="true" />
           <div className="lvr-r1-glow" aria-hidden="true" />
           <div className="lvr-r1-glow lvr-r1-glow--low" aria-hidden="true" />
           <div className="lvf-container lvr-r1-inner">

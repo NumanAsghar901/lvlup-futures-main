@@ -5983,3 +5983,46 @@
     margin-bottom: 16px;
   }
 }
+
+/* Fixed hero wash matching the final Rules reference: this sits behind the
+   navigation and headline, separate from the slower page-side lighting. */
+.lvr-r1-top-glow {
+  position: absolute;
+  top: -235px;
+  left: 50%;
+  width: min(1280px, 115vw);
+  height: 620px;
+  transform: translateX(-42%);
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(54% 82% at 68% 46%, rgba(64, 188, 255, 0.38) 0%, rgba(18, 146, 229, 0.22) 42%, rgba(0, 91, 153, 0.08) 65%, transparent 82%),
+    radial-gradient(42% 65% at 16% 30%, rgba(33, 144, 212, 0.18) 0%, transparent 76%);
+  filter: blur(30px);
+}
+@media (max-width: 767px) {
+  .lvr-r1-top-glow { top: -170px; width: 150vw; height: 500px; transform: translateX(-46%); }
+}
+
+/* Keep the headline in a dark pocket; the bright cyan light belongs on the
+   upper-right and must fall back to a dark edge rather than washing the copy. */
+.lvr-r1-top-glow {
+  left: 78%;
+  width: min(1120px, 100vw);
+  transform: translateX(-50%);
+  background: radial-gradient(58% 82% at 54% 44%, rgba(61, 190, 255, 0.43) 0%, rgba(16, 140, 221, 0.20) 43%, rgba(0, 72, 120, 0.06) 65%, transparent 82%);
+}
+.lvr-r1-contrast-mask {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(42% 58% at 50% 42%, rgba(0, 3, 7, 0.72) 0%, rgba(0, 4, 8, 0.48) 46%, rgba(0, 4, 8, 0) 82%),
+    linear-gradient(90deg, transparent 56%, rgba(0, 5, 10, 0.10) 75%, rgba(0, 4, 8, 0.52) 100%);
+}
+.lvr-r1-inner { position: relative; z-index: 2; }
+@media (max-width: 767px) {
+  .lvr-r1-top-glow { left: 82%; transform: translateX(-50%); }
+  .lvr-r1-contrast-mask { background: radial-gradient(72% 48% at 50% 34%, rgba(0, 3, 7, 0.68), transparent 84%); }
+}
