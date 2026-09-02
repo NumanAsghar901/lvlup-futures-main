@@ -65,28 +65,28 @@ export default function Page() {
               <ul className="lvab-values">
                 <li className="lvab-value">
                   <div className="lvab-value-head">
-                    <img className="lvab-value-ico" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvab-icon-longterm.webp" alt width={24} height={24} loading="lazy" decoding="async" />
+              <img className="lvab-value-ico" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvab-icon-longterm.webp" alt="" width={24} height={24} loading="lazy" decoding="async" />
                     <h3 className="lvab-value-title"><span className="lvab-grad-blue">Long-Term</span> <span className="lvab-value-title-w">Thinking</span></h3>
                   </div>
                   <p className="lvab-value-text">We make decisions around sustainable growth, not temporary attention.</p>
                 </li>
                 <li className="lvab-value">
                   <div className="lvab-value-head">
-                    <img className="lvab-value-ico" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvab-icon-operational.webp" alt width={24} height={24} loading="lazy" decoding="async" />
+              <img className="lvab-value-ico" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvab-icon-operational.webp" alt="" width={24} height={24} loading="lazy" decoding="async" />
                     <h3 className="lvab-value-title"><span className="lvab-grad-blue">Operational</span> <span className="lvab-value-title-w">Discipline</span></h3>
                   </div>
                   <p className="lvab-value-text">Every system, process, and policy should have a clear purpose.</p>
                 </li>
                 <li className="lvab-value">
                   <div className="lvab-value-head">
-                    <img className="lvab-value-ico" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvab-icon-transparent.webp" alt width={24} height={24} loading="lazy" decoding="async" />
+              <img className="lvab-value-ico" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvab-icon-transparent.webp" alt="" width={24} height={24} loading="lazy" decoding="async" />
                     <h3 className="lvab-value-title"><span className="lvab-grad-blue">Transparent</span> <span className="lvab-value-title-w">Communication</span></h3>
                   </div>
                   <p className="lvab-value-text">Important conditions should be presented clearly and consistently.</p>
                 </li>
                 <li className="lvab-value">
                   <div className="lvab-value-head">
-                    <img className="lvab-value-ico" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvab-icon-continuous.webp" alt width={24} height={24} loading="lazy" decoding="async" />
+              <img className="lvab-value-ico" src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvab-icon-continuous.webp" alt="" width={24} height={24} loading="lazy" decoding="async" />
                     <h3 className="lvab-value-title"><span className="lvab-grad-blue">Continuous</span> <span className="lvab-value-title-w">Development</span></h3>
                   </div>
                   <p className="lvab-value-text">Lvlup is designed to improve as the company, technology, and community grow.</p>
@@ -258,8 +258,8 @@ export default function Page() {
                   <div className="lvab-frow">
                     <label className="lvab-flabel" htmlFor="lvab-enquiry">Enquiry Type<span className="lvab-req">*</span></label>
                     <span className="lvab-selwrap">
-                      <select className="lvab-input lvab-select" id="lvab-enquiry" name="enquiry-type" required>
-                        <option value selected disabled>Select here</option>
+                <select className="lvab-input lvab-select" id="lvab-enquiry" name="enquiry-type" defaultValue="" required>
+                  <option value="" disabled>Select here</option>
                         <option value="general">General enquiry</option>
                         <option value="partnership">Partnership</option>
                         <option value="support">Support</option>
