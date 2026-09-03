@@ -146,14 +146,14 @@ export default function Page() {
               <p className="lvev-e2-sub">Select an account size to configure your evaluation.</p>
             </div>
             <div className="lvev-e2-toggle" role="tablist" aria-label="Account type">
-              <button className="lvev-e2-tab is-active" type="button" role="tab" id="lvev-e2-tab-lvlup" aria-selected="true" aria-controls="lvev-e2-panel-lvlup" data-lvev-e2-plan="lvlup">
+              <button className="lvev-e2-tab" type="button" role="tab" id="lvev-e2-tab-lvlup" aria-selected="false" aria-controls="lvev-e2-panel-lvlup" data-lvev-e2-plan="lvlup">
                 <span className="lvev-e2-tab-t">Lvlup Accounts</span>
               </button>
-              <button className="lvev-e2-tab" type="button" role="tab" id="lvev-e2-tab-starter" aria-selected="true" aria-controls="lvev-e2-panel-starter" data-lvev-e2-plan="starter">
+              <button className="lvev-e2-tab is-active" type="button" role="tab" id="lvev-e2-tab-starter" aria-selected="true" aria-controls="lvev-e2-panel-starter" data-lvev-e2-plan="starter">
                 <span className="lvev-e2-tab-t">Starter Accounts</span>
               </button>
             </div>
-            <div className="lvev-e2-cards" id="lvev-e2-panel-lvlup" role="tabpanel" aria-labelledby="lvev-e2-tab-lvlup" data-lvev-e2-panel="lvlup">
+            <div className="lvev-e2-cards" id="lvev-e2-panel-lvlup" style={{ display: 'none' }} role="tabpanel" aria-labelledby="lvev-e2-tab-lvlup" data-lvev-e2-panel="lvlup">
               <article className="lvev-e2-card" data-lvev-e2-account="25k">
                 <div className="lvev-e2-card-in">
                   <span className="lvev-e2-card-glow" aria-hidden="true" />
@@ -436,7 +436,7 @@ export default function Page() {
                 </div>
               </article>
             </div>{/* /.lvev-e2-cards */}
-            <div className="lvev-e2-cards" id="lvev-e2-panel-starter" style={{ display: 'none' }} role="tabpanel" aria-labelledby="lvev-e2-tab-starter" data-lvev-e2-panel="starter">
+            <div className="lvev-e2-cards" id="lvev-e2-panel-starter" role="tabpanel" aria-labelledby="lvev-e2-tab-starter" data-lvev-e2-panel="starter">
               <article className="lvev-e2-card" data-lvev-e2-account="25k">
                 <div className="lvev-e2-card-in">
                   <span className="lvev-e2-card-glow" aria-hidden="true" />
@@ -1069,7 +1069,7 @@ export default function Page() {
                   </tr>
                   <tr className="lvev-e4-row">
                     <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>
-                      One-Time Activation Fee<br /><span className="lvev-e4-note" style={{ opacity: 0.6, fontSize: '0.85em', fontWeight: 400 }}>(on One-Time Pricing)</span>
+                      One-Time Activation Fee<br /><span className="lvev-e4-note" style={{ opacity: 0.6, fontSize: '0.85em', fontWeight: 400 }}>(on Monthly Pricing)</span>
                     </th>
                     <td className="lvev-e4-cell">$129</td>
                     <td className="lvev-e4-cell">$225</td>
