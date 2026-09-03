@@ -1,6 +1,11 @@
+'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+  const pathname = usePathname();
+  const isGold = pathname === '/elite' || pathname === '/elite/';
+
   return (
     <div className="lvf-page lvf-theme-teil" data-lvf-teil="kopf">
       <section className="lvf-s01" id="top" data-lvf-s01="true">
@@ -55,7 +60,7 @@ export default function Header() {
                 <img
                   fetchPriority="high"
                   className="lvf-s01-logo-img"
-                  src="https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-logo-nav.webp"
+                  src={isGold ? "https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-logo-nav-gold.webp" : "https://lvlup.tivaosagencytempdomains.de/wp-content/uploads/2026/08/lvlup-logo-nav.webp"}
                   width="780" height="120" alt="Lvlup Futures"
                 />
               </Link>
