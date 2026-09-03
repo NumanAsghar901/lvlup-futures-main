@@ -1618,7 +1618,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon {
       linear-gradient(180deg, rgb(248, 164, 38) 0%, rgba(248, 172, 51, 0.85) 3%, rgba(248, 172, 51, 0) 20%),
       radial-gradient(ellipse 38% 52% at -6% 34%, rgba(255, 251, 243, 0.9) 0%, rgba(255, 247, 234, 0.88) 26%, rgba(255, 235, 204, 0.88) 40%, rgba(253, 209, 140, 0.88) 55%, rgba(250, 175, 60, 0.9) 70%, rgba(247, 163, 34, 0.88) 82%, rgba(243, 157, 28, 0.42) 94%, rgba(240, 155, 26, 0) 100%),
       radial-gradient(ellipse 28% 64% at 106% 40%, rgba(255, 242, 218, 0.9) 0%, rgba(255, 234, 198, 0.88) 26%, rgba(255, 218, 162, 0.88) 42%, rgba(253, 194, 102, 0.88) 58%, rgba(250, 170, 48, 0.9) 72%, rgba(246, 158, 28, 0.86) 84%, rgba(240, 152, 24, 0.4) 95%, rgba(236, 148, 22, 0) 100%),
-      linear-gradient(180deg, rgb(20, 13, 4) 0%, rgb(95, 63, 23) 3%, rgb(170, 112, 30) 10%, rgb(218, 148, 38) 18%, rgb(240, 170, 57) 26%, rgb(242, 170, 60) 33%, rgb(228, 155, 44) 41%, rgb(232, 155, 36) 49%, rgb(209, 139, 30) 57%, rgb(172, 113, 26) 64%, rgb(140, 92, 24) 72%, rgb(100, 66, 18) 80%, rgb(90, 60, 16) 83%);
+      linear-gradient(90deg, rgb(20, 13, 4) 0%, rgb(242, 170, 60) 33%, rgb(100, 66, 18) 83%);
     /* Naht zu e2 (Befund der Gegenpruefung: sichtbare waagerechte Kante).
        Randprofil, Mittel ueber x 0..150 und 1610..1760, Soll-y = Ist-y + 10:
          dy      -40    0   +40   +80
@@ -1636,8 +1636,8 @@ a.lve-e1-btn--primary .lve-e1-btn-icon {
        rechts neben der unteren Haelfte der Punkte-Karte. Im Entwurf liegt sie
        bei y 2230, also 835 px unter der Sektionsoberkante. Feste Pixel halten
        sie bei der naechsten Hoehenaenderung an Ort und Stelle. */
-    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0, #000 30px, #000 835px, transparent 838px);
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0, #000 30px, #000 835px, transparent 838px);
+    /* -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0, #000 30px, #000 835px, transparent 838px);
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0, #000 30px, #000 835px, transparent 838px); */
   }
 }
 
@@ -1832,7 +1832,7 @@ a.lve-e1-btn--primary .lve-e1-btn-icon {
 .lve-e4 {
   position: relative;
   overflow: clip;
-  padding: 36px 0 40px;
+  padding: 130px 0 40px;
 }
 
 /* Hintergrund: warme Bernstein-Glows an den unteren Ecken, laufen grossflaechig

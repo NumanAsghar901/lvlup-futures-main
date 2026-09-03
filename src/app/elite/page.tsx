@@ -322,7 +322,6 @@ export default function Page() {
                 </div>
               </article>
             </div>
-            <p className="lve-e4-proof">Proof of Performance</p>
           </div>
         </section >
         {/* e5-recognition */}
@@ -330,7 +329,8 @@ export default function Page() {
           <div className="lve-e5-bg" aria-hidden="true" />
           <div className="lvf-container lve-e5-inner">
             <div className="lve-e5-head">
-              <h2 className="lve-e5-title">Recognition <span className="lve-e5-title-gold">You Cannot Buy</span></h2>
+              <p className="lve-e4-kicker">Proof of Performance</p>
+              <h2 className="lve-e5-title" >Recognition <span style={{ fontWeight: 600 }} className="lve-e5-title-gold">You Cannot Buy</span></h2>
               <p className="lve-e5-sub">Elite status is designed to be seen, carried and remembered. Every recognition asset represents a place earned through verified trading results.</p>
             </div>
             <div className="lve-e5-grid">
