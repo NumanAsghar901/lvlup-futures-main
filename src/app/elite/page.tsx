@@ -9,7 +9,7 @@ export default function Page() {
       <div className="lvf-page">
         {/* e1-hero */}
         <section className="lve-e1" id="elite-hero">
-          <div className="lve-e1-bg" aria-hidden="true">
+          <div className="" aria-hidden="true">
             <video
               className="lve-e1-bg-video"
               src="/assets/media/Comp 8.mp4"
