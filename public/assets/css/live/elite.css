@@ -1869,11 +1869,26 @@ a.lve-e1-btn--primary .lve-e1-btn-icon {
   margin-bottom: 48px;
 }
 
+.lve-e4-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 28px;
+  border-radius: 78px;
+  background: #100b04;
+  border: 1px solid rgba(255, 188, 84, 0.08);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .lve-e4-title {
   font-size: clamp(36px, 4.6vw, 65px);
   font-weight: 500;
-  line-height: 0.93;
+  line-height: 2;
   letter-spacing: -1.3px;
+  padding-inline: 20px;
   background: linear-gradient(141deg, rgba(255, 255, 255, 0.7) 0%, #ffffff 50%, rgba(255, 255, 255, 0.7) 100%);
   -webkit-background-clip: text;
   background-clip: text;

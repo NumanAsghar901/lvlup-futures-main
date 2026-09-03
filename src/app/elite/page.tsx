@@ -196,14 +196,15 @@ export default function Page() {
                 </div>
               </article>
             </div>
-            <p className="lve-e3-pill">Private Member Privileges</p>
           </div>
+          {/* <p className="lve-e3-pill">Private Member Privileges</p> */}
         </section >
         {/* e4-world-beyond */}
         < section className="lve-e4" id="elite-world-beyond" >
           <div className="lve-e4-bg" aria-hidden="true" />
           <div className="lvf-container lve-e4-inner">
             <div className="lve-e4-head">
+              <p className="lve-e4-kicker">Private Member Privileges</p>
               <h2 className="lve-e4-title">A World Built <span className="lve-e4-title-gold">Beyond the Payout</span></h2>
               <p className="lve-e4-sub">Elite rewards are designed to offer something more meaningful than another percentage or account upgrade. Membership gives proven traders access to recognition, experiences and opportunities that cannot be purchased directly.</p>
             </div>
