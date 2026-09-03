@@ -775,12 +775,13 @@
        Ebene traegt genau diese Differenz nach: Lage und Deckkraft
        sind aus (Referenz minus gerendertem Stand) zurueckgerechnet,
        deshalb steht sie ueber der schmalen Ellipse.               */
-    radial-gradient(758px 430px at 100% 175px,
+    /* this below is the star unncomet for star  */
+    /* radial-gradient(758px 430px at 100% 175px,
       rgba(185, 231, 255) 2.4%, rgba(185, 231, 255) 7.3%, rgba(185, 231, 255) 17.1%, rgba(185, 231, 255,
         0.404) 26.8%, rgba(185, 231, 255, 0.317) 36.6%, rgba(185, 231,
         255, 0.271) 46.3%, rgba(185, 231, 255, 0.188) 56.1%, rgba(185,
         231, 255, 0) 65.9%, rgba(185, 231, 255, 0.054) 75.6%,
-      rgba(185, 231, 255, 0.021) 85.4%, rgba(185, 230, 255, 0) 95.1%, rgba(0, 0, 0, 0) 100%),
+      rgba(185, 231, 255, 0.021) 85.4%, rgba(185, 230, 255, 0) 95.1%, rgba(0, 0, 0, 0) 100%), */
     radial-gradient(500px 2260px at 100% 175px,
       rgb(185, 231, 255) 0%, rgb(183, 229, 254) 10%, rgb(180, 227,
         253) 17%, rgb(145, 210, 240) 20%, rgb(128, 202, 235) 23%,
