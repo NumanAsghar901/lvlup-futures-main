@@ -461,29 +461,10 @@ export default function Page() {
             <div className="lve-e7-frame">
               <div className="lve-e7-panel">
                 <div className="lve-e7-arrows lve-e7-arrows--left" aria-hidden="true">
-                  <svg viewBox="0 0 404 407" width={404} height={407} fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient id="lve-e7-gold-l" x1={0} y1={0} x2={0} y2={1}>
-                        <stop offset={0} stopColor="#ffbc54" />
-                        <stop offset="0.45" stopColor="#ff9200" />
-                        <stop offset="0.85" stopColor="#ff9200" stopOpacity={0} />
-                      </linearGradient>
-                    </defs>
-                    <path d="M 100 26 Q 112 8 124 26 L 196 130 Q 208 148 188 148 L 152 148 L 152 320 L 72 320 L 72 148 L 36 148 Q 16 148 28 130 Z" fill="url(#lve-e7-gold-l)" />
-                    <path d="M32 8 L192 8 L192 320 L32 320 Z" transform="translate(238 210) scale(0.62) rotate(38 112 160)" fill="url(#lve-e7-gold-l)" opacity="0.9" />
-                  </svg>
+                  <img src="/assets/images/logo/logo-cta-left.png" alt="Elite" width={604} height={607} style={{ width: "100%", height: "100%", objectFit: "contain", opacity: 1 }} />
                 </div>
                 <div className="lve-e7-arrows lve-e7-arrows--right" aria-hidden="true">
-                  <svg viewBox="0 0 404 407" width={404} height={407} fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient id="lve-e7-gold-r" x1={0} y1={0} x2={0} y2={1}>
-                        <stop offset={0} stopColor="#ffbc54" />
-                        <stop offset="0.45" stopColor="#ff9200" />
-                        <stop offset="0.85" stopColor="#ff9200" stopOpacity={0} />
-                      </linearGradient>
-                    </defs>
-                    <path d="M 280 26 Q 292 8 304 26 L 376 130 Q 388 148 368 148 L 332 148 L 332 320 L 252 320 L 252 148 L 216 148 Q 196 148 208 130 Z" fill="url(#lve-e7-gold-r)" />
-                    <path d="M252 148 L412 148 L412 320 L252 320 Z" transform="translate(-160 210) scale(0.62) rotate(-38 292 160)" fill="url(#lve-e7-gold-r)" opacity="0.9" />                  </svg>
+                  <img src="/assets/images/logo/logo-cta-right.png" alt="Elite" width={604} height={607} style={{ width: "100%", height: "100%", objectFit: "contain", opacity: 1 }} />
                 </div>
                 <div className="lve-e7-content">
                   <div className="lve-e7-head">
