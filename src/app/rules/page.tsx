@@ -218,6 +218,14 @@ export default function Page() {
     return () => window.removeEventListener('hashchange', openRuleFromHash);
   }, []);
 
+  const handleViewRules = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (window.location.pathname !== '/rules') return;
+
+    event.preventDefault();
+    window.history.replaceState(window.history.state, '', '/rules');
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <style>{`
@@ -272,20 +280,6 @@ export default function Page() {
         }
 
         /* Ambient Left & Right Glow Orbs - Smooth Gradient rgb(37,145,202) -> rgb(150,218,247) */
-        @keyframes lvrGlowLeftFloat {
-          0% { transform: translateY(-180px) scale(0.96); opacity: 0; }
-          12% { opacity: 0.72; }
-          82% { opacity: 0.68; }
-          100% { transform: translateY(680px) scale(1.08); opacity: 0; }
-        }
-
-        @keyframes lvrGlowRightFloat {
-          0% { transform: translateY(-220px) scale(1.06); opacity: 0; }
-          15% { opacity: 0.76; }
-          80% { opacity: 0.66; }
-          100% { transform: translateY(720px) scale(0.95); opacity: 0; }
-        }
-
         .lvr-page-glow-layer {
           position: absolute;
           inset: 0;
@@ -303,7 +297,7 @@ export default function Page() {
           height: 1100px;
           background: radial-gradient(ellipse at center, rgba(150, 218, 247, 0.55) 0%, rgba(37, 145, 202, 0.42) 45%, rgba(0, 3, 5, 0) 75%);
           filter: blur(85px);
-          animation: lvrGlowRightFloat 24s linear infinite;
+          animation: none;
         }
 
         /* Left Side Heavy Glow */
@@ -315,7 +309,7 @@ export default function Page() {
           height: 1200px;
           background: radial-gradient(ellipse at center, rgba(150, 218, 247, 0.48) 0%, rgba(37, 145, 202, 0.38) 45%, rgba(0, 3, 5, 0) 75%);
           filter: blur(90px);
-          animation: lvrGlowLeftFloat 21s linear -6s infinite;
+          animation: none;
         }
 
         /* Right Side Heavy Glow */
@@ -327,7 +321,7 @@ export default function Page() {
           height: 1300px;
           background: radial-gradient(ellipse at center, rgba(150, 218, 247, 0.52) 0%, rgba(37, 145, 202, 0.42) 45%, rgba(0, 3, 5, 0) 75%);
           filter: blur(95px);
-          animation: lvrGlowRightFloat 27s linear -14s infinite;
+          animation: none;
         }
 
         /* Lower Left Side Glow */
@@ -339,7 +333,7 @@ export default function Page() {
           height: 1250px;
           background: radial-gradient(ellipse at center, rgba(150, 218, 247, 0.45) 0%, rgba(37, 145, 202, 0.36) 45%, rgba(0, 3, 5, 0) 75%);
           filter: blur(90px);
-          animation: lvrGlowLeftFloat 23s linear -10s infinite;
+          animation: none;
         }
 
         /* Lower Right Side Glow */
@@ -351,7 +345,7 @@ export default function Page() {
           height: 1200px;
           background: radial-gradient(ellipse at center, rgba(150, 218, 247, 0.48) 0%, rgba(37, 145, 202, 0.4) 45%, rgba(0, 3, 5, 0) 75%);
           filter: blur(90px);
-          animation: lvrGlowRightFloat 25s linear -18s infinite;
+          animation: none;
         }
 
         /* Semi-transparent Cards allowing Glow to brighten from behind */
@@ -501,32 +495,14 @@ export default function Page() {
 
         {/* r1-hero */}
         <section className="lvr-r1" id="rules-hero">
-          <div className="lvr-r1-bg" aria-hidden="true" />
-          <div className="lvr-r1-top-glow" aria-hidden="true" />
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{
-              position: 'absolute',
-              top: '56%',
-              left: '50%',
-              transform: 'translate(-50%, -50%) scale(1.22)',
-              minWidth: '100%',
-              minHeight: '100%',
-              objectFit: 'cover',
-              opacity: 0.42,
-              pointerEvents: 'none',
-              zIndex: 0,
-              mixBlendMode: 'screen'
-            }}
-          >
-            <source src="/assets/media/God rays.mp4" type="video/mp4" />
-          </video>
-          <div className="lvr-r1-contrast-mask" aria-hidden="true" />
-          <div className="lvr-r1-glow" aria-hidden="true" />
-          <div className="lvr-r1-glow lvr-r1-glow--low" aria-hidden="true" />
+          {/* Figma's "video" frame: the gradient mask is applied by CSS above the MP4. */}
+          <div className="lvr-r1-video-viewport" aria-hidden="true">
+            <div className="lvr-r1-video">
+              <video className="lvr-r1-video-media" autoPlay loop muted playsInline preload="metadata">
+                <source src="/assets/media/God rays.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
           <div className="lvf-container lvr-r1-inner">
             <p className="lvr-r1-badge"><span className="lvr-r1-badge-dot" aria-hidden="true" /><b className="lvr-r1-badge-hl">Zero</b> Hidden Rules</p>
             <h1 className="lvr-r1-title">
@@ -558,7 +534,7 @@ export default function Page() {
             </div>
             <div
               ref={searchContainerRef}
-              style={{ position: 'relative', width: '100%', maxWidth: 1238, zIndex: 50, marginTop: 124 }}
+              style={{ position: 'relative', width: '100%', maxWidth: 1120, zIndex: 50, marginTop: 124 }}
             >
               <form onSubmit={handleSearchSubmit} className="lvr-r1-search" data-lvr-r1-search style={{ margin: 0, position: 'relative' }}>
                 <svg className="lvr-r1-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx={11} cy={11} r={7} /><path d="m21 21-4.3-4.3" /></svg>
@@ -710,6 +686,25 @@ export default function Page() {
                 );
               })}
             </nav>
+            {/* Keep the CTA inside the Rules hero so the index and artwork
+                share one uninterrupted video/glow background. */}
+            <section className="lvr-final-cta" id="final-cta">
+              <div className="lvr-final-cta-media">
+                <img
+                  className="lvr-final-cta-image"
+                  src="/assets/media/CTA_frame.png"
+                  alt="Choose $25K–$150K and build toward $1M"
+                />
+                {/* The artwork contains the button visuals; these links provide their behavior. */}
+                <Link href="/#evaluations" aria-label="Choose Your Evaluation" className="lvr-final-cta-link lvr-final-cta-link--evaluation" />
+                <Link
+                  href="/rules"
+                  aria-label="View the Rules"
+                  className="lvr-final-cta-link lvr-final-cta-link--rules"
+                  onClick={handleViewRules}
+                />
+              </div>
+            </section>
           </div>
         </section>
         {/* r2-account-overview */}
@@ -2221,17 +2216,6 @@ export default function Page() {
               </div>
             </article>
 
-          </div>
-        </section>
-        {/* r9b-cta */}
-        <section className="lvf-s10" id="final-cta" style={{ paddingTop: 40, paddingBottom: 40 }}>
-          <div className="lvf-container lvf-s10-container" style={{ maxWidth: 1152, margin: '0 auto', width: '100%', padding: '0 1rem' }}>
-            <div style={{ position: 'relative', width: '100%' }}>
-              <img src="assets/media/CTA_frame.png" alt="Choose Your Evaluation - Build Toward $1M" style={{ width: '100%', height: 'auto', objectFit: 'contain', borderRadius: 40, display: 'block', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }} />
-              {/* Transparent functional links mapped over the baked-in image buttons */}
-              <Link href="/#evaluations" aria-label="Choose Your Evaluation" style={{ position: 'absolute', left: '25%', top: '65%', width: '24%', height: '25%', zIndex: 10, display: 'block' }} />
-              <a href="/rules" aria-label="View the Rules" style={{ position: 'absolute', left: '51%', top: '65%', width: '24%', height: '25%', zIndex: 10, display: 'block' }} />
-            </div>
           </div>
         </section>
       </div>
