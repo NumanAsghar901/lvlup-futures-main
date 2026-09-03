@@ -191,41 +191,8 @@ export default function Page() {
                   </div>
                   <p className="lve-e3-desc">Once your verified balance reaches 10,000 points, Elite membership becomes available. The 10,000 entry points are redeemed when your membership begins. Any points earned above that amount remain in your balance.</p>
                 </div>
-                <div className="lve-e3-icon lve-e3-icon--xl" aria-hidden="true">
-                  {/* <svg width={140} height={140} viewBox="0 0 24 24" fill="none">
-                    <defs><linearGradient id="lve-e3-g5" x1={0} y1={0} x2={0} y2={1}><stop offset={0} stopColor="#ffbc54" /><stop offset={1} stopColor="#ff9200" /></linearGradient></defs>
-                    <path d="M8 4v11h4l4-8M11 7h5v5" stroke="url(#lve-e3-g5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg> */}
-                  {/* <svg width={140} height={140} viewBox="0 0 24 24" fill="none">
-                    <defs>
-                      <linearGradient id="lve-e3-g5" x1={0} y1={0} x2={0} y2={1}>
-                        <stop offset={0} stopColor="#ffbc54" />
-                        <stop offset={1} stopColor="#ff9200" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M7 6v10h3l8-8M12 8h6v6"
-                      stroke="url(#lve-e3-g5)"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg> */}
-                  <svg width={140} height={140} viewBox="0 0 24 24" fill="none">
-                    <defs>
-                      <linearGradient id="lve-e3-g5" x1={0} y1={0} x2={0} y2={1}>
-                        <stop offset={0} stopColor="#ffbc54" />
-                        <stop offset={1} stopColor="#ff9200" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M8 4v11h4l4-8M11.5 8.5l4.5-1.5l1.5 4.5"
-                      stroke="url(#lve-e3-g5)"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                <div className="lve-e3-icon" aria-hidden="true">
+                  <img src="/assets/images/logo/gold-logo-mid.png" alt="" width={54} height={54} />
                 </div>
               </article>
             </div>
