@@ -5921,6 +5921,54 @@
   }
 }
 
+/* Final CTA artwork is shared with the Evaluation page. Keep it above the
+   Rules page's ambient overlay so the approved colors are not dulled. */
+.lvr-final-cta {
+  width: 100%;
+  padding: 72px 0 40px;
+}
+
+.lvr-final-cta-media {
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 2rem);
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+.lvr-final-cta-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 40px;
+  object-fit: contain;
+  opacity: 1;
+  filter: none;
+}
+
+.lvr-final-cta-link {
+  position: absolute;
+  top: 65%;
+  z-index: 3;
+  display: block;
+  width: 24%;
+  height: 25%;
+}
+
+.lvr-final-cta-link--evaluation {
+  left: 25%;
+}
+
+.lvr-final-cta-link--rules {
+  left: 51%;
+}
+
+.lvr-final-cta-link:focus-visible {
+  border-radius: 10px;
+  outline: 2px solid var(--lvf-blue-light);
+  outline-offset: 3px;
+}
+
 /* Inline accordion panels. Rule grids are moved here on mount so the selected
    section opens exactly below its heading and naturally pushes later headings
    down the page. */
@@ -6025,4 +6073,104 @@
 @media (max-width: 767px) {
   .lvr-r1-top-glow { left: 82%; transform: translateX(-50%); }
   .lvr-r1-contrast-mask { background: radial-gradient(72% 48% at 50% 34%, rgba(0, 3, 7, 0.68), transparent 84%); }
+}
+
+/* Clip only the oversized artwork. The hero itself intentionally stays
+   overflow-visible so the search suggestion panel can overlap the next section. */
+.lvr-r1-video-viewport {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 42% 70% at 104% 62%, rgba(202, 239, 255, 0.96) 0%, rgba(118, 207, 252, 0.86) 18%, rgba(18, 169, 255, 0.56) 42%, rgba(0, 116, 184, 0.22) 65%, transparent 82%),
+    radial-gradient(ellipse 28% 58% at -8% 60%, rgba(78, 190, 245, 0.32) 0%, rgba(0, 124, 192, 0.15) 48%, transparent 78%),
+    #000305;
+}
+
+/* Figma "video" frame. At the 1760px design width, centering 3022px produces
+   the specified -631px left offset while remaining centered on wider screens. */
+.lvr-r1-video {
+  position: absolute;
+  top: -240px;
+  left: 50%;
+  width: 3022px;
+  height: 1084px;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateX(-50%);
+  background: #000305;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  filter: blur(59.3px);
+}
+
+.lvr-r1-video-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 1;
+  filter: brightness(0.78) contrast(1.18) saturate(1.5);
+}
+
+/* A translucent tint preserves the moving luminance from the MP4. The old
+   opaque color-blend stack flattened the footage into a gray field. */
+.lvr-r1-video::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(20, 151, 224, 0.34) 0%, rgba(0, 75, 119, 0.18) 58%, rgba(0, 8, 14, 0.08) 100%);
+}
+
+/* Dark masks remain separate from the color layer so they fade the video at
+   the top, bottom, and corners instead of flattening it into solid blue. */
+.lvr-r1-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(62.79% 70.22% at 50% 29.78%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.5) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 72.11%, #000000 93.71%),
+    linear-gradient(180deg, #000000 -1.48%, rgba(0, 0, 0, 0) 34.74%);
+}
+
+/* Desktop Rules index aligns with the CTA artwork's 1120px content edge. */
+@media (min-width: 1024px) {
+  .lvr-rule-accordion {
+    width: min(100%, 1120px);
+    gap: 48px;
+    margin-top: 68px;
+  }
+
+  .lvf-page.lvr-rules-page .lvr-rule-accordion-trigger {
+    min-height: 41.11px;
+    grid-template-columns: 41.11px 1fr;
+    gap: 16px;
+    padding: 0;
+    border-radius: 10px;
+    font-family: var(--lvf-font-display);
+    font-size: 41.11px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .lvf-page.lvr-rules-page .lvr-rule-accordion-trigger strong {
+    font-weight: 600;
+  }
+
+  .lvf-page.lvr-rules-page .lvr-rule-accordion-number {
+    width: 41.11px;
+    height: 41.11px;
+    border-radius: 6px;
+    font-size: 20px;
+  }
 }
