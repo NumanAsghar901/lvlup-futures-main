@@ -921,7 +921,7 @@ export default function Page() {
                     <th className="lvev-e4-cell lvev-e4-cell--group" colSpan={4} scope="colgroup"><span className="lvev-e4-grad">Starter Accounts</span></th>
                   </tr>
                   <tr className="lvev-e4-row-sizes">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature lvev-e4-cell--feature-head" style={{ backgroundColor: "#051016 !important" }} scope="col">Feature</th>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature lvev-e4-cell--feature-head" scope="col">Feature</th>
                     <th className="lvev-e4-cell lvev-e4-cell--size" scope="col">25K</th>
                     <th className="lvev-e4-cell lvev-e4-cell--size" scope="col">50K</th>
                     <th className="lvev-e4-cell lvev-e4-cell--size" scope="col">100K</th>
@@ -934,7 +934,7 @@ export default function Page() {
                 </thead>
                 <tbody>
                   <tr className="lvev-e4-row lvev-e4-row--tall">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" style={{ backgroundColor: "#051016 !important" }} scope="row">Evaluation Payment</th>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">Evaluation Payment</th>
                     <td className="lvev-e4-cell"><span className="lvev-e4-stack"><span>One-Time</span><span className="lvev-e4-grad" style={{ fontWeight: '600' }}>OR</span><span>Monthly</span></span></td>
                     <td className="lvev-e4-cell"><span className="lvev-e4-stack"><span>One-Time</span><span className="lvev-e4-grad" style={{ fontWeight: '600' }}>OR</span><span>Monthly</span></span></td>
                     <td className="lvev-e4-cell"><span className="lvev-e4-stack"><span>One-Time</span><span className="lvev-e4-grad" style={{ fontWeight: '600' }}>OR</span><span>Monthly</span></span></td>
@@ -945,29 +945,29 @@ export default function Page() {
                     <td className="lvev-e4-cell">One-Time</td>
                   </tr>
                   <tr className="lvev-e4-row lvev-e4-row--hi">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature lvev-e4-cell--feature-strong" style={{ backgroundColor: "#071f2d !important" }} scope="row">One-Time Price</th>
-                    <td className="lvev-e4-cell lvev-e4-cell--price" style={{ backgroundColor: "#09324E !important" }}>$194</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--price" style={{ backgroundColor: "#09324E !important" }}>$338</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--price" style={{ backgroundColor: "#09324E !important" }}>$554</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--price" style={{ backgroundColor: "#09324E !important" }}>$714</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--price" style={{ backgroundColor: "#09324E !important" }}>$129</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--price" style={{ backgroundColor: "#09324E !important" }}>$194</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--price" style={{ backgroundColor: "#09324E !important" }}>$259</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--price" style={{ backgroundColor: "#09324E !important" }}>$324</td>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature lvev-e4-cell--feature-strong" scope="row">One-Time Price</th>
+                    <td className="lvev-e4-cell lvev-e4-cell--price">$194</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--price">$338</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--price">$554</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--price">$714</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--price">$129</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--price">$194</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--price">$259</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--price">$324</td>
                   </tr>
                   <tr className="lvev-e4-row lvev-e4-row--hi">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature lvev-e4-cell--feature-strong" style={{ backgroundColor: "#071f2d !important" }} scope="row">Monthly Price</th>
-                    <td className="lvev-e4-cell lvev-e4-cell--price" style={{ backgroundColor: "#09324E !important" }}>$129/mo</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--price" style={{ backgroundColor: "#09324E !important" }}>$225/mo</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--price" style={{ backgroundColor: "#09324E !important" }}>$369/mo</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--price" style={{ backgroundColor: "#09324E !important" }}>$476/mo</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--dim" style={{ backgroundColor: "#071F2C !important" }}>Not Applicable</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--dim" style={{ backgroundColor: "#071F2C !important" }}>Not Applicable</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--dim" style={{ backgroundColor: "#071F2C !important" }}>Not Applicable</td>
-                    <td className="lvev-e4-cell lvev-e4-cell--dim" style={{ backgroundColor: "#071F2C !important" }}>Not Applicable</td>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature lvev-e4-cell--feature-strong" scope="row">Monthly Price</th>
+                    <td className="lvev-e4-cell lvev-e4-cell--price">$129/mo</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--price">$225/mo</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--price">$369/mo</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--price">$476/mo</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--dim">Not Applicable</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--dim">Not Applicable</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--dim">Not Applicable</td>
+                    <td className="lvev-e4-cell lvev-e4-cell--dim">Not Applicable</td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>Profit Target</th>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">Profit Target</th>
                     <td className="lvev-e4-cell"><span className="lvev-e4-stack"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>6%</span><span className="lvev-e4-note">($1,500)</span></span></td>
                     <td className="lvev-e4-cell"><span className="lvev-e4-stack"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>6%</span><span className="lvev-e4-note">($3,000)</span></span></td>
                     <td className="lvev-e4-cell"><span className="lvev-e4-stack"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>7%</span><span className="lvev-e4-note">($7,000)</span></span></td>
@@ -978,7 +978,7 @@ export default function Page() {
                     <td className="lvev-e4-cell"><span className="lvev-e4-stack"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>8%</span><span className="lvev-e4-note">($12,000)</span></span></td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>Maximum Drawdown</th>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">Maximum Drawdown</th>
                     <td className="lvev-e4-cell"><span className="lvev-e4-stack"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>5%</span><span className="lvev-e4-note">($1,250)</span></span></td>
                     <td className="lvev-e4-cell"><span className="lvev-e4-stack"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>5%</span><span className="lvev-e4-note">($2,500)</span></span></td>
                     <td className="lvev-e4-cell"><span className="lvev-e4-stack"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>5%</span><span className="lvev-e4-note">($5,000)</span></span></td>
@@ -989,7 +989,7 @@ export default function Page() {
                     <td className="lvev-e4-cell"><span className="lvev-e4-stack"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>3%</span><span className="lvev-e4-note">($4,500)</span></span></td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>Drawdown Type</th>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">Drawdown Type</th>
                     <td className="lvev-e4-cell"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>EOD</span> Trailing</td>
                     <td className="lvev-e4-cell"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>EOD</span> Trailing</td>
                     <td className="lvev-e4-cell"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>EOD</span> Trailing</td>
@@ -1000,7 +1000,7 @@ export default function Page() {
                     <td className="lvev-e4-cell"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>EOD</span> Trailing</td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>Min. Trading Days</th>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">Min. Trading Days</th>
                     <td className="lvev-e4-cell">5 Days</td>
                     <td className="lvev-e4-cell">5 Days</td>
                     <td className="lvev-e4-cell">5 Days</td>
@@ -1011,7 +1011,7 @@ export default function Page() {
                     <td className="lvev-e4-cell">5 Days</td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>Maximum Contracts</th>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">Maximum Contracts</th>
                     <td className="lvev-e4-cell">1 mini</td>
                     <td className="lvev-e4-cell">3 mini</td>
                     <td className="lvev-e4-cell">6 mini</td>
@@ -1022,7 +1022,7 @@ export default function Page() {
                     <td className="lvev-e4-cell">9 mini</td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>Profit Split</th>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">Profit Split</th>
                     <td className="lvev-e4-cell">80%</td>
                     <td className="lvev-e4-cell">80%</td>
                     <td className="lvev-e4-cell">80%</td>
@@ -1033,7 +1033,7 @@ export default function Page() {
                     <td className="lvev-e4-cell">100%</td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>Payout Terms</th>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">Payout Terms</th>
                     <td className="lvev-e4-cell"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>10%</span> Cap</td>
                     <td className="lvev-e4-cell"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>10%</span> Cap</td>
                     <td className="lvev-e4-cell"><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>10%</span> Cap</td>
@@ -1044,7 +1044,7 @@ export default function Page() {
                     <td className="lvev-e4-cell"><span className="lvev-e4-stack"><span><span className="lvev-e4-grad lvev-e4-grad--bold" style={{ fontWeight: '600' }}>2%</span> Cap</span><span className="lvev-e4-note">Up to 50% Profit</span></span></td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>Payout Cycle</th>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">Payout Cycle</th>
                     <td className="lvev-e4-cell">Every 14 Days</td>
                     <td className="lvev-e4-cell">Every 14 Days</td>
                     <td className="lvev-e4-cell">Every 14 Days</td>
@@ -1055,7 +1055,7 @@ export default function Page() {
                     <td className="lvev-e4-cell">Every 5 Profitable Days</td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">
                       One-Time Activation Fee<br /><span className="lvev-e4-note" style={{ opacity: 0.6, fontSize: '0.85em', fontWeight: 400 }}>(on One-Time Pricing)</span>
                     </th>
                     <td className="lvev-e4-cell">$194</td>
@@ -1068,7 +1068,7 @@ export default function Page() {
                     <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">
                       One-Time Activation Fee<br /><span className="lvev-e4-note" style={{ opacity: 0.6, fontSize: '0.85em', fontWeight: 400 }}>(on Monthly Pricing)</span>
                     </th>
                     <td className="lvev-e4-cell">$129</td>
@@ -1081,7 +1081,7 @@ export default function Page() {
                     <td className="lvev-e4-cell lvev-e4-cell--dim">None</td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>Consistency Rule on Evaluation</th>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">Consistency Rule on Evaluation</th>
                     <td className="lvev-e4-cell">40%</td>
                     <td className="lvev-e4-cell">40%</td>
                     <td className="lvev-e4-cell">40%</td>
@@ -1092,7 +1092,7 @@ export default function Page() {
                     <td className="lvev-e4-cell">40%</td>
                   </tr>
                   <tr className="lvev-e4-row">
-                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row" style={{ backgroundColor: "#051016 !important" }}>Consistency Rule on Funded</th>
+                    <th className="lvev-e4-cell lvev-e4-cell--feature" scope="row">Consistency Rule on Funded</th>
                     <td className="lvev-e4-cell">40%</td>
                     <td className="lvev-e4-cell">40%</td>
                     <td className="lvev-e4-cell">40%</td>

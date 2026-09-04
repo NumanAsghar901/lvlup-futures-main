@@ -282,25 +282,42 @@
   background-color: #01050a !important;
 }
 
-.lvev-e4-table tbody tr th:nth-child(1) {
-  background-color: #01060c !important;
+/* Feature column (default rows) */
+.lvev-e4-table th.lvev-e4-cell--feature,
+.lvev-e4-table th.lvev-e4-cell--feature-head,
+.lvev-e4-table tbody tr:not(.lvev-e4-row--hi) th:nth-child(1) {
+  background-color: #051016 !important;
 }
 
-.lvev-e4-table tbody tr td:nth-child(2),
-.lvev-e4-table tbody tr td:nth-child(4),
-.lvev-e4-table tbody tr td:nth-child(6),
-.lvev-e4-table tbody tr td:nth-child(8) {
+/* Alternating dark columns for normal rows */
+.lvev-e4-table tbody tr:not(.lvev-e4-row--hi) td:nth-child(2),
+.lvev-e4-table tbody tr:not(.lvev-e4-row--hi) td:nth-child(4),
+.lvev-e4-table tbody tr:not(.lvev-e4-row--hi) td:nth-child(6),
+.lvev-e4-table tbody tr:not(.lvev-e4-row--hi) td:nth-child(8) {
   background-color: #02060c !important;
 }
 
-.lvev-e4-table tbody tr td:nth-child(3),
-.lvev-e4-table tbody tr td:nth-child(5),
-.lvev-e4-table tbody tr td:nth-child(7),
-.lvev-e4-table tbody tr td:nth-child(9) {
+.lvev-e4-table tbody tr:not(.lvev-e4-row--hi) td:nth-child(3),
+.lvev-e4-table tbody tr:not(.lvev-e4-row--hi) td:nth-child(5),
+.lvev-e4-table tbody tr:not(.lvev-e4-row--hi) td:nth-child(7),
+.lvev-e4-table tbody tr:not(.lvev-e4-row--hi) td:nth-child(9) {
   background-color: #05101c !important;
 }
 
-/* Removed blue row overrides to keep consistent dark mode */
+/* Highlighted pricing rows (One-Time Price & Monthly Price) */
+.lvev-e4-table tbody tr.lvev-e4-row--hi th,
+.lvev-e4-table tbody tr.lvev-e4-row--hi th.lvev-e4-cell--feature-strong {
+  background-color: #071f2d !important;
+}
+
+.lvev-e4-table tbody tr.lvev-e4-row--hi td.lvev-e4-cell--price,
+.lvev-e4-table tbody tr.lvev-e4-row--hi td:not(.lvev-e4-cell--dim) {
+  background-color: #09324E !important;
+}
+
+.lvev-e4-table tbody tr.lvev-e4-row--hi td.lvev-e4-cell--dim {
+  background-color: #071F2C !important;
+}
 
 @media (min-width: 768px) {
   .lvev-e4 {
