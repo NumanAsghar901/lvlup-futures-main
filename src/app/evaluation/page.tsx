@@ -1,5 +1,6 @@
 // @ts-nocheck
 import Script from 'next/script';
+import EvaluationInteractions from './EvaluationInteractions';
 
 export default function Page() {
   return (
@@ -1667,7 +1668,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <Script src="/assets/js/live/evaluation.js" strategy="lazyOnload" />
+      <EvaluationInteractions />
       {/* Load the home JS so the conditions modal open/close logic runs on this page too */}
       <Script src="/assets/js/live/lvlup-home.js" strategy="lazyOnload" />
     </>

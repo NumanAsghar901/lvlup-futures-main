@@ -127,8 +127,8 @@ var LVEV_PLAN_DATA = {
   }
 };
 
-window.LVEV_CURRENT_PLAN_TYPE = 'lvlup';
-window.LVEV_CURRENT_PLAN_SIZE = '50k';
+window.LVEV_CURRENT_PLAN_TYPE = window.LVEV_CURRENT_PLAN_TYPE || 'starter';
+window.LVEV_CURRENT_PLAN_SIZE = window.LVEV_CURRENT_PLAN_SIZE || '50k';
 
 function lvevApplyPlanToConfigure() {
   var size = window.LVEV_CURRENT_PLAN_SIZE;
@@ -188,11 +188,16 @@ window.lvevApplyPlanToConfigure = lvevApplyPlanToConfigure;
 window.lvevUpdateGrandTotal = lvevUpdateGrandTotal;
 
 /* e2-pricing */
-(function () {
+function initializePricing() {
   'use strict';
 
   var root = document.querySelector('.lvev-e2');
   if (!root) return;
+  if (root.dataset.lvevE2Ready === '1') {
+    lvevApplyPlanToConfigure();
+    return;
+  }
+  root.dataset.lvevE2Ready = '1';
 
   function updateSelectedCardState(panel) {
       var chips = Array.prototype.slice.call(panel.querySelectorAll('[data-lvev-e2-select]'));
@@ -220,6 +225,7 @@ window.lvevUpdateGrandTotal = lvevUpdateGrandTotal;
       panels.forEach(function (panel) {
           updateSelectedCardState(panel);
       });
+      lvevApplyPlanToConfigure();
   }
 
   var allChips = Array.prototype.slice.call(root.querySelectorAll('[data-lvev-e2-select]'));
@@ -279,17 +285,23 @@ window.lvevUpdateGrandTotal = lvevUpdateGrandTotal;
     });
   });
 
-  // Init
-  lvevApplyPlanToConfigure();
+  // Synchronize the JavaScript state with the tab rendered as active in HTML.
+  var activeTab = root.querySelector('[data-lvev-e2-plan].is-active') || tabs[0];
+  if (activeTab) activateTab(activeTab, false);
 
-})();
+}
 
 /* e3-configure */
-(function () {
+function initializeConfiguration() {
   'use strict';
 
   var root = document.querySelector('.lvev-e3');
   if (!root) return;
+  if (root.dataset.lvevE3Ready === '1') {
+    lvevApplyPlanToConfigure();
+    return;
+  }
+  root.dataset.lvevE3Ready = '1';
 
   var platforms = Array.prototype.slice.call(root.querySelectorAll('[data-lvev-e3-platform]'));
   var sumPlatform = root.querySelector('[data-lvev-e3-sum-platform]');
@@ -324,10 +336,10 @@ window.lvevUpdateGrandTotal = lvevUpdateGrandTotal;
       window.lvevUpdateGrandTotal();
     });
   }
-})();
+}
 
 /* e7-faq */
-(function () {
+function initializeFaq() {
   'use strict';
 
   var lists = document.querySelectorAll('[data-lvev-e7-accordion]');
@@ -378,5 +390,15 @@ window.lvevUpdateGrandTotal = lvevUpdateGrandTotal;
       });
     });
   });
-})();
+}
+
+function initializeEvaluationPage() {
+  initializePricing();
+  initializeConfiguration();
+  initializeFaq();
+  lvevApplyPlanToConfigure();
+}
+
+window.lvevInitializePage = initializeEvaluationPage;
+window.lvevInitializePage();
 })();
